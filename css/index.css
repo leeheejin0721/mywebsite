@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+
+address {
+  font-style: normal;
+}
+
+img {
+  display: block;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 38px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+header,
+nav,
+main,
+aside,
+article,
+section,
+footer {
+  display: block;
+}
+
+body {
+  background-color: #FFF5ED;
+}
+
+.container {
+  width: 100%;
+  max-width: 1416px;
+  margin: auto;
+  padding: 0 32px;
+}
+
+header .logo-menu-text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+header .logo-menu-text .logo-img {
+  width: 20%;
+}
+header .logo-menu-text .logo-img img {
+  width: 100%;
+}
+header .menu-toggle-btn {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+header .menu-toggle-btn span {
+  width: 30%;
+  margin: 0 auto;
+  height: 3px;
+  background-color: black;
+  border-radius: 5px;
+}
+header .header-text {
+  width: 25%;
+  margin-right: 0;
+}
+header .header-text a {
+  font-family: "Alegreya";
+  font-size: 10px;
+}
+header .header-text a p {
+  line-height: 1.2;
+  font-size: 10px;
+}
+
+main #intro {
+  margin-top: 200px;
+  height: 100vh;
+  position: relative;
+}
+main .star1, main .star2, main .star3 {
+  position: absolute;
+}
+main .contact-circle {
+  position: absolute;
+  top: 8%;
+  left: 10%;
+  z-index: 5;
+  cursor: pointer;
+}
+main .contact-circle text textPath {
+  font-family: "Alegreya";
+  font-weight: lighter;
+  font-size: 14px;
+}
+main .contact-circle img {
+  width: 80%;
+}
+main .portfolio-circle {
+  position: absolute;
+  top: 12%;
+  left: 70%;
+  z-index: 5;
+  cursor: pointer;
+}
+main .portfolio-circle text textPath {
+  font-family: "Alegreya";
+  font-weight: lighter;
+  font-size: 14px;
+}
+main .portfolio-circle img {
+  width: 80%;
+}
+main .aboutme-circle {
+  position: absolute;
+  top: 38%;
+  z-index: 3;
+  cursor: pointer;
+}
+main .aboutme-circle text textPath {
+  font-family: "Alegreya";
+  font-weight: lighter;
+  font-size: 14px;
+}
+main .aboutme-circle img {
+  width: 80%;
+}
+main .skill-circle {
+  position: absolute;
+  z-index: 5;
+  top: 42%;
+  left: 70%;
+  cursor: pointer;
+}
+main .skill-circle text textPath {
+  font-family: "Alegreya";
+  font-weight: lighter;
+  font-size: 14px;
+}
+main .skill-circle img {
+  width: 80%;
+}
+main .blue_gradient img {
+  position: absolute;
+  width: 30%;
+  top: 65%;
+  left: 18%;
+  z-index: 1;
+}
+main .gradient {
+  position: relative;
+  z-index: 1;
+}
+main .gradient .gradient-red {
+  position: absolute;
+  top: 120px;
+  left: 30px;
+  width: 10px;
+}
+main .gradient .gradient-red img {
+  width: 250px;
+}
+main .gradient .gradient-orange {
+  position: absolute;
+  top: 170px;
+  left: 60px;
+  z-index: 2;
+}
+main .gradient .gradient-orange img {
+  width: 300px;
+}
+main .gradient .gradient-yellow {
+  position: absolute;
+  z-index: 1;
+  top: 230px;
+  left: 30%;
+}
+main .gradient .gradient-yellow img {
+  width: 250px;
+}
+main .intro-txt {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  z-index: 5;
+}
+main .intro-txt h1 {
+  text-align: center;
+  width: 200px;
+  z-index: 5;
+  font-family: "Alegreya";
+  font-weight: lighter;
+}
+main .intro-txt #resume {
+  margin-left: 30%;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-family: "Alegreya";
+  font-weight: lighter;
+}
+main svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main text {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  fill: #000;
+}
+
+#aboutme {
+  position: relative;
+}
+#aboutme .gradient-orange img {
+  width: 20%;
+}
+#aboutme .aboutme_txt-img {
+  position: relative;
+  text-align: center;
+  z-index: 3;
+}
+#aboutme .aboutme_txt-img h2 {
+  font-family: "Alegreya";
+  font-weight: 400;
+}
+#aboutme .aboutme_txt-img img {
+  width: 100%;
+  height: auto;
+}
+#aboutme .curved-text {
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#aboutme .curved-text text {
+  fill: black;
+  font-size: 24px;
+}
+#aboutme .aboutme-bg {
+  position: absolute;
+  top: 45%;
+  z-index: 1;
+  margin: 0 auto;
+}
+#aboutme .aboutme-bg img {
+  width: 100%;
+}
+#aboutme .aboutme-button {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+}
+#aboutme .aboutme-button #prof {
+  width: 50%;
+  background: #FFF5ED;
+  cursor: pointer;
+  border: 2px solid black;
+  border-left: 0;
+}
+#aboutme .aboutme-button #prof p {
+  font-size: 16px;
+}
+#aboutme .aboutme-button #suit {
+  width: 50%;
+  background: #FFF5ED;
+  cursor: pointer;
+  border: 2px solid black;
+  border-right: 0;
+}
+#aboutme .aboutme-button #suit p {
+  font-size: 16px;
+}
+
+#skill {
+  margin-top: 100px;
+  background-image: url(../images/skill_bg.png);
+  background-size: cover;
+}
+#skill h2 {
+  font-family: "Alegreya";
+  font-weight: 400;
+}/*# sourceMappingURL=index.css.map */

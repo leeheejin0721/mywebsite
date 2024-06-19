@@ -1,0 +1,302 @@
+@import "./style.scss";
+@import "./reset.scss";
+@import "./mixin.scss";
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+
+body {
+    background-color: $bg-color;
+}
+.container {
+    width: $width-wide;
+    max-width: 1416px;
+    margin: auto;
+    padding: 0 32px;
+}
+
+header {
+    .logo-menu-text {
+        width: $width-wide;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: $width-wide;
+        .logo-img {
+            width: 20%;
+            img {
+                width: 100%;
+            }
+            
+        }
+    }
+    .menu-toggle-btn {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        
+        span {
+            width: 30%;
+            margin: 0 auto;
+            height: 3px;
+            background-color: black;
+            border-radius: 5px;
+        }
+    }
+    .header-text {
+        width: 25%;
+        margin-right: 0;
+        a {
+            font-family: $font-en;
+            font-size: 10px;
+            p {
+                line-height: 1.2;
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+main {
+    #intro {
+        margin-top: 200px;
+        height: 100vh;
+        position: relative;
+    }
+    
+    .star1, .star2, .star3 {
+        position: absolute;
+    }
+
+    
+    // .contact-circle, .portfolio-circle, .aboutme-circle, .skill-circle {
+    //     position: absolute;
+    //     display: flex;
+    //     justify-content: space-between;
+    // }
+    .contact-circle {
+        position: absolute;
+        top: 8%;
+        left: 10%;
+        z-index: 5;
+        cursor: pointer;
+        text {
+            textPath {
+                font-family: $font-en;
+                font-weight: lighter;
+                font-size: 14px;
+            }
+        }
+        img {
+            width: 80%;
+        }
+    }
+    .portfolio-circle {
+        position: absolute;
+        top: 12%;
+        left: 70%;
+        z-index: 5;
+        cursor: pointer;
+        text {
+            textPath {
+                font-family: $font-en;
+                font-weight: lighter;
+                font-size: 14px;
+            }
+        }
+        img {
+            width: 80%;
+        }
+    }
+    .aboutme-circle {
+        position: absolute;
+        top: 38%;
+        z-index: 3;
+        cursor: pointer;
+        text {
+            textPath {
+                font-family: $font-en;
+                font-weight: lighter;
+                font-size: 14px;
+            }
+        }
+        img {
+            width: 80%;
+        }
+    }
+    .skill-circle {
+        position: absolute;
+        z-index: 5;
+        top: 42%;
+        left: 70%;
+        cursor: pointer;
+        text {
+            textPath {
+                font-family: $font-en;
+                font-weight: lighter;
+                font-size: 14px;
+            }
+        }
+        img {
+            width: 80%;
+        }
+    }
+    
+    .blue_gradient img {
+        position: absolute;
+        width: 30%;
+        top: 65%;
+        left: 18%;
+        z-index: 1;
+    }
+
+    .gradient {
+        position: relative;
+        z-index: 1;
+        .gradient-red {
+           position: absolute;
+           top: 120px;
+           left: 30px;
+           width: 10px;
+           img {
+            width: 250px;
+        }
+        }
+        .gradient-orange {
+            position: absolute;
+            top: 170px;
+            left: 60px;
+            z-index: 2;
+            img {
+                width: 300px;
+            }
+        }
+        .gradient-yellow {
+            position: absolute;
+            z-index: 1;
+            top: 230px;
+            left: 30%;
+            img {
+                width: 250px;
+            }
+        }
+    }
+    
+    .intro-txt {
+        position: absolute;
+        top: 20%;
+        left: 25%;
+        z-index: 5;
+        h1 {
+            text-align: center;
+            width: 200px;
+            z-index: 5;
+            font-family: $font-en;
+            font-weight: lighter;
+        }
+        #resume {
+            margin-left: 30%;
+            background-color: $color-black;
+            color: $color-white;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            font-family: $font-en;
+            font-weight: lighter;
+        }
+    }
+      
+    svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    text {
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        fill: #000;
+    }
+}
+
+    #aboutme {
+        position: relative;
+        .gradient-orange {
+            img {
+                width: 20%;
+            }
+        }
+        .aboutme_txt-img {
+            position: relative;
+            text-align: center;
+            z-index: 3;
+            h2 {
+                font-family: $font-en;
+                font-weight: 400;
+            }
+        }
+        
+        .aboutme_txt-img img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .curved-text {
+            font-size: 24px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .curved-text text {
+            fill: black;
+            font-size: 24px;
+        }
+        .aboutme-bg {
+            position: absolute;
+            top: 45%;
+            z-index: 1;
+            margin: 0 auto;
+            img {
+                width: 100%;
+            }
+        }
+        .aboutme-button {
+            position: relative;
+            z-index: 3;
+            width: $width-wide;
+            display: flex;
+            #prof {
+                width: $width-half;
+                background: $bg-color;
+                cursor: pointer;
+                border: 2px solid black;
+                border-left: 0;
+                p {
+                    font-size: 16px;
+                }
+            }
+            #suit {
+                width: $width-half;
+                background: $bg-color;
+                cursor: pointer;
+                border: 2px solid black;
+                border-right: 0;
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    #skill {
+        margin-top: 100px;
+        background-image: url(../images/skill_bg.png);
+        background-size: cover;
+        h2 {
+            font-family: $font-en;
+            font-weight: 400;
+        }
+    }

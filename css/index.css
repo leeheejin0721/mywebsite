@@ -1,4 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap");
+@font-face {
+  font-family: "Pretendard-Thin";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard-ExtraLight";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard-Light";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Poject-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard-Medium";
+  src: url("https://fastly.jsdelivr.net/gh/Poject-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard-SemiBold";
+  src: url("https://fastly.jsdelivr.net/gh/Poject-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard-Bold";
+  src: url("https://fastly.jsdelivr.net/gh/Poject-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard-ExtraBold";
+  src: url("https://fastly.jsdelivr.net/gh/Poject-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
@@ -65,36 +113,57 @@ body {
   margin: auto;
   padding: 0 32px;
 }
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 12px;
+  }
+}
 
 header .logo-menu-text {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 }
 header .logo-menu-text .logo-img {
-  width: 20%;
+  width: 25%;
+}
+@media (min-width: 1024px) {
+  header .logo-menu-text .logo-img {
+    width: 7%;
+  }
 }
 header .logo-menu-text .logo-img img {
   width: 100%;
 }
 header .menu-toggle-btn {
-  width: 30%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 12px;
 }
 header .menu-toggle-btn span {
-  width: 30%;
+  width: 15%;
   margin: 0 auto;
   height: 3px;
   background-color: black;
   border-radius: 5px;
 }
+@media (min-width: 1024px) {
+  header .menu-toggle-btn span {
+    width: 6%;
+    gap: 20px;
+  }
+}
 header .header-text {
   width: 25%;
+  text-align: center;
   margin-right: 0;
+}
+@media (min-width: 1024px) {
+  header .header-text {
+    width: 10%;
+  }
 }
 header .header-text a {
   font-family: "Alegreya";
@@ -106,6 +175,8 @@ header .header-text a p {
 }
 
 main #intro {
+  overflow: hidden;
+  width: 100%;
   margin-top: 200px;
   height: 100vh;
   position: relative;
@@ -245,79 +316,289 @@ main text {
   font-size: 20px;
   fill: #000;
 }
-
-#aboutme {
+main #aboutme {
+  overflow: hidden;
+  width: 100%;
   position: relative;
 }
-#aboutme .gradient-orange img {
+main #aboutme .gradient-orange img {
   width: 20%;
 }
-#aboutme .aboutme_txt-img {
+main #aboutme .aboutme_txt-img {
   position: relative;
   text-align: center;
   z-index: 3;
 }
-#aboutme .aboutme_txt-img h2 {
+main #aboutme .aboutme_txt-img h2 {
   font-family: "Alegreya";
   font-weight: 400;
 }
-#aboutme .aboutme_txt-img img {
+main #aboutme .aboutme_txt-img .pic {
+  width: 60%;
+  margin: auto;
+}
+main #aboutme .aboutme_txt-img img {
   width: 100%;
   height: auto;
 }
-#aboutme .curved-text {
+main #aboutme .curved-text {
   font-size: 24px;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
 }
-#aboutme .curved-text text {
+main #aboutme .curved-text text {
   fill: black;
   font-size: 24px;
 }
-#aboutme .aboutme-bg {
+main #aboutme .aboutme-bg {
   position: absolute;
   top: 45%;
   z-index: 1;
   margin: 0 auto;
 }
-#aboutme .aboutme-bg img {
+main #aboutme .aboutme-bg img {
   width: 100%;
 }
-#aboutme .aboutme-button {
+main #aboutme .aboutme-button {
   position: relative;
   z-index: 3;
   width: 100%;
   display: flex;
 }
-#aboutme .aboutme-button #prof {
+main #aboutme .aboutme-button #prof {
   width: 50%;
   background: #FFF5ED;
   cursor: pointer;
   border: 2px solid black;
   border-left: 0;
 }
-#aboutme .aboutme-button #prof p {
+main #aboutme .aboutme-button #prof p {
   font-size: 16px;
 }
-#aboutme .aboutme-button #suit {
+main #aboutme .aboutme-button #suit {
   width: 50%;
   background: #FFF5ED;
   cursor: pointer;
   border: 2px solid black;
   border-right: 0;
 }
-#aboutme .aboutme-button #suit p {
+main #aboutme .aboutme-button #suit p {
   font-size: 16px;
 }
-
-#skill {
+main #skill {
+  overflow: hidden;
+  width: 100%;
   margin-top: 100px;
   background-image: url(../images/skill_bg.png);
   background-size: cover;
 }
-#skill h2 {
+main #skill h2 {
   font-family: "Alegreya";
   font-weight: 400;
+  margin-bottom: 30px;
+}
+main #skill .mo-skill-box {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+main #skill .mo-skill-box div {
+  width: 50%;
+}
+main #skill .mo-skill-box div img {
+  margin: 0 auto;
+  width: 30%;
+}
+main #skill .mo-skill-box div p {
+  font-family: "Pretendard-Regular";
+  font-size: 14px;
+  margin-top: 10px;
+}
+main #portfolio {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 100px;
+}
+main #portfolio h2 {
+  font-family: "Alegreya";
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+main #portfolio .art-museum .art-museum-title h3 {
+  font-family: "Pretendard-Light";
+  font-size: 20px;
+}
+main #portfolio .art-museum .art-museum-title .en {
+  color: #776677;
+  font-size: 14px;
+  font-family: "Pretendard-Light";
+}
+main #portfolio .art-museum .museum-img-box {
+  width: 100%;
+}
+main #portfolio .art-museum .museum-img {
+  width: 100%;
+}
+main #portfolio .art-museum .museum-img img {
+  width: 100%;
+  margin: 20px 0;
+}
+main #portfolio .art-museum .museum-button {
+  width: 100%;
+  display: flex;
+}
+main #portfolio .art-museum .museum-button #git, main #portfolio .art-museum .museum-button #website, main #portfolio .art-museum .museum-button #design-guide {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  border: 1px solid #E78156;
+  background-color: #FFF5ED;
+  padding: 0 5px;
+}
+main #portfolio .art-museum .museum-button #git p, main #portfolio .art-museum .museum-button #website p, main #portfolio .art-museum .museum-button #design-guide p {
+  font-size: 14px;
+  font-family: "Pretendard-Light";
+}
+main #portfolio .art-museum .museum-button #git img, main #portfolio .art-museum .museum-button #website img, main #portfolio .art-museum .museum-button #design-guide img {
+  width: 18%;
+}
+main #portfolio .loyal-festival {
+  margin-top: 30px;
+}
+main #portfolio .loyal-festival .festiva-title h3 {
+  font-family: "Pretendard-Light";
+  font-size: 20px;
+}
+main #portfolio .loyal-festival .festiva-title .en {
+  color: #776677;
+  font-size: 14px;
+  font-family: "Pretendard-Light";
+}
+main #portfolio .loyal-festival .festival-img-box {
+  width: 100%;
+}
+main #portfolio .loyal-festival .festival-img {
+  width: 100%;
+}
+main #portfolio .loyal-festival .festival-img img {
+  width: 100%;
+  margin: 20px 0;
+}
+main #portfolio .loyal-festival .festival-button {
+  width: 100%;
+  display: flex;
+}
+main #portfolio .loyal-festival .festival-button #git, main #portfolio .loyal-festival .festival-button #website, main #portfolio .loyal-festival .festival-button #design-guide {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  border: 1px solid #E78156;
+  background-color: #FFF5ED;
+  padding: 0 5px;
+}
+main #portfolio .loyal-festival .festival-button #git p, main #portfolio .loyal-festival .festival-button #website p, main #portfolio .loyal-festival .festival-button #design-guide p {
+  font-size: 14px;
+  font-family: "Pretendard-Light";
+}
+main #portfolio .loyal-festival .festival-button #git img, main #portfolio .loyal-festival .festival-button #website img, main #portfolio .loyal-festival .festival-button #design-guide img {
+  width: 18%;
+}
+main #portfolio .public-portfolio {
+  margin-top: 30px;
+}
+main #portfolio .public-portfolio .public-title h3 {
+  font-family: "Pretendard-Light";
+  font-size: 20px;
+}
+main #portfolio .public-portfolio .public-title .en {
+  color: #776677;
+  font-size: 14px;
+  font-family: "Pretendard-Light";
+}
+main #portfolio .public-portfolio .public-img-box {
+  width: 100%;
+}
+main #portfolio .public-portfolio .public-img {
+  width: 100%;
+}
+main #portfolio .public-portfolio .public-img img {
+  width: 100%;
+  margin: 20px 0;
+}
+main #portfolio .public-portfolio .public-button {
+  width: 100%;
+  display: flex;
+}
+main #portfolio .public-portfolio .public-button #git, main #portfolio .public-portfolio .public-button #website, main #portfolio .public-portfolio .public-button #design-guide {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  border: 1px solid #E78156;
+  background-color: #FFF5ED;
+  padding: 0 5px;
+}
+main #portfolio .public-portfolio .public-button #git p, main #portfolio .public-portfolio .public-button #website p, main #portfolio .public-portfolio .public-button #design-guide p {
+  font-size: 14px;
+  font-family: "Pretendard-Light";
+}
+main #portfolio .public-portfolio .public-button #git img, main #portfolio .public-portfolio .public-button #website img, main #portfolio .public-portfolio .public-button #design-guide img {
+  width: 18%;
+}
+main #contact {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 100px;
+  position: relative;
+}
+main #contact .contact-box h2 {
+  font-family: "Alegreya";
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+main #contact .contact-box .contact-img {
+  width: 100%;
+}
+main #contact .contact-box .contact-img .contact-top {
+  width: 100%;
+  position: absolute;
+}
+main #contact .contact-box .contact-img .contact-top img {
+  width: 100%;
+}
+main #contact .contact-box .contact-img .contact-bottom {
+  width: 100%;
+  position: absolute;
+}
+main #contact .contact-box .contact-img .contact-bottom img {
+  width: 100%;
+}
+main #contact .contact-box .contact-img .contact-img {
+  position: relative;
+}
+main #contact .contact-box .contact-img .contact-img img {
+  width: 80%;
+  margin: 0 auto;
+}
+main #contact .contact-box .contact-txt {
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+main #contact .contact-box .contact-txt .icon-tell a {
+  font-family: "Pretendard-Light";
+  margin: 0 auto;
+  text-align: center;
+}
+main #contact .contact-box .contact-txt .icon-mail a {
+  font-family: "Pretendard-Light";
+  text-align: center;
 }/*# sourceMappingURL=index.css.map */

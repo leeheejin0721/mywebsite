@@ -11,6 +11,9 @@ body {
     max-width: 1416px;
     margin: auto;
     padding: 0 32px;
+    @include responsive(large-screens) {
+        padding: 0 12px;
+    }
 }
 
 header {
@@ -19,9 +22,11 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: $width-wide;
         .logo-img {
-            width: 20%;
+            width: 25%;
+            @include responsive(large-screens) {
+                width: 7%;
+            }
             img {
                 width: 100%;
             }
@@ -29,22 +34,31 @@ header {
         }
     }
     .menu-toggle-btn {
-        width: 30%;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 12px;
         
         span {
-            width: 30%;
+            width: 15%;
             margin: 0 auto;
             height: 3px;
             background-color: black;
             border-radius: 5px;
+            @include responsive(large-screens) {
+                width: 6%;
+                gap: 20px;
+            }
         }
     }
     .header-text {
         width: 25%;
+        text-align: center;
         margin-right: 0;
+        // background-color: #E78156;
+        @include responsive(large-screens) {
+            width: 10%;
+        }
         a {
             font-family: $font-en;
             font-size: 10px;
@@ -58,6 +72,8 @@ header {
 
 main {
     #intro {
+        overflow: hidden;
+        width: $width-wide;
         margin-top: 200px;
         height: 100vh;
         position: relative;
@@ -218,9 +234,10 @@ main {
         font-size: 20px;
         fill: #000;
     }
-}
-
+    
     #aboutme {
+        overflow: hidden;
+        width: $width-wide;
         position: relative;
         .gradient-orange {
             img {
@@ -235,6 +252,11 @@ main {
                 font-family: $font-en;
                 font-weight: 400;
             }
+            .pic {
+                width: 60%;
+                margin: auto;
+            }
+            
         }
         
         .aboutme_txt-img img {
@@ -290,16 +312,243 @@ main {
             }
         }
     }
-
+    
     #skill {
+        overflow: hidden;
+        width: $width-wide;
         margin-top: 100px;
         background-image: url(../images/skill_bg.png);
         background-size: cover;
         h2 {
             font-family: $font-en;
             font-weight: 400;
+            margin-bottom: 30px;
         }
-        .mo-skill-box1 {
+        .mo-skill-box {
+            margin-bottom: 40px;
             display: flex;
+            justify-content: space-around;
+            width: $width-wide;
+            div {
+                width: $width-half;
+                img {
+                    margin: 0 auto;
+                    width: 30%;
+                }
+                p {
+                    font-family: $font-pre-regular;
+                    font-size: 14px;
+                    margin-top: 10px;
+                }
+            }
+            // .html-box, .css-box, .sass-box, .javascript-box, .jquery-box, .react-box, .git-box, .figma-box,  {
+                //     margin-bottom: 40px;
+                // } 
+            }
         }
+        
+        #portfolio {
+            overflow: hidden;
+            width: $width-wide;
+            margin-top: 100px;
+            h2 {
+                font-family: $font-en;
+                font-weight: 400;
+                margin-bottom: 30px;
+            }
+            .art-museum {
+                .art-museum-title {
+                    h3 {
+                        font-family: $font-pre-light;
+                        font-size: 20px;
+                    }
+                    .en {
+                        color: #776677;
+                        font-size: 14px;
+                        font-family: $font-pre-light;
+                    }
+                }
+                .museum-img-box {
+                    width: $width-wide
+                }
+                .museum-img {
+                    width: $width-wide;
+                    img {
+                        width: $width-wide;
+                        margin: 20px 0;
+                    }
+                }
+                .museum-button {
+                    width: $width-wide;
+                    display: flex;
+                    #git, #website, #design-guide {
+                        width: 30%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin: 10px;
+                        border: 1px solid #E78156;
+                        background-color: $bg-color;
+                        padding: 0 5px;
+                        p {
+                            font-size: 14px;
+                            font-family: $font-pre-light;
+                        }
+                        img {
+                            width: 18%;
+                        }
+                    }
+                    
+                }
+            }
+            .loyal-festival {
+                margin-top: 30px;
+                .festiva-title {
+                    h3 {
+                        font-family: $font-pre-light;
+                        font-size: 20px;
+                    }
+                    .en {
+                        color: #776677;
+                        font-size: 14px;
+                        font-family: $font-pre-light;
+                    }
+                }
+                .festival-img-box {
+                    width: $width-wide
+            }
+            .festival-img {
+                width: $width-wide;
+                img {
+                    width: $width-wide;
+                    margin: 20px 0;
+                }
+            }
+            .festival-button {
+                width: $width-wide;
+                display: flex;
+                #git, #website, #design-guide {
+                    width: 30%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 10px;
+                    border: 1px solid #E78156;
+                    background-color: $bg-color;
+                    padding: 0 5px;
+                    p {
+                        font-size: 14px;
+                        font-family: $font-pre-light;
+                    }
+                    img {
+                        width: 18%;
+                    }
+                }
+                
+            }
+        }
+        .public-portfolio {
+            margin-top: 30px;
+            .public-title {
+                h3 {
+                    font-family: $font-pre-light;
+                    font-size: 20px;
+                }
+                .en {
+                    color: #776677;
+                    font-size: 14px;
+                    font-family: $font-pre-light;
+                }
+            }
+            .public-img-box {
+                width: $width-wide
+            }
+            .public-img {
+                width: $width-wide;
+                img {
+                    width: $width-wide;
+                    margin: 20px 0;
+                }
+            }
+            .public-button {
+                width: $width-wide;
+                display: flex;
+                #git, #website, #design-guide {
+                    width: 30%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 10px;
+                    border: 1px solid #E78156;
+                    background-color: $bg-color;
+                    padding: 0 5px;
+                    p {
+                        font-size: 14px;
+                        font-family: $font-pre-light;
+                    }
+                    img {
+                        width: 18%;
+                    }
+                }
+                
+            }
+        }
+        
     }
+    #contact {
+        overflow: hidden;
+        width: $width-wide;
+        margin-top: 100px;
+        position: relative;
+        .contact-box {
+            h2 {
+                font-family: $font-en;
+                font-weight: 400; 
+                margin-bottom: 30px;
+            }
+            .contact-img {
+                width: $width-wide;
+                .contact-top {
+                    width: $width-wide;
+                    position: absolute;
+                    img {
+                        width: $width-wide;
+                    }
+                }
+                .contact-bottom {
+                    width: $width-wide;
+                    position: absolute;
+                    img {
+                        width: $width-wide;
+                    }
+                }
+                .contact-img {
+                    position: relative;
+                    img {
+                        width: 80%;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .contact-txt {
+                margin: 0 auto;
+                margin-top: 30px;
+                margin-bottom: 50px;
+                .icon-tell {
+                    a {
+                        font-family: $font-pre-light;
+                        margin: 0 auto;
+                        text-align: center;
+                    }
+                }
+                .icon-mail {
+                    a {
+                        font-family: $font-pre-light;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        
+    }
+} // main

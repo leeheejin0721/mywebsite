@@ -44,7 +44,7 @@
                     <div class="contact-circle">
                         <svg width="200" height="200">
                             <defs>
-                                <path id="contactPath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
+                                <path id="contactPath" d="M 108, 100 m -75, 0 a 60,53 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
                             </defs>
                             <text>
                                 <textPath href="#contactPath">
@@ -55,9 +55,9 @@
                         <img src="./images/contact_circle.png" alt="contact">
                     </div>
                     <div class="portfolio-circle">
-                        <svg width="200" height="200">
+                        <svg width="190" height="190">
                             <defs>
-                                <path id="portfolioPath" d="M 180, 40 m -85, 0 a 100,85 0 1,1 -100,0 a 75,90 0 1,1 -130,0"/>
+                                <path id="portfolioPath" d="M 170, 45 m -85, 0 a 90,90 0 1,1 -100,0 a 75,90 0 1,1 -130,0"/>
                             </defs>
                             <text>
                                 <textPath href="#portfolioPath">
@@ -72,7 +72,7 @@
                     <div class="aboutme-circle">
                         <svg width="230" height="250">
                             <defs>
-                                <path id="aboutmePath" d="M 97, 95 m -75, 0 a 69,65 0 1,1 178,0 a 190,120 0 1,1 -80,0"/>
+                                <path id="aboutmePath" d="M 100, 95 m -75, 0 a 85,65 0 1,1 178,0 a 190,120 0 1,1 -80,0"/>
                             </defs>
                             <text>
                                 <textPath href="#aboutmePath">
@@ -114,32 +114,35 @@
                     <h1>WELCOME TO MY STORY</h1>
                     <button id="resume">RESUME</button>
                 </div>
+                <div class="gradient_orange">
+                    <img src="./images/gradient_orange.png" alt="gradient_orange">
+                </div>
             </div>
         </section>
 
         <section id="aboutme">
             <div class="container">
-                <div class="gradient_orange">
-                    <img src="./images/gradient_orange.png" alt="gradient_orange">
-                </div>
                 <div class="aboutme_txt-img">
-                    <h2>ABOUT ME</h2>
+                    <h2>ABOUT ME</h2> 
                     <img src="./images/aboutme_picture.png" alt="aboutme_picture" class="pic">
+                    <div class="about-txt">
+                        <strong>안녕하세요</strong>
+                    </div>
+                </div>
+                <div class="aboutme-star">
+                    <div class="about-star1">
+                        <img src="./images/star.png" alt="star">
+                    </div>
+                    <div class="about-star2">
+                        <img src="./images/star.png" alt="star">
+                    </div>
+                    <div class="about-star3">
+                        <img src="./images/star.png" alt="star">
+                    </div>
                 </div>
             </div>
-                <div class="aboutme-bg">
-                    <img src="./images/aboutme_bg.png" alt="">
-                </div>
+            <div class="bg-button">
                 <!-- background 깔기 -->
-                <div>
-                    <img src="./images/star.png" alt="star">
-                </div>
-                <div>
-                    <img src="./images/star.png" alt="star">
-                </div>
-                <div>
-                    <img src="./images/star.png" alt="star">
-                </div>
                 <div class="aboutme-button">
                     <button id="prof">
                         <p>PROFESSIONMAL SUMMARY</p>
@@ -149,9 +152,13 @@
                     </button>
                 </div>
             </div>
+            </div>
         </section>
 
         <section id="skill">
+            <div class="skill-bg">
+                <img src="./images/skill_bg.png" alt="">
+            </div>
             <!-- background 깔기 -->
             <div class="container">
                 <h2>SKILL</h2>
@@ -255,8 +262,14 @@
                         <span class="en">gyeonggi museum of modern art</span>
                     </div>
                     <div class="museum-img-box">
-                        <div class="museum-img">
+                        <div class="museum-img1">
+                            <img src="./images/museum-img1.png" alt="museum-img2">
+                        </div>
+                        <div class="museum-img2">
                             <img src="./images/museum-img2.png" alt="museum-img2">
+                        </div>
+                        <div class="museum-img3">
+                            <img src="./images/museum-img3.png" alt="museum-img3">
                         </div>
                     </div>
                     <div class="museum-button">
@@ -277,45 +290,67 @@
                         <p>설명</p>
                     </div>
                 </div> <!-- art-museum -->
+            </div> <!-- container -->
+
                 <!-- bg이미지 -->
                 <div class="loyal-festival">
-                    <div class="festiva-title">
-                        <h3 class="festiva-renewal">궁중문화축전</h3>
-                        <span class="en">royal cultural celebration</span>
-                    </div>
-                    <div class="festival-img-box">
-                        <div class="festival-img">
-                            <img src="./images/festival-img2.png" alt="museum-img2">
+                    <div class="container">
+                        <div class="festiva-title">
+                            <h3 class="festiva-renewal">궁중문화축전</h3>
+                            <span class="en">royal cultural celebration</span>
                         </div>
                     </div>
-                    <div class="festival-button">
-                        <button id="git">
-                            <p>GIT</p>
-                            <img src="./images/git_black.png" alt="git">
-                        </button>
-                        <button id="website">
-                            <p>WEBSITE</p>
-                            <img src="./images/website_black.png" alt="website_black">
-                        </button>
-                        <button id="design-guide">
-                            <p>DESIGN GUIDE</p>
-                            <img src="./images/design_black.png" alt="design_black">
-                        </button>
+                    <div class="festival-img-box">
+                        <div class="festival-img1">
+                            <img src="./images/festival-img2.png" alt="festival-img2" class="festivalimg">
+                        </div>
+                        <div class="festival-img2">
+                            <img src="./images/festival-img1.png" alt="festival-img1">
+                        </div>
+                        <div class="festival-img3">
+                            <img src="./images/festival-img3.png" alt="festival-img3">
+                        </div>
+                        <div class="festival-img4">
+                            <img src="./images/festival-img4.png" alt="festival-img4">
+                        </div>
                     </div>
-                    <div class="festival-txt">
-                        <p>설명</p>
+                    <div class="container">
+                        <div class="festival-button">
+                            <button id="git">
+                                <p>GIT</p>
+                                <img src="./images/git_black.png" alt="git">
+                            </button>
+                            <button id="website">
+                                <p>WEBSITE</p>
+                                <img src="./images/website_black.png" alt="website_black">
+                            </button>
+                            <button id="design-guide">
+                                <p>DESIGN GUIDE</p>
+                                <img src="./images/design_black.png" alt="design_black">
+                            </button>
+                        </div>
+                        <div class="festival-txt">
+                            <p>설명</p>
+                        </div>
                     </div>
                 </div> <!-- loyal-festival -->
 
                 <!-- bg이미지 -->
+            <div class="container"> 
                 <div class="public-portfolio">
                     <div class="public-title">
                         <h3 class="public">개인 포트폴리오</h3>
-                        <span class="en">PUBLIC PORTFOLIO</span>
+                        <span class="en">public portfolio</span>
                     </div>
                     <div class="public-img-box">
-                        <div class="public-img">
-                            <img src="./images/public-img2.png" alt="museum-img2">
+                        <div class="public-img1">
+                            <img src="./images/public-img1.png" alt="public-img1">
+                        </div>
+                        <div class="public-img2">
+                            <img src="./images/public-img2.png" alt="public-img2">
+                        </div>
+                        <div class="public-img3">
+                            <img src="./images/public-img3.png" alt="public-img3">
                         </div>
                     </div>
                     <div class="public-button">

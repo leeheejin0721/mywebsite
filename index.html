@@ -14,19 +14,43 @@
                 <div class="logo-img">
                     <img src="./images/header_logo.png" alt="logo">
                 </div>
-                <div class="menu-toggle-btn">
-                    <span>&nbsp</span>
-                    <span>&nbsp</span>
+                <div class="menu-toggle-btn" id="menuToggle">
+                    <span></span>
+                    <span></span>
                 </div>
                 <div class="header-text">
-                    <a>
+                    <a href="#">
                         <strong>CONTACT ME</strong>
-                        <P>LET'S CREATE TOGETHER</P>
+                        <p>LET'S CREATE TOGETHER</p>
                     </a>
                 </div>
             </div>
         </div>
+        <div class="menu_box" id="menuBox">
+            <nav class="mainmenu">
+                <ul class="gnb">
+                    <li><a href="#">ABOUT ME</a></li>
+                    <li><a href="#">SKILL</a></li>
+                    <li><a href="#">PORTFOLIO</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+    this.classList.toggle('change');
+    const menuBox = document.getElementById('menuBox');
+    if (menuBox.classList.contains('active')) {
+        menuBox.classList.remove('active');
+        setTimeout(() => menuBox.style.display = 'none', 500); // 애니메이션 시간과 일치
+    } else {
+        menuBox.style.display = 'block';
+        setTimeout(() => menuBox.classList.add('active'), 10); // display가 block으로 바뀐 후 애니메이션 시작
+    }
+});
+    </script>
 
     <main>
         <section id="intro">
@@ -162,10 +186,20 @@
             <!-- background 깔기 -->
             <div class="container">
                 <h2>SKILL</h2>
+                <div id="skill-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <img src="" alt="" class="modal-icon">
+                        <p class="modal-description"></p>
+                    </div>
+                </div>
+
                 <div class="mo-skill-box">
                     <div class="html-box">
                         <img src="./images/html-5.png" alt="html">
-                        <!-- 막대그래프 -->
+                        <div class="progress-bar">
+                            <div class="progress html-progress"></div>
+                        </div>
                         <p>
                             웹 표준과 웹 접근성을 준수
                             홈페이지 구조적으로 작성 가능
@@ -173,7 +207,9 @@
                     </div>
                     <div class="css-box">
                         <img src="./images/css-3.png" alt="css-3">
-                        <!-- 막대그래프 -->
+                        <div class="progress-bar">
+                            <div class="progress css-progress"></div>
+                        </div>
                         <p>
                             반응형 웹사이트 구현 가능
                         </p>
@@ -182,14 +218,18 @@
                 <div class="mo-skill-box">
                     <div class="sass-box">
                         <img src="./images/sass.png" alt="sass">
-                        <!-- 막대그래프 -->
+                        <div class="progress-bar">
+                            <div class="progress sass-progress"></div>
+                        </div>
                         <p>
                             flex와 grid를 통해 반응형 홈페이지 제작 가능
                         </p>
                     </div>
                     <div class="javascript-box">
                         <img src="./images/java-script.png" alt="java-script">
-                        <!-- 막대그래프 -->
+                        <div class="progress-bar">
+                            <div class="progress javascript-progress"></div>
+                        </div>
                         <p>
                             fuction의 응용 및 구조 이해
                             슬라이드, 메뉴, 스크롤 애니메이션 기능 등 다양한 동적 기능 구현 가능
@@ -199,14 +239,18 @@
                 <div class="mo-skill-box">
                     <div class="jquery-box">
                         <img src="./images/jquery.png" alt="jquery">
-                        <!-- 막대그래프 -->
+                        <div class="progress-bar">
+                            <div class="progress jquery-progress"></div>
+                        </div>
                         <p>
                             사용자의 이벤트에 따른 동작에 필요한 기능 구현 가능
                         </p>
                     </div>
                     <div class="react-box">
                         <img src="./images/react.png" alt="react">
-                        <!-- 막대그래프 -->
+                        <div class="progress-bar">
+                            <div class="progress react-progress"></div>
+                        </div>
                         <p>
                             Router로 SPA탭메뉴 구성 가능 
                         </p>
@@ -215,24 +259,32 @@
                 <div class="mo-skill-box">
                     <div class="git-box">
                         <img src="./images/git.png" alt="git">
-                        <!-- 막대그래프 -->
+                        <div class="progress-bar">
+                            <div class="progress git-progress"></div>
+                        </div>
                         <p>gitHub 연동으로 작업 관리, git 형상 관리</p>
                     </div>
                     <div class="figma-box">
                         <img src="./images/figma.png" alt="figma">
-                        <!-- 막대그래프 -->
+                        <div class="progress-bar">
+                            <div class="progress figma-progress"></div>
+                        </div>
                         <p>와이어프레임으로 아이디어 기획구조 활용 가능</p>
                     </div>
                 </div>
                 <div class="mo-skill-box">
                     <div class="ai-box">
                         <img src="./images/illustrator.png" alt="ai">
-                        <!-- 막대그래프 -->
+                        <div class="progress-bar">
+                            <div class="progress ai-progress"></div>
+                        </div>
                         <p>팝업, 배너, 로고, 아이콘, 벡터 이미지 작업 가능</p>
                     </div>
                     <div class="photoshop-box">
                         <img src="./images/photoshop.png" alt="photoshop">
-                        <!-- 막대그래프 -->
+                        <div class="progress-bar">
+                            <div class="progress photoshop-progress"></div>
+                        </div>
                         <p>
                             사진 보정, 편집 상세 페이지 디자인 작업 가능
                         </p>
@@ -241,17 +293,87 @@
                 <div class="mo-skill-box">
                     <div class="ae-box">
                         <img src="./images/after-effects.png" alt="after-effects">
-                        <!-- 막대그래프 -->
+                        <div class="progress-bar">
+                            <div class="progress ae-progress"></div>
+                        </div>
                         <p>설명</p>
                     </div>
                     <div class="pre-box">
                         <img src="./images/premiere-pro.png" alt="premiere-pro">
-                        <!-- 막대그래프 -->
+                        <div class="progress-bar">
+                            <div class="progress pre-progress"></div>
+                        </div>
                         <p>설명</p>
                     </div>
                 </div>
             </div>
         </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+    var skillSection = document.querySelector('#skill');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            var progressBars = document.querySelectorAll('.progress');
+            if (entry.isIntersecting) {
+                skillSection.classList.add('skill-visible');
+                progressBars.forEach(function(progressBar) {
+                    progressBar.style.animation = progressBar.classList.contains('html-progress') ? 'fill-html 2s forwards' :
+                    progressBar.classList.contains('css-progress') ? 'fill-css 2s forwards' :
+                    progressBar.classList.contains('sass-progress') ? 'fill-sass 2s forwards' :
+                    progressBar.classList.contains('javascript-progress') ? 'fill-javascript 2s forwards' :
+                    progressBar.classList.contains('jquery-progress') ? 'fill-jquery 2s forwards' :
+                    progressBar.classList.contains('react-progress') ? 'fill-react 2s forwards' :
+                    progressBar.classList.contains('git-progress') ? 'fill-git 2s forwards' :
+                    progressBar.classList.contains('figma-progress') ? 'fill-figma 2s forwards' :
+                    progressBar.classList.contains('ai-progress') ? 'fill-ai 2s forwards' :
+                    progressBar.classList.contains('photoshop-progress') ? 'fill-photoshop 2s forwards' :
+                    progressBar.classList.contains('ae-progress') ? 'fill-ae 2s forwards' :
+                    progressBar.classList.contains('pre-progress') ? 'fill-pre 2s forwards' :
+                    
+                    progressBar.style.animation;
+                });
+            } else {
+                skillSection.classList.remove('skill-visible');
+                progressBars.forEach(function(progressBar) {
+                    progressBar.style.animation = 'none';
+                });
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    observer.observe(skillSection);
+
+    // 모달 제어
+    var modal = document.getElementById('skill-modal');
+    var modalIcon = modal.querySelector('.modal-icon');
+    var modalDescription = modal.querySelector('.modal-description');
+    var closeBtn = modal.querySelector('.close');
+    var skillBoxes = document.querySelectorAll('.mo-skill-box div');
+
+    skillBoxes.forEach(function(skillBox) {
+        skillBox.addEventListener('click', function() {
+            var imgSrc = this.querySelector('img').src;
+            var description = this.querySelector('p').innerText;
+            modalIcon.src = imgSrc;
+            modalDescription.innerText = description;
+            modal.style.display = 'block';
+        });
+    });
+
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+            </script>
+
 
         <section id="portfolio">
             <div class="container">
@@ -291,7 +413,9 @@
                     </div>
                 </div> <!-- art-museum -->
             </div> <!-- container -->
-
+            <div class="loyal-bg">
+                <img src="./images/loyal_bg.png" alt="loyal-bg">
+            </div>
                 <!-- bg이미지 -->
                 <div class="loyal-festival">
                     <div class="container">
@@ -301,17 +425,19 @@
                         </div>
                     </div>
                     <div class="festival-img-box">
-                        <div class="festival-img1">
-                            <img src="./images/festival-img2.png" alt="festival-img2" class="festivalimg">
-                        </div>
                         <div class="festival-img2">
                             <img src="./images/festival-img1.png" alt="festival-img1">
                         </div>
-                        <div class="festival-img3">
-                            <img src="./images/festival-img3.png" alt="festival-img3">
+                        <div class="festival-img1">
+                            <img src="./images/festival-img2.png" alt="festival-img2" class="festivalimg">
                         </div>
-                        <div class="festival-img4">
-                            <img src="./images/festival-img4.png" alt="festival-img4">
+                        <div class="loyal-img-po">
+                            <div class="festival-img3">
+                                <img src="./images/festival-img3.png" alt="festival-img3">
+                            </div>
+                            <div class="festival-img4">
+                                <img src="./images/festival-img4.png" alt="festival-img4">
+                            </div>
                         </div>
                     </div>
                     <div class="container">
@@ -328,6 +454,10 @@
                                 <p>DESIGN GUIDE</p>
                                 <img src="./images/design_black.png" alt="design_black">
                             </button>
+                            <button id="design-guide">
+                                <p>DESIGN PLAN</p>
+                                <img src="./images/design_black.png" alt="design_black">
+                            </button>
                         </div>
                         <div class="festival-txt">
                             <p>설명</p>
@@ -336,6 +466,9 @@
                 </div> <!-- loyal-festival -->
 
                 <!-- bg이미지 -->
+                <div class="public-bg">
+                    <img src="./images/public_bg.png" alt="public-bg">
+                </div>
             <div class="container"> 
                 <div class="public-portfolio">
                     <div class="public-title">
@@ -376,8 +509,8 @@
 
         <section id="contact">
             <div class="container">
+                <h2>CONTACT</h2>
                 <div class="contact-box">
-                    <h2>CONTACT</h2>
                     <div class="contact-img">
                         <div class="contact-top">
                            

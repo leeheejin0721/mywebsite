@@ -19,54 +19,98 @@ body {
 header {
     .logo-menu-text {
         margin-top: 32px;
-        width: $width-wide;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .logo-img {
-            width: 25%;
-            @include responsive(large-screens) {
-                width: 7%;
-            }
-            img {
-                width: 100%;
-            }
-            
-        }
+        position: relative;
+        z-index: 1001;
     }
-    .menu-toggle-btn {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        span {
-            width: 18%;
-            margin: 0 auto;
-            height: 3px;
-            background-color: black;
-            border-radius: 5px;
-            @include responsive(large-screens) {
-                width: 4%;
-                gap: 20px;
-            }
-        }
-    }
-    .header-text {
-        width: 25%;
-        text-align: center;
-        margin-right: 0;
-        // background-color: #E78156;
+    .logo-img {
+        width: 20%;
         @include responsive(large-screens) {
             width: 10%;
         }
-        a {
-            font-family: $font-en;
-            font-size: 10px;
-            
-            p {
-                line-height: 1.2;
-                font-size: 10px;
-            }
+    }
+    .logo-img img {
+        width: 100%;
+    }
+    .menu-toggle-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    .menu-toggle-btn span {
+        width: 36px; /* Adjusted width */
+        height: 3px;
+        background-color: black;
+        border-radius: 5px;
+        transition: 0.4s;
+    }
+    .menu-toggle-btn.change span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .menu-toggle-btn.change span:nth-child(2) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    .header-text {
+        width: 25%;
+        text-align: center;
+        z-index: 1001;
+        @include responsive(large-screens) {
+            width: 10%;
+        }
+    }
+    .header-text a {
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+    }
+    .header-text p {
+        line-height: 1.2;
+        font-size: 10px;
+    }
+    .menu_box {
+        display: none;
+        position: fixed;
+        top: 10%;
+        left: -3%;
+        width: 100%;
+        height: 100%;
+        background-color: #FFF5ED;
+        z-index: 1000;
+        text-align: center;
+        padding-top: 100px;
+        transition: opacity 0.5s ease;
+        @include responsive(large-screens) {
+            left: 0;
+        }
+    }
+    .menu_box.active {
+        display: block;
+    }
+    .mainmenu {
+        list-style: none;
+        padding: 0;
+    }
+    .gnb li {
+        display: block;
+        margin-bottom: 40px;
+        @include responsive(large-screens) {
+            margin-bottom: 60px;
+        }
+    }
+    .gnb a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        font-size: 24px;
+        font-family: $font-en;
+        font-weight: 500;
+        @include responsive(large-screens) {
+            font-size: 34px;
         }
     }
 }
@@ -142,7 +186,7 @@ main {
     .portfolio-circle {
         position: absolute;
         top: 3%;
-        left: 77%;
+        left: 73%;
         z-index: 5;
         cursor: pointer;
         @include responsive(large-screens) {
@@ -431,7 +475,7 @@ main {
             margin-top: 150px;
             position: absolute;
             z-index: 1;
-            top: -30%;
+            top: 0;
             opacity: 0.8;
             @include responsive(large-screens) {
                 width: $width-wide;
@@ -450,7 +494,7 @@ main {
             font-weight: 400;
             margin-bottom: 30px;
             position: relative;
-                z-index: 4;
+            z-index: 4;
         }
         .mo-skill-box {
             position: relative;
@@ -469,13 +513,160 @@ main {
                     font-family: $font-pre-regular;
                     font-size: 14px;
                     margin-top: 10px;
+                    display: none;
                 }
             }
-            // .html-box, .css-box, .sass-box, .javascript-box, .jquery-box, .react-box, .git-box, .figma-box,  {
-                //     margin-bottom: 40px;
-                // } 
-            }
         }
+        .progress-bar {
+            margin: auto;
+            width: 100%;
+            height: 7px; /* 직사각형 박스의 높이 */
+            background-color: #e0e0e0; /* 백그라운드 색상 */
+            margin-top: 10px;
+            position: relative;
+        }
+        
+        .progress {
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, #ff4e02, #E77E51, #f1d475);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        @keyframes fill-html {
+            from { width: 0; }
+            to { width: 90%; } /* HTML은 90%로 설정 */
+        }
+        @keyframes fill-css {
+            from { width: 0; }
+            to { width: 85%; } /* CSS는 80%로 설정 */
+        }
+        @keyframes fill-sass {
+            from { width: 0; }
+            to { width: 85%; } /* CSS는 80%로 설정 */
+        }
+        @keyframes fill-javascript {
+            from { width: 0; }
+            to { width: 80%; } /* CSS는 80%로 설정 */
+        }
+        @keyframes fill-jquery {
+            from { width: 0; }
+            to { width: 85%; } /* CSS는 80%로 설정 */
+        }
+        @keyframes fill-react {
+            from { width: 0; }
+            to { width: 80%; } /* CSS는 80%로 설정 */
+        }
+        @keyframes fill-git {
+            from { width: 0; }
+            to { width: 90%; } /* CSS는 80%로 설정 */
+        }
+        @keyframes fill-figma {
+            from { width: 0; }
+            to { width: 90%; } /* CSS는 80%로 설정 */
+        }
+        @keyframes fill-ai {
+            from { width: 0; }
+            to { width: 85%; } /* CSS는 80%로 설정 */
+        }
+        @keyframes fill-photoshop {
+            from { width: 0; }
+            to { width: 90%; } /* CSS는 80%로 설정 */
+        }
+        @keyframes fill-ae {
+            from { width: 0; }
+            to { width: 75%; } /* CSS는 80%로 설정 */
+        }
+        @keyframes fill-pre {
+            from { width: 0; }
+            to { width: 80%; } /* CSS는 80%로 설정 */
+        }
+        /* 나머지 항목도 같은 방식으로 추가 */
+        
+        .html-progress {
+            animation: fill-html 2s forwards;
+        }
+        .css-progress {
+            animation: fill-css 2s forwards;
+        }
+        .sass-progress {
+            animation: fill-css 2s forwards;
+        }
+        .javascript-progress {
+            animation: fill-css 2s forwards;
+        }
+        .jquery-progress {
+            animation: fill-css 2s forwards;
+        }
+        .react-progress {
+            animation: fill-css 2s forwards;
+        }
+        .git-progress {
+            animation: fill-css 2s forwards;
+        }
+        .figma-progress {
+            animation: fill-css 2s forwards;
+        }
+        .ai-progress {
+            animation: fill-css 2s forwards;
+        }
+        .photoshop-progress {
+            animation: fill-css 2s forwards;
+        }
+        .ae-progress {
+            animation: fill-css 2s forwards;
+        }
+        .pre-progress {
+            animation: fill-css 2s forwards;
+        }
+        /* 나머지 항목도 같은 방식으로 추가 */
+
+        .modal {
+            display: none; /* 기본적으로 숨김 */
+            position: fixed;
+            z-index: 5;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5); /* 반투명 배경 */
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            position: relative;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .modal-icon {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .modal-description {
+            margin-top: 20px;
+        }
+    }
         
         #portfolio {
             position: relative;
@@ -517,6 +708,7 @@ main {
                     align-items: center;
                     overflow: hidden;
                     position: relative;
+                    z-index: 5;
                 }
                 .museum-img1 {
                     @include responsive(large-screens) {
@@ -557,15 +749,27 @@ main {
                 .museum-button {
                     width: $width-wide;
                     display: flex;
+                    justify-content: right;
+                    position: relative;
+                    z-index: 5;
+                    @include responsive(large-screens) {
+                        position: absolute;
+                        top: 28%;
+                        right: 35%;
+                        width: 40%;
+                    }
                     #git, #website, #design-guide {
-                        width: 30%;
+                        width: 25%;
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
-                        margin: 10px;
+                        margin: 5px;
                         border: 1px solid #E78156;
                         background-color: $bg-color;
                         padding: 0 5px;
+                        @include responsive(large-screens) {
+                            padding: 3px 5px;
+                        }
                         p {
                             font-size: 14px;
                             font-family: $font-pre-light;
@@ -577,14 +781,33 @@ main {
                     
                 }
             }
+            .loyal-bg {
+                position: absolute;
+                top: 20%;
+                opacity: 0.7;
+                z-index: 1;
+            }
             .loyal-festival {
+                width: $width-wide;
+                overflow: hidden;
+                position: relative;
+                z-index: 5;
                 margin-top: 30px;
                 .festiva-title {
+                    @include responsive(large-screens) {
+                        position: absolute;
+                        top: 8%;
+                        left: 9%;
+                    }
                     h3 {
+                        position: relative;
                         width: $width-wide;
                         font-family: $font-pre-light;
                         text-align: right;
                         font-size: 20px;
+                        @include responsive(large-screens) {
+                            text-align: left;
+                        }
                     }
                     .en {
                         display: inline-block;
@@ -593,35 +816,73 @@ main {
                         color: #776677;
                         font-size: 14px;
                         font-family: $font-pre-light;
+                        @include responsive(large-screens) {
+                            text-align: left;
+                        }
                     }
                 }
                 .festival-img-box {
-                    width: $width-wide;
+                    width: 88%;
+                    margin: auto;
                     display: flex;
+                    align-items: center;
                     overflow: hidden;
-                    @include responsive(large-screens) {
-                        display: flex;
+                    .festival-img1, .festival-img3, .festival-img4  {
+                        display: none;
+                        @include responsive(large-screens) {
+                            display: block;
+                        }
                     }
-                    .festival-img1 {
-                        width: 6%;
-                        .festivalimg {
-                            width: 50%;
-                            
+                    .festival-img2 {
+                        @include responsive(large-screens) {
+                            margin-left: 40px;
+                        }
+                    }
+                    @include responsive(large-screens) {
+                        .festival-img1 {
+                            margin: 0 80px;
+                            img {
+                                width: 80%;
+                            }
+                        }
+                        .festival-img2 {
+                            img {
+                                width: 80%;
+                            }
+                        }
+                        .loyal-img-po {
+                            position: absolute;
+                            display: flex;
+                            left: 60%;
+                            top: 20%;
+                            .festival-img3 {
+                                margin-right: 20px;
+                            }
                         }
                     }
                 }
             .festival-button {
                 width: $width-wide;
                 display: flex;
+                justify-content: left;
+                @include responsive(large-screens) {
+                    position: absolute;
+                    top: 80%;
+                    left: 8%;
+                    width: 45%;
+                }
                 #git, #website, #design-guide {
-                    width: 30%;
+                    width: 25%;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    margin: 10px;
+                    margin: 5px;
                     border: 1px solid #E78156;
                     background-color: $bg-color;
                     padding: 0 5px;
+                    @include responsive(large-screens) {
+                        padding: 3px 5px;
+                    }
                     p {
                         font-size: 14px;
                         font-family: $font-pre-light;
@@ -632,6 +893,9 @@ main {
                 }
                 
             }
+        }
+        .public-bg {
+            position: absolute;
         }
         .public-portfolio {
             position: relative;
@@ -710,15 +974,25 @@ main {
             .public-button {
                 width: $width-wide;
                 display: flex;
+                justify-content: right;
+                @include responsive(large-screens) {
+                    position: absolute;
+                    top: 85%;
+                    left: 17%;
+                    width: 55%;
+                }
                 #git, #website, #design-guide {
-                    width: 30%;
+                    width: 25%;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    margin: 10px;
+                    margin: 5px;
                     border: 1px solid #E78156;
                     background-color: $bg-color;
                     padding: 0 5px;
+                    @include responsive(large-screens) {
+                        padding: 3px 5px;
+                    }
                     p {
                         font-size: 14px;
                         font-family: $font-pre-light;
@@ -737,33 +1011,42 @@ main {
         width: $width-wide;
         margin-top: 100px;
         position: relative;
+        h2 {
+            font-family: $font-en;
+            font-weight: 400; 
+            margin-bottom: 30px;
+        }
         .contact-box {
-            h2 {
-                font-family: $font-en;
-                font-weight: 400; 
-                margin-bottom: 30px;
+            @include responsive(large-screens) {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
             .contact-img {
                 width: $width-wide;
-                .contact-top {
-                    width: $width-wide;
-                    position: absolute;
-                    img {
-                        width: $width-wide;
-                    }
-                }
-                .contact-bottom {
-                    width: $width-wide;
-                    position: absolute;
-                    img {
-                        width: $width-wide;
-                    }
-                }
+                // .contact-top {
+                //     width: $width-wide;
+                //     position: absolute;
+                //     img {
+                //         width: $width-wide;
+                //     }
+                // }
+                // .contact-bottom {
+                //     width: $width-wide;
+                //     position: absolute;
+                //     img {
+                //         width: $width-wide;
+                //     }
+                // }
                 .contact-img {
                     position: relative;
                     img {
                         width: 80%;
                         margin: 0 auto;
+                        @include responsive(large-screens) {
+                            width: 60%;
+                            margin: 0;
+                        }
                     }
                 }
             }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap");
 @font-face {
   font-family: "Pretendard-Thin";
@@ -125,41 +126,44 @@ header .logo-menu-text {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 1001;
 }
-header .logo-menu-text .logo-img {
-  width: 25%;
+header .logo-img {
+  width: 20%;
 }
 @media (min-width: 1024px) {
-  header .logo-menu-text .logo-img {
-    width: 7%;
+  header .logo-img {
+    width: 10%;
   }
 }
-header .logo-menu-text .logo-img img {
+header .logo-img img {
   width: 100%;
 }
 header .menu-toggle-btn {
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  cursor: pointer;
+  z-index: 1001;
 }
 header .menu-toggle-btn span {
-  width: 18%;
-  margin: 0 auto;
+  width: 36px; /* Adjusted width */
   height: 3px;
   background-color: black;
   border-radius: 5px;
+  transition: 0.4s;
 }
-@media (min-width: 1024px) {
-  header .menu-toggle-btn span {
-    width: 4%;
-    gap: 20px;
-  }
+header .menu-toggle-btn.change span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+header .menu-toggle-btn.change span:nth-child(2) {
+  transform: rotate(45deg) translate(-5px, -6px);
 }
 header .header-text {
   width: 25%;
   text-align: center;
-  margin-right: 0;
+  z-index: 1001;
 }
 @media (min-width: 1024px) {
   header .header-text {
@@ -167,12 +171,59 @@ header .header-text {
   }
 }
 header .header-text a {
-  font-family: "Alegreya";
+  font-family: Arial, sans-serif;
   font-size: 10px;
 }
-header .header-text a p {
+header .header-text p {
   line-height: 1.2;
   font-size: 10px;
+}
+header .menu_box {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: -3%;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF5ED;
+  z-index: 1000;
+  text-align: center;
+  padding-top: 100px;
+  transition: opacity 0.5s ease;
+}
+@media (min-width: 1024px) {
+  header .menu_box {
+    left: 0;
+  }
+}
+header .menu_box.active {
+  display: block;
+}
+header .mainmenu {
+  list-style: none;
+  padding: 0;
+}
+header .gnb li {
+  display: block;
+  margin-bottom: 40px;
+}
+@media (min-width: 1024px) {
+  header .gnb li {
+    margin-bottom: 60px;
+  }
+}
+header .gnb a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: "Alegreya";
+  font-weight: 500;
+}
+@media (min-width: 1024px) {
+  header .gnb a {
+    font-size: 34px;
+  }
 }
 
 main #intro {
@@ -244,7 +295,7 @@ main #intro .contact-circle img {
 main #intro .portfolio-circle {
   position: absolute;
   top: 3%;
-  left: 77%;
+  left: 73%;
   z-index: 5;
   cursor: pointer;
 }
@@ -543,6 +594,8 @@ main #skill {
   width: 100%;
   margin-top: 150px;
   position: relative;
+  /* 나머지 항목도 같은 방식으로 추가 */
+  /* 나머지 항목도 같은 방식으로 추가 */
 }
 @media (min-width: 1024px) {
   main #skill {
@@ -553,7 +606,7 @@ main #skill .skill-bg {
   margin-top: 150px;
   position: absolute;
   z-index: 1;
-  top: -30%;
+  top: 0;
   opacity: 0.8;
 }
 @media (min-width: 1024px) {
@@ -597,6 +650,193 @@ main #skill .mo-skill-box div p {
   font-family: "Pretendard-Regular";
   font-size: 14px;
   margin-top: 10px;
+  display: none;
+}
+main #skill .progress-bar {
+  margin: auto;
+  width: 100%;
+  height: 7px; /* 직사각형 박스의 높이 */
+  background-color: #e0e0e0; /* 백그라운드 색상 */
+  margin-top: 10px;
+  position: relative;
+}
+main #skill .progress {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #ff4e02, #E77E51, #f1d475);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@keyframes fill-html {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90%;
+  } /* HTML은 90%로 설정 */
+}
+@keyframes fill-css {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  } /* CSS는 80%로 설정 */
+}
+@keyframes fill-sass {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  } /* CSS는 80%로 설정 */
+}
+@keyframes fill-javascript {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  } /* CSS는 80%로 설정 */
+}
+@keyframes fill-jquery {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  } /* CSS는 80%로 설정 */
+}
+@keyframes fill-react {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  } /* CSS는 80%로 설정 */
+}
+@keyframes fill-git {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90%;
+  } /* CSS는 80%로 설정 */
+}
+@keyframes fill-figma {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90%;
+  } /* CSS는 80%로 설정 */
+}
+@keyframes fill-ai {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  } /* CSS는 80%로 설정 */
+}
+@keyframes fill-photoshop {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90%;
+  } /* CSS는 80%로 설정 */
+}
+@keyframes fill-ae {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  } /* CSS는 80%로 설정 */
+}
+@keyframes fill-pre {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  } /* CSS는 80%로 설정 */
+}
+main #skill .html-progress {
+  animation: fill-html 2s forwards;
+}
+main #skill .css-progress {
+  animation: fill-css 2s forwards;
+}
+main #skill .sass-progress {
+  animation: fill-css 2s forwards;
+}
+main #skill .javascript-progress {
+  animation: fill-css 2s forwards;
+}
+main #skill .jquery-progress {
+  animation: fill-css 2s forwards;
+}
+main #skill .react-progress {
+  animation: fill-css 2s forwards;
+}
+main #skill .git-progress {
+  animation: fill-css 2s forwards;
+}
+main #skill .figma-progress {
+  animation: fill-css 2s forwards;
+}
+main #skill .ai-progress {
+  animation: fill-css 2s forwards;
+}
+main #skill .photoshop-progress {
+  animation: fill-css 2s forwards;
+}
+main #skill .ae-progress {
+  animation: fill-css 2s forwards;
+}
+main #skill .pre-progress {
+  animation: fill-css 2s forwards;
+}
+main #skill .modal {
+  display: none; /* 기본적으로 숨김 */
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+}
+main #skill .modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  position: relative;
+}
+main #skill .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+main #skill .close:hover,
+main #skill .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+main #skill .modal-icon {
+  width: 50px;
+  height: 50px;
+}
+main #skill .modal-description {
+  margin-top: 20px;
 }
 main #portfolio {
   position: relative;
@@ -638,6 +878,7 @@ main #portfolio .art-museum .museum-img-box {
   align-items: center;
   overflow: hidden;
   position: relative;
+  z-index: 5;
 }
 @media (min-width: 1024px) {
   main #portfolio .art-museum .museum-img1 {
@@ -678,16 +919,32 @@ main #portfolio .art-museum .museum-img3 img {
 main #portfolio .art-museum .museum-button {
   width: 100%;
   display: flex;
+  justify-content: right;
+  position: relative;
+  z-index: 5;
+}
+@media (min-width: 1024px) {
+  main #portfolio .art-museum .museum-button {
+    position: absolute;
+    top: 28%;
+    right: 35%;
+    width: 40%;
+  }
 }
 main #portfolio .art-museum .museum-button #git, main #portfolio .art-museum .museum-button #website, main #portfolio .art-museum .museum-button #design-guide {
-  width: 30%;
+  width: 25%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 10px;
+  margin: 5px;
   border: 1px solid #E78156;
   background-color: #FFF5ED;
   padding: 0 5px;
+}
+@media (min-width: 1024px) {
+  main #portfolio .art-museum .museum-button #git, main #portfolio .art-museum .museum-button #website, main #portfolio .art-museum .museum-button #design-guide {
+    padding: 3px 5px;
+  }
 }
 main #portfolio .art-museum .museum-button #git p, main #portfolio .art-museum .museum-button #website p, main #portfolio .art-museum .museum-button #design-guide p {
   font-size: 14px;
@@ -696,14 +953,37 @@ main #portfolio .art-museum .museum-button #git p, main #portfolio .art-museum .
 main #portfolio .art-museum .museum-button #git img, main #portfolio .art-museum .museum-button #website img, main #portfolio .art-museum .museum-button #design-guide img {
   width: 18%;
 }
+main #portfolio .loyal-bg {
+  position: absolute;
+  top: 20%;
+  opacity: 0.7;
+  z-index: 1;
+}
 main #portfolio .loyal-festival {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
   margin-top: 30px;
 }
+@media (min-width: 1024px) {
+  main #portfolio .loyal-festival .festiva-title {
+    position: absolute;
+    top: 8%;
+    left: 9%;
+  }
+}
 main #portfolio .loyal-festival .festiva-title h3 {
+  position: relative;
   width: 100%;
   font-family: "Pretendard-Light";
   text-align: right;
   font-size: 20px;
+}
+@media (min-width: 1024px) {
+  main #portfolio .loyal-festival .festiva-title h3 {
+    text-align: left;
+  }
 }
 main #portfolio .loyal-festival .festiva-title .en {
   display: inline-block;
@@ -713,35 +993,78 @@ main #portfolio .loyal-festival .festiva-title .en {
   font-size: 14px;
   font-family: "Pretendard-Light";
 }
-main #portfolio .loyal-festival .festival-img-box {
-  width: 100%;
-  display: flex;
-  overflow: hidden;
-}
 @media (min-width: 1024px) {
-  main #portfolio .loyal-festival .festival-img-box {
-    display: flex;
+  main #portfolio .loyal-festival .festiva-title .en {
+    text-align: left;
   }
 }
-main #portfolio .loyal-festival .festival-img-box .festival-img1 {
-  width: 6%;
+main #portfolio .loyal-festival .festival-img-box {
+  width: 88%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
-main #portfolio .loyal-festival .festival-img-box .festival-img1 .festivalimg {
-  width: 50%;
+main #portfolio .loyal-festival .festival-img-box .festival-img1, main #portfolio .loyal-festival .festival-img-box .festival-img3, main #portfolio .loyal-festival .festival-img-box .festival-img4 {
+  display: none;
+}
+@media (min-width: 1024px) {
+  main #portfolio .loyal-festival .festival-img-box .festival-img1, main #portfolio .loyal-festival .festival-img-box .festival-img3, main #portfolio .loyal-festival .festival-img-box .festival-img4 {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  main #portfolio .loyal-festival .festival-img-box .festival-img2 {
+    margin-left: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  main #portfolio .loyal-festival .festival-img-box .festival-img1 {
+    margin: 0 80px;
+  }
+  main #portfolio .loyal-festival .festival-img-box .festival-img1 img {
+    width: 80%;
+  }
+  main #portfolio .loyal-festival .festival-img-box .festival-img2 img {
+    width: 80%;
+  }
+  main #portfolio .loyal-festival .festival-img-box .loyal-img-po {
+    position: absolute;
+    display: flex;
+    left: 60%;
+    top: 20%;
+  }
+  main #portfolio .loyal-festival .festival-img-box .loyal-img-po .festival-img3 {
+    margin-right: 20px;
+  }
 }
 main #portfolio .loyal-festival .festival-button {
   width: 100%;
   display: flex;
+  justify-content: left;
+}
+@media (min-width: 1024px) {
+  main #portfolio .loyal-festival .festival-button {
+    position: absolute;
+    top: 80%;
+    left: 8%;
+    width: 45%;
+  }
 }
 main #portfolio .loyal-festival .festival-button #git, main #portfolio .loyal-festival .festival-button #website, main #portfolio .loyal-festival .festival-button #design-guide {
-  width: 30%;
+  width: 25%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 10px;
+  margin: 5px;
   border: 1px solid #E78156;
   background-color: #FFF5ED;
   padding: 0 5px;
+}
+@media (min-width: 1024px) {
+  main #portfolio .loyal-festival .festival-button #git, main #portfolio .loyal-festival .festival-button #website, main #portfolio .loyal-festival .festival-button #design-guide {
+    padding: 3px 5px;
+  }
 }
 main #portfolio .loyal-festival .festival-button #git p, main #portfolio .loyal-festival .festival-button #website p, main #portfolio .loyal-festival .festival-button #design-guide p {
   font-size: 14px;
@@ -749,6 +1072,9 @@ main #portfolio .loyal-festival .festival-button #git p, main #portfolio .loyal-
 }
 main #portfolio .loyal-festival .festival-button #git img, main #portfolio .loyal-festival .festival-button #website img, main #portfolio .loyal-festival .festival-button #design-guide img {
   width: 18%;
+}
+main #portfolio .public-bg {
+  position: absolute;
 }
 main #portfolio .public-portfolio {
   position: relative;
@@ -829,16 +1155,30 @@ main #portfolio .public-portfolio .public-img-box .public-img3 img {
 main #portfolio .public-portfolio .public-button {
   width: 100%;
   display: flex;
+  justify-content: right;
+}
+@media (min-width: 1024px) {
+  main #portfolio .public-portfolio .public-button {
+    position: absolute;
+    top: 85%;
+    left: 17%;
+    width: 55%;
+  }
 }
 main #portfolio .public-portfolio .public-button #git, main #portfolio .public-portfolio .public-button #website, main #portfolio .public-portfolio .public-button #design-guide {
-  width: 30%;
+  width: 25%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 10px;
+  margin: 5px;
   border: 1px solid #E78156;
   background-color: #FFF5ED;
   padding: 0 5px;
+}
+@media (min-width: 1024px) {
+  main #portfolio .public-portfolio .public-button #git, main #portfolio .public-portfolio .public-button #website, main #portfolio .public-portfolio .public-button #design-guide {
+    padding: 3px 5px;
+  }
 }
 main #portfolio .public-portfolio .public-button #git p, main #portfolio .public-portfolio .public-button #website p, main #portfolio .public-portfolio .public-button #design-guide p {
   font-size: 14px;
@@ -853,26 +1193,19 @@ main #contact {
   margin-top: 100px;
   position: relative;
 }
-main #contact .contact-box h2 {
+main #contact h2 {
   font-family: "Alegreya";
   font-weight: 400;
   margin-bottom: 30px;
 }
+@media (min-width: 1024px) {
+  main #contact .contact-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 main #contact .contact-box .contact-img {
-  width: 100%;
-}
-main #contact .contact-box .contact-img .contact-top {
-  width: 100%;
-  position: absolute;
-}
-main #contact .contact-box .contact-img .contact-top img {
-  width: 100%;
-}
-main #contact .contact-box .contact-img .contact-bottom {
-  width: 100%;
-  position: absolute;
-}
-main #contact .contact-box .contact-img .contact-bottom img {
   width: 100%;
 }
 main #contact .contact-box .contact-img .contact-img {
@@ -881,6 +1214,12 @@ main #contact .contact-box .contact-img .contact-img {
 main #contact .contact-box .contact-img .contact-img img {
   width: 80%;
   margin: 0 auto;
+}
+@media (min-width: 1024px) {
+  main #contact .contact-box .contact-img .contact-img img {
+    width: 60%;
+    margin: 0;
+  }
 }
 main #contact .contact-box .contact-txt {
   margin: 0 auto;

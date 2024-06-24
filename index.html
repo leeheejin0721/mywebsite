@@ -150,7 +150,12 @@
                     <h2>ABOUT ME</h2> 
                     <img src="./images/aboutme_picture.png" alt="aboutme_picture" class="pic">
                     <div class="about-txt">
-                        <strong>안녕하세요</strong>
+                        <strong>웹 개발자</strong>
+                        <strong>이희진입니다.</strong>
+                        <p>
+                            거칠고 빠른 것 보다는 조용하지만 꾸준히 계속해서 나아갑니다.
+                            단순히 디자인만을 그대로 구현한 사이트보다 사용자의 편의 또한 고려한 웹사이트를 만들어 나가고 싶습니다. 
+                        </p>
                     </div>
                 </div>
                 <div class="aboutme-star">
@@ -183,6 +188,9 @@
             <div class="skill-bg">
                 <img src="./images/skill_bg.png" alt="">
             </div>
+            <div class="skill-bg-pc">
+                <img src="./images/skill_pc_bg.png" alt="">
+            </div>
             <!-- background 깔기 -->
             <div class="container">
                 <h2>SKILL</h2>
@@ -195,7 +203,7 @@
                 </div>
 
                 <div class="mo-skill-box">
-                    <div class="html-box">
+                    <div class="skill-box html-box">
                         <img src="./images/html-5.png" alt="html">
                         <div class="progress-bar">
                             <div class="progress html-progress"></div>
@@ -205,7 +213,7 @@
                             홈페이지 구조적으로 작성 가능
                         </p>
                     </div>
-                    <div class="css-box">
+                    <div class="skill-box css-box">
                         <img src="./images/css-3.png" alt="css-3">
                         <div class="progress-bar">
                             <div class="progress css-progress"></div>
@@ -216,7 +224,7 @@
                     </div>
                 </div>
                 <div class="mo-skill-box">
-                    <div class="sass-box">
+                    <div class="skill-box sass-box">
                         <img src="./images/sass.png" alt="sass">
                         <div class="progress-bar">
                             <div class="progress sass-progress"></div>
@@ -225,7 +233,7 @@
                             flex와 grid를 통해 반응형 홈페이지 제작 가능
                         </p>
                     </div>
-                    <div class="javascript-box">
+                    <div class="skill-box javascript-box">
                         <img src="./images/java-script.png" alt="java-script">
                         <div class="progress-bar">
                             <div class="progress javascript-progress"></div>
@@ -237,7 +245,7 @@
                     </div>
                 </div>
                 <div class="mo-skill-box">
-                    <div class="jquery-box">
+                    <div class="skill-box jquery-box">
                         <img src="./images/jquery.png" alt="jquery">
                         <div class="progress-bar">
                             <div class="progress jquery-progress"></div>
@@ -246,7 +254,7 @@
                             사용자의 이벤트에 따른 동작에 필요한 기능 구현 가능
                         </p>
                     </div>
-                    <div class="react-box">
+                    <div class="skill-box react-box">
                         <img src="./images/react.png" alt="react">
                         <div class="progress-bar">
                             <div class="progress react-progress"></div>
@@ -257,14 +265,14 @@
                     </div>
                 </div>
                 <div class="mo-skill-box">
-                    <div class="git-box">
+                    <div class="skill-box git-box">
                         <img src="./images/git.png" alt="git">
                         <div class="progress-bar">
                             <div class="progress git-progress"></div>
                         </div>
                         <p>gitHub 연동으로 작업 관리, git 형상 관리</p>
                     </div>
-                    <div class="figma-box">
+                    <div class="skill-box figma-box">
                         <img src="./images/figma.png" alt="figma">
                         <div class="progress-bar">
                             <div class="progress figma-progress"></div>
@@ -273,14 +281,14 @@
                     </div>
                 </div>
                 <div class="mo-skill-box">
-                    <div class="ai-box">
+                    <div class="skill-box ai-box">
                         <img src="./images/illustrator.png" alt="ai">
                         <div class="progress-bar">
                             <div class="progress ai-progress"></div>
                         </div>
                         <p>팝업, 배너, 로고, 아이콘, 벡터 이미지 작업 가능</p>
                     </div>
-                    <div class="photoshop-box">
+                    <div class="skill-box photoshop-box">
                         <img src="./images/photoshop.png" alt="photoshop">
                         <div class="progress-bar">
                             <div class="progress photoshop-progress"></div>
@@ -291,14 +299,14 @@
                     </div>
                 </div>
                 <div class="mo-skill-box">
-                    <div class="ae-box">
+                    <div class="skill-box ae-box">
                         <img src="./images/after-effects.png" alt="after-effects">
                         <div class="progress-bar">
                             <div class="progress ae-progress"></div>
                         </div>
                         <p>설명</p>
                     </div>
-                    <div class="pre-box">
+                    <div class="skill-box pre-box">
                         <img src="./images/premiere-pro.png" alt="premiere-pro">
                         <div class="progress-bar">
                             <div class="progress pre-progress"></div>
@@ -306,13 +314,174 @@
                         <p>설명</p>
                     </div>
                 </div>
+
+                <div class="skills-circle">
+                    <div class="skill-box html-box" data-icon="./images/html-5.png" data-description="웹 표준과 웹 접근성을 준수<br>홈페이지 구조적으로 작성 가능" data-progress="90%">
+                        <img src="./images/html-5.png" alt="html">
+                        <div class="progress-bar">
+                            <div class="progress html-progress"></div>
+                        </div>
+                    </div>
+                    <div class="skill-box css-box" data-icon="./images/css-3.png" data-description="반응형 웹사이트 구현 가능" data-progress="85%">
+                        <img src="./images/css-3.png" alt="css-3">
+                        <div class="progress-bar">
+                            <div class="progress css-progress"></div>
+                        </div>
+                        <div class="description">
+                            반응형 웹사이트 구현 가능
+                        </div>
+     
+                    </div>
+                    <div class="skill-box sass-box" data-icon="./images/sass.png" data-description="flex와 grid를 통해 반응형 홈페이지 제작 가능" data-progress="85%">
+                        <img src="./images/sass.png" alt="sass">
+                        <div class="progress-bar">
+                            <div class="progress sass-progress"></div>
+                        </div>
+                        <div class="description">
+                            flex와 grid를 통해 반응형 홈페이지 제작 가능
+                        </div>
+              
+                    </div>
+                    <div class="skill-box javascript-box" data-icon="./images/java-script.png" data-description="fuction의 응용 및 구조 이해
+                    슬라이드, 메뉴, 스크롤 애니메이션 기능 등 다양한 동적 기능 구현 가능" data-progress="80%">
+                     
+                        <img src="./images/java-script.png" alt="java-script">
+                        <div class="progress-bar">
+                            <div class="progress javascript-progress"></div>
+                        </div>
+                        <div class="description">
+                            fuction의 응용 및 구조 이해
+                            슬라이드, 메뉴, 스크롤 애니메이션 기능 등 다양한 동적 기능 구현 가능
+                        </div>
+                  
+                    </div>
+                    <div class="skill-box jquery-box" data-icon="./images/jquery.png" data-description="사용자의 이벤트에 따른 동작에 필요한 기능 구현 가능" data-progress="85%">
+                 
+                        <img src="./images/jquery.png" alt="jquery">
+                        <div class="progress-bar">
+                            <div class="progress jquery-progress"></div>
+                        </div>
+                        <div class="description">
+                            사용자의 이벤트에 따른 동작에 필요한 기능 구현 가능
+                        </div>
+               
+                    </div>
+                    <div class="skill-box react-box" data-icon="./images/react.png" data-description="Router로 SPA탭메뉴 구성 가능" data-progress="80%">
+                        <div class="icon-wrapper">
+                            <img src="./images/react.png" alt="react">
+                            <div class="progress-bar">
+                                <div class="progress react-progress"></div>
+                            </div>
+                            <div class="description">
+                                Router로 SPA탭메뉴 구성 가능 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-box git-box" data-icon="./images/git.png" data-description="gitHub 연동으로 작업 관리, git 형상 관리" data-progress="90%">
+                        <div class="icon-wrapper">
+                            <img src="./images/git.png" alt="git">
+                            <div class="progress-bar">
+                                <div class="progress git-progress"></div>
+                            </div>
+                            <div class="description">
+                                gitHub 연동으로 작업 관리, git 형상 관리
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="skill-box figma-box" data-icon="./images/figma.png" data-description="와이어프레임으로 아이디어 기획구조 활용 가능" data-progress="90%">
+                        <div class="icon-wrapper">
+                            <img src="./images/figma.png" alt="figma">
+                            <div class="progress-bar">
+                                <div class="progress figma-progress"></div>
+                            </div>
+                            <div class="description">
+                                와이어프레임으로 아이디어 기획구조 활용 가능
+                            </div>
+                        </div>
+ 
+                    </div>
+                    <div class="skill-box ai-box" data-icon="./images/illustrator.png" data-description="팝업, 배너, 로고, 아이콘, 벡터 이미지 작업 가능" data-progress="85%">
+                        <div class="icon-wrapper">
+                            <img src="./images/illustrator.png" alt="ai">
+                            <div class="progress-bar">
+                                <div class="progress ai-progress"></div>
+                            </div>
+                            <div class="description">
+                                팝업, 배너, 로고, 아이콘, 벡터 이미지 작업 가능
+                            </div>
+                        </div>
+ 
+                    </div>
+                    <div class="skill-box photoshop-box" data-icon="./images/photoshop.png" data-description="사진 보정, 편집 상세 페이지 디자인 작업 가능" data-progress="90%">
+                        <div class="icon-wrapper">
+                            <img src="./images/photoshop.png" alt="photoshop">
+                            <div class="progress-bar">
+                                <div class="progress photoshop-progress"></div>
+                            </div>
+                            <div class="description">
+                                사진 보정, 편집 상세 페이지 디자인 작업 가능
+                            </div>
+                        </div>
+     
+                    </div>
+                    <div class="skill-box ae-box" data-icon="./images/after-effects.png" data-description="설명" data-progress="75%">
+                        <div class="icon-wrapper">
+                            <img src="./images/after-effects.png" alt="after-effects">
+                            <div class="progress-bar">
+                                <div class="progress ae-progress"></div>
+                            </div>
+                            <div class="description">
+                                설명
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="skill-box pre-box" data-icon="./images/premiere-pro.png" data-description="설명" data-progress="80%">
+                        <div class="icon-wrapper">
+                            <img src="./images/premiere-pro.png" alt="premiere-pro">
+                            <div class="progress-bar">
+                                <div class="progress pre-progress"></div>
+                            </div>
+                            <div class="description">설명</div>
+                        </div>
+                    </div>
+                    <div class="hover-display">
+                        <img class="hover-icon" src="" alt="skill-icon">
+                        <div class="progress-bar">
+                            <div class="progress hover-progress"></div>
+                        </div>
+                        <div class="hover-description"></div>
+                    </div>
+                </div>
             </div>
         </section>
         <script>
+            document.querySelectorAll('.skill-box').forEach(skill => {
+                skill.addEventListener('mouseover', function() {
+                    const icon = skill.getAttribute('data-icon');
+                    const description = skill.getAttribute('data-description');
+                    const progress = skill.getAttribute('data-progress');
+            
+                    document.querySelector('.hover-display .hover-icon').src = icon;
+                    document.querySelector('.hover-display .hover-description').innerHTML = description;
+                    document.querySelector('.hover-display .hover-progress').style.width = progress;
+                    
+                    document.querySelector('.hover-display').style.display = 'block';
+                });
+            
+                skill.addEventListener('mouseout', function() {
+                    document.querySelector('.hover-display').style.display = 'none';
+                });
+            });
+            </script>
+
+        
+        <script>
             document.addEventListener('DOMContentLoaded', function() {
-    var skillSection = document.querySelector('#skill');
-    var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
+            var skillSection = document.querySelector('#skill');
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
             var progressBars = document.querySelectorAll('.progress');
             if (entry.isIntersecting) {
                 skillSection.classList.add('skill-visible');
@@ -346,33 +515,33 @@
     observer.observe(skillSection);
 
     // 모달 제어
-    var modal = document.getElementById('skill-modal');
-    var modalIcon = modal.querySelector('.modal-icon');
-    var modalDescription = modal.querySelector('.modal-description');
-    var closeBtn = modal.querySelector('.close');
-    var skillBoxes = document.querySelectorAll('.mo-skill-box div');
+        var modal = document.getElementById('skill-modal');
+        var modalIcon = modal.querySelector('.modal-icon');
+        var modalDescription = modal.querySelector('.modal-description');
+        var closeBtn = modal.querySelector('.close');
+        var skillBoxes = document.querySelectorAll('.mo-skill-box div');
 
-    skillBoxes.forEach(function(skillBox) {
-        skillBox.addEventListener('click', function() {
-            var imgSrc = this.querySelector('img').src;
-            var description = this.querySelector('p').innerText;
-            modalIcon.src = imgSrc;
-            modalDescription.innerText = description;
-            modal.style.display = 'block';
+        skillBoxes.forEach(function(skillBox) {
+            skillBox.addEventListener('click', function() {
+                var imgSrc = this.querySelector('img').src;
+                var description = this.querySelector('p').innerText;
+                modalIcon.src = imgSrc;
+                modalDescription.innerText = description;
+                modal.style.display = 'block';
+            });
         });
-    });
 
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', function(event) {
-        if (event.target === modal) {
+        closeBtn.addEventListener('click', function() {
             modal.style.display = 'none';
-        }
-    });
-});
-            </script>
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                }
+            });
+        });
+        </script>
 
 
         <section id="portfolio">
@@ -385,10 +554,10 @@
                     </div>
                     <div class="museum-img-box">
                         <div class="museum-img1">
-                            <img src="./images/museum-img1.png" alt="museum-img2">
+                            <img src="./images/museum-img2.png" alt="museum-img2">
                         </div>
                         <div class="museum-img2">
-                            <img src="./images/museum-img2.png" alt="museum-img2">
+                            <img src="./images/museum-img1.png" alt="museum-img1">
                         </div>
                         <div class="museum-img3">
                             <img src="./images/museum-img3.png" alt="museum-img3">

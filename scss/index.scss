@@ -117,6 +117,34 @@ header {
 
 main {
     #intro {
+        // @keyframes fade-in {
+        //     0% {
+        //         opacity: 0;
+        //     }
+        //     100% {
+        //         opacity: 1;
+        //     }
+        // }
+        
+        // .gradient-red img {
+        //     opacity: 0; /* 초기에는 숨겨둡니다. */
+        //     animation: fade-in 1.5s ease forwards 0.5s; /* 0.5초 후에 나타나도록 설정 */
+        // }
+        
+        // .gradient-orange img {
+        //     opacity: 0; /* 초기에는 숨겨둡니다. */
+        //     animation: fade-in 1.5s ease forwards 1s; /* 1초 후에 나타나도록 설정 */
+        // }
+        
+        // .gradient-yellow img {
+        //     opacity: 0; /* 초기에는 숨겨둡니다. */
+        //     animation: fade-in 1.5s ease forwards 1.5s; /* 1.5초 후에 나타나도록 설정 */
+        // }
+        
+        // .intro-txt h1, #resume {
+        //     opacity: 0; /* 초기에는 숨겨둡니다. */
+        //     animation: fade-in 1s ease forwards 2s; /* 2초 후에 나타나도록 설정 */
+        // }
         width: $width-wide;
         margin-top: 200px;
         height: 100vh;
@@ -388,7 +416,8 @@ main {
             left: 0;
             z-index: 3;
             @include responsive(large-screens) {
-                left: 37%;
+                left: 10%;
+                top: -40%;
             }
             h2 {
                 font-family: $font-en;
@@ -397,10 +426,26 @@ main {
             .pic {
                 width: 60%;
                 margin: auto;
+                margin-bottom: 30px;
                 @include responsive(large-screens) {
-                    width: 80%;
+                    width: 30%;
+                    margin: auto;
                 }
-            }     
+            }  
+            .about-txt {
+                strong {
+                    color: white;
+                    font-family: $font-pre-regular;
+                    padding-top: 20px;
+                    font-size: 20px;
+                }
+                p {
+                    color: white;
+                    font-family: $font-pre-light;
+                    font-size: 16px;
+                    margin-top: 20px;
+                }
+            }   
         }
 
         .aboutme-star {
@@ -472,20 +517,32 @@ main {
             margin-top: 200px;
         }
         .skill-bg {
-            margin-top: 150px;
+            // margin-top: 150px;
             position: absolute;
             z-index: 1;
-            top: 0;
-            opacity: 0.8;
+            top: -10%;
+            width: $width-wide;
+            opacity: 0.5;
             @include responsive(large-screens) {
-                width: $width-wide;
-                top: -20%;
+                display: none;
             }
             img {
                 width: $width-wide;
-                height: 5%;
-                @include responsive(large-screens) {
-                    height: 2000px;
+                height: 1100px;
+            }
+        }
+        .skill-bg-pc {
+            display: none;
+            @include responsive(large-screens) {
+                display: block;
+                position: absolute;
+                top: 0;
+                z-index: 1;
+                opacity: 0.5;
+                width: $width-wide;
+                img {
+                    width: $width-wide;
+                    height: 1100px;
                 }
             }
         }
@@ -503,8 +560,12 @@ main {
             display: flex;
             justify-content: space-around;
             width: $width-wide;
+            @include responsive(large-screens) {
+                display: none;
+            }
             div {
-                width: $width-half;
+                width: $width-half; 
+               
                 img {
                     margin: 0 auto;
                     width: 30%;
@@ -517,6 +578,7 @@ main {
                 }
             }
         }
+        
         .progress-bar {
             margin: auto;
             width: 100%;
@@ -666,9 +728,89 @@ main {
         .modal-description {
             margin-top: 20px;
         }
+        .skills-circle {
+            display: none;
+            @include responsive(large-screens) {
+                z-index: 5;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100vh; /* 원형 배치를 위해 높이 설정 */
+                position: relative;
+                img {
+                    margin: auto;
+                }
+                p {
+                    display: none;
+                }
+            }
+        }
+        .skill-box {
+            @include responsive(large-screens) {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                text-align: center;
+                transition: all 0.3s ease;
+                .description {
+                    display: none;
+                }
+                &.center {
+                    z-index: 10;
+                    transform: translate(-50%, -50%) !important;
+                }
+            }
+        }
+        @include responsive(large-screens) {
+
+            .html-box { transform: rotate(0deg) translate(350px) rotate(0deg); }
+            .css-box { transform: rotate(30deg) translate(350px) rotate(-30deg); }
+            .sass-box { transform: rotate(60deg) translate(350px) rotate(-60deg); }
+            .javascript-box { transform: rotate(90deg) translate(350px) rotate(-90deg); }
+            .jquery-box { transform: rotate(120deg) translate(350px) rotate(-120deg); }
+            .react-box { transform: rotate(150deg) translate(350px) rotate(-150deg); }
+            .git-box { transform: rotate(180deg) translate(350px) rotate(-180deg); }
+            .figma-box { transform: rotate(210deg) translate(350px) rotate(-210deg); }
+            .ai-box { transform: rotate(240deg) translate(350px) rotate(-240deg); }
+            .photoshop-box { transform: rotate(270deg) translate(350px) rotate(-270deg); }
+            .ae-box { transform: rotate(300deg) translate(350px) rotate(-300deg); }
+            .pre-box { transform: rotate(330deg) translate(350px) rotate(-330deg); }
+
+            .hover-display {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                z-index: 6;
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .hover-display .hover-icon {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 10px;
+            }
+            
+            .hover-display .progress-bar {
+                width: 80%;
+                margin: 10px auto;
+            }
+            
+            .hover-display .hover-description {
+                font-size: 14px;
+            }
+        }
     }
         
         #portfolio {
+            overflow: hidden;
             position: relative;
             margin-top: 150px;
             width: $width-wide;
@@ -682,6 +824,7 @@ main {
                 margin-bottom: 30px;
             }
             .art-museum {
+                overflow: hidden;
                 .art-museum-title {
                     @include responsive(large-screens) {
                         position: absolute;
@@ -703,14 +846,18 @@ main {
                     }
                 }
                 .museum-img-box {
-                    width: $width-wide;
+                    width: 254%;
                     display: flex;
                     align-items: center;
                     overflow: hidden;
                     position: relative;
                     z-index: 5;
+                    @include responsive(large-screens) {
+                        width: $width-wide;
+                    }
                 }
-                .museum-img1 {
+                .museum-img2 {
+                    width: $width-wide;
                     @include responsive(large-screens) {
                         width: 28%;
                         position: absolute;
@@ -721,16 +868,28 @@ main {
                         margin: 20px 0;
                     }
                 }
-                .museum-img2 {
+                .museum-img1 {
+                    width: $width-wide;
                     @include responsive(large-screens) {
                         position: relative;
                         margin: auto;
                         margin-top: 70px;
                         margin-bottom: 70px;
                         z-index: 5;
+                        width: 60%;
+                        height: 200px; /* 높이 지정 */
+                        overflow: hidden; /* 오버플로우 숨기기 */
                         img {
                             margin: 20px 0;
+                            width: 60%;
+                            transition: top 0.5s ease;
                         }
+                        &:hover img {
+                            top: -100%; /* 호버 시 이미지가 위로 스크롤 */
+                        }
+                    }
+                    img {
+                        width: $width-wide;
                     }
                 }
                 .museum-img3 {
@@ -784,8 +943,12 @@ main {
             .loyal-bg {
                 position: absolute;
                 top: 20%;
-                opacity: 0.7;
+                left: 40%;
+                opacity: 0.5;
                 z-index: 1;
+                @include responsive(large-screens) {
+                    left: 40%;
+                }
             }
             .loyal-festival {
                 width: $width-wide;
@@ -896,6 +1059,7 @@ main {
         }
         .public-bg {
             position: absolute;
+            opacity: 0.5;
         }
         .public-portfolio {
             position: relative;

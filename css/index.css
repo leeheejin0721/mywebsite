@@ -514,7 +514,8 @@ main #aboutme .aboutme_txt-img {
 }
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img {
-    left: 37%;
+    left: 10%;
+    top: -40%;
   }
 }
 main #aboutme .aboutme_txt-img h2 {
@@ -524,11 +525,25 @@ main #aboutme .aboutme_txt-img h2 {
 main #aboutme .aboutme_txt-img .pic {
   width: 60%;
   margin: auto;
+  margin-bottom: 30px;
 }
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .pic {
-    width: 80%;
+    width: 30%;
+    margin: auto;
   }
+}
+main #aboutme .aboutme_txt-img .about-txt strong {
+  color: white;
+  font-family: "Pretendard-Regular";
+  padding-top: 20px;
+  font-size: 20px;
+}
+main #aboutme .aboutme_txt-img .about-txt p {
+  color: white;
+  font-family: "Pretendard-Light";
+  font-size: 16px;
+  margin-top: 20px;
 }
 main #aboutme .aboutme-star {
   position: relative;
@@ -603,25 +618,36 @@ main #skill {
   }
 }
 main #skill .skill-bg {
-  margin-top: 150px;
   position: absolute;
   z-index: 1;
-  top: 0;
-  opacity: 0.8;
+  top: -10%;
+  width: 100%;
+  opacity: 0.5;
 }
 @media (min-width: 1024px) {
   main #skill .skill-bg {
-    width: 100%;
-    top: -20%;
+    display: none;
   }
 }
 main #skill .skill-bg img {
   width: 100%;
-  height: 5%;
+  height: 1100px;
+}
+main #skill .skill-bg-pc {
+  display: none;
 }
 @media (min-width: 1024px) {
-  main #skill .skill-bg img {
-    height: 2000px;
+  main #skill .skill-bg-pc {
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    opacity: 0.5;
+    width: 100%;
+  }
+  main #skill .skill-bg-pc img {
+    width: 100%;
+    height: 1100px;
   }
 }
 main #skill h2 {
@@ -638,6 +664,11 @@ main #skill .mo-skill-box {
   display: flex;
   justify-content: space-around;
   width: 100%;
+}
+@media (min-width: 1024px) {
+  main #skill .mo-skill-box {
+    display: none;
+  }
 }
 main #skill .mo-skill-box div {
   width: 50%;
@@ -838,7 +869,108 @@ main #skill .modal-icon {
 main #skill .modal-description {
   margin-top: 20px;
 }
+main #skill .skills-circle {
+  display: none;
+}
+@media (min-width: 1024px) {
+  main #skill .skills-circle {
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh; /* 원형 배치를 위해 높이 설정 */
+    position: relative;
+  }
+  main #skill .skills-circle img {
+    margin: auto;
+  }
+  main #skill .skills-circle p {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  main #skill .skill-box {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  main #skill .skill-box .description {
+    display: none;
+  }
+  main #skill .skill-box.center {
+    z-index: 10;
+    transform: translate(-50%, -50%) !important;
+  }
+}
+@media (min-width: 1024px) {
+  main #skill .html-box {
+    transform: rotate(0deg) translate(350px) rotate(0deg);
+  }
+  main #skill .css-box {
+    transform: rotate(30deg) translate(350px) rotate(-30deg);
+  }
+  main #skill .sass-box {
+    transform: rotate(60deg) translate(350px) rotate(-60deg);
+  }
+  main #skill .javascript-box {
+    transform: rotate(90deg) translate(350px) rotate(-90deg);
+  }
+  main #skill .jquery-box {
+    transform: rotate(120deg) translate(350px) rotate(-120deg);
+  }
+  main #skill .react-box {
+    transform: rotate(150deg) translate(350px) rotate(-150deg);
+  }
+  main #skill .git-box {
+    transform: rotate(180deg) translate(350px) rotate(-180deg);
+  }
+  main #skill .figma-box {
+    transform: rotate(210deg) translate(350px) rotate(-210deg);
+  }
+  main #skill .ai-box {
+    transform: rotate(240deg) translate(350px) rotate(-240deg);
+  }
+  main #skill .photoshop-box {
+    transform: rotate(270deg) translate(350px) rotate(-270deg);
+  }
+  main #skill .ae-box {
+    transform: rotate(300deg) translate(350px) rotate(-300deg);
+  }
+  main #skill .pre-box {
+    transform: rotate(330deg) translate(350px) rotate(-330deg);
+  }
+  main #skill .hover-display {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 6;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  main #skill .hover-display .hover-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  main #skill .hover-display .progress-bar {
+    width: 80%;
+    margin: 10px auto;
+  }
+  main #skill .hover-display .hover-description {
+    font-size: 14px;
+  }
+}
 main #portfolio {
+  overflow: hidden;
   position: relative;
   margin-top: 150px;
   width: 100%;
@@ -851,6 +983,9 @@ main #portfolio h2 {
   font-family: "Alegreya";
   font-weight: 400;
   margin-bottom: 30px;
+}
+main #portfolio .art-museum {
+  overflow: hidden;
 }
 @media (min-width: 1024px) {
   main #portfolio .art-museum .art-museum-title {
@@ -873,7 +1008,7 @@ main #portfolio .art-museum .art-museum-title .en {
   font-family: "Pretendard-Light";
 }
 main #portfolio .art-museum .museum-img-box {
-  width: 100%;
+  width: 254%;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -881,27 +1016,49 @@ main #portfolio .art-museum .museum-img-box {
   z-index: 5;
 }
 @media (min-width: 1024px) {
-  main #portfolio .art-museum .museum-img1 {
+  main #portfolio .art-museum .museum-img-box {
+    width: 100%;
+  }
+}
+main #portfolio .art-museum .museum-img2 {
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  main #portfolio .art-museum .museum-img2 {
     width: 28%;
     position: absolute;
     top: 0;
   }
 }
-main #portfolio .art-museum .museum-img1 img {
+main #portfolio .art-museum .museum-img2 img {
   width: 100%;
   margin: 20px 0;
 }
+main #portfolio .art-museum .museum-img1 {
+  width: 100%;
+}
 @media (min-width: 1024px) {
-  main #portfolio .art-museum .museum-img2 {
+  main #portfolio .art-museum .museum-img1 {
     position: relative;
     margin: auto;
     margin-top: 70px;
     margin-bottom: 70px;
     z-index: 5;
+    width: 60%;
+    height: 200px; /* 높이 지정 */
+    overflow: hidden; /* 오버플로우 숨기기 */
   }
-  main #portfolio .art-museum .museum-img2 img {
+  main #portfolio .art-museum .museum-img1 img {
     margin: 20px 0;
+    width: 60%;
+    transition: top 0.5s ease;
   }
+  main #portfolio .art-museum .museum-img1:hover img {
+    top: -100%; /* 호버 시 이미지가 위로 스크롤 */
+  }
+}
+main #portfolio .art-museum .museum-img1 img {
+  width: 100%;
 }
 @media (min-width: 1024px) {
   main #portfolio .art-museum .museum-img3 {
@@ -956,8 +1113,14 @@ main #portfolio .art-museum .museum-button #git img, main #portfolio .art-museum
 main #portfolio .loyal-bg {
   position: absolute;
   top: 20%;
-  opacity: 0.7;
+  left: 40%;
+  opacity: 0.5;
   z-index: 1;
+}
+@media (min-width: 1024px) {
+  main #portfolio .loyal-bg {
+    left: 40%;
+  }
 }
 main #portfolio .loyal-festival {
   width: 100%;
@@ -1075,6 +1238,7 @@ main #portfolio .loyal-festival .festival-button #git img, main #portfolio .loya
 }
 main #portfolio .public-bg {
   position: absolute;
+  opacity: 0.5;
 }
 main #portfolio .public-portfolio {
   position: relative;

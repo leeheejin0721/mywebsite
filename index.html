@@ -600,6 +600,7 @@
                         <div class="festival-img1">
                             <img src="./images/festival-img2.png" alt="festival-img2" class="festivalimg">
                         </div>
+                       
                         <div class="loyal-img-po">
                             <div class="festival-img3">
                                 <img src="./images/festival-img3.png" alt="festival-img3">
@@ -608,6 +609,7 @@
                                 <img src="./images/festival-img4.png" alt="festival-img4">
                             </div>
                         </div>
+                       
                     </div>
                     <div class="container">
                         <div class="festival-button">
@@ -629,7 +631,7 @@
                             </button>
                         </div>
                         <div class="festival-txt">
-                            <p>설명</p>
+                            <p>설명설명설명설명</p>
                         </div>
                     </div>
                 </div> <!-- loyal-festival -->
@@ -675,6 +677,58 @@
                 </div> <!-- public-portfolio -->
             </div> <!-- container -->
         </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const img = document.querySelector('.festival-img2 img');
+                let startY = 0;
+                let currentY = 0;
+            
+                const startDragging = (y) => {
+                    startY = y - currentY;
+                    img.style.cursor = 'grabbing';
+                };
+            
+                const stopDragging = () => {
+                    img.style.cursor = 'grab';
+                    document.removeEventListener('mousemove', onMouseMove);
+                    document.removeEventListener('mouseup', stopDragging);
+                    document.removeEventListener('touchmove', onTouchMove);
+                    document.removeEventListener('touchend', stopDragging);
+                };
+            
+                const onMouseMove = (e) => {
+                    currentY = e.clientY - startY;
+                    updateImagePosition();
+                };
+            
+                const onTouchMove = (e) => {
+                    currentY = e.touches[0].clientY - startY;
+                    updateImagePosition();
+                };
+            
+                const updateImagePosition = () => {
+                    const containerHeight = img.parentElement.clientHeight;
+                    const imgHeight = img.clientHeight;
+                    if (currentY > 0) currentY = 0; // 위로 드래그할 때의 한계 설정
+                    if (currentY < -(imgHeight - containerHeight)) currentY = -(imgHeight - containerHeight); // 아래로 드래그할 때의 한계 설정
+                    img.style.transform = `translateY(${currentY}px)`;
+                };
+            
+                img.addEventListener('mousedown', (e) => {
+                    startDragging(e.clientY);
+                    document.addEventListener('mousemove', onMouseMove);
+                    document.addEventListener('mouseup', stopDragging);
+                });
+            
+                img.addEventListener('touchstart', (e) => {
+                    startDragging(e.touches[0].clientY);
+                    document.addEventListener('touchmove', onTouchMove);
+                    document.addEventListener('touchend', stopDragging);
+                });
+            });
+            </script>
+        
+        
 
         <section id="contact">
             <div class="container">

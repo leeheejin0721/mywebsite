@@ -945,28 +945,29 @@ main #skill .skills-circle {
   }
   main #skill .hover-display {
     display: none;
-    position: fixed;
-    top: 50%;
+    position: absolute;
+    top: 46.8%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 6;
-    background-color: rgba(255, 255, 255, 0.9);
+    background: transparent;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    height: 100px;
   }
   main #skill .hover-display .hover-icon {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     margin-bottom: 10px;
   }
   main #skill .hover-display .progress-bar {
-    width: 80%;
+    width: 70%;
     margin: 10px auto;
   }
   main #skill .hover-display .hover-description {
     font-size: 14px;
+    font-family: "Pretendard-Light";
   }
 }
 main #portfolio {
@@ -985,7 +986,7 @@ main #portfolio h2 {
   margin-bottom: 30px;
 }
 main #portfolio .art-museum {
-  overflow: hidden;
+  height: 100vh;
 }
 @media (min-width: 1024px) {
   main #portfolio .art-museum .art-museum-title {
@@ -1008,10 +1009,9 @@ main #portfolio .art-museum .art-museum-title .en {
   font-family: "Pretendard-Light";
 }
 main #portfolio .art-museum .museum-img-box {
-  width: 254%;
+  width: 100%;
   display: flex;
   align-items: center;
-  overflow: hidden;
   position: relative;
   z-index: 5;
 }
@@ -1022,9 +1022,11 @@ main #portfolio .art-museum .museum-img-box {
 }
 main #portfolio .art-museum .museum-img2 {
   width: 100%;
+  display: none;
 }
 @media (min-width: 1024px) {
   main #portfolio .art-museum .museum-img2 {
+    display: block;
     width: 28%;
     position: absolute;
     top: 0;
@@ -1036,6 +1038,9 @@ main #portfolio .art-museum .museum-img2 img {
 }
 main #portfolio .art-museum .museum-img1 {
   width: 100%;
+  height: 400px; /* 높이 지정 */
+  overflow: hidden; /* 오버플로우 숨기기 */
+  position: relative;
 }
 @media (min-width: 1024px) {
   main #portfolio .art-museum .museum-img1 {
@@ -1044,8 +1049,8 @@ main #portfolio .art-museum .museum-img1 {
     margin-top: 70px;
     margin-bottom: 70px;
     z-index: 5;
-    width: 60%;
-    height: 200px; /* 높이 지정 */
+    width: 50%;
+    height: 600px; /* 높이 지정 */
     overflow: hidden; /* 오버플로우 숨기기 */
   }
   main #portfolio .art-museum .museum-img1 img {
@@ -1053,19 +1058,23 @@ main #portfolio .art-museum .museum-img1 {
     width: 60%;
     transition: top 0.5s ease;
   }
-  main #portfolio .art-museum .museum-img1:hover img {
-    top: -100%; /* 호버 시 이미지가 위로 스크롤 */
-  }
 }
 main #portfolio .art-museum .museum-img1 img {
   width: 100%;
+  position: absolute;
+  top: 0;
+  transition: top 0.5s ease;
+}
+main #portfolio .art-museum .museum-img3 {
+  display: none;
 }
 @media (min-width: 1024px) {
   main #portfolio .art-museum .museum-img3 {
+    display: block;
     z-index: 1;
     width: 30%;
     position: absolute;
-    top: 28%;
+    top: 32%;
     left: 70%;
   }
 }
@@ -1110,6 +1119,10 @@ main #portfolio .art-museum .museum-button #git p, main #portfolio .art-museum .
 main #portfolio .art-museum .museum-button #git img, main #portfolio .art-museum .museum-button #website img, main #portfolio .art-museum .museum-button #design-guide img {
   width: 18%;
 }
+main #portfolio .art-museum .museum-txt {
+  position: absolute;
+  top: 80%;
+}
 main #portfolio .loyal-bg {
   position: absolute;
   top: 20%;
@@ -1123,6 +1136,7 @@ main #portfolio .loyal-bg {
   }
 }
 main #portfolio .loyal-festival {
+  height: 100vh;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -1133,7 +1147,7 @@ main #portfolio .loyal-festival {
   main #portfolio .loyal-festival .festiva-title {
     position: absolute;
     top: 8%;
-    left: 9%;
+    left: 10.3%;
   }
 }
 main #portfolio .loyal-festival .festiva-title h3 {
@@ -1176,6 +1190,19 @@ main #portfolio .loyal-festival .festival-img-box .festival-img1, main #portfoli
     display: block;
   }
 }
+main #portfolio .loyal-festival .festival-img-box .festival-img2 {
+  width: 100%;
+  overflow: hidden;
+  height: 400px; /* 컨테이너 높이 지정 */
+  position: relative;
+}
+main #portfolio .loyal-festival .festival-img-box .festival-img2 img {
+  width: 100%; /* 이미지 너비를 꽉 차게 지정 */
+  height: auto; /* 자동 높이 설정 */
+  cursor: grab; /* 드래그할 수 있음을 나타내는 커서 */
+  position: absolute; /* 드래그 이동을 위해 position을 absolute로 설정 */
+  top: 0; /* 초기 위치 설정 */
+}
 @media (min-width: 1024px) {
   main #portfolio .loyal-festival .festival-img-box .festival-img2 {
     margin-left: 40px;
@@ -1183,22 +1210,42 @@ main #portfolio .loyal-festival .festival-img-box .festival-img1, main #portfoli
 }
 @media (min-width: 1024px) {
   main #portfolio .loyal-festival .festival-img-box .festival-img1 {
+    position: absolute;
+    top: 8%;
+    left: 45%;
     margin: 0 80px;
+    height: 700px;
+    width: 80%;
   }
   main #portfolio .loyal-festival .festival-img-box .festival-img1 img {
-    width: 80%;
+    width: 40%;
+  }
+  main #portfolio .loyal-festival .festival-img-box .festival-img2 {
+    width: 35%;
+    top: 14%;
+    left: 7.8%;
+    height: 500px;
+    position: absolute;
   }
   main #portfolio .loyal-festival .festival-img-box .festival-img2 img {
-    width: 80%;
+    width: 100%;
   }
   main #portfolio .loyal-festival .festival-img-box .loyal-img-po {
     position: absolute;
     display: flex;
-    left: 60%;
-    top: 20%;
+    left: 70%;
+    top: 23%;
+    overflow: hidden;
+    width: 100%;
   }
   main #portfolio .loyal-festival .festival-img-box .loyal-img-po .festival-img3 {
-    margin-right: 20px;
+    margin-right: -330px;
+  }
+  main #portfolio .loyal-festival .festival-img-box .loyal-img-po .festival-img3 img {
+    width: 50%;
+  }
+  main #portfolio .loyal-festival .festival-img-box .loyal-img-po .festival-img4 img {
+    width: 48%;
   }
 }
 main #portfolio .loyal-festival .festival-button {
@@ -1209,13 +1256,13 @@ main #portfolio .loyal-festival .festival-button {
 @media (min-width: 1024px) {
   main #portfolio .loyal-festival .festival-button {
     position: absolute;
-    top: 80%;
-    left: 8%;
-    width: 45%;
+    top: 73%;
+    left: 9.7%;
+    width: 46%;
   }
 }
 main #portfolio .loyal-festival .festival-button #git, main #portfolio .loyal-festival .festival-button #website, main #portfolio .loyal-festival .festival-button #design-guide {
-  width: 25%;
+  width: 20%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1236,13 +1283,18 @@ main #portfolio .loyal-festival .festival-button #git p, main #portfolio .loyal-
 main #portfolio .loyal-festival .festival-button #git img, main #portfolio .loyal-festival .festival-button #website img, main #portfolio .loyal-festival .festival-button #design-guide img {
   width: 18%;
 }
+main #portfolio .loyal-festival .festival-txt {
+  position: absolute;
+  top: 79%;
+}
 main #portfolio .public-bg {
   position: absolute;
   opacity: 0.5;
 }
 main #portfolio .public-portfolio {
+  height: 100vh;
   position: relative;
-  margin-top: 30px;
+  margin-top: 150px;
 }
 @media (min-width: 1024px) {
   main #portfolio .public-portfolio .public-title {

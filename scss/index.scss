@@ -780,31 +780,32 @@ main {
 
             .hover-display {
                 display: none;
-                position: fixed;
-                top: 50%;
+                position: absolute;
+                top: 46.8%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 text-align: center;
                 z-index: 6;
-                background-color: rgba(255, 255, 255, 0.9);
+                background: transparent;
                 padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 200px;
+                height: 100px;
             }
             
             .hover-display .hover-icon {
-                width: 50px;
-                height: 50px;
+                width: 80px;
+                height: 80px;
                 margin-bottom: 10px;
             }
             
             .hover-display .progress-bar {
-                width: 80%;
+                width: 70%;
                 margin: 10px auto;
             }
             
             .hover-display .hover-description {
                 font-size: 14px;
+                font-family: $font-pre-light;
             }
         }
     }
@@ -824,7 +825,7 @@ main {
                 margin-bottom: 30px;
             }
             .art-museum {
-                overflow: hidden;
+                height: 100vh;
                 .art-museum-title {
                     @include responsive(large-screens) {
                         position: absolute;
@@ -846,10 +847,9 @@ main {
                     }
                 }
                 .museum-img-box {
-                    width: 254%;
+                    width: $width-wide;
                     display: flex;
                     align-items: center;
-                    overflow: hidden;
                     position: relative;
                     z-index: 5;
                     @include responsive(large-screens) {
@@ -858,7 +858,9 @@ main {
                 }
                 .museum-img2 {
                     width: $width-wide;
+                    display: none;
                     @include responsive(large-screens) {
+                        display: block;
                         width: 28%;
                         position: absolute;
                         top: 0;
@@ -870,34 +872,39 @@ main {
                 }
                 .museum-img1 {
                     width: $width-wide;
+                    height:400px; /* 높이 지정 */
+                    overflow: hidden; /* 오버플로우 숨기기 */
+                    position: relative;
                     @include responsive(large-screens) {
                         position: relative;
                         margin: auto;
                         margin-top: 70px;
                         margin-bottom: 70px;
                         z-index: 5;
-                        width: 60%;
-                        height: 200px; /* 높이 지정 */
+                        width: 50%;
+                        height: 600px; /* 높이 지정 */
                         overflow: hidden; /* 오버플로우 숨기기 */
                         img {
                             margin: 20px 0;
                             width: 60%;
                             transition: top 0.5s ease;
                         }
-                        &:hover img {
-                            top: -100%; /* 호버 시 이미지가 위로 스크롤 */
-                        }
                     }
                     img {
                         width: $width-wide;
+                        position: absolute;
+                        top: 0;
+                        transition: top 0.5s ease;
                     }
                 }
                 .museum-img3 {
+                    display: none;
                     @include responsive(large-screens) {
+                        display: block;
                         z-index: 1;
                         width: 30%;
                         position: absolute;
-                        top: 28%;
+                        top: 32%;
                         left: 70%;
                     }
                     img {
@@ -936,8 +943,11 @@ main {
                         img {
                             width: 18%;
                         }
-                    }
-                    
+                    }  
+                }
+                .museum-txt {
+                    position: absolute;
+                    top: 80%;
                 }
             }
             .loyal-bg {
@@ -951,6 +961,7 @@ main {
                 }
             }
             .loyal-festival {
+                height: 100vh;
                 width: $width-wide;
                 overflow: hidden;
                 position: relative;
@@ -960,7 +971,7 @@ main {
                     @include responsive(large-screens) {
                         position: absolute;
                         top: 8%;
-                        left: 9%;
+                        left: 10.3%;
                     }
                     h3 {
                         position: relative;
@@ -997,30 +1008,65 @@ main {
                         }
                     }
                     .festival-img2 {
+                        width: 100%;
+                        overflow: hidden;
+                        height: 400px; /* 컨테이너 높이 지정 */
+                        position: relative;
+                        img {
+                            width: 100%; /* 이미지 너비를 꽉 차게 지정 */
+                            height: auto; /* 자동 높이 설정 */
+                            cursor: grab; /* 드래그할 수 있음을 나타내는 커서 */
+                            position: absolute; /* 드래그 이동을 위해 position을 absolute로 설정 */
+                            top: 0; /* 초기 위치 설정 */
+                        }
                         @include responsive(large-screens) {
                             margin-left: 40px;
                         }
                     }
                     @include responsive(large-screens) {
                         .festival-img1 {
+                            position: absolute;
+                            top: 8%;
+                            left: 45%;
                             margin: 0 80px;
+                            height: 700px;
+                            width: 80%;
                             img {
-                                width: 80%;
+                                width: 40%;
                             }
                         }
                         .festival-img2 {
+                            width: 35%;
+                            top: 14%;
+                            left: 7.8%;
+                            height: 500px;
+                            position: absolute;
                             img {
-                                width: 80%;
+                                width: 100%;
                             }
                         }
-                        .loyal-img-po {
-                            position: absolute;
-                            display: flex;
-                            left: 60%;
-                            top: 20%;
-                            .festival-img3 {
-                                margin-right: 20px;
-                            }
+                       
+                            .loyal-img-po {
+                                position: absolute;
+                                display: flex;
+                                left: 70%;
+                                top: 23%;
+                                overflow: hidden;
+                                width: 100%;
+                                .festival-img3 {
+                                    margin-right: -330px;
+                                    img {
+                                        width: 50%;
+                                    }
+                                }
+                                .festival-img4 {
+                                    
+                                    img {
+                                        width: 48%;
+                                    }
+                                    
+                                }
+                     
                         }
                     }
                 }
@@ -1030,12 +1076,12 @@ main {
                 justify-content: left;
                 @include responsive(large-screens) {
                     position: absolute;
-                    top: 80%;
-                    left: 8%;
-                    width: 45%;
+                    top: 73%;
+                    left: 9.7%;
+                    width: 46%;
                 }
                 #git, #website, #design-guide {
-                    width: 25%;
+                    width: 20%;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
@@ -1054,7 +1100,10 @@ main {
                         width: 18%;
                     }
                 }
-                
+            }
+            .festival-txt {
+                position: absolute;
+                top: 79%;
             }
         }
         .public-bg {
@@ -1062,8 +1111,9 @@ main {
             opacity: 0.5;
         }
         .public-portfolio {
+            height: 100vh;
             position: relative;
-            margin-top: 30px;
+            margin-top: 150px;
             .public-title {
                 @include responsive(large-screens) {
                     position: absolute;

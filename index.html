@@ -144,6 +144,64 @@
                 </div>
             </div>
         </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+            const introSection = document.querySelector('#intro');
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // 여기에 애니메이션을 다시 실행하는 코드를 추가합니다.
+                        const circles = document.querySelectorAll('.contact-circle, .portfolio-circle, .aboutme-circle, .skill-circle');
+                        circles.forEach(circle => {
+                            circle.style.animation = 'none';
+                            circle.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
+                            circle.style.animation = '';
+                        });
+
+                        const gradients = document.querySelectorAll('.blue_gradient img, .gradient-red, .gradient-orange, .gradient-yellow, .intro-txt h1, #resume');
+                        gradients.forEach(gradient => {
+                            gradient.style.animation = 'none';
+                            gradient.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
+                            gradient.style.animation = '';
+                        });
+                    }
+                });
+            }, options);
+
+            observer.observe(introSection);
+        });
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+            const gradientOrange = document.querySelector('.gradient_orange');
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // 애니메이션을 다시 실행
+                        gradientOrange.style.animation = 'none';
+                        gradientOrange.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
+                        gradientOrange.style.animation = 'gradientFadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+                    }
+                });
+            }, options);
+
+            observer.observe(gradientOrange);
+        });
+        </script>
+        
 
         <section id="aboutme">
             <div class="container">
@@ -151,17 +209,21 @@
                     <h2>ABOUT ME</h2> 
                     <img src="./images/aboutme_picture.png" alt="aboutme_picture" class="pic">
                     <div class="about-txt">
-                        <div class="sum">
-                            <p>경일 고등학교 졸업</p>
-                            <p>가천대학교 패션디자인학과 졸업</p>
-                            <p>방송정보교육원 수료</p>
-                            <p>아웃도어 브랜드‘쉘코퍼레이션’ 인턴</p>
-                            <p>KOTITI 시험 연구원 인턴</p>
-                            <p>GTQ 1급</p>
+                        <div class="sum active">
+                            <div class="ab-left">
+                                <p>2019 경일 고등학교 졸업</p>
+                                <p>2024 가천대학교 패션디자인학과 졸업</p>
+                                <p>2024 방송정보교육원 수료</p>
+                            </div>
+                            <div class="ab-right">
+                                <p>2021 GTQ 1급</p>
+                                <p>2022 아웃도어 브랜드 ‘쉘코퍼레이션’ 인턴</p>
+                                <p>2023 KOTITI 시험 연구원 인턴</p>
+                            </div>
                         </div>
                         <div class="suit">
-                            <strong>웹 개발자</strong>
-                            <strong>이희진입니다.</strong>
+                            <h4 class="web">웹 개발자</h4>
+                            <h4 class="name">이희진입니다.</h4>
                             <p>
                                 거칠고 빠른 것 보다는 조용하지만 꾸준히 계속해서 나아갑니다.
                                 단순히 디자인만을 그대로 구현한 사이트보다 사용자의 편의 또한 고려한 웹사이트를 만들어 나가고 싶습니다. 
@@ -184,7 +246,7 @@
             <div class="bg-button">
                 <!-- background 깔기 -->
                 <div class="aboutme-button">
-                    <button id="prof">
+                    <button id="prof" class="active">
                         <p>PROFESSIONMAL SUMMARY</p>
                     </button>
                     <button id="suit">
@@ -194,6 +256,29 @@
             </div>
             </div>
         </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var profButton = document.getElementById('prof');
+                var suitButton = document.getElementById('suit');
+                var sumSection = document.querySelector('.sum');
+                var suitSection = document.querySelector('.suit');
+        
+                profButton.addEventListener('click', function() {
+                    profButton.classList.add('active');
+                    suitButton.classList.remove('active');
+                    sumSection.classList.add('active');
+                    suitSection.classList.remove('active');
+                });
+        
+                suitButton.addEventListener('click', function() {
+                    suitButton.classList.add('active');
+                    profButton.classList.remove('active');
+                    sumSection.classList.remove('active');
+                    suitSection.classList.add('active');
+                });
+            });
+        </script>
+
 
         <section id="skill">
             <div class="skill-bg">
@@ -912,12 +997,12 @@
                 <h2>CONTACT</h2>
                 <div class="contact-box">
                     <div class="contact-img">
-                        <div class="contact-top">
-                           
+                        <!-- <div class="contact-top">
+                           <img src="./images/contact_top.png" alt="contact-top">
                         </div>
                         <div class="contact-bottom">
-                            
-                        </div>
+                            <img src="./images/contact_bottom.png" alt="contact-bottom">
+                        </div> -->
                         <div class="contact-img">
                             <img src="./images/contact_img.png" alt="contact-img">
                         </div>

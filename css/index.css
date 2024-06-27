@@ -48,7 +48,9 @@
   font-weight: 800;
   font-style: normal;
 }
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -1021,6 +1023,40 @@ main #portfolio .art-museum .museum-img-box {
     width: 100%;
   }
 }
+main #portfolio .art-museum .museum-img2, main #portfolio .art-museum .museum-img3 {
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* 기본 z-index 설정 */
+}
+main #portfolio .art-museum .museum-img2 img, main #portfolio .art-museum .museum-img3 img {
+  width: 100%;
+  height: 100%; /* 이미지의 높이를 부모 요소에 맞춤 */
+  display: block; /* 이미지 요소의 margin 제거 */
+  transition: opacity 0.5s ease, z-index 0.5s ease;
+  opacity: 0.5; /* 이미지를 어둡게 */
+}
+main #portfolio .art-museum .museum-img2::before, main #portfolio .art-museum .museum-img3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
+  pointer-events: none; /* 박스가 호버 이벤트에 영향을 주지 않도록 */
+}
+main #portfolio .art-museum .museum-img2:hover, main #portfolio .art-museum .museum-img3:hover {
+  z-index: 11; /* 호버 시 요소를 가장 앞에 보이게 */
+}
+main #portfolio .art-museum .museum-img2:hover img, main #portfolio .art-museum .museum-img3:hover img {
+  opacity: 1;
+  z-index: 11; /* 호버 시 이미지가 밝아지면서 앞에 보이게 */
+}
+main #portfolio .art-museum .museum-img2:hover::before, main #portfolio .art-museum .museum-img3:hover::before {
+  opacity: 0; /* 호버 시 어두운 박스 제거 */
+}
 main #portfolio .art-museum .museum-img2 {
   width: 100%;
   display: none;
@@ -1029,6 +1065,7 @@ main #portfolio .art-museum .museum-img2 {
   main #portfolio .art-museum .museum-img2 {
     display: block;
     width: 28%;
+    height: auto;
     position: absolute;
     top: 0;
   }
@@ -1036,16 +1073,6 @@ main #portfolio .art-museum .museum-img2 {
 main #portfolio .art-museum .museum-img2 img {
   width: 100%;
   margin: 20px 0;
-}
-main #portfolio .art-museum .museum-img2::before {
-  content: "";
-  position: absolute;
-  top: 3%;
-  left: 0;
-  width: 100%;
-  height: 93%;
-  background-color: rgba(0, 0, 0, 0.3); /* Adjust opacity as needed */
-  z-index: 1;
 }
 main #portfolio .art-museum .museum-img1 {
   cursor: pointer;
@@ -1070,12 +1097,39 @@ main #portfolio .art-museum .museum-img1 {
     width: 100%;
     position: absolute;
     top: 0;
+    display: block;
+    transition: opacity 0.5s ease;
+  }
+  main #portfolio .art-museum .museum-img1.darken::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+    z-index: 6;
+    pointer-events: none; /* 박스가 호버 이벤트에 영향을 주지 않도록 */
   }
 }
 main #portfolio .art-museum .museum-img1 img {
   width: 100%;
   position: absolute;
   top: 0;
+}
+main #portfolio .art-museum .museum-img1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none; /* 박스가 호버 이벤트에 영향을 주지 않도록 */
 }
 @media (min-width: 1024px) {
   main #portfolio .art-museum .museum-img1:hover img {
@@ -1101,16 +1155,6 @@ main #portfolio .art-museum .museum-img3 {
 main #portfolio .art-museum .museum-img3 img {
   width: 100%;
   margin: 20px 0;
-}
-main #portfolio .art-museum .museum-img3::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3); /* Adjust opacity as needed */
-  z-index: 1;
 }
 main #portfolio .art-museum .museum-button {
   width: 100%;

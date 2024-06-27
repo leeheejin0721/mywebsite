@@ -11,3 +11,22 @@ document.getElementById('menuToggle').addEventListener('click', function() {
     }
 });
 
+// hover 어둡게
+document.addEventListener('DOMContentLoaded', function() {
+    const img2 = document.querySelector('.museum-img2');
+    const img3 = document.querySelector('.museum-img3');
+    const img1 = document.querySelector('.museum-img1');
+
+    function addDarkenClass() {
+        img1.classList.add('darken');
+    }
+
+    function removeDarkenClass() {
+        img1.classList.remove('darken');
+    }
+
+    img2.addEventListener('mouseenter', addDarkenClass);
+    img2.addEventListener('mouseleave', removeDarkenClass);
+    img3.addEventListener('mouseenter', addDarkenClass);
+    img3.addEventListener('mouseleave', removeDarkenClass);
+});

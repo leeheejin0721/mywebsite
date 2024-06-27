@@ -128,22 +128,22 @@ main {
         
         // .gradient-red img {
         //     opacity: 0; /* 초기에는 숨겨둡니다. */
-        //     animation: fade-in 1.5s ease forwards 0.5s; /* 0.5초 후에 나타나도록 설정 */
+        //     animation: fade-in 1.5s ease-in forwards 0.5s; /* 0.5초 후에 나타나도록 설정 */
         // }
         
         // .gradient-orange img {
         //     opacity: 0; /* 초기에는 숨겨둡니다. */
-        //     animation: fade-in 1.5s ease forwards 1s; /* 1초 후에 나타나도록 설정 */
+        //     animation: fade-in 1.5s ease-in  forwards 1s; /* 1초 후에 나타나도록 설정 */
         // }
         
         // .gradient-yellow img {
         //     opacity: 0; /* 초기에는 숨겨둡니다. */
-        //     animation: fade-in 1.5s ease forwards 1.5s; /* 1.5초 후에 나타나도록 설정 */
+        //     animation: fade-in 1.5s ease-in  forwards 1.5s; /* 1.5초 후에 나타나도록 설정 */
         // }
         
         // .intro-txt h1, #resume {
         //     opacity: 0; /* 초기에는 숨겨둡니다. */
-        //     animation: fade-in 1s ease forwards 2s; /* 2초 후에 나타나도록 설정 */
+        //     animation: fade-in 1s ease-in  forwards 2s; /* 2초 후에 나타나도록 설정 */
         // }
         width: $width-wide;
         margin-top: 200px;
@@ -857,29 +857,62 @@ main {
                     }
                 }
 
+                .museum-img2, .museum-img3 {
+                    position: relative;
+                    overflow: hidden; 
+                    z-index: 1; /* 기본 z-index 설정 */
+                
+                    img {
+                        width: 100%;
+                        height: 100%; /* 이미지의 높이를 부모 요소에 맞춤 */
+                        display: block; /* 이미지 요소의 margin 제거 */
+                        transition: opacity 0.5s ease, z-index 0.5s ease;
+                        opacity: 0.5; /* 이미지를 어둡게 */
+                    }
+                
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: black;
+                        opacity: 0.5;
+                        transition: opacity 0.5s ease;
+                        pointer-events: none; /* 박스가 호버 이벤트에 영향을 주지 않도록 */
+                    }
+                
+                    &:hover {
+                        z-index: 11; /* 호버 시 요소를 가장 앞에 보이게 */
+                    }
+                
+                    &:hover img {
+                        opacity: 1;
+                        z-index: 11; /* 호버 시 이미지가 밝아지면서 앞에 보이게 */
+                    }
+                
+                    &:hover::before {
+                        opacity: 0; /* 호버 시 어두운 박스 제거 */
+                    }
+                }
+                
+
                 .museum-img2 {
                     width: $width-wide;
                     display: none;
                     @include responsive(large-screens) {
                         display: block;
                         width: 28%;
+                        height: auto;
                         position: absolute;
                         top: 0;
                     }
                     img {
                         width: $width-wide;
                         margin: 20px 0;
+                        
                     }
-                }
-                .museum-img2::before {
-                    content: '';
-                    position: absolute;
-                    top: 3%;
-                    left: 0;
-                    width: 100%;
-                    height: 93%;
-                    background-color: rgba(0, 0, 0, 0.3); /* Adjust opacity as needed */
-                    z-index: 1;
                 }
 
                 .museum-img1 {
@@ -902,12 +935,39 @@ main {
                             width: 100%;
                             position: absolute;
                             top: 0;
+                            display: block;
+                            transition: opacity 0.5s ease;
                         }
+                        &.darken::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: black;
+                        opacity: 0.5;
+                        transition: opacity 0.5s ease;
+                        z-index: 6;
+                        pointer-events: none; /* 박스가 호버 이벤트에 영향을 주지 않도록 */
+                    }
                     }
                     img {
                         width: $width-wide;
                         position: absolute;
                         top: 0;
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: black;
+                        opacity: 0;
+                        transition: opacity 0.5s ease;
+                        pointer-events: none; /* 박스가 호버 이벤트에 영향을 주지 않도록 */
                     }
                 }
                 @include responsive(large-screens) {
@@ -917,9 +977,7 @@ main {
                     
                     .museum-img1 img {
                         transition: transform 1.5s ease; /* 변환 애니메이션 설정 */
-                    }
-                    
-                    
+                    }    
                 }
                 .museum-img3 {
                     display: none;
@@ -935,16 +993,6 @@ main {
                         width: $width-wide;
                         margin: 20px 0;
                     }
-                }
-                .museum-img3::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(0, 0, 0, 0.3); /* Adjust opacity as needed */
-                    z-index: 1;
                 }
 
                 .museum-button {

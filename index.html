@@ -151,12 +151,22 @@
                     <h2>ABOUT ME</h2> 
                     <img src="./images/aboutme_picture.png" alt="aboutme_picture" class="pic">
                     <div class="about-txt">
-                        <strong>웹 개발자</strong>
-                        <strong>이희진입니다.</strong>
-                        <p>
-                            거칠고 빠른 것 보다는 조용하지만 꾸준히 계속해서 나아갑니다.
-                            단순히 디자인만을 그대로 구현한 사이트보다 사용자의 편의 또한 고려한 웹사이트를 만들어 나가고 싶습니다. 
-                        </p>
+                        <div class="sum">
+                            <p>경일 고등학교 졸업</p>
+                            <p>가천대학교 패션디자인학과 졸업</p>
+                            <p>방송정보교육원 수료</p>
+                            <p>아웃도어 브랜드‘쉘코퍼레이션’ 인턴</p>
+                            <p>KOTITI 시험 연구원 인턴</p>
+                            <p>GTQ 1급</p>
+                        </div>
+                        <div class="suit">
+                            <strong>웹 개발자</strong>
+                            <strong>이희진입니다.</strong>
+                            <p>
+                                거칠고 빠른 것 보다는 조용하지만 꾸준히 계속해서 나아갑니다.
+                                단순히 디자인만을 그대로 구현한 사이트보다 사용자의 편의 또한 고려한 웹사이트를 만들어 나가고 싶습니다. 
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="aboutme-star">
@@ -468,7 +478,7 @@
             });
             </script>
 
-        
+        <!-- 스킬 퍼센트 -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
             var skillSection = document.querySelector('#skill');
@@ -500,11 +510,11 @@
                 });
             }
         });
-    }, {
-        threshold: 0.5
-    });
+        }, {
+            threshold: 0.5
+        });
 
-    observer.observe(skillSection);
+        observer.observe(skillSection);
 
     // 모달 제어
         var modal = document.getElementById('skill-modal');
@@ -539,7 +549,7 @@
         <section id="portfolio">
             <div class="container">
                 <h2>PORTFOLIO</h2>
-                <div class="art-museum">
+            <div class="art-museum">
             <div class="art-museum-title">
                 <h3 class="art-museum-renewal">경기도 미술관 리뉴얼</h3>
                 <span class="en">gyeonggi museum of modern art</span>
@@ -736,6 +746,27 @@
                 </div> <!-- public-portfolio -->
             </div> <!-- container -->
         </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const img2 = document.querySelector('.museum-img2');
+            const img3 = document.querySelector('.museum-img3');
+            const img1 = document.querySelector('.museum-img1');
+
+            function addDarkenClass() {
+                img1.classList.add('darken');
+            }
+
+            function removeDarkenClass() {
+                img1.classList.remove('darken');
+            }
+
+            img2.addEventListener('mouseenter', addDarkenClass);
+            img2.addEventListener('mouseleave', removeDarkenClass);
+            img3.addEventListener('mouseenter', addDarkenClass);
+            img3.addEventListener('mouseleave', removeDarkenClass);
+        });
+        </script>
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {

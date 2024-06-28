@@ -288,17 +288,19 @@
             <div class="skill-bg">
                 <img src="./images/skill_bg.png" alt="skill-bg">
             </div>
-            <div class="skill-bg-pc">
-                <img src="./images/skill_pc_bg.png" alt="skill-bg-pc">
-            </div>
-            <!-- background 깔기 -->
             <div class="container">
                 <h2>SKILL</h2>
                 <div id="skill-modal" class="modal">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <img src="" alt="" class="modal-icon">
-                        <p class="modal-description"></p>
+                    <div class="modal-border">
+                        <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="gray" stroke-width="3"/>
+                            <circle id="progress-circle" cx="50" cy="50" r="45" fill="none" stroke="rgba(255, 255, 255, 0.5)" stroke-width="3" stroke-dasharray="283" stroke-dashoffset="283"/>
+                        </svg>     
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <img src="" alt="" class="modal-icon">
+                            <p class="modal-description"></p>
+                        </div>
                     </div>
                 </div>
 
@@ -414,6 +416,7 @@
                         <p>설명</p>
                     </div>
                 </div>
+
                 <div class="skills-circle">
                     <div class="skill-box html-box" data-icon="./images/html-5.png" data-description="웹 표준과 웹 접근성을 준수<br>홈페이지 구조적으로 작성 가능" data-progress="90%">
                         <img src="./images/html-5.png" alt="html">
@@ -539,6 +542,7 @@
                     </div>
                     <div class="hover-display">
                         <img class="hover-icon" src="" alt="skill-icon">
+                        
                         <div class="progress-bar">
                             <div class="progress hover-progress"></div>
                         </div>
@@ -547,6 +551,31 @@
                 </div>
             </div>
         </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const skillBg = document.querySelector('.skill-bg img');
+                const options = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.1
+                };
+            
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // 애니메이션을 다시 실행
+                            skillBg.style.animation = 'none';
+                            skillBg.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
+                            skillBg.style.animation = 'gradientFadein 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+                        }
+                    });
+                }, options);
+            
+                observer.observe(skillBg);
+            });
+            </script>
+
         <script>
             document.querySelectorAll('.skill-box').forEach(skill => {
                 skill.addEventListener('mouseover', function() {
@@ -612,26 +641,61 @@
         var closeBtn = modal.querySelector('.close');
         var skillBoxes = document.querySelectorAll('.mo-skill-box div');
 
+        var skillPercentages = {
+            'html-box': 90,
+            'css-box': 85,
+            'sass-box': 85,
+            'javascript-box': 80,
+            'jquery-box': 85,
+            'react-box': 80,
+            'git-box': 90,
+            'figma-box': 90,
+            'ai-box': 85,
+            'photoshop-box': 90,
+            'ae-box': 75,
+            'pre-box': 80
+        };
+
         skillBoxes.forEach(function(skillBox) {
             skillBox.addEventListener('click', function() {
                 var imgSrc = this.querySelector('img').src;
                 var description = this.querySelector('p').innerText;
+                var skillClass = this.classList[1];
+                var percentage = skillPercentages[skillClass];
+                
                 modalIcon.src = imgSrc;
                 modalDescription.innerText = description;
                 modal.style.display = 'block';
-            });
-        });
+                
+                // 애니메이션 설정
+                var progressCircle = document.getElementById('progress-circle');
+                var radius = progressCircle.r.baseVal.value;
+                var circumference = radius * 2 * Math.PI;
+                var offset = circumference - (percentage / 100 * circumference);
 
-        closeBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
+                progressCircle.style.strokeDashoffset = circumference; // 초기 상태
+                modal.style.display = 'block';
+                
+                setTimeout(() => {
+                    progressCircle.style.strokeDashoffset = offset;
+                }, 0);
+                    });
+                });
 
-        window.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-                }
-            });
-        });
+                closeBtn.addEventListener('click', function() {
+                    modal.style.display = 'none';
+                    var progressCircle = document.getElementById('progress');
+                    progressCircle.style.strokeDashoffset = 879; // 초기 상태로 복구
+                });
+
+                window.addEventListener('click', function(event) {
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                        var progressCircle = document.getElementById('progress');
+                        progressCircle.style.strokeDashoffset = 879; // 초기 상태로 복구
+                    }
+                });
+                });
         </script>
 
 
@@ -835,6 +899,54 @@
                 </div> <!-- public-portfolio -->
             </div> <!-- container -->
         </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const loyalBg = document.querySelector('.loyal-bg img');
+                const options = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.1
+                };
+            
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // 애니메이션을 다시 실행
+                            loyalBg.style.animation = 'none';
+                            loyalBg.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
+                            loyalBg.style.animation = 'gradientFadein 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+                        }
+                    });
+                }, options);
+            
+                observer.observe(loyalBg);
+            });
+            </script>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const publicBg = document.querySelector('.public-bg img');
+                    const options = {
+                        root: null,
+                        rootMargin: '0px',
+                        threshold: 0.1
+                    };
+                
+                    const observer = new IntersectionObserver((entries, observer) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                // 애니메이션을 다시 실행
+                                publicBg.style.animation = 'none';
+                                publicBg.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
+                                publicBg.style.animation = 'gradientFadein 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+                            }
+                        });
+                    }, options);
+                
+                    observer.observe(publicBg);
+                });
+            </script>
 
         <script>
             document.addEventListener('DOMContentLoaded', function() {

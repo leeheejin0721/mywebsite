@@ -640,19 +640,19 @@ main {
             transform: scale(1);
         }
     
-        @keyframes gradientFadeIn {
+        @keyframes gradientFadein {
             from {
                 opacity: 0;
                 transform: scale(0.5);
             }
             to {
-                opacity: 0.5;
+                opacity: 0.7;
                 transform: scale(1);
             }
         }
 
         .skill-bg {
-            animation: gradientFadeIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.4s;
+            animation: gradientFadein 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.4s;
             // margin-top: 150px;
             position: absolute;
             z-index: 1;
@@ -661,26 +661,15 @@ main {
             height: 100%;
             opacity: 0.5;
             @include responsive(large-screens) {
-                display: none;
+                position: absolute;
+                top: 0;
+                z-index: 1;
+                opacity: 0.7;
+                width: $width-wide;
             }
             img {
                 width: $width-wide;
                 height: 1100px;
-            }
-        }
-        .skill-bg-pc {
-            display: none;
-            @include responsive(large-screens) {
-                display: block;
-                position: absolute;
-                top: 0;
-                z-index: 1;
-                opacity: 0.5;
-                width: $width-wide;
-                img {
-                    width: $width-wide;
-                    height: 1100px;
-                }
             }
         }
         h2 {
@@ -827,21 +816,49 @@ main {
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.5); /* 반투명 배경 */
+            background-color: rgba(0,0,0,0.8); /* 반투명 배경 */
+        }
+        .modal-border {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            
+            margin: 50% auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg); /* 12시 방향에서 시작하도록 회전 */
         }
         
+        #progress-circle {
+            stroke-dasharray: 283; /* 원의 둘레 */
+            stroke-dashoffset: 283; /* 처음에는 전체 표시되지 않도록 */
+            transition: stroke-dashoffset 2s;
+        }
         .modal-content {
-            background-color: #fff;
+            background-image: url(../images/gradient_yellow.png);
+            background-size: cover;
+            
+            border-radius: 50%;
             margin: 50% auto;
             padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
+            
+            width: 100%;
+            height: 100%;
             position: relative;
         }
         
         .close {
             color: #aaa;
-            float: right;
+            position: absolute;
+            top: 80%;
+            left: 45%;
             font-size: 28px;
             font-weight: bold;
         }
@@ -854,17 +871,28 @@ main {
         }
         
         .modal-icon {
+            position: absolute;
+            top: 30%;
+            left: 40%;
             width: 50px;
             height: 50px;
             margin: auto;
         }
         
         .modal-description {
+            position: absolute;
+            top: 50%;
+            left: 22%;
             margin-top: 20px;
+            text-align: center;
             font-size: 14px;
             margin: auto;
             font-family: $font-pre-light;
         }
+        
+        
+
+
         .skills-circle {
             display: none;
             @include responsive(large-screens) {
@@ -923,10 +951,11 @@ main {
                 transform: translate(-50%, -50%);
                 text-align: center;
                 z-index: 6;
-                background: transparent;
+                border: 4px solid #e0e0e0;
                 padding: 20px;
-                width: 200px;
-                height: 100px;
+                width: 250px;
+                height: 250px;
+                border-radius: 50%;
             }
             
             .hover-display .hover-icon {
@@ -1244,7 +1273,18 @@ main {
                     }
                 }
             }
+            @keyframes gradientFadein {
+                from {
+                    opacity: 0;
+                    transform: scale(0.5);
+                }
+                to {
+                    opacity: 0.7;
+                    transform: scale(1);
+                }
+            }
             .loyal-bg {
+                animation: gradientFadein 0.5s cubic-bezier(0.30, 0.57, 0.78, 0.99) forwards 0.1s;
                 position: absolute;
                 top: 20%;
                 left: 40%;
@@ -1488,11 +1528,26 @@ main {
                 }
             }
         }
+        @keyframes gradientFadein {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+        }
         .public-bg {
+            animation: gradientFadein 0.5s cubic-bezier(0.30, 0.57, 0.78, 0.99) forwards 0.1s;
             position: absolute;
+            top: 60%;
+            right: 20%;
             opacity: 0.5;
+            z-index: 1;
         }
         .public-portfolio {
+            z-index: 5;
             height: 100vh;
             position: relative;
             margin-top: 150px;

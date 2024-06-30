@@ -122,6 +122,9 @@ body {
   }
 }
 
+header {
+  width: 100%;
+}
 header .logo-menu-text {
   margin-top: 32px;
   width: 100%;
@@ -173,12 +176,12 @@ header .header-text {
   }
 }
 header .header-text a {
-  font-family: Arial, sans-serif;
-  font-size: 10px;
+  font-family: "Alegreya";
+  font-size: 0.5rem;
 }
 header .header-text p {
   line-height: 1.2;
-  font-size: 10px;
+  font-size: 0.5rem;
 }
 header .menu_box {
   display: none;
@@ -218,7 +221,7 @@ header .gnb a {
   text-decoration: none;
   color: black;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 2rem;
   font-family: "Alegreya";
   font-weight: 500;
 }
@@ -228,6 +231,9 @@ header .gnb a {
   }
 }
 
+main {
+  width: 100%;
+}
 main #intro {
   width: 100%;
   margin-top: 200px;
@@ -320,32 +326,36 @@ main #intro .contact-circle {
   top: -5%;
   left: 10%;
   z-index: 5;
+  width: 27%;
   cursor: pointer;
 }
 @media (min-width: 1024px) {
   main #intro .contact-circle {
-    left: 36%;
+    left: 29%;
+    width: 9%;
   }
 }
 main #intro .contact-circle text textPath {
   font-family: "Alegreya";
   font-weight: lighter;
-  font-size: 14px;
+  font-size: 0.7rem;
 }
 main #intro .contact-circle img {
-  width: 70%;
+  width: 100%;
 }
 main #intro .portfolio-circle {
   position: absolute;
-  top: 3%;
-  left: 73%;
+  top: -3%;
+  left: 65%;
   z-index: 5;
+  width: 20%;
   cursor: pointer;
 }
 @media (min-width: 1024px) {
   main #intro .portfolio-circle {
-    left: 58%;
+    left: 60%;
     top: 6%;
+    width: 8%;
   }
 }
 main #intro .portfolio-circle text textPath {
@@ -354,17 +364,19 @@ main #intro .portfolio-circle text textPath {
   font-size: 14px;
 }
 main #intro .portfolio-circle img {
-  width: 70%;
+  width: 100%;
 }
 main #intro .aboutme-circle {
   position: absolute;
-  top: 22%;
+  top: 20%;
   z-index: 3;
+  width: 35%;
   cursor: pointer;
 }
 @media (min-width: 1024px) {
   main #intro .aboutme-circle {
-    left: 36%;
+    left: 30%;
+    width: 10%;
   }
 }
 main #intro .aboutme-circle text textPath {
@@ -373,19 +385,21 @@ main #intro .aboutme-circle text textPath {
   font-size: 14px;
 }
 main #intro .aboutme-circle img {
-  width: 70%;
+  width: 100%;
 }
 main #intro .skill-circle {
   position: absolute;
   z-index: 5;
-  top: 25%;
+  top: 23%;
   left: 65%;
+  width: 20%;
   cursor: pointer;
 }
 @media (min-width: 1024px) {
   main #intro .skill-circle {
     left: 57%;
-    top: 28%;
+    top: 26%;
+    width: 8%;
   }
 }
 main #intro .skill-circle text textPath {
@@ -394,7 +408,7 @@ main #intro .skill-circle text textPath {
   font-size: 14px;
 }
 main #intro .skill-circle img {
-  width: 70%;
+  width: 100%;
 }
 main #intro .blue_gradient img {
   animation: gradientFadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
@@ -439,44 +453,37 @@ main #intro .gradient {
 main #intro .gradient .gradient-red {
   animation: gradientFadeIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   position: absolute;
-  top: -20px;
-  left: 10px;
-  width: 10px;
-}
-main #intro .gradient .gradient-red img {
-  width: 230px;
-}
-@media (min-width: 1024px) {
-  main #intro .gradient .gradient-red img {
-    width: 280px;
-  }
+  top: 0;
+  left: -17%;
+  width: 80%;
 }
 @media (min-width: 1024px) {
   main #intro .gradient .gradient-red {
-    left: 34%;
-    top: -30px;
+    width: 30%;
+    left: 30%;
+    top: -50px;
   }
+}
+main #intro .gradient .gradient-red img {
+  width: 100%;
 }
 main #intro .gradient .gradient-orange {
   animation: gradientFadeIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.2s;
   position: absolute;
-  top: 10px;
-  left: 50px;
+  top: 12%;
+  left: 10%;
   z-index: 2;
-}
-main #intro .gradient .gradient-orange img {
-  width: 250px;
-}
-@media (min-width: 1024px) {
-  main #intro .gradient .gradient-orange img {
-    width: 300px;
-  }
+  width: 80%;
 }
 @media (min-width: 1024px) {
   main #intro .gradient .gradient-orange {
+    width: 25%;
     left: 40%;
     top: 20px;
   }
+}
+main #intro .gradient .gradient-orange img {
+  width: 100%;
 }
 main #intro .gradient .gradient-yellow {
   animation: gradientFadeIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.4s;
@@ -484,51 +491,53 @@ main #intro .gradient .gradient-yellow {
   z-index: 1;
   top: 70px;
   left: 30%;
-}
-main #intro .gradient .gradient-yellow img {
-  width: 200px;
-}
-@media (min-width: 1024px) {
-  main #intro .gradient .gradient-yellow img {
-    width: 230px;
-  }
+  width: 70%;
 }
 @media (min-width: 1024px) {
   main #intro .gradient .gradient-yellow {
     top: 110px;
     left: 47%;
+    width: 20%;
   }
 }
+main #intro .gradient .gradient-yellow img {
+  width: 100%;
+}
 main #intro .intro-txt {
-  position: absolute;
-  top: 5%;
-  left: 25%;
+  position: relative;
   z-index: 5;
+  margin: auto;
+  padding-top: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 @media (min-width: 1024px) {
   main #intro .intro-txt {
-    left: 39%;
+    padding-top: 5%;
   }
 }
 main #intro .intro-txt h1 {
+  position: static; /* absolute에서 static으로 변경 */
+  margin: auto;
   animation: textFadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.6s;
   text-align: center;
   line-height: 1.1;
-  width: 200px;
+  width: 100%;
   z-index: 5;
   font-family: "Alegreya";
   font-weight: lighter;
+  font-size: 2.5rem;
 }
 @media (min-width: 1024px) {
   main #intro .intro-txt h1 {
-    font-size: 64px;
-    text-align: center;
-    width: 340px;
+    font-size: 4rem;
   }
 }
 main #intro .intro-txt #resume {
   animation: textFadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.6s;
-  margin-left: 30%;
+  margin: auto;
   background-color: #000;
   color: #fff;
   border-radius: 5px;
@@ -537,11 +546,6 @@ main #intro .intro-txt #resume {
   cursor: pointer;
   font-family: "Alegreya";
   font-weight: lighter;
-}
-@media (min-width: 1024px) {
-  main #intro .intro-txt #resume {
-    margin-left: 38%;
-  }
 }
 main #intro svg {
   position: absolute;
@@ -563,7 +567,6 @@ main #intro .gradient_orange img {
   width: 85%;
 }
 main #aboutme {
-  height: 70vh;
   background-image: url(../images/aboutme_bg.png);
   background-size: cover;
   background-position: bottom 100px;
@@ -573,25 +576,29 @@ main #aboutme {
 @media (min-width: 1024px) {
   main #aboutme {
     background-image: url(../images/about_bg_pc.png);
-    height: 80vh;
   }
 }
 main #aboutme .aboutme_txt-img {
-  position: absolute;
   text-align: center;
-  top: -36%;
-  left: 0;
   z-index: 3;
+  position: relative;
+  top: -150px; /* 위치를 위로 이동 */
+  left: 50%;
+  transform: translateX(-50%);
 }
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img {
-    left: 37%;
-    top: -40%;
+    top: -200px;
   }
 }
 main #aboutme .aboutme_txt-img h2 {
   font-family: "Alegreya";
   font-weight: 400;
+}
+@media (min-width: 1024px) {
+  main #aboutme .aboutme_txt-img h2 {
+    font-size: 3rem;
+  }
 }
 main #aboutme .aboutme_txt-img .pic {
   width: 60%;
@@ -600,8 +607,7 @@ main #aboutme .aboutme_txt-img .pic {
 }
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .pic {
-    width: 450px;
-    margin: 40px auto;
+    width: 35%;
   }
 }
 main #aboutme .aboutme_txt-img .about-txt .sum, main #aboutme .aboutme_txt-img .about-txt .suit {
@@ -619,19 +625,26 @@ main #aboutme .aboutme_txt-img .about-txt .sum.active, main #aboutme .aboutme_tx
 main #aboutme .aboutme_txt-img .about-txt .sum p {
   line-height: 1.3;
   width: 100%;
+  font-size: 1rem;
+  font-family: "Pretendard-Light";
+}
+@media (min-width: 1024px) {
+  main #aboutme .aboutme_txt-img .about-txt .sum p {
+    font-size: 1.5rem;
+  }
 }
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .about-txt .sum .ab-left {
     position: absolute;
     width: 400px;
-    right: 65%;
+    right: 80;
   }
 }
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .about-txt .sum .ab-right {
     position: absolute;
     width: 400px;
-    left: 390px;
+    left: 1000px;
   }
 }
 @media (min-width: 1024px) {
@@ -649,15 +662,17 @@ main #aboutme .aboutme_txt-img .about-txt h4 {
   main #aboutme .aboutme_txt-img .about-txt .web {
     position: absolute;
     top: -400px;
-    left: -30%;
+    left: 20%;
+    font-size: 2rem;
   }
 }
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .about-txt .name {
     position: absolute;
-    width: 130px;
+    width: 300px;
     top: -400px;
-    left: 300px;
+    font-size: 2rem;
+    left: 93%;
   }
 }
 main #aboutme .aboutme_txt-img .about-txt p {
@@ -675,7 +690,6 @@ main #aboutme .aboutme_txt-img .about-txt p {
   }
 }
 main #aboutme .aboutme-star {
-  position: relative;
   z-index: 4;
 }
 main #aboutme .aboutme-star .about-star1, main #aboutme .aboutme-star .about-star2, main #aboutme .aboutme-star .about-star3 {
@@ -685,7 +699,7 @@ main #aboutme .aboutme-star .about-star1, main #aboutme .aboutme-star .about-sta
 main #aboutme .aboutme-star .about-star1 {
   position: absolute;
   left: 90%;
-  top: 70px;
+  top: 0;
   width: 6%;
 }
 @media (min-width: 1024px) {
@@ -720,31 +734,33 @@ main #aboutme .aboutme-star .about-star1 img, main #aboutme .aboutme-star .about
   height: auto;
 }
 main #aboutme .aboutme-button {
-  position: absolute;
   z-index: 3;
   width: 100%;
   display: flex;
-  top: 93%;
-}
-@media (min-width: 1024px) {
-  main #aboutme .aboutme-button {
-    height: 10%;
-  }
 }
 main #aboutme .aboutme-button button {
   width: 50%;
   background: #FFF5ED;
   cursor: pointer;
-  border: 2px solid black;
+  border: 1.5px solid black;
 }
 main #aboutme .aboutme-button button p {
-  font-size: 16px;
+  line-height: 1.4;
+  font-size: 0.9rem;
+  padding: 8% 0;
+}
+@media (min-width: 1024px) {
+  main #aboutme .aboutme-button button p {
+    font-size: 1.2rem;
+    padding: 5% 0;
+  }
 }
 main #aboutme .aboutme-button button:hover, main #aboutme .aboutme-button button.active {
   color: #E78156;
 }
 main #aboutme .aboutme-button #prof {
   border-left: 0;
+  border-right: 0;
 }
 main #aboutme .aboutme-button #suit {
   border-right: 0;
@@ -1019,8 +1035,8 @@ main #skill .modal-content {
 main #skill .close {
   color: #aaa;
   position: absolute;
-  top: 80%;
-  left: 45%;
+  top: 77%;
+  left: 47%;
   font-size: 28px;
   font-weight: bold;
 }
@@ -1031,18 +1047,16 @@ main #skill .close:focus {
   cursor: pointer;
 }
 main #skill .modal-icon {
-  position: absolute;
-  top: 30%;
-  left: 40%;
+  position: relative;
+  top: 25%;
   width: 50px;
   height: 50px;
   margin: auto;
 }
 main #skill .modal-description {
-  position: absolute;
-  top: 50%;
-  left: 22%;
-  margin-top: 20px;
+  position: relative;
+  top: 23%;
+  margin-top: 10px;
   text-align: center;
   font-size: 14px;
   margin: auto;
@@ -1086,6 +1100,11 @@ main #skill .skills-circle {
   }
 }
 @media (min-width: 1024px) {
+  @keyframes fill {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
   main #skill .html-box {
     transform: rotate(0deg) translate(350px) rotate(0deg);
   }
@@ -1125,29 +1144,51 @@ main #skill .skills-circle {
   main #skill .hover-display {
     display: none;
     position: absolute;
-    top: 46.8%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 6;
-    border: 4px solid #e0e0e0;
     padding: 20px;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
+    width: 500px;
+    height: 500px;
   }
   main #skill .hover-display .hover-icon {
+    position: relative;
+    top: 40%;
     width: 80px;
     height: 80px;
     margin-bottom: 10px;
   }
   main #skill .hover-display .progress-bar {
-    width: 70%;
-    margin: 10px auto;
+    display: none;
   }
   main #skill .hover-display .hover-description {
+    width: 40%;
+    position: relative;
+    left: 30%;
+    top: 40%;
     font-size: 14px;
     font-family: "Pretendard-Light";
+  }
+  main #skill .hover-display svg {
+    position: absolute;
+    top: -16%;
+    left: 20%;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+  main #skill .hover-display circle {
+    fill: none;
+    stroke-width: 7;
+    stroke: #e0e0e0;
+  }
+  main #skill .hover-display .progress-ring {
+    stroke: url(#grad1);
+    stroke-dasharray: 754;
+    stroke-dashoffset: 754;
+    transition: stroke-dashoffset 1s linear;
   }
 }
 main #portfolio {
@@ -1366,7 +1407,7 @@ main #portfolio .art-museum .museum-button #git, main #portfolio .art-museum .mu
 }
 main #portfolio .art-museum .museum-button #git p, main #portfolio .art-museum .museum-button #website p, main #portfolio .art-museum .museum-button #design-guide p {
   padding: 3px;
-  font-size: 12px;
+  font-size: 0.7rem;
   font-family: "Pretendard-Light";
 }
 main #portfolio .art-museum .museum-button #git .design, main #portfolio .art-museum .museum-button #website .design, main #portfolio .art-museum .museum-button #design-guide .design {
@@ -1401,43 +1442,49 @@ main #portfolio .art-museum .museum-txt .time {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-}
-main #portfolio .art-museum .museum-txt .time p {
-  margin-left: 20px;
+  width: 100%;
 }
 main #portfolio .art-museum .museum-txt .together {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
-main #portfolio .art-museum .museum-txt .together p {
-  margin-left: 40px;
-}
 main #portfolio .art-museum .museum-txt h4 {
-  font-size: 18px;
+  font-size: 1rem;
   font-family: "Pretendard-Light";
+  width: 50%;
 }
 main #portfolio .art-museum .museum-txt p {
-  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.3;
   font-family: "Pretendard-Light";
+  width: 50%;
 }
 main #portfolio .art-museum .museum-txt .tool-box {
+  width: 100%;
   display: flex;
 }
 main #portfolio .art-museum .museum-txt .tool-box .usetool {
   display: flex;
-  margin-left: 35px;
+}
+main #portfolio .art-museum .museum-txt .tool-box .usetool h4 {
+  width: 50%;
+}
+main #portfolio .art-museum .museum-txt .tool-box .usetool .usetool {
+  width: 50%;
 }
 main #portfolio .art-museum .museum-txt .tool-box .usetool .tool {
   border: 1px solid black;
   border-radius: 10px;
-  width: 80px;
+  width: 50%;
   text-align: center;
-  font-size: 14px;
-  margin-right: 5px;
+  font-size: 0.9rem;
+  padding: 3px;
+  margin-right: 5%;
 }
 main #portfolio .art-museum .museum-txt .project-txt {
   margin-top: 10px;
+  display: flex;
 }
 @media (min-width: 1024px) {
   main #portfolio .art-museum .museum-txt {
@@ -1609,37 +1656,36 @@ main #portfolio .loyal-festival .festival-button {
     width: 46%;
   }
 }
-main #portfolio .loyal-festival .festival-button #git, main #portfolio .loyal-festival .festival-button #website, main #portfolio .loyal-festival .festival-button #design-guide {
+main #portfolio .loyal-festival .festival-button #git, main #portfolio .loyal-festival .festival-button #website, main #portfolio .loyal-festival .festival-button #design-guide, main #portfolio .loyal-festival .festival-button #design-plan {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 5px;
+  margin: 1%;
   border: 1px solid #E78156;
   background-color: #FFF5ED;
-  padding: 0 5px;
+  padding: 0 1%;
 }
 @media (min-width: 1024px) {
-  main #portfolio .loyal-festival .festival-button #git, main #portfolio .loyal-festival .festival-button #website, main #portfolio .loyal-festival .festival-button #design-guide {
+  main #portfolio .loyal-festival .festival-button #git, main #portfolio .loyal-festival .festival-button #website, main #portfolio .loyal-festival .festival-button #design-guide, main #portfolio .loyal-festival .festival-button #design-plan {
     width: 20%;
     padding: 3px 5px;
   }
 }
-main #portfolio .loyal-festival .festival-button #git p, main #portfolio .loyal-festival .festival-button #website p, main #portfolio .loyal-festival .festival-button #design-guide p {
-  padding: 3px;
-  font-size: 12px;
+main #portfolio .loyal-festival .festival-button #git p, main #portfolio .loyal-festival .festival-button #website p, main #portfolio .loyal-festival .festival-button #design-guide p, main #portfolio .loyal-festival .festival-button #design-plan p {
+  font-size: 0.7rem;
   font-family: "Pretendard-Light";
 }
-main #portfolio .loyal-festival .festival-button #git .design, main #portfolio .loyal-festival .festival-button #website .design, main #portfolio .loyal-festival .festival-button #design-guide .design {
+main #portfolio .loyal-festival .festival-button #git .design, main #portfolio .loyal-festival .festival-button #git .design-p, main #portfolio .loyal-festival .festival-button #website .design, main #portfolio .loyal-festival .festival-button #website .design-p, main #portfolio .loyal-festival .festival-button #design-guide .design, main #portfolio .loyal-festival .festival-button #design-guide .design-p, main #portfolio .loyal-festival .festival-button #design-plan .design, main #portfolio .loyal-festival .festival-button #design-plan .design-p {
   line-height: 1.3;
 }
-main #portfolio .loyal-festival .festival-button #git img, main #portfolio .loyal-festival .festival-button #website img, main #portfolio .loyal-festival .festival-button #design-guide img {
+main #portfolio .loyal-festival .festival-button #git img, main #portfolio .loyal-festival .festival-button #website img, main #portfolio .loyal-festival .festival-button #design-guide img, main #portfolio .loyal-festival .festival-button #design-plan img {
   width: 18%;
 }
-main #portfolio .loyal-festival .festival-button #git .black, main #portfolio .loyal-festival .festival-button #website .black, main #portfolio .loyal-festival .festival-button #design-guide .black {
+main #portfolio .loyal-festival .festival-button #git .black, main #portfolio .loyal-festival .festival-button #website .black, main #portfolio .loyal-festival .festival-button #design-guide .black, main #portfolio .loyal-festival .festival-button #design-plan .black {
   display: block;
 }
-main #portfolio .loyal-festival .festival-button #git .white, main #portfolio .loyal-festival .festival-button #website .white, main #portfolio .loyal-festival .festival-button #design-guide .white {
+main #portfolio .loyal-festival .festival-button #git .white, main #portfolio .loyal-festival .festival-button #website .white, main #portfolio .loyal-festival .festival-button #design-guide .white, main #portfolio .loyal-festival .festival-button #design-plan .white {
   display: none;
 }
 main #portfolio .loyal-festival .festival-button #git, main #portfolio .loyal-festival .festival-button #website, main #portfolio .loyal-festival .festival-button #design-guide {
@@ -1662,43 +1708,49 @@ main #portfolio .loyal-festival .festival-txt .time {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-}
-main #portfolio .loyal-festival .festival-txt .time p {
-  margin-left: 20px;
+  width: 100%;
 }
 main #portfolio .loyal-festival .festival-txt .together {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
-main #portfolio .loyal-festival .festival-txt .together p {
-  margin-left: 40px;
-}
 main #portfolio .loyal-festival .festival-txt h4 {
-  font-size: 18px;
+  font-size: 1rem;
   font-family: "Pretendard-Light";
+  width: 50%;
 }
 main #portfolio .loyal-festival .festival-txt p {
-  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.3;
   font-family: "Pretendard-Light";
+  width: 50%;
 }
 main #portfolio .loyal-festival .festival-txt .tool-box {
+  width: 100%;
   display: flex;
 }
 main #portfolio .loyal-festival .festival-txt .tool-box .usetool {
   display: flex;
-  margin-left: 35px;
+}
+main #portfolio .loyal-festival .festival-txt .tool-box .usetool h4 {
+  width: 50%;
+}
+main #portfolio .loyal-festival .festival-txt .tool-box .usetool .usetool {
+  width: 50%;
 }
 main #portfolio .loyal-festival .festival-txt .tool-box .usetool .tool {
   border: 1px solid black;
   border-radius: 10px;
-  width: 65px;
+  width: 50%;
   text-align: center;
-  font-size: 14px;
-  margin-right: 5px;
+  font-size: 0.9rem;
+  padding: 3px;
+  margin-right: 5%;
 }
 main #portfolio .loyal-festival .festival-txt .project-txt {
   margin-top: 10px;
+  display: flex;
 }
 @media (min-width: 1024px) {
   main #portfolio .loyal-festival .festival-txt {
@@ -1868,43 +1920,49 @@ main #portfolio .public-portfolio .public-txt .time {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-}
-main #portfolio .public-portfolio .public-txt .time p {
-  margin-left: 20px;
+  width: 100%;
 }
 main #portfolio .public-portfolio .public-txt .together {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
-main #portfolio .public-portfolio .public-txt .together p {
-  margin-left: 40px;
-}
 main #portfolio .public-portfolio .public-txt h4 {
-  font-size: 18px;
+  font-size: 1rem;
   font-family: "Pretendard-Light";
+  width: 50%;
 }
 main #portfolio .public-portfolio .public-txt p {
-  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.3;
   font-family: "Pretendard-Light";
+  width: 50%;
 }
 main #portfolio .public-portfolio .public-txt .tool-box {
+  width: 100%;
   display: flex;
 }
 main #portfolio .public-portfolio .public-txt .tool-box .usetool {
   display: flex;
-  margin-left: 35px;
+}
+main #portfolio .public-portfolio .public-txt .tool-box .usetool h4 {
+  width: 50%;
+}
+main #portfolio .public-portfolio .public-txt .tool-box .usetool .usetool {
+  width: 50%;
 }
 main #portfolio .public-portfolio .public-txt .tool-box .usetool .tool {
   border: 1px solid black;
   border-radius: 10px;
-  width: 65px;
+  width: 50%;
   text-align: center;
-  font-size: 14px;
-  margin-right: 5px;
+  font-size: 0.9rem;
+  padding: 3px;
+  margin-right: 5%;
 }
 main #portfolio .public-portfolio .public-txt .project-txt {
   margin-top: 10px;
+  display: flex;
 }
 main #contact {
   overflow: hidden;

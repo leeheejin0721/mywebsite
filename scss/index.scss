@@ -17,6 +17,7 @@ body {
 }
 
 header {
+    width: 100%;
     .logo-menu-text {
         margin-top: 32px;
         width: 100%;
@@ -65,12 +66,12 @@ header {
         }
     }
     .header-text a {
-        font-family: Arial, sans-serif;
-        font-size: 10px;
+        font-family: $font-en;
+        font-size: 0.5rem;
     }
     .header-text p {
         line-height: 1.2;
-        font-size: 10px;
+        font-size: 0.5rem;
     }
     .menu_box {
         display: none;
@@ -106,7 +107,7 @@ header {
         text-decoration: none;
         color: black;
         font-weight: bold;
-        font-size: 24px;
+        font-size: 2rem;
         font-family: $font-en;
         font-weight: 500;
         @include responsive(large-screens) {
@@ -116,12 +117,12 @@ header {
 }
 
 main {
+    width: $width-wide;
     #intro {
         width: $width-wide;
         margin-top: 200px;
         height: 100vh;
         position: relative;
-
         @keyframes rotate {
             from {
                 transform: rotate(0deg);
@@ -215,30 +216,34 @@ main {
             top: -5%;
             left: 10%;
             z-index: 5;
+            width: 27%;
             cursor: pointer;
             @include responsive(large-screens) {
-                left: 36%;
+                left: 29%;
+                width: 9%;
             }
             text {
                 textPath {
                     font-family: $font-en;
                     font-weight: lighter;
-                    font-size: 14px;
+                    font-size: 0.7rem;
                 }
                 }
         img {
-            width: 70%;
+            width: $width-wide;
         }
     }
     .portfolio-circle {
         position: absolute;
-        top: 3%;
-        left: 73%;
+        top: -3%;
+        left: 65%;
         z-index: 5;
+        width: 20%;
         cursor: pointer;
         @include responsive(large-screens) {
-            left: 58%;
+            left: 60%;
             top: 6%;
+            width: 8%;
         }
         text {
             textPath {
@@ -248,16 +253,18 @@ main {
             }
         }
         img {
-            width: 70%;
+            width: $width-wide;
         }
     }
     .aboutme-circle {
         position: absolute;
-        top: 22%;
+        top: 20%;
         z-index: 3;
+        width: 35%;
         cursor: pointer;
         @include responsive(large-screens) {
-            left: 36%;
+            left: 30%;
+            width: 10%;
         }
         text {
             textPath {
@@ -267,18 +274,20 @@ main {
             }
         }
         img {
-            width: 70%;
+            width: $width-wide;
         }
     }
     .skill-circle {
         position: absolute;
         z-index: 5;
-        top: 25%;
+        top: 23%;
         left: 65%;
+        width: 20%;
         cursor: pointer;
         @include responsive(large-screens) {
             left: 57%;
-            top: 28%;
+            top: 26%;
+            width: 8%;
         }
         text {
             textPath {
@@ -288,7 +297,7 @@ main {
             }
         }
         img {
-            width: 70%;
+            width: $width-wide;
         }
     }
     .blue_gradient img {
@@ -333,35 +342,33 @@ main {
         .gradient-red {
             animation: gradientFadeIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
             position: absolute;
-            top: -20px;
-            left: 10px;
-           width: 10px;
-           img {
-               width: 230px;
-               @include responsive(large-screens) {
-                width: 280px;
-            }
-            }
+            top: 0;
+            left: -17%;
+            width: 80%;
             @include responsive(large-screens) {
-                left: 34%;
-                top: -30px;
+                width: 30%;
+                left: 30%;
+                top: -50px;
+            }
+           img {
+               width: $width-wide;
+               
             }
         }
         .gradient-orange {
             animation: gradientFadeIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.2s;
             position: absolute;
-            top: 10px;
-            left: 50px;
+            top: 12%;
+            left: 10%;
             z-index: 2;
-            img {
-                width: 250px;
-                @include responsive(large-screens) {
-                    width: 300px;
-                }
-            }
+            width: 80%;
             @include responsive(large-screens) {
+                width: 25%;
                 left: 40%;
                 top: 20px;
+            }
+            img {
+                width: $width-wide;
             }
         }
         .gradient-yellow {
@@ -370,44 +377,48 @@ main {
             z-index: 1;
             top: 70px;
             left: 30%;
-            img {
-                width: 200px;
-                @include responsive(large-screens) {
-                    width: 230px;
-                }
-            }
+            width: 70%;
             @include responsive(large-screens) {
                 top: 110px;
                 left: 47%;
+                width: 20%;
+            }
+            img {
+                width: $width-wide;
             }
         }
     }
     
     .intro-txt {
-        position: absolute;
-        top: 5%;
-        left: 25%;
+        position: relative;
         z-index: 5;
+        margin: auto;
+        padding-top: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
         @include responsive(large-screens) {
-            left: 39%;
+            padding-top: 5%;
         }
         h1 {
+            position: static; /* absolute에서 static으로 변경 */
+            margin: auto;
             animation: textFadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.6s;
             text-align: center;
             line-height: 1.1;
-            width: 200px;
+            width: 100%;
             z-index: 5;
             font-family: $font-en;
             font-weight: lighter;
+            font-size: 2.5rem;
             @include responsive(large-screens) {
-                font-size: 64px;
-                text-align: center;
-                width: 340px;
+                font-size: 4rem;
             }
         }
         #resume {
             animation: textFadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.6s;
-            margin-left: 30%;
+            margin: auto;
             background-color: $color-black;
             color: $color-white;
             border-radius: 5px;
@@ -416,9 +427,6 @@ main {
             cursor: pointer;
             font-family: $font-en;
             font-weight: lighter;
-            @include responsive(large-screens) {
-                margin-left: 38%;
-            }
         }
     }
     
@@ -447,7 +455,6 @@ main {
 }
     
     #aboutme {
-        height: 70vh;
         background-image: url(../images/aboutme_bg.png);
         background-size: cover;
         background-position: bottom 100px;
@@ -455,29 +462,31 @@ main {
         position: relative;
         @include responsive(large-screens) {
             background-image: url(../images/about_bg_pc.png);
-            height: 80vh;
         }
         .aboutme_txt-img {
-            position: absolute;
             text-align: center;
-            top: -36%;
-            left: 0;
             z-index: 3;
+            position: relative;
+            top: -150px; /* 위치를 위로 이동 */
+            left: 50%;
+            transform: translateX(-50%);
             @include responsive(large-screens) {
-                left: 37%;
-                top: -40%;
+                top: -200px;
             }
             h2 {
                 font-family: $font-en;
                 font-weight: 400;
+                @include responsive(large-screens) {
+                    font-size: 3rem;
+                }
             }
             .pic {
                 width: 60%;
                 margin: auto;
                 margin-bottom: 30px;
                 @include responsive(large-screens) {
-                    width: 450px;
-                    margin: 40px auto;
+                    width: 35%;
+                    
                 }
             }  
             .about-txt {
@@ -495,19 +504,24 @@ main {
                     p {
                         line-height: 1.3;
                         width: $width-wide;
+                        font-size: 1rem;
+                        font-family: $font-pre-light;
+                        @include responsive(large-screens) {
+                            font-size: 1.5rem;
+                        }
                     }
                     .ab-left {
                         @include responsive(large-screens) {
                             position: absolute;
                             width: 400px;
-                            right: 65%;
+                            right: 80;
                         }
                     }
                     .ab-right {
                         @include responsive(large-screens) {
                             position: absolute;
                             width: 400px;
-                            left: 390px;
+                            left: 1000px;
                         }
                     }
                 }
@@ -527,15 +541,17 @@ main {
                     @include responsive(large-screens) {
                         position: absolute;
                         top: -400px;
-                        left: -30%;
+                        left: 20%;
+                        font-size: 2rem;
                     }
                 }
                 .name {
                     @include responsive(large-screens) {
                         position: absolute;
-                        width: 130px;
+                        width: 300px;
                         top: -400px;
-                        left: 300px;
+                        font-size: 2rem;
+                        left:93%;
                     }
                 }
                 p {
@@ -558,7 +574,7 @@ main {
         
 
         .aboutme-star {
-            position: relative;
+            
             z-index: 4;
             .about-star1, .about-star2, .about-star3 {
                 animation: rotate 10s infinite linear;
@@ -567,7 +583,7 @@ main {
             .about-star1 {
                 position: absolute;
                 left: 90%;
-                top: 70px;
+                top: 0;
                 width: 6%;
                 @include responsive(large-screens) {
                     width: 3%;
@@ -598,21 +614,22 @@ main {
         }   
 
         .aboutme-button {
-            position: absolute;
             z-index: 3;
             width: $width-wide;
             display: flex;
-            top: 93%;
-            @include responsive(large-screens) {
-                height: 10%;
-            }
             button {
                 width: $width-half;
                 background: $bg-color;
                 cursor: pointer;
-                border: 2px solid black;
+                border: 1.5px solid black;
                 p {
-                    font-size: 16px;
+                    line-height: 1.4;
+                    font-size: 0.9rem;
+                    padding: 8% 0;
+                    @include responsive(large-screens) {
+                        font-size: 1.2rem;
+                    padding: 5% 0;
+                    }
                 }
                 &:hover, &.active {
                     color: $color-hover;
@@ -620,6 +637,7 @@ main {
             }
             #prof {
                 border-left: 0;
+                border-right: 0;
             }
             #suit {
                 border-right: 0;
@@ -657,7 +675,6 @@ main {
             position: absolute;
             z-index: 1;
             top: -10%;
-            
             height: 100%;
             opacity: 0.5;
             @include responsive(large-screens) {
@@ -821,8 +838,7 @@ main {
         .modal-border {
             width: 300px;
             height: 300px;
-            border-radius: 50%;
-            
+            border-radius: 50%;   
             margin: 50% auto;
             display: flex;
             justify-content: center;
@@ -857,8 +873,8 @@ main {
         .close {
             color: #aaa;
             position: absolute;
-            top: 80%;
-            left: 45%;
+            top: 77%;
+            left: 47%;
             font-size: 28px;
             font-weight: bold;
         }
@@ -871,28 +887,23 @@ main {
         }
         
         .modal-icon {
-            position: absolute;
-            top: 30%;
-            left: 40%;
+            position: relative;
+            top: 25%;
             width: 50px;
             height: 50px;
             margin: auto;
         }
         
         .modal-description {
-            position: absolute;
-            top: 50%;
-            left: 22%;
-            margin-top: 20px;
+            position: relative;
+            top: 23%;
+            margin-top: 10px;
             text-align: center;
             font-size: 14px;
             margin: auto;
             font-family: $font-pre-light;
         }
         
-        
-
-
         .skills-circle {
             display: none;
             @include responsive(large-screens) {
@@ -930,6 +941,12 @@ main {
         }
         @include responsive(large-screens) {
 
+            @keyframes fill {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+
             .html-box { transform: rotate(0deg) translate(350px) rotate(0deg); }
             .css-box { transform: rotate(30deg) translate(350px) rotate(-30deg); }
             .sass-box { transform: rotate(60deg) translate(350px) rotate(-60deg); }
@@ -943,35 +960,63 @@ main {
             .ae-box { transform: rotate(300deg) translate(350px) rotate(-300deg); }
             .pre-box { transform: rotate(330deg) translate(350px) rotate(-330deg); }
 
+            
+
             .hover-display {
                 display: none;
                 position: absolute;
-                top: 46.8%;
+                top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 text-align: center;
                 z-index: 6;
-                border: 4px solid #e0e0e0;
                 padding: 20px;
-                width: 250px;
-                height: 250px;
-                border-radius: 50%;
+                width: 500px;
+                height: 500px;
+                
             }
             
             .hover-display .hover-icon {
+                position: relative;
+                top: 40%;
                 width: 80px;
                 height: 80px;
                 margin-bottom: 10px;
             }
             
             .hover-display .progress-bar {
-                width: 70%;
-                margin: 10px auto;
+                display: none;
             }
             
             .hover-display .hover-description {
+                width: 40%;
+                position: relative;
+                left: 30%;
+                top: 40%;
                 font-size: 14px;
                 font-family: $font-pre-light;
+            }
+
+            .hover-display svg {
+                position: absolute;
+                top: -16%;
+                left: 20%;
+                width: 100%;
+                height: 100%;
+                transform: rotate(-90deg);
+            }
+            
+            .hover-display circle {
+                fill: none;
+                stroke-width: 7;
+                stroke: #e0e0e0;
+            }
+            
+            .hover-display .progress-ring {
+                stroke: url(#grad1);
+                stroke-dasharray: 754;
+                stroke-dashoffset: 754;
+                transition: stroke-dashoffset 1s linear;
             }
         }
     }
@@ -1189,7 +1234,7 @@ main {
                         }
                         p {
                         padding: 3px;
-                        font-size: 12px;
+                        font-size: 0.7rem;
                         font-family: $font-pre-light;
                     }
                     .design {
@@ -1229,43 +1274,50 @@ main {
                         display: flex;
                         align-items: center;
                         margin-bottom: 10px;
-                        p {
-                            margin-left: 20px;
-                        }
+                        width: $width-wide;
                     }
                     .together {
                         display: flex;
                         align-items: center;
                         margin-bottom: 10px;
-                        p {
-                            margin-left: 40px;
-                        }
                     }
                     h4 {
-                        font-size: 18px;
+                        font-size: 1rem;
                         font-family: $font-pre-light;
+                        width: $width-half; 
                     }
                     p {
-                        font-size: 16px;
+                        font-size: 1rem;
+                        line-height: 1.3;
                         font-family: $font-pre-light;
+                        width: $width-half; 
                     }
                     .tool-box {
+                        width: $width-wide;
                         display: flex;
                         .usetool {
                             display: flex;
-                            margin-left: 35px;
+        
+                            h4 {
+                                width: $width-half;
+                            }
+                            .usetool {
+                                width: $width-half;
+                            }
                             .tool {
                                 border: 1px solid black;
                                 border-radius: 10px;
-                                width: 80px;
+                                width: 50%;
                                 text-align: center;
-                                font-size: 14px;
-                                margin-right: 5px;
+                                font-size: 0.9rem;
+                                padding: 3px;
+                                margin-right: 5%;
                             }
                         }
                     }
                     .project-txt {
                         margin-top: 10px;
+                        display: flex;
                     }
                     @include responsive(large-screens) {
                         position: absolute;
@@ -1415,8 +1467,7 @@ main {
                                 
                                 img {
                                     width: 48%;
-                                }
-                                
+                                }    
                             }
                         }
                     }
@@ -1431,25 +1482,25 @@ main {
                     left: 9.7%;
                     width: 46%;
                 }
-                #git, #website, #design-guide {
+                #git, #website, #design-guide, #design-plan {
                     width: $width-wide;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    margin: 5px;
+                    margin: 1%;
                     border: 1px solid #E78156;
                     background-color: $bg-color;
-                    padding: 0 5px;
+                    padding: 0 1%;
                     @include responsive(large-screens) {
                         width: 20%;
                         padding: 3px 5px;
                     }
                     p {
-                        padding: 3px;
-                        font-size: 12px;
+                        
+                        font-size: 0.7rem;
                         font-family: $font-pre-light;
                     }
-                    .design {
+                    .design, .design-p {
                         line-height: 1.3;
                     }
                     img {
@@ -1461,6 +1512,7 @@ main {
                     .white {
                         display: none;
                     }
+                    
                 }
                 #git, #website, #design-guide {
                     cursor: pointer;
@@ -1484,43 +1536,50 @@ main {
                     display: flex;
                     align-items: center;
                     margin-bottom: 10px;
-                    p {
-                        margin-left: 20px;
-                    }
+                    width: $width-wide;
                 }
                 .together {
                     display: flex;
                     align-items: center;
                     margin-bottom: 10px;
-                    p {
-                        margin-left: 40px;
-                    }
                 }
                 h4 {
-                    font-size: 18px;
+                    font-size: 1rem;
                     font-family: $font-pre-light;
+                    width: $width-half; 
                 }
                 p {
-                    font-size: 16px;
+                    font-size: 1rem;
+                    line-height: 1.3;
                     font-family: $font-pre-light;
+                    width: $width-half; 
                 }
                 .tool-box {
+                    width: $width-wide;
                     display: flex;
                     .usetool {
                         display: flex;
-                        margin-left: 35px;
+    
+                        h4 {
+                            width: $width-half;
+                        }
+                        .usetool {
+                            width: $width-half;
+                        }
                         .tool {
                             border: 1px solid black;
                             border-radius: 10px;
-                            width: 65px;
+                            width: 50%;
                             text-align: center;
-                            font-size: 14px;
-                            margin-right: 5px;
+                            font-size: 0.9rem;
+                            padding: 3px;
+                            margin-right: 5%;
                         }
                     }
                 }
                 .project-txt {
                     margin-top: 10px;
+                    display: flex;
                 }
                 @include responsive(large-screens) {
                     position: absolute;
@@ -1685,43 +1744,50 @@ main {
                     display: flex;
                     align-items: center;
                     margin-bottom: 10px;
-                    p {
-                        margin-left: 20px;
-                    }
+                    width: $width-wide;
                 }
                 .together {
                     display: flex;
                     align-items: center;
                     margin-bottom: 10px;
-                    p {
-                        margin-left: 40px;
-                    }
                 }
                 h4 {
-                    font-size: 18px;
+                    font-size: 1rem;
                     font-family: $font-pre-light;
+                    width: $width-half; 
                 }
                 p {
-                    font-size: 16px;
+                    font-size: 1rem;
+                    line-height: 1.3;
                     font-family: $font-pre-light;
+                    width: $width-half; 
                 }
                 .tool-box {
+                    width: $width-wide;
                     display: flex;
                     .usetool {
                         display: flex;
-                        margin-left: 35px;
+    
+                        h4 {
+                            width: $width-half;
+                        }
+                        .usetool {
+                            width: $width-half;
+                        }
                         .tool {
                             border: 1px solid black;
                             border-radius: 10px;
-                            width: 65px;
+                            width: 50%;
                             text-align: center;
-                            font-size: 14px;
-                            margin-right: 5px;
+                            font-size: 0.9rem;
+                            padding: 3px;
+                            margin-right: 5%;
                         }
                     }
                 }
                 .project-txt {
                     margin-top: 10px;
+                    display: flex;
                 }
             }   
         }     

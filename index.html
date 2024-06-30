@@ -71,9 +71,9 @@
                 </div>
                 <div class="contact-portfolio">
                     <div class="contact-circle">
-                        <svg width="200" height="200">
+                        <svg width="100%" height="100%">
                             <defs>
-                                <path id="contactPath" d="M 108, 100 m -75, 0 a 60,53 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
+                                <path id="contactPath" d="M 100, 100 m -75, 0 a 60,53 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
                             </defs>
                             <text>
                                 <textPath href="#contactPath">
@@ -84,9 +84,9 @@
                         <img src="./images/contact_circle.png" alt="contact">
                     </div>
                     <div class="portfolio-circle">
-                        <svg width="190" height="190">
+                        <svg width="100%" height="100%">
                             <defs>
-                                <path id="portfolioPath" d="M 170, 45 m -85, 0 a 90,90 0 1,1 -100,0 a 75,90 0 1,1 -130,0"/>
+                                <path id="portfolioPath" d="M 120, 50 m -85, 0 a 90,90 0 1,1 -100,0 a 75,90 0 1,1 -130,0"/>
                             </defs>
                             <text>
                                 <textPath href="#portfolioPath">
@@ -99,9 +99,9 @@
                 </div>
                 <div class="aboutme-skill">
                     <div class="aboutme-circle">
-                        <svg width="230" height="250">
+                        <svg width="100%" height="100%">
                             <defs>
-                                <path id="aboutmePath" d="M 100, 95 m -75, 0 a 85,65 0 1,1 178,0 a 190,120 0 1,1 -80,0"/>
+                                <path id="aboutmePath" d="M 60, 95 m -75, 0 a 85,65 0 1,1 178,0 a 190,120 0 1,1 -80,0"/>
                             </defs>
                             <text>
                                 <textPath href="#aboutmePath">
@@ -112,7 +112,7 @@
                         <img src="./images/aboutme_circle.png" alt="about me">
                     </div>
                     <div class="skill-circle">
-                        <svg width="200" height="200">
+                        <svg width="100%" height="100%">
                             <defs>
                                 <path id="skillPath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
                             </defs>
@@ -140,7 +140,7 @@
                     </div>
                 </div>
                 <div class="intro-txt">
-                    <h1>WELCOME TO MY STORY</h1>
+                    <h1>WELCOME<br> TO MY<br> STORY</h1>
                     <button id="resume">RESUME</button>
                 </div>
                 <div class="gradient_orange">
@@ -214,15 +214,20 @@
                     <img src="./images/aboutme_picture.png" alt="aboutme_picture" class="pic">
                     <div class="about-txt">
                         <div class="sum active">
-                            <div class="ab-left">
-                                <p>2019 경일 고등학교 졸업</p>
-                                <p>2024 가천대학교 패션디자인학과 졸업</p>
-                                <p>2024 방송정보교육원 수료</p>
+                            <div class="ab-box">
+                                <div class="ab-left">
+                                    <p>2019 경일 고등학교 졸업</p>
+                                    <p>2024 가천대학교 패션디자인학과 졸업</p>
+                                    <p>2024 방송정보교육원 수료</p>
+                                </div>
+                                <div class="ab-right">
+                                    <p>2021 GTQ 1급</p>
+                                    <p>2022 아웃도어 브랜드 ‘쉘코퍼레이션’ 인턴</p>
+                                    <p>2023 KOTITI 시험 연구원 인턴</p>
+                                </div>
                             </div>
-                            <div class="ab-right">
-                                <p>2021 GTQ 1급</p>
-                                <p>2022 아웃도어 브랜드 ‘쉘코퍼레이션’ 인턴</p>
-                                <p>2023 KOTITI 시험 연구원 인턴</p>
+                            <div class="hash">
+                                #passion #
                             </div>
                         </div>
                         <div class="suit">
@@ -311,6 +316,7 @@
                             <div class="progress html-progress"></div>
                         </div>
                         <p>
+                            90%<br>
                             웹 표준과 웹 접근성을 준수
                             홈페이지 구조적으로 작성 가능
                         </p>
@@ -321,6 +327,7 @@
                             <div class="progress css-progress"></div>
                         </div>
                         <p>
+                            85%<br>
                             반응형 웹사이트 구현 가능
                         </p>
                     </div>
@@ -332,6 +339,7 @@
                             <div class="progress sass-progress"></div>
                         </div>
                         <p>
+                            85%<br>
                             flex와 grid를 통해 반응형 홈페이지 제작 가능
                         </p>
                     </div>
@@ -341,6 +349,7 @@
                             <div class="progress javascript-progress"></div>
                         </div>
                         <p>
+                            80%<br>
                             fuction의 응용 및 구조 이해
                             슬라이드, 메뉴, 스크롤 애니메이션 기능 등 다양한 동적 기능 구현 가능
                         </p>
@@ -353,6 +362,7 @@
                             <div class="progress jquery-progress"></div>
                         </div>
                         <p>
+                            85%<br>
                             사용자의 이벤트에 따른 동작에 필요한 기능 구현 가능
                         </p>
                     </div>
@@ -362,6 +372,7 @@
                             <div class="progress react-progress"></div>
                         </div>
                         <p>
+                            80%<br>
                             Router로 SPA탭메뉴 구성 가능 
                         </p>
                     </div>
@@ -372,14 +383,20 @@
                         <div class="progress-bar">
                             <div class="progress git-progress"></div>
                         </div>
-                        <p>gitHub 연동으로 작업 관리, git 형상 관리</p>
+                        <p>
+                            90%<br>
+                            gitHub 연동으로 작업 관리, git 형상 관리
+                        </p>
                     </div>
                     <div class="skill-box figma-box">
                         <img src="./images/figma.png" alt="figma">
                         <div class="progress-bar">
                             <div class="progress figma-progress"></div>
                         </div>
-                        <p>와이어프레임으로 아이디어 기획구조 활용 가능</p>
+                        <p>
+                            90%<br>
+                            와이어프레임으로 아이디어 기획구조 활용 가능
+                        </p>
                     </div>
                 </div>
                 <div class="mo-skill-box">
@@ -388,7 +405,10 @@
                         <div class="progress-bar">
                             <div class="progress ai-progress"></div>
                         </div>
-                        <p>팝업, 배너, 로고, 아이콘, 벡터 이미지 작업 가능</p>
+                        <p>
+                            85%<br>
+                            팝업, 배너, 로고, 아이콘, 벡터 이미지 작업 가능
+                        </p>
                     </div>
                     <div class="skill-box photoshop-box">
                         <img src="./images/photoshop.png" alt="photoshop">
@@ -396,6 +416,7 @@
                             <div class="progress photoshop-progress"></div>
                         </div>
                         <p>
+                            90%<br>
                             사진 보정, 편집 상세 페이지 디자인 작업 가능
                         </p>
                     </div>
@@ -406,17 +427,31 @@
                         <div class="progress-bar">
                             <div class="progress ae-progress"></div>
                         </div>
-                        <p>설명</p>
+                        <p>
+                            <span>75%<br></span>
+                            설명
+                        </p>
                     </div>
                     <div class="skill-box pre-box">
                         <img src="./images/premiere-pro.png" alt="premiere-pro">
                         <div class="progress-bar">
                             <div class="progress pre-progress"></div>
                         </div>
-                        <p>설명</p>
+                        <p>
+                            80%<br>
+                            설명
+                        </p>
                     </div>
                 </div>
-
+                <svg width="0" height="0">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#ff4e02;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#E77E51;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#f1d475;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
                 <div class="skills-circle">
                     <div class="skill-box html-box" data-icon="./images/html-5.png" data-description="웹 표준과 웹 접근성을 준수<br>홈페이지 구조적으로 작성 가능" data-progress="90%">
                         <img src="./images/html-5.png" alt="html">
@@ -541,6 +576,10 @@
                         </div>
                     </div>
                     <div class="hover-display">
+                        <svg>
+                            <circle cx="150" cy="150" r="120"></circle>
+                            <circle class="progress-ring" cx="150" cy="150" r="120"></circle>
+                        </svg>
                         <img class="hover-icon" src="" alt="skill-icon">
                         
                         <div class="progress-bar">
@@ -578,22 +617,36 @@
 
         <script>
             document.querySelectorAll('.skill-box').forEach(skill => {
-                skill.addEventListener('mouseover', function() {
-                    const icon = skill.getAttribute('data-icon');
-                    const description = skill.getAttribute('data-description');
-                    const progress = skill.getAttribute('data-progress');
-            
-                    document.querySelector('.hover-display .hover-icon').src = icon;
-                    document.querySelector('.hover-display .hover-description').innerHTML = description;
-                    document.querySelector('.hover-display .hover-progress').style.width = progress;
-                    
-                    document.querySelector('.hover-display').style.display = 'block';
-                });
-            
-                skill.addEventListener('mouseout', function() {
-                    document.querySelector('.hover-display').style.display = 'none';
-                });
+    skill.addEventListener('mouseover', function() {
+        const icon = skill.getAttribute('data-icon');
+        const description = skill.getAttribute('data-description');
+        const progress = skill.getAttribute('data-progress');
+        const progressValue = parseInt(progress, 10);
+        const circumference = 754; // 반지름 120에 맞춘 둘레 길이
+        const offset = circumference - (progressValue / 100) * circumference;
+
+        const hoverDisplay = document.querySelector('.hover-display');
+        hoverDisplay.querySelector('.hover-icon').src = icon;
+        hoverDisplay.querySelector('.hover-description').innerHTML = description;
+        hoverDisplay.querySelector('.hover-progress').style.width = progress;
+
+        const progressRing = hoverDisplay.querySelector('.progress-ring');
+        progressRing.style.strokeDashoffset = circumference;
+        progressRing.style.transition = 'none';
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                progressRing.style.transition = 'stroke-dashoffset 1s linear';
+                progressRing.style.strokeDashoffset = offset;
             });
+        });
+
+        hoverDisplay.style.display = 'block';
+    });
+
+    skill.addEventListener('mouseout', function() {
+        document.querySelector('.hover-display').style.display = 'none';
+    });
+});
             </script>
 
         <!-- 스킬 퍼센트 -->
@@ -738,7 +791,7 @@
             <div class="museum-txt">
                 <div class="time">
                     <h4>제작 기간</h4>
-                    <p>03.04 ~ 04.02 (기획, 디자인, 코딩)</p>
+                    <p>03.04 ~ 04.02<br>(기획, 디자인, 코딩)</p>
                 </div>
                 <div class="together">
                     <h4>기여도</h4>
@@ -754,7 +807,7 @@
                 </div>
                 <div class="project-txt">
                     <h4>기획 의도</h4>
-                    <p></p>
+                    <p>사용자 편의를 위해 메인페이지 리뉴얼 수정</p>
                 </div>
             </div>
         </div> <!-- art-museum -->
@@ -803,8 +856,8 @@
                                 <img src="./images/design_black.png" alt="design_black" class="black">
                                 <img src="./images/design_white.png" alt="design_white" class="white">
                             </button>
-                            <button id="design-guide">
-                                <p class="design">DESIGN PLAN</p>
+                            <button id="design-plan">
+                                <p class="design-p">DESIGN PLAN</p>
                                 <img src="./images/designplan_black.png" alt="design_black" class="black">
                                 <img src="./images/designplan_white.png" alt="designplan_white" class="white">
                             </button>
@@ -812,7 +865,7 @@
                         <div class="festival-txt">
                             <div class="time">
                                 <h4>제작 기간</h4>
-                                <p>04.15 ~ 05.31(기획, 디자인, 코딩)</p>
+                                <p>04.15 ~ 05.31<br>(기획, 디자인, 코딩)</p>
                             </div>
                             <div class="together">
                                 <h4>기여도</h4>
@@ -821,7 +874,6 @@
                             <div class="tool-box">
                                 <h4>사용툴</h4>
                                 <div class="usetool">
-                                    <p class="tool">FIGMA</p>
                                     <p class="tool">HTML5</p>
                                     <p class="tool">CSS3</p>
                                     <p class="tool">JS</p>
@@ -829,7 +881,7 @@
                             </div>
                             <div class="project-txt">
                                 <h4>기획 의도</h4>
-                                <p></p>
+                                <p>프로그램 상세페이지 정보나 예매할 때의 불편함을 최소화하기 위한 리뉴얼</p>
                             </div>
                         </div>
                     </div>
@@ -876,7 +928,7 @@
                     <div class="public-txt">
                         <div class="time">
                             <h4>제작 기간</h4>
-                            <p>06.10 ~ 06.30(기획, 디자인, 코딩)</p>
+                            <p>06.10 ~ 06.30<br>(기획, 디자인, 코딩)</p>
                         </div>
                         <div class="together">
                             <h4>기여도</h4>
@@ -885,7 +937,6 @@
                         <div class="tool-box">
                             <h4>사용툴</h4>
                             <div class="usetool">
-                                <p class="tool">FIGMA</p>
                                 <p class="tool">HTML5</p>
                                 <p class="tool">CSS3</p>
                                 <p class="tool">JS</p>

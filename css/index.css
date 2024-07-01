@@ -664,6 +664,14 @@ main #aboutme .aboutme_txt-img .about-txt h4 {
   padding-top: 20px;
   font-size: 20px;
 }
+main #aboutme .aboutme_txt-img .about-txt .web-name {
+  display: flex;
+  justify-content: center;
+}
+main #aboutme .aboutme_txt-img .about-txt .web {
+  padding-top: 0;
+  margin-right: 5px;
+}
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .about-txt .web {
     position: absolute;
@@ -671,6 +679,9 @@ main #aboutme .aboutme_txt-img .about-txt h4 {
     left: 20%;
     font-size: 2rem;
   }
+}
+main #aboutme .aboutme_txt-img .about-txt .name {
+  padding-top: 0;
 }
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .about-txt .name {
@@ -681,11 +692,25 @@ main #aboutme .aboutme_txt-img .about-txt h4 {
     left: 93%;
   }
 }
-main #aboutme .aboutme_txt-img .about-txt p {
+main #aboutme .aboutme_txt-img .about-txt .me {
   color: white;
   font-family: "Pretendard-Light";
-  font-size: 16px;
+  font-size: 0.8rem;
   margin-top: 20px;
+}
+@media (min-width: 1024px) {
+  main #aboutme .aboutme_txt-img .about-txt .me {
+    display: flex;
+  }
+}
+main #aboutme .aboutme_txt-img .about-txt .hash {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+main #aboutme .aboutme_txt-img .about-txt .hash h5 {
+  color: white;
+  font-size: 1.3rem;
 }
 @keyframes rotate {
   from {

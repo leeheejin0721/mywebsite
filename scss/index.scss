@@ -533,8 +533,7 @@ main {
                 .suit {
                     @include responsive(large-screens) {
                         position: absolute;
-                    }
-                    
+                    }  
                 }
                 h4 {
                     color: white;
@@ -542,7 +541,13 @@ main {
                     padding-top: 20px;
                     font-size: 20px;       
                 }
+                .web-name {
+                    display: flex;
+                    justify-content: center;
+                }
                 .web {
+                    padding-top: 0;
+                    margin-right: 5px;
                     @include responsive(large-screens) {
                         position: absolute;
                         top: -400px;
@@ -551,6 +556,7 @@ main {
                     }
                 }
                 .name {
+                    padding-top: 0;
                     @include responsive(large-screens) {
                         position: absolute;
                         width: 300px;
@@ -559,11 +565,29 @@ main {
                         left:93%;
                     }
                 }
-                p {
+                .me {
                     color: white;
                     font-family: $font-pre-light;
-                    font-size: 16px;
+                    font-size: 0.8rem;
                     margin-top: 20px;
+                    @include responsive(large-screens) {
+                        display: flex;
+                    }
+                    .fast {
+                        @include responsive(large-screens) {
+
+                        }
+                    }
+                }
+                .hash {
+                    display: flex;
+                    justify-content: space-around;
+                    position: relative;
+                    
+                    h5 {
+                        color: white;
+                        font-size: 1.3rem;
+                    }
                 }
             }   
         }

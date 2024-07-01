@@ -336,8 +336,8 @@ main #intro .contact-circle {
 }
 @media (min-width: 1024px) {
   main #intro .contact-circle {
-    left: 32%;
-    width: 9%;
+    left: 35%;
+    width: 7%;
   }
 }
 main #intro .contact-circle text textPath {
@@ -360,7 +360,7 @@ main #intro .portfolio-circle {
   main #intro .portfolio-circle {
     left: 59%;
     top: 2%;
-    width: 8%;
+    width: 7%;
   }
 }
 main #intro .portfolio-circle text textPath {
@@ -380,8 +380,9 @@ main #intro .aboutme-circle {
 }
 @media (min-width: 1024px) {
   main #intro .aboutme-circle {
-    left: 33%;
-    width: 10%;
+    top: 21%;
+    left: 34%;
+    width: 8.5%;
   }
 }
 main #intro .aboutme-circle text textPath {
@@ -404,7 +405,7 @@ main #intro .skill-circle {
   main #intro .skill-circle {
     left: 57%;
     top: 26%;
-    width: 8%;
+    width: 7%;
   }
 }
 main #intro .skill-circle text textPath {
@@ -648,7 +649,7 @@ main #aboutme .aboutme_txt-img .about-txt .sum p {
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .about-txt .sum .ab-right {
     position: absolute;
-    width: 400px;
+    width: 410px;
     left: 1000px;
   }
 }
@@ -833,6 +834,7 @@ main #skill h2 {
   }
 }
 main #skill .mo-skill-box {
+  cursor: pointer;
   position: relative;
   z-index: 3;
   margin-bottom: 40px;
@@ -1098,6 +1100,7 @@ main #skill .skills-circle {
 }
 @media (min-width: 1024px) {
   main #skill .skill-box {
+    cursor: pointer;
     position: absolute;
     width: 100px;
     height: 100px;
@@ -1262,6 +1265,7 @@ main #portfolio .art-museum .museum-img2, main #portfolio .art-museum .museum-im
   position: relative;
   overflow: hidden;
   z-index: 1; /* 기본 z-index 설정 */
+  width: 100%;
 }
 main #portfolio .art-museum .museum-img2 img, main #portfolio .art-museum .museum-img3 img {
   width: 100%;
@@ -1308,6 +1312,7 @@ main #portfolio .art-museum .museum-img2 {
 main #portfolio .art-museum .museum-img2 img {
   width: 100%;
   margin: 20px 0;
+  height: auto;
 }
 main #portfolio .art-museum .museum-img1 {
   cursor: pointer;
@@ -1412,7 +1417,7 @@ main #portfolio .art-museum .museum-button #git, main #portfolio .art-museum .mu
   align-items: center;
   justify-content: space-between;
   margin: 5px;
-  border: 1px solid #C2C2C2;
+  border: 1px solid #E78156;
   background-color: #fff;
   padding: 0 5px;
 }
@@ -1502,6 +1507,9 @@ main #portfolio .art-museum .museum-txt .tool-box .usetool .tool {
 main #portfolio .art-museum .museum-txt .project-txt {
   margin-top: 10px;
   display: flex;
+}
+main #portfolio .art-museum .museum-txt .project-txt p {
+  width: 50%;
 }
 @media (min-width: 1024px) {
   main #portfolio .art-museum .museum-txt {
@@ -1670,7 +1678,7 @@ main #portfolio .loyal-festival .festival-button {
     position: absolute;
     top: 73%;
     left: 9.7%;
-    width: 46%;
+    width: 45%;
   }
 }
 main #portfolio .loyal-festival .festival-button #git, main #portfolio .loyal-festival .festival-button #website, main #portfolio .loyal-festival .festival-button #design-guide, main #portfolio .loyal-festival .festival-button #design-plan {
@@ -1680,6 +1688,7 @@ main #portfolio .loyal-festival .festival-button #git, main #portfolio .loyal-fe
   justify-content: space-between;
   margin: 1%;
   border: 1px solid #E78156;
+  background-color: #fff;
   background-color: #FFF5ED;
   padding: 0 1%;
 }
@@ -1719,6 +1728,11 @@ main #portfolio .loyal-festival .festival-button #git:hover .black, main #portfo
 }
 main #portfolio .loyal-festival .festival-button #git:hover .white, main #portfolio .loyal-festival .festival-button #website:hover .white, main #portfolio .loyal-festival .festival-button #design-guide:hover .white {
   display: block;
+}
+@media (min-width: 1024px) {
+  main #portfolio .loyal-festival .festival-txt {
+    width: 20%;
+  }
 }
 main #portfolio .loyal-festival .festival-txt .time {
   margin-top: 20px;
@@ -1768,6 +1782,9 @@ main #portfolio .loyal-festival .festival-txt .tool-box .usetool .tool {
 main #portfolio .loyal-festival .festival-txt .project-txt {
   margin-top: 10px;
   display: flex;
+}
+main #portfolio .loyal-festival .festival-txt .project-txt p {
+  width: 50%;
 }
 @media (min-width: 1024px) {
   main #portfolio .loyal-festival .festival-txt {
@@ -1891,6 +1908,7 @@ main #portfolio .public-portfolio .public-button #git, main #portfolio .public-p
   justify-content: space-between;
   margin: 5px;
   border: 1px solid #E78156;
+  background-color: #fff;
   background-color: #FFF5ED;
   padding: 0 5px;
 }
@@ -1932,6 +1950,14 @@ main #portfolio .public-portfolio .public-button #git:hover .black, main #portfo
 main #portfolio .public-portfolio .public-button #git:hover .white, main #portfolio .public-portfolio .public-button #website:hover .white, main #portfolio .public-portfolio .public-button #design-guide:hover .white {
   display: block;
 }
+main #portfolio .public-portfolio .public-txt {
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  main #portfolio .public-portfolio .public-txt {
+    width: 20%;
+  }
+}
 main #portfolio .public-portfolio .public-txt .time {
   margin-top: 20px;
   display: flex;
@@ -1956,7 +1982,6 @@ main #portfolio .public-portfolio .public-txt p {
   width: 50%;
 }
 main #portfolio .public-portfolio .public-txt .tool-box {
-  width: 100%;
   display: flex;
 }
 main #portfolio .public-portfolio .public-txt .tool-box .usetool {
@@ -1978,6 +2003,7 @@ main #portfolio .public-portfolio .public-txt .tool-box .usetool .tool {
   margin-right: 5%;
 }
 main #portfolio .public-portfolio .public-txt .project-txt {
+  width: 50%;
   margin-top: 10px;
   display: flex;
 }
@@ -2075,4 +2101,9 @@ main #contact .contact-box .contact-txt .icon-mail a {
   main #contact .contact-box .contact-txt .icon-mail a {
     font-size: 1.5rem;
   }
+}
+
+footer .copyright {
+  text-align: center;
+  font-family: "Alegreya";
 }/*# sourceMappingURL=index.css.map */

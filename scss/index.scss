@@ -57,6 +57,7 @@ header {
         transform: rotate(45deg) translate(-5px, -6px);
     }
     
+    
     .header-text {
         width: 25%;
         text-align: center;
@@ -222,8 +223,8 @@ main {
             width: 27%;
             cursor: pointer;
             @include responsive(large-screens) {
-                left: 32%;
-                width: 9%;
+                left: 35%;
+                width: 7%;
             }
             text {
                 textPath {
@@ -246,7 +247,7 @@ main {
         @include responsive(large-screens) {
             left: 59%;
             top: 2%;
-            width: 8%;
+            width: 7%;
         }
         text {
             textPath {
@@ -266,8 +267,9 @@ main {
         width: 35%;
         cursor: pointer;
         @include responsive(large-screens) {
-            left: 33%;
-            width: 10%;
+            top: 21%;
+            left: 34%;
+            width: 8.5%;
         }
         text {
             textPath {
@@ -290,7 +292,7 @@ main {
         @include responsive(large-screens) {
             left: 57%;
             top: 26%;
-            width: 8%;
+            width: 7%;
         }
         text {
             textPath {
@@ -523,7 +525,7 @@ main {
                     .ab-right {
                         @include responsive(large-screens) {
                             position: absolute;
-                            width: 400px;
+                            width: 410px;
                             left: 1000px;
                         }
                     }
@@ -577,7 +579,6 @@ main {
         
 
         .aboutme-star {
-            
             z-index: 4;
             .about-star1, .about-star2, .about-star3 {
                 animation: rotate 10s infinite linear;
@@ -706,6 +707,7 @@ main {
             }
         }
         .mo-skill-box {
+            cursor: pointer;
             position: relative;
             z-index: 3;
             margin-bottom: 40px;
@@ -933,6 +935,7 @@ main {
         }
         .skill-box {
             @include responsive(large-screens) {
+                cursor: pointer;
                 position: absolute;
                 width: 100px;
                 height: 100px;
@@ -967,8 +970,6 @@ main {
             .photoshop-box { transform: rotate(270deg) translate(350px) rotate(-270deg); }
             .ae-box { transform: rotate(300deg) translate(350px) rotate(-300deg); }
             .pre-box { transform: rotate(330deg) translate(350px) rotate(-330deg); }
-
-            
 
             .hover-display {
                 display: none;
@@ -1082,7 +1083,8 @@ main {
                     position: relative;
                     overflow: hidden; 
                     z-index: 1; /* 기본 z-index 설정 */
-                
+                    
+                    width: $width-wide;
                     img {
                         width: 100%;
                         height: 100%; /* 이미지의 높이를 부모 요소에 맞춤 */
@@ -1117,8 +1119,6 @@ main {
                         opacity: 0; /* 호버 시 어두운 박스 제거 */
                     }
                 }
-                
-
                 .museum-img2 {
                     width: $width-wide;
                     display: none;
@@ -1132,7 +1132,7 @@ main {
                     img {
                         width: $width-wide;
                         margin: 20px 0;
-                        
+                        height: auto;
                     }
                 }
 
@@ -1234,7 +1234,7 @@ main {
                         align-items: center;
                         justify-content: space-between;
                         margin: 5px;
-                        border: 1px solid #C2C2C2;
+                        border: 1px solid #E78156;
                         
                         background-color: $color-white;
                         padding: 0 5px;
@@ -1328,6 +1328,9 @@ main {
                     .project-txt {
                         margin-top: 10px;
                         display: flex;
+                        p {
+                           width: $width-half; 
+                        }
                     }
                     @include responsive(large-screens) {
                         position: absolute;
@@ -1490,7 +1493,7 @@ main {
                     position: absolute;
                     top: 73%;
                     left: 9.7%;
-                    width: 46%;
+                    width: 45%;
                 }
                 #git, #website, #design-guide, #design-plan {
                     width: $width-wide;
@@ -1499,6 +1502,7 @@ main {
                     justify-content: space-between;
                     margin: 1%;
                     border: 1px solid #E78156;
+                    background-color: $color-white;
                     background-color: $bg-color;
                     padding: 0 1%;
                     @include responsive(large-screens) {
@@ -1541,6 +1545,9 @@ main {
                 }
             }
             .festival-txt {
+                @include responsive(large-screens) {
+                    width: 20%;
+                }
                 .time {
                     margin-top: 20px;
                     display: flex;
@@ -1590,6 +1597,10 @@ main {
                 .project-txt {
                     margin-top: 10px;
                     display: flex;
+                    p {
+                        width: $width-half;
+                        
+                    }
                 }
                 @include responsive(large-screens) {
                     position: absolute;
@@ -1708,6 +1719,7 @@ main {
                     justify-content: space-between;
                     margin: 5px;
                     border: 1px solid #E78156;
+                    background-color: $color-white;
                     background-color: $bg-color;
                     padding: 0 5px;
                     @include responsive(large-screens) {
@@ -1749,6 +1761,10 @@ main {
                 }
             }
             .public-txt {
+                width: $width-wide;
+                @include responsive(large-screens) {
+                    width: 20%;
+                }
                 .time {
                     margin-top: 20px;
                     display: flex;
@@ -1773,7 +1789,6 @@ main {
                     width: $width-half; 
                 }
                 .tool-box {
-                    width: $width-wide;
                     display: flex;
                     .usetool {
                         display: flex;
@@ -1796,6 +1811,8 @@ main {
                     }
                 }
                 .project-txt {
+                    width: $width-half;
+                    
                     margin-top: 10px;
                     display: flex;
                 }
@@ -1899,5 +1916,12 @@ main {
                 }
             }
         }   
+    }
+}
+
+footer {
+    .copyright {
+        text-align: center;
+        font-family: $font-en;
     }
 }

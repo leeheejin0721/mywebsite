@@ -24,7 +24,7 @@
                     <span></span>
                 </div>
                 <div class="header-text">
-                    <a href="#">
+                    <a href="#contact" id="scrollToContact">
                         <strong>CONTACT ME</strong>
                         <p>LET'S CREATE TOGETHER</p>
                     </a>
@@ -34,14 +34,21 @@
         <div class="menu_box" id="menuBox">
             <nav class="mainmenu">
                 <ul class="gnb">
-                    <li><a href="#">ABOUT ME</a></li>
-                    <li><a href="#">SKILL</a></li>
-                    <li><a href="#">PORTFOLIO</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="#" id="aboutMeLink">ABOUT ME</a></li>
+                    <li><a href="#" id="skillLink">SKILL</a></li>
+                    <li><a href="#" id="portfolioLink">PORTFOLIO</a></li>
+                    <li><a href="#" id="contactLink">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
+    <script>
+        document.getElementById("scrollToContact").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+})
+    </script>
 
     <script>
         document.getElementById('menuToggle').addEventListener('click', function() {
@@ -54,6 +61,34 @@
             menuBox.style.display = 'block';
             setTimeout(() => menuBox.classList.add('active'), 10); // display가 block으로 바뀐 후 애니메이션 시작
         }
+    });
+
+    document.getElementById('aboutMeLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('aboutme').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('menuBox').style.display = 'none';
+            document.getElementById('menuToggle').classList.remove('open');
+        });
+
+        document.getElementById('skillLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('skill').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('menuBox').style.display = 'none';
+            document.getElementById('menuToggle').classList.remove('open');
+        });
+
+        document.getElementById('portfolioLink').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('menuBox').style.display = 'none';
+        document.getElementById('menuToggle').classList.remove('open');  // 햄버거 모양으로 변경
+    });
+
+    document.getElementById('contactLink').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('menuBox').style.display = 'none';
+        document.getElementById('menuToggle').classList.remove('open');  // 햄버거 모양으로 변경
     });
     </script>
 
@@ -248,9 +283,7 @@
                                     <p>2023 KOTITI 시험 연구원 인턴</p>
                                 </div>
                             </div>
-                            <div class="hash">
-                                #passion #
-                            </div>
+                            <!-- - -->
                         </div>
                         <div class="suit">
                             <h4 class="web">웹 개발자</h4>
@@ -475,13 +508,13 @@
                     </defs>
                 </svg>
                 <div class="skills-circle">
-                    <div class="skill-box html-box" data-icon="./images/html-5.png" data-description="웹 표준과 웹 접근성을 준수<br>홈페이지 구조적으로 작성 가능" data-progress="90%">
+                    <div class="skill-box html-box" data-icon="./images/html-5.png" data-description="90%<br>웹 표준과 웹 접근성을 준수<br>홈페이지 구조적으로 작성 가능" data-progress="90%">
                         <img src="./images/html-5.png" alt="html">
                         <div class="progress-bar">
                             <div class="progress html-progress"></div>
                         </div>
                     </div>
-                    <div class="skill-box css-box" data-icon="./images/css-3.png" data-description="반응형 웹사이트 구현 가능" data-progress="85%">
+                    <div class="skill-box css-box" data-icon="./images/css-3.png" data-description="85%<br>반응형 웹사이트 구현 가능" data-progress="85%">
                         <img src="./images/css-3.png" alt="css-3">
                         <div class="progress-bar">
                             <div class="progress css-progress"></div>
@@ -490,7 +523,7 @@
                             반응형 웹사이트 구현 가능
                         </div>
                     </div>
-                    <div class="skill-box sass-box" data-icon="./images/sass.png" data-description="flex와 grid를 통해 반응형 홈페이지 제작 가능" data-progress="85%">
+                    <div class="skill-box sass-box" data-icon="./images/sass.png" data-description="85%<br>flex와 grid를 통해 반응형 홈페이지 제작 가능" data-progress="85%">
                         <img src="./images/sass.png" alt="sass">
                         <div class="progress-bar">
                             <div class="progress sass-progress"></div>
@@ -499,7 +532,7 @@
                             flex와 grid를 통해 반응형 홈페이지 제작 가능
                         </div>
                     </div>
-                    <div class="skill-box javascript-box" data-icon="./images/java-script.png" data-description="fuction의 응용 및 구조 이해
+                    <div class="skill-box javascript-box" data-icon="./images/java-script.png" data-description="80%<br>fuction의 응용 및 구조 이해
                     슬라이드, 메뉴, 스크롤 애니메이션 기능 등 다양한 동적 기능 구현 가능" data-progress="80%">
                      
                         <img src="./images/java-script.png" alt="java-script">
@@ -511,7 +544,7 @@
                             슬라이드, 메뉴, 스크롤 애니메이션 기능 등 다양한 동적 기능 구현 가능
                         </div>
                     </div>
-                    <div class="skill-box jquery-box" data-icon="./images/jquery.png" data-description="사용자의 이벤트에 따른 동작에 필요한 기능 구현 가능" data-progress="85%">
+                    <div class="skill-box jquery-box" data-icon="./images/jquery.png" data-description="85%<br>사용자의 이벤트에 따른 동작에 필요한 기능 구현 가능" data-progress="85%">
                         <img src="./images/jquery.png" alt="jquery">
                         <div class="progress-bar">
                             <div class="progress jquery-progress"></div>
@@ -520,7 +553,7 @@
                             사용자의 이벤트에 따른 동작에 필요한 기능 구현 가능
                         </div>
                     </div>
-                    <div class="skill-box react-box" data-icon="./images/react.png" data-description="Router로 SPA탭메뉴 구성 가능" data-progress="80%">
+                    <div class="skill-box react-box" data-icon="./images/react.png" data-description="80%<br>Router로 SPA탭메뉴 구성 가능" data-progress="80%">
                         <div class="icon-wrapper">
                             <img src="./images/react.png" alt="react">
                             <div class="progress-bar">
@@ -531,7 +564,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="skill-box git-box" data-icon="./images/git.png" data-description="gitHub 연동으로 작업 관리, git 형상 관리" data-progress="90%">
+                    <div class="skill-box git-box" data-icon="./images/git.png" data-description="90%<br>gitHub 연동으로 작업 관리, git 형상 관리" data-progress="90%">
                         <div class="icon-wrapper">
                             <img src="./images/git.png" alt="git">
                             <div class="progress-bar">
@@ -542,7 +575,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="skill-box figma-box" data-icon="./images/figma.png" data-description="와이어프레임으로 아이디어 기획구조 활용 가능" data-progress="90%">
+                    <div class="skill-box figma-box" data-icon="./images/figma.png" data-description="90%<br>와이어프레임으로 아이디어 기획구조 활용 가능" data-progress="90%">
                         <div class="icon-wrapper">
                             <img src="./images/figma.png" alt="figma">
                             <div class="progress-bar">
@@ -553,7 +586,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="skill-box ai-box" data-icon="./images/illustrator.png" data-description="팝업, 배너, 로고, 아이콘, 벡터 이미지 작업 가능" data-progress="85%">
+                    <div class="skill-box ai-box" data-icon="./images/illustrator.png" data-description="85%<br>팝업, 배너, 로고, 아이콘, 벡터 이미지 작업 가능" data-progress="85%">
                         <div class="icon-wrapper">
                             <img src="./images/illustrator.png" alt="ai">
                             <div class="progress-bar">
@@ -564,7 +597,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="skill-box photoshop-box" data-icon="./images/photoshop.png" data-description="사진 보정, 편집 상세 페이지 디자인 작업 가능" data-progress="90%">
+                    <div class="skill-box photoshop-box" data-icon="./images/photoshop.png" data-description="90%<br>사진 보정, 편집 상세 페이지 디자인 작업 가능" data-progress="90%">
                         <div class="icon-wrapper">
                             <img src="./images/photoshop.png" alt="photoshop">
                             <div class="progress-bar">
@@ -576,7 +609,7 @@
                         </div>
      
                     </div>
-                    <div class="skill-box ae-box" data-icon="./images/after-effects.png" data-description="설명" data-progress="75%">
+                    <div class="skill-box ae-box" data-icon="./images/after-effects.png" data-description="75%<br>설명" data-progress="75%">
                         <div class="icon-wrapper">
                             <img src="./images/after-effects.png" alt="after-effects">
                             <div class="progress-bar">
@@ -588,7 +621,7 @@
                         </div>
 
                     </div>
-                    <div class="skill-box pre-box" data-icon="./images/premiere-pro.png" data-description="설명" data-progress="80%">
+                    <div class="skill-box pre-box" data-icon="./images/premiere-pro.png" data-description="80%<br>설명" data-progress="80%">
                         <div class="icon-wrapper">
                             <img src="./images/premiere-pro.png" alt="premiere-pro">
                             <div class="progress-bar">
@@ -903,7 +936,7 @@
                             </div>
                             <div class="project-txt">
                                 <h4>기획 의도</h4>
-                                <p>프로그램 상세페이지 정보나 예매할 때의 불편함을 최소화하기 위한 리뉴얼</p>
+                                <p></p>
                             </div>
                         </div>
                     </div>
@@ -1212,7 +1245,13 @@
     </main>
 
     <footer>
-        <p class="copyright">Copyright ⓒ 2024 Leeheejin</p>
+        <div class="copy-sns">
+            <p class="copyright">Copyright ⓒ 2024 Leeheejin</p>
+            <div class="sns">
+                <img src="" alt="">
+                <img src="" alt="">
+            </div>
+        </div>
     </footer>
 </body>
 </html>

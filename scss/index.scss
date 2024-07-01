@@ -30,7 +30,7 @@ header {
     .logo-img {
         width: 20%;
         @include responsive(large-screens) {
-            width: 10%;
+            width: 8%;
         }
     }
     .logo-img img {
@@ -68,6 +68,9 @@ header {
     .header-text a {
         font-family: $font-en;
         font-size: 0.5rem;
+        @include responsive(large-screens) {
+            font-size: 0.7rem;
+        }
     }
     .header-text p {
         line-height: 1.2;
@@ -219,7 +222,7 @@ main {
             width: 27%;
             cursor: pointer;
             @include responsive(large-screens) {
-                left: 29%;
+                left: 32%;
                 width: 9%;
             }
             text {
@@ -241,8 +244,8 @@ main {
         width: 20%;
         cursor: pointer;
         @include responsive(large-screens) {
-            left: 60%;
-            top: 6%;
+            left: 59%;
+            top: 2%;
             width: 8%;
         }
         text {
@@ -263,7 +266,7 @@ main {
         width: 35%;
         cursor: pointer;
         @include responsive(large-screens) {
-            left: 30%;
+            left: 33%;
             width: 10%;
         }
         text {
@@ -646,12 +649,14 @@ main {
     }
     
     #skill {
-        
+        overflow: hidden;
         width: $width-wide;
+        height: 107vh;
         margin-top: 150px;
         position: relative;
         @include responsive(large-screens) {
             margin-top: 200px;
+            height: 120vh;
         }
 
         .skill-bg {
@@ -712,7 +717,6 @@ main {
             }
             div {
                 width: $width-half; 
-               
                 img {
                     margin: 0 auto;
                     width: 30%;
@@ -1028,7 +1032,6 @@ main {
         #portfolio {
             overflow: hidden;
             position: relative;
-            margin-top: 150px;
             width: $width-wide;
             h2 {
                 position: relative;
@@ -1818,9 +1821,7 @@ main {
             align-items: center;
             flex-direction: column;
             @include responsive(large-screens) {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                flex-direction: row;
             }
             .contact-img {
                 width: $width-wide;
@@ -1846,8 +1847,7 @@ main {
                     margin: auto;
                     @include responsive(large-screens) {
                         margin: auto;
-                        width: $width-wide;
-                        
+                        width: $width-wide;    
                     }
                     img {
                         margin: auto;

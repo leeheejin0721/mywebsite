@@ -70,10 +70,10 @@
                     <img src="./images/star.png" alt="star">
                 </div>
                 <div class="contact-portfolio">
-                    <div class="contact-circle">
+                    <div class="contact-circle" id="contact-circle">
                         <svg width="100%" height="100%">
                             <defs>
-                                <path id="contactPath" d="M 100, 100 m -75, 0 a 60,53 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
+                                <path id="contactPath" d="M 80, 88 m -60, 0 a 70,60 0 1,1 170,0 a 80,80 0 1,1 -100,0"/>
                             </defs>
                             <text>
                                 <textPath href="#contactPath">
@@ -83,10 +83,10 @@
                         </svg>
                         <img src="./images/contact_circle.png" alt="contact">
                     </div>
-                    <div class="portfolio-circle">
+                    <div class="portfolio-circle" id="portfolio-circle">
                         <svg width="100%" height="100%">
                             <defs>
-                                <path id="portfolioPath" d="M 120, 50 m -85, 0 a 90,90 0 1,1 -100,0 a 75,90 0 1,1 -130,0"/>
+                                <path id="portfolioPath" d="M 120, 4 m -100, 0 a 90,90 0 1,1 -100,0 a 75,90 0 1,1 -130,0"/>
                             </defs>
                             <text>
                                 <textPath href="#portfolioPath">
@@ -98,10 +98,10 @@
                     </div>
                 </div>
                 <div class="aboutme-skill">
-                    <div class="aboutme-circle">
+                    <div class="aboutme-circle" id="aboutme-circle">
                         <svg width="100%" height="100%">
                             <defs>
-                                <path id="aboutmePath" d="M 60, 95 m -75, 0 a 85,65 0 1,1 178,0 a 190,120 0 1,1 -80,0"/>
+                                <path id="aboutmePath" d="M 70, 70 m -60, 0 a 85,65 0 1,1 178,0 a 190,120 0 1,1 -80,0"/>
                             </defs>
                             <text>
                                 <textPath href="#aboutmePath">
@@ -111,10 +111,10 @@
                         </svg>
                         <img src="./images/aboutme_circle.png" alt="about me">
                     </div>
-                    <div class="skill-circle">
+                    <div class="skill-circle" id="skill-circle">
                         <svg width="100%" height="100%">
                             <defs>
-                                <path id="skillPath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
+                                <path id="skillPath" d="M 90, 45 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
                             </defs>
                             <text>
                                 <textPath href="#skillPath">
@@ -148,6 +148,28 @@
                 </div>
             </div>
         </section>
+
+        <script>
+            document.getElementById('aboutme-circle').addEventListener('click', function() {
+                document.getElementById('aboutme').scrollIntoView({ behavior: 'smooth' });
+            });
+        </script>
+        <script>
+            document.getElementById('portfolio-circle').addEventListener('click', function() {
+                document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
+            });
+        </script>
+        <script>
+            document.getElementById('contact-circle').addEventListener('click', function() {
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            });
+        </script>
+        <script>
+            document.getElementById('skill-circle').addEventListener('click', function() {
+                document.getElementById('skill').scrollIntoView({ behavior: 'smooth' });
+            });
+        </script>
+
         <script>
             document.addEventListener('DOMContentLoaded', () => {
             const introSection = document.querySelector('#intro');

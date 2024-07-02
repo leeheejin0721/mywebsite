@@ -578,11 +578,23 @@ main #aboutme {
   background-position: bottom 100px;
   width: 100%;
   position: relative;
+  background-position: bottom -200px; /* 초기 위치 */
+  transition: background-position 1s ease-out; /* 애니메이션 효과 */
+  /* 스크롤 시 활성화될 스타일 */
 }
 @media (min-width: 1024px) {
   main #aboutme {
     background-image: url(../images/about_bg_pc.png);
   }
+}
+main #aboutme .animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+main #aboutme .animate.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 main #aboutme .aboutme_txt-img {
   text-align: center;
@@ -621,6 +633,9 @@ main #aboutme .aboutme_txt-img .about-txt .sum, main #aboutme .aboutme_txt-img .
 }
 main #aboutme .aboutme_txt-img .about-txt .sum.active, main #aboutme .aboutme_txt-img .about-txt .suit.active {
   display: block;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .about-txt .sum {
@@ -675,8 +690,8 @@ main #aboutme .aboutme_txt-img .about-txt .web {
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .about-txt .web {
     position: absolute;
-    top: -400px;
-    left: 20%;
+    top: -430px;
+    left: 15%;
     font-size: 2rem;
   }
 }
@@ -686,10 +701,9 @@ main #aboutme .aboutme_txt-img .about-txt .name {
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .about-txt .name {
     position: absolute;
-    width: 300px;
-    top: -400px;
+    top: -430px;
     font-size: 2rem;
-    left: 93%;
+    left: 73%;
   }
 }
 main #aboutme .aboutme_txt-img .about-txt .me {
@@ -703,14 +717,56 @@ main #aboutme .aboutme_txt-img .about-txt .me {
     display: flex;
   }
 }
+@media (min-width: 1024px) {
+  main #aboutme .aboutme_txt-img .about-txt .me .fast {
+    font-size: 1.25rem;
+    position: absolute;
+    top: -130%;
+    width: 450px;
+  }
+}
+@media (min-width: 1024px) {
+  main #aboutme .aboutme_txt-img .about-txt .me .want {
+    font-size: 1.25rem;
+    width: 40%;
+    position: absolute;
+    top: -130%;
+    left: 970px;
+  }
+}
+main #aboutme .aboutme_txt-img .about-txt h5 {
+  color: white;
+  font-size: 1.3rem;
+}
+main #aboutme .aboutme_txt-img .about-txt p {
+  font-size: 1.2rem;
+  color: white;
+}
+main #aboutme .aboutme_txt-img .about-txt .hash-1, main #aboutme .aboutme_txt-img .about-txt .hash-2, main #aboutme .aboutme_txt-img .about-txt .hash-3 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+@media (min-width: 1024px) {
+  main #aboutme .aboutme_txt-img .about-txt .hash-1, main #aboutme .aboutme_txt-img .about-txt .hash-2, main #aboutme .aboutme_txt-img .about-txt .hash-3 {
+    flex-direction: row;
+  }
+}
+main #aboutme .aboutme_txt-img .about-txt .hash-1 h5, main #aboutme .aboutme_txt-img .about-txt .hash-2 h5, main #aboutme .aboutme_txt-img .about-txt .hash-3 h5 {
+  color: white;
+  font-size: 1.3rem;
+  width: 15%;
+  text-align: left;
+}
+main #aboutme .aboutme_txt-img .about-txt .hash-1 p, main #aboutme .aboutme_txt-img .about-txt .hash-2 p, main #aboutme .aboutme_txt-img .about-txt .hash-3 p {
+  width: 85%;
+  text-align: left;
+}
 main #aboutme .aboutme_txt-img .about-txt .hash {
   display: flex;
   justify-content: space-around;
   position: relative;
-}
-main #aboutme .aboutme_txt-img .about-txt .hash h5 {
-  color: white;
-  font-size: 1.3rem;
 }
 @keyframes rotate {
   from {
@@ -1336,7 +1392,6 @@ main #portfolio .art-museum .museum-img2 {
 }
 main #portfolio .art-museum .museum-img2 img {
   width: 100%;
-  margin: 20px 0;
   height: auto;
 }
 main #portfolio .art-museum .museum-img1 {
@@ -1350,25 +1405,22 @@ main #portfolio .art-museum .museum-img1 {
   main #portfolio .art-museum .museum-img1 {
     position: relative;
     margin: auto;
-    margin-top: 70px;
-    margin-bottom: 70px;
     z-index: 5;
     width: 50%;
     height: 630px; /* 높이 지정 */
     overflow: hidden; /* 오버플로우 숨기기 */
   }
   main #portfolio .art-museum .museum-img1 img {
-    margin: 20px 0;
     width: 100%;
-    position: absolute;
-    top: 0;
+    position: relative;
+    top: -10%;
     display: block;
     transition: opacity 0.5s ease;
   }
   main #portfolio .art-museum .museum-img1.darken::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 11%;
     left: 0;
     width: 100%;
     height: 100%;
@@ -1381,13 +1433,18 @@ main #portfolio .art-museum .museum-img1 {
 }
 main #portfolio .art-museum .museum-img1 img {
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 0;
+}
+@media (min-width: 1024px) {
+  main #portfolio .art-museum .museum-img1 img {
+    top: 11%;
+  }
 }
 main #portfolio .art-museum .museum-img1::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 11%;
   left: 0;
   width: 100%;
   height: 100%;
@@ -1419,7 +1476,6 @@ main #portfolio .art-museum .museum-img3 {
 }
 main #portfolio .art-museum .museum-img3 img {
   width: 100%;
-  margin: 20px 0;
 }
 main #portfolio .art-museum .museum-button {
   width: 100%;
@@ -1431,7 +1487,7 @@ main #portfolio .art-museum .museum-button {
 @media (min-width: 1024px) {
   main #portfolio .art-museum .museum-button {
     position: absolute;
-    top: 28%;
+    top: 26%;
     right: 35%;
     width: 40%;
   }
@@ -1637,6 +1693,7 @@ main #portfolio .loyal-festival .festival-img-box .festival-img2 img {
 @media (min-width: 1024px) {
   main #portfolio .loyal-festival .festival-img-box .festival-img2 {
     margin-left: 40px;
+    cursor: pointer;
   }
 }
 @media (min-width: 1024px) {
@@ -1655,15 +1712,36 @@ main #portfolio .loyal-festival .festival-img-box .festival-img2 img {
 }
 @media (min-width: 1024px) {
   main #portfolio .loyal-festival .festival-img-box .festival-img1 {
+    cursor: pointer;
     position: absolute;
     top: 8%;
     left: 45%;
     margin: 0 80px;
     height: 700px;
-    width: 80%;
+    width: 35%;
+    z-index: 1; /* 낮은 z-index 값으로 설정하여 뒤에 위치 */
   }
   main #portfolio .loyal-festival .festival-img-box .festival-img1 img {
-    width: 40%;
+    width: 100%;
+  }
+  main #portfolio .loyal-festival .festival-img-box .festival-img1:hover {
+    opacity: 1; /* 호버 시 밝게 표시 */
+    z-index: 3; /* 높은 z-index 값으로 설정하여 앞으로 가져옴 */
+  }
+  main #portfolio .loyal-festival .festival-img-box .festival-img1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 800px;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+    pointer-events: none; /* 박스가 호버 이벤트에 영향을 주지 않도록 */
+  }
+  main #portfolio .loyal-festival .festival-img-box .festival-img1:hover {
+    z-index: 11; /* 호버 시 요소를 가장 앞에 보이게 */
   }
   main #portfolio .loyal-festival .festival-img-box .festival-img2 {
     width: 35%;
@@ -1676,21 +1754,29 @@ main #portfolio .loyal-festival .festival-img-box .festival-img2 img {
     width: 100%;
   }
   main #portfolio .loyal-festival .festival-img-box .loyal-img-po {
+    z-index: 1;
     position: absolute;
     display: flex;
     left: 70%;
     top: 23%;
-    overflow: hidden;
     width: 100%;
+    transition: left 0.5s ease;
   }
   main #portfolio .loyal-festival .festival-img-box .loyal-img-po .festival-img3 {
     margin-right: -330px;
+    transition: transform 0.5s ease;
   }
   main #portfolio .loyal-festival .festival-img-box .loyal-img-po .festival-img3 img {
     width: 50%;
   }
+  main #portfolio .loyal-festival .festival-img-box .loyal-img-po .festival-img4 {
+    transition: transform 0.5s ease;
+  }
   main #portfolio .loyal-festival .festival-img-box .loyal-img-po .festival-img4 img {
     width: 48%;
+  }
+  main #portfolio .loyal-festival .festival-img-box .loyal-img-po .loyal-img-po:hover {
+    left: calc(70% - 50px); /* 슬라이드할 양만큼 왼쪽으로 이동 */
   }
 }
 main #portfolio .loyal-festival .festival-button {

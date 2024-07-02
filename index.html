@@ -267,9 +267,9 @@
         <section id="aboutme">
             <div class="container">
                 <div class="aboutme_txt-img">
-                    <h2>ABOUT ME</h2> 
-                    <img src="./images/aboutme_picture.png" alt="aboutme_picture" class="pic">
-                    <div class="about-txt">
+                    <h2 class="animate">ABOUT ME</h2> 
+                    <img src="./images/aboutme_picture.png" alt="aboutme_picture" class="pic animate">
+                    <div class="about-txt animate">
                         <div class="sum active">
                             <div class="ab-box">
                                 <div class="ab-left">
@@ -287,28 +287,29 @@
                         </div>
                         <div class="suit">
                             <div class="web-name">
-                                <h4 class="web">웹 개발자</h4>
-                                <h4 class="name">이희진입니다.</h4>
+                                <h4 class="web">안녕하세요.</h4>
+                                <h4 class="name">웹 개발자 이희진입니다.</h4>
                             </div>
                             <div class="me">
                                 <p class="fast">
-                                    거칠고 빠른 것 보다는 조용하지만 꾸준히 계속해서 나아갑니다.
+                                    조용하지만 끊임없이 배움을 추구하면서 성장하지만 초반의 마음가짐은 잃지 않는 한결같은 사람이 되고 싶습니다. 
                                 </p>
                                 <p class="want">
-                                    단순히 디자인만을 그대로 구현한 사이트보다 사용자의 편의 또한 고려한 웹사이트를 만들어 나가고 싶습니다. 
+                                    웹페이지를 제작할 때 다양한 유저를 고려하여 웹 접근성에 신경쓰고 있습니다.
+                                    단순히 디자인만을 그대로 구현하기보다 오래 사용하고 싶은, 제가 만든 사이트로 인해 사람들의 불편함을 최대한 해결하는것이 목표입니다.
                                 </p>
                             </div>
                             <div class="hash-1">
                                 <h5>#responsible</h5>
-                                <p>기한을 철저히 지키며 책임감 있게 일을 수행해요! </p>
+                                <p>기한을 철저히 지키며 책임감 있게 일을 수행합니다. 맡은 일은 끝까지 집중해서 꼼꼼히 해냅니다.</p>
                             </div>
                             <div class="hash-2">
                                 <h5>#effort</h5>
-                                <p>끊임없는 소스 분석과 모르는 것은 끝까지 늘어져서 결국 알아내는 끈질김을 가지고 있어요!</p>
+                                <p>꾸준한 복습과 풀리지 않는 문제를 끊임없이 고민하여 결국 해결하는 끈기를 가지고 있습니다.</p>
                             </div>
                             <div class="hash-3">
                                 <h5>#coorperative</h5>
-                                <p>누구와도 잘 어우러지는 부드러움을 가지고 있어요. 그러나 외유내강으로 속에는 단단함으로 가득차 있어요!</p>
+                                <p>누구와도 잘 어우러지는 부드러움을 가지고 있습니다. 그러나 외유내강으로 속에는 단단함으로 가득차 있습니다. 부드러움과 강인함으로 다양한 팀원들과 협력하여 일을 해냅니다.</p>
                             </div>
                             <div class="hash">
                                 <h5>#responsible</h5>
@@ -343,6 +344,26 @@
             </div>
             </div>
         </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            const aboutMeSection = document.getElementById("aboutme");
+            const elementsToAnimate = document.querySelectorAll(".animate");
+
+            window.addEventListener("scroll", function() {
+                const sectionPosition = aboutMeSection.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.5;
+
+                if (sectionPosition < screenPosition) {
+                    aboutMeSection.style.backgroundPosition = "bottom 100px"; // 배경 이미지 애니메이션
+                    elementsToAnimate.forEach(element => {
+                        element.classList.add("active");
+                    });
+                }
+            });
+        });
+        </script>
+
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 var profButton = document.getElementById('prof');
@@ -889,7 +910,7 @@
                 </div>
             </div>
         </div> <!-- art-museum -->
-            </div> <!-- container -->
+        </div> <!-- container -->
             <div class="loyal-bg">
                 <img src="./images/loyal_bg.png" alt="loyal-bg">
             </div>

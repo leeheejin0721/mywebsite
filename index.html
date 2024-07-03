@@ -106,57 +106,17 @@
                 </div>
                 <div class="contact-portfolio">
                     <div class="contact-circle" id="contact-circle">
-                        <svg width="100%" height="100%">
-                            <defs>
-                                <path id="contactPath" d="M 80, 88 m -60, 0 a 70,60 0 1,1 170,0 a 80,80 0 1,1 -100,0"/>
-                            </defs>
-                            <text>
-                                <textPath href="#contactPath">
-                                    CONTACT
-                                </textPath>
-                            </text>
-                        </svg>
                         <img src="./images/contact_circle.png" alt="contact">
                     </div>
                     <div class="portfolio-circle" id="portfolio-circle">
-                        <svg width="100%" height="100%">
-                            <defs>
-                                <path id="portfolioPath" d="M 120, 4 m -100, 0 a 90,90 0 1,1 -100,0 a 75,90 0 1,1 -130,0"/>
-                            </defs>
-                            <text>
-                                <textPath href="#portfolioPath">
-                                    PORTFOLIO
-                                </textPath>
-                            </text>
-                        </svg>
                         <img src="./images/portfolio_circle.png" alt="portfolio">
                     </div>
                 </div>
                 <div class="aboutme-skill">
                     <div class="aboutme-circle" id="aboutme-circle">
-                        <svg width="100%" height="100%">
-                            <defs>
-                                <path id="aboutmePath" d="M 70, 70 m -60, 0 a 85,65 0 1,1 178,0 a 190,120 0 1,1 -80,0"/>
-                            </defs>
-                            <text>
-                                <textPath href="#aboutmePath">
-                                    ABOUT ME
-                                </textPath>
-                            </text>
-                        </svg>
                         <img src="./images/aboutme_circle.png" alt="about me">
                     </div>
                     <div class="skill-circle" id="skill-circle">
-                        <svg width="100%" height="100%">
-                            <defs>
-                                <path id="skillPath" d="M 90, 45 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
-                            </defs>
-                            <text>
-                                <textPath href="#skillPath">
-                                    SKILL
-                                </textPath>
-                            </text>
-                        </svg>
                         <img src="./images/skill_circle.png" alt="skill">
                     </div>
                 </div>
@@ -267,9 +227,9 @@
         <section id="aboutme">
             <div class="container">
                 <div class="aboutme_txt-img">
-                    <h2 class="animate">ABOUT ME</h2> 
+                    <h2>ABOUT ME</h2> 
                     <img src="./images/aboutme_picture.png" alt="aboutme_picture" class="pic animate">
-                    <div class="about-txt animate">
+                    <div class="about-txt">
                         <div class="sum active">
                             <div class="ab-box">
                                 <div class="ab-left">
@@ -349,15 +309,27 @@
             document.addEventListener("DOMContentLoaded", function() {
             const aboutMeSection = document.getElementById("aboutme");
             const elementsToAnimate = document.querySelectorAll(".animate");
+            const picElement = document.querySelector(".pic");
+            const h2Element = aboutMeSection.querySelector("h2");
+            const sumElement = document.querySelector(".about-txt .sum");
+            const sumParagraphs = document.querySelectorAll(".about-txt .sum p");
 
             window.addEventListener("scroll", function() {
                 const sectionPosition = aboutMeSection.getBoundingClientRect().top;
                 const screenPosition = window.innerHeight / 1.5;
 
                 if (sectionPosition < screenPosition) {
-                    aboutMeSection.style.backgroundPosition = "bottom 100px"; // 배경 이미지 애니메이션
+                    aboutMeSection.style.backgroundPosition = "bottom 100px";
                     elementsToAnimate.forEach(element => {
                         element.classList.add("active");
+                    });
+                    picElement.classList.add("active");
+                    h2Element.classList.add("active");
+                    sumElement.classList.add("active");
+                    sumParagraphs.forEach((p, index) => {
+                        setTimeout(() => {
+                            p.classList.add("active");
+                        }, index * 200); // 각 p 태그가 순차적으로 활성화되도록 200ms 간격 설정
                     });
                 }
             });
@@ -368,20 +340,17 @@
             document.addEventListener('DOMContentLoaded', function() {
                 var profButton = document.getElementById('prof');
                 var suitButton = document.getElementById('suit');
-                var sumSection = document.querySelector('.sum');
                 var suitSection = document.querySelector('.suit');
         
                 profButton.addEventListener('click', function() {
                     profButton.classList.add('active');
                     suitButton.classList.remove('active');
-                    sumSection.classList.add('active');
                     suitSection.classList.remove('active');
                 });
         
                 suitButton.addEventListener('click', function() {
                     suitButton.classList.add('active');
                     profButton.classList.remove('active');
-                    sumSection.classList.remove('active');
                     suitSection.classList.add('active');
                 });
             });
@@ -553,142 +522,181 @@
                 </svg>
                 <div class="skills-circle">
                     <div class="skill-box html-box" data-icon="./images/html-5.png" data-description="90%<br>웹 표준과 웹 접근성을 준수<br>홈페이지 구조적으로 작성 가능" data-progress="90%">
-                        <img src="./images/html-5.png" alt="html">
-                        <div class="progress-bar">
-                            <div class="progress html-progress"></div>
+                        <div class="img-bar">
+                            <img src="./images/html-5.png" alt="html">
+                            <div class="progress-bar">
+                                <div class="progress html-progress"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="skill-box css-box" data-icon="./images/css-3.png" data-description="85%<br>반응형 웹사이트 구현 가능" data-progress="85%">
-                        <img src="./images/css-3.png" alt="css-3">
-                        <div class="progress-bar">
-                            <div class="progress css-progress"></div>
-                        </div>
-                        <div class="description">
-                            반응형 웹사이트 구현 가능
+                        <div class="img-bar">
+                            <img src="./images/css-3.png" alt="css-3">
+                            <div class="progress-bar">
+                                <div class="progress css-progress"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="skill-box sass-box" data-icon="./images/sass.png" data-description="85%<br>flex와 grid를 통해 반응형 홈페이지 제작 가능" data-progress="85%">
-                        <img src="./images/sass.png" alt="sass">
-                        <div class="progress-bar">
-                            <div class="progress sass-progress"></div>
-                        </div>
-                        <div class="description">
-                            flex와 grid를 통해 반응형 홈페이지 제작 가능
+                        <div class="img-bar">
+                            <img src="./images/sass.png" alt="sass">
+                            <div class="progress-bar">
+                                <div class="progress sass-progress"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="skill-box javascript-box" data-icon="./images/java-script.png" data-description="80%<br>fuction의 응용 및 구조 이해
                     슬라이드, 메뉴, 스크롤 애니메이션 기능 등 다양한 동적 기능 구현 가능" data-progress="80%">
-                     
-                        <img src="./images/java-script.png" alt="java-script">
-                        <div class="progress-bar">
-                            <div class="progress javascript-progress"></div>
-                        </div>
-                        <div class="description">
-                            fuction의 응용 및 구조 이해
-                            슬라이드, 메뉴, 스크롤 애니메이션 기능 등 다양한 동적 기능 구현 가능
+                        <div class="img-bar">
+                            <img src="./images/java-script.png" alt="java-script">
+                            <div class="progress-bar">
+                                <div class="progress javascript-progress"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="skill-box jquery-box" data-icon="./images/jquery.png" data-description="85%<br>사용자의 이벤트에 따른 동작에 필요한 기능 구현 가능" data-progress="85%">
-                        <img src="./images/jquery.png" alt="jquery">
-                        <div class="progress-bar">
-                            <div class="progress jquery-progress"></div>
-                        </div>
-                        <div class="description">
-                            사용자의 이벤트에 따른 동작에 필요한 기능 구현 가능
+                        <div class="img-bar">
+                            <img src="./images/jquery.png" alt="jquery">
+                            <div class="progress-bar">
+                                <div class="progress jquery-progress"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="skill-box react-box" data-icon="./images/react.png" data-description="80%<br>Router로 SPA탭메뉴 구성 가능" data-progress="80%">
-                        <div class="icon-wrapper">
+                        <div class="img-bar">
                             <img src="./images/react.png" alt="react">
                             <div class="progress-bar">
                                 <div class="progress react-progress"></div>
                             </div>
-                            <div class="description">
-                                Router로 SPA탭메뉴 구성 가능 
-                            </div>
                         </div>
                     </div>
                     <div class="skill-box git-box" data-icon="./images/git.png" data-description="90%<br>gitHub 연동으로 작업 관리, git 형상 관리" data-progress="90%">
-                        <div class="icon-wrapper">
+                        <div class="img-bar">
                             <img src="./images/git.png" alt="git">
                             <div class="progress-bar">
                                 <div class="progress git-progress"></div>
                             </div>
-                            <div class="description">
-                                gitHub 연동으로 작업 관리, git 형상 관리
-                            </div>
                         </div>
                     </div>
                     <div class="skill-box figma-box" data-icon="./images/figma.png" data-description="90%<br>와이어프레임으로 아이디어 기획구조 활용 가능" data-progress="90%">
-                        <div class="icon-wrapper">
+                        <div class="img-bar">
                             <img src="./images/figma.png" alt="figma">
                             <div class="progress-bar">
                                 <div class="progress figma-progress"></div>
                             </div>
-                            <div class="description">
-                                와이어프레임으로 아이디어 기획구조 활용 가능
-                            </div>
                         </div>
                     </div>
                     <div class="skill-box ai-box" data-icon="./images/illustrator.png" data-description="85%<br>팝업, 배너, 로고, 아이콘, 벡터 이미지 작업 가능" data-progress="85%">
-                        <div class="icon-wrapper">
+                        <div class="img-bar">
                             <img src="./images/illustrator.png" alt="ai">
                             <div class="progress-bar">
                                 <div class="progress ai-progress"></div>
                             </div>
-                            <div class="description">
-                                팝업, 배너, 로고, 아이콘, 벡터 이미지 작업 가능
-                            </div>
                         </div>
                     </div>
                     <div class="skill-box photoshop-box" data-icon="./images/photoshop.png" data-description="90%<br>사진 보정, 편집 상세 페이지 디자인 작업 가능" data-progress="90%">
-                        <div class="icon-wrapper">
+                        <div class="img-bar">
                             <img src="./images/photoshop.png" alt="photoshop">
                             <div class="progress-bar">
                                 <div class="progress photoshop-progress"></div>
                             </div>
-                            <div class="description">
-                                사진 보정, 편집 상세 페이지 디자인 작업 가능
-                            </div>
                         </div>
-     
                     </div>
                     <div class="skill-box ae-box" data-icon="./images/after-effects.png" data-description="75%<br>설명" data-progress="75%">
-                        <div class="icon-wrapper">
+                        <div class="img-bar">
                             <img src="./images/after-effects.png" alt="after-effects">
                             <div class="progress-bar">
                                 <div class="progress ae-progress"></div>
                             </div>
-                            <div class="description">
-                                설명
-                            </div>
                         </div>
-
                     </div>
                     <div class="skill-box pre-box" data-icon="./images/premiere-pro.png" data-description="80%<br>설명" data-progress="80%">
-                        <div class="icon-wrapper">
+                        <div class="img-bar">
                             <img src="./images/premiere-pro.png" alt="premiere-pro">
                             <div class="progress-bar">
                                 <div class="progress pre-progress"></div>
                             </div>
-                            <div class="description">설명</div>
                         </div>
                     </div>
-                    <div class="hover-display">
-                        <svg>
-                            <circle cx="150" cy="150" r="120"></circle>
-                            <circle class="progress-ring" cx="150" cy="150" r="120"></circle>
-                        </svg>
-                        <img class="hover-icon" src="" alt="skill-icon">
-                        
-                        <div class="progress-bar">
-                            <div class="progress hover-progress"></div>
-                        </div>
-                        <div class="hover-description"></div>
+                </div>
+                <div class="hover-display">
+                    <svg>
+                        <circle cx="150" cy="150" r="120"></circle>
+                        <circle class="progress-ring" cx="150" cy="150" r="120"></circle>
+                    </svg>
+                    <img class="hover-icon" src="" alt="skill-icon">
+                    <div class="progress-bar">
+                        <div class="progress hover-progress"></div>
                     </div>
+                    <div class="hover-description"></div>
                 </div>
             </div>
         </section>
+
+       <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const skillSection = document.querySelector('.skills-circle');
+            const skillBoxes = document.querySelectorAll('.skill-box');
+
+            const checkVisibility = () => {
+                const sectionTop = skillSection.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                // skill 섹션이 화면에 나올 때
+                if (sectionTop < windowHeight - 100) { // 약간의 여유를 두기 위해 -100 추가
+                    skillBoxes.forEach(box => {
+                        box.classList.add('visible');
+                    });
+
+                    // 스크롤 이벤트 리스너 제거
+                    document.removeEventListener('scroll', checkVisibility);
+                }
+            };
+
+            document.addEventListener('scroll', checkVisibility);
+
+            // 페이지 로드 시 한 번 확인
+            checkVisibility();
+        });
+       </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const skillBoxes = document.querySelectorAll('.skill-box');
+            const skillsCircle = document.querySelector('.skills-circle');
+            const imgBars = document.querySelectorAll('.img-bar'); // 모든 img-bar 요소를 선택
+
+            skillsCircle.addEventListener('mouseenter', function() {
+                skillsCircle.style.animationPlayState = 'paused';
+                imgBars.forEach(bar => {
+                    bar.style.animationPlayState = 'paused';
+                });
+            });
+
+            skillsCircle.addEventListener('mouseleave', function() {
+                skillsCircle.style.animationPlayState = 'running';
+                imgBars.forEach(bar => {
+                    bar.style.animationPlayState = 'running';
+                });
+            });
+
+            skillBoxes.forEach(box => {
+                box.addEventListener('mouseenter', function() {
+                    skillsCircle.style.animationPlayState = 'paused';
+                    imgBars.forEach(bar => {
+                        bar.style.animationPlayState = 'paused';
+                    });
+                });
+
+                box.addEventListener('mouseleave', function() {
+                    skillsCircle.style.animationPlayState = 'running';
+                    imgBars.forEach(bar => {
+                        bar.style.animationPlayState = 'running';
+                    });
+                });
+            });
+        });
+        </script>
 
         <script>
             document.addEventListener('DOMContentLoaded', () => {
@@ -716,36 +724,36 @@
 
         <script>
             document.querySelectorAll('.skill-box').forEach(skill => {
-    skill.addEventListener('mouseover', function() {
-        const icon = skill.getAttribute('data-icon');
-        const description = skill.getAttribute('data-description');
-        const progress = skill.getAttribute('data-progress');
-        const progressValue = parseInt(progress, 10);
-        const circumference = 754; // 반지름 120에 맞춘 둘레 길이
-        const offset = circumference - (progressValue / 100) * circumference;
+            skill.addEventListener('mouseover', function() {
+                const icon = skill.getAttribute('data-icon');
+                const description = skill.getAttribute('data-description');
+                const progress = skill.getAttribute('data-progress');
+                const progressValue = parseInt(progress, 10);
+                const circumference = 754; // 반지름 120에 맞춘 둘레 길이
+                const offset = circumference - (progressValue / 100) * circumference;
 
-        const hoverDisplay = document.querySelector('.hover-display');
-        hoverDisplay.querySelector('.hover-icon').src = icon;
-        hoverDisplay.querySelector('.hover-description').innerHTML = description;
-        hoverDisplay.querySelector('.hover-progress').style.width = progress;
+                const hoverDisplay = document.querySelector('.hover-display');
+                hoverDisplay.querySelector('.hover-icon').src = icon;
+                hoverDisplay.querySelector('.hover-description').innerHTML = description;
+                hoverDisplay.querySelector('.hover-progress').style.width = progress;
 
-        const progressRing = hoverDisplay.querySelector('.progress-ring');
-        progressRing.style.strokeDashoffset = circumference;
-        progressRing.style.transition = 'none';
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                progressRing.style.transition = 'stroke-dashoffset 1s linear';
-                progressRing.style.strokeDashoffset = offset;
+                const progressRing = hoverDisplay.querySelector('.progress-ring');
+                progressRing.style.strokeDashoffset = circumference;
+                progressRing.style.transition = 'none';
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        progressRing.style.transition = 'stroke-dashoffset 1s linear';
+                        progressRing.style.strokeDashoffset = offset;
+                    });
+                });
+
+                hoverDisplay.style.display = 'block';
+            });
+
+            skill.addEventListener('mouseout', function() {
+                document.querySelector('.hover-display').style.display = 'none';
             });
         });
-
-        hoverDisplay.style.display = 'block';
-    });
-
-    skill.addEventListener('mouseout', function() {
-        document.querySelector('.hover-display').style.display = 'none';
-    });
-});
             </script>
 
         <!-- 스킬 퍼센트 -->
@@ -1049,6 +1057,59 @@
                 </div> <!-- public-portfolio -->
             </div> <!-- container -->
         </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            let festivalImages = document.querySelectorAll('.festival-img1, .festival-img2, .festival-img3, .festival-img4');
+
+            function checkScroll() {
+                festivalImages.forEach(image => {
+                    if (isElementInViewport(image)) {
+                        image.classList.add('visible');
+                    }
+                });
+            }
+
+            function isElementInViewport(el) {
+                var rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // Check on page load
+        });
+    </script>
+        <script>
+            window.addEventListener('scroll', function() {
+            // .museum-img1 요소의 위치를 가져옴
+            const museumImg1 = document.querySelector('.museum-img1');
+            const museumImg2 = document.querySelector('.museum-img2');
+            const museumImg3 = document.querySelector('.museum-img3');
+
+            // .museum-img1 요소가 화면에 보일 때
+            if (isElementInViewport(museumImg1)) {
+                museumImg1.classList.add('active');
+            } else {
+                museumImg1.classList.remove('active');
+            }
+        });
+
+        // 요소가 화면에 보이는지 체크하는 함수
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        </script>
 
         <script>
             document.addEventListener('DOMContentLoaded', () => {

@@ -32,6 +32,15 @@ header {
         @include responsive(large-screens) {
             width: 8%;
         }
+        animation: rotateLogo 10s linear infinite;
+    }
+    @keyframes rotateLogo {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
     }
     .logo-img img {
         width: 100%;
@@ -434,19 +443,6 @@ main {
             font-weight: lighter;
         }
     }
-    
-    svg {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    
-    text {
-        font-family: Arial, sans-serif;
-        font-size: 20px;
-        fill: #000;
-    }
 
     .gradient_orange {
         // animation: gradientFadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
@@ -493,13 +489,64 @@ main {
             @include responsive(large-screens) {
                 top: -200px;
             }
-            h2 {
+            .estrellas {
+                position: relative;
+                top: 110px;
+                width: 0;
+                height: 0;
+                margin: 0 auto;
+                margin-top: 200px;
+                font-size: 2rem;
                 font-family: $font-en;
                 font-weight: 400;
                 @include responsive(large-screens) {
+                    width: 0;
+                    height:0;
+                    margin: 0 auto;
                     font-size: 3rem;
                 }
-            }
+              }
+              .estrellas span {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 70px;
+                height: 200px;
+                margin-left: -35px;
+                text-align: center;
+                transform-origin: top center;
+                
+              }
+              .estrellas span:nth-of-type(1)  {
+                transform: rotate(75deg);
+              }
+              .estrellas span:nth-of-type(2)  {
+                transform: rotate(50deg);
+              }
+              .estrellas span:nth-of-type(3)  {
+                transform: rotate(25deg);
+              }
+              .estrellas span:nth-of-type(4)  {
+                transform: rotate(0deg);
+              }
+              .estrellas span:nth-of-type(5)  {
+                transform: rotate(-25deg);
+              }
+              .estrellas span:nth-of-type(6)  {
+                transform: rotate(-50deg);
+              }
+              .estrellas span:nth-of-type(7)  {
+                transform: rotate(-75deg);
+              }
+              /* Reverse mode */
+              .inverso {
+                font-weight: bold;
+              }
+              .inverso span {
+                line-height: -10;
+                transform-origin: bottom center;
+                // border: 1px solid red; /* Only for seeing trick */
+              }
             .pic {
                 opacity: 0;
                 transform: translateY(50px);
@@ -516,12 +563,12 @@ main {
                 opacity: 1;
                 transform: translateY(0);
             }
-            h2 {
+            .estrellas {
                 opacity: 0;
                 transform: translateX(-50px);
                 transition: opacity 0.4s ease-out, transform 0.6s ease-out;
             }
-            h2.active {
+            .estrellas.active {
                 opacity: 1;
                 transform: translateX(0);
             }
@@ -1579,7 +1626,9 @@ main {
                         }
                     }
                     .festival-img1.visible,
-                    .festival-img2.visible {
+                    .festival-img2.visible,
+                    .festival-img3.visible,
+                    .festival-img4.visible {
                         opacity: 1;
                         transform: translateX(0);
                     }
@@ -1633,7 +1682,7 @@ main {
                             z-index: 1; /* 낮은 z-index 값으로 설정하여 뒤에 위치 */
                             opacity: 0;
                             transform: translateX(100px); /* 초기에 오른쪽으로 이동 */
-                            transition: opacity 0.5s, transform 0.5s;
+                            transition: opacity 0.3s, transform 0.3s;
                             img {
                                 width: $width-wide;
                             }
@@ -1661,7 +1710,7 @@ main {
                         .festival-img2 {
                             opacity: 0;
                             transform: translateX(-100px); /* 초기에 왼쪽으로 이동 */
-                            transition: opacity 0.5s, transform 0.5s;
+                            transition: opacity 0.3s, transform 0.3s;
                             width: 35%;
                             top: 14%;
                             left: 7.8%;
@@ -1680,6 +1729,10 @@ main {
                             top: 23%;
                             width: 100%;
                             transition: left 0.5s ease;
+                            &:hover {
+                                transform: translateX(-190px);
+                                transition: transform 0.3s ease;
+                            }
                             .festival-img3 {
                                 margin-right: -330px;
                                 opacity: 0;
@@ -1700,9 +1753,6 @@ main {
                             .festival-img3.visible, .festival-img4.visible {
                                 opacity: 1;
                                 transform: translateX(0);
-                            }
-                            .loyal-img-po:hover {
-                                left: calc(70% - 50px); /* 슬라이드할 양만큼 왼쪽으로 이동 */
                             }
                         }
                     }
@@ -2064,6 +2114,9 @@ main {
             }
             .contact-img {
                 width: $width-wide;
+                opacity: 0;
+                transform: translateY(50px); /* 예시로 50px 아래로 이동 */
+                transition: opacity 0.5s ease, transform 0.5s ease;
                 // .contact-top {
                 //     width: 85%;
                 //     position: absolute;
@@ -2099,6 +2152,9 @@ main {
                 }
             }
             .contact-txt {
+                opacity: 0;
+                transform: translateY(50px); /* 예시로 50px 아래로 이동 */
+                transition: opacity 0.5s ease, transform 0.5s ease;
                 margin: 0 auto;
                 margin-top: 30px;
                 margin-bottom: 50px;
@@ -2142,8 +2198,25 @@ main {
 }
 
 footer {
+    background-color: #E77E51;
+    padding: 10px;
+    @include responsive(large-screens) {
+        margin-top: 50px;
+    }
     .copyright {
+        color: $color-white;
         text-align: center;
         font-family: $font-en;
+    }
+    .sns {
+        display: flex;
+        justify-content: center;
+        img {
+            width: 5%;
+            margin: 5px;
+            @include responsive(large-screens) {
+                width: 2%;
+            }
+        }
     }
 }

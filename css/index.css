@@ -136,10 +136,19 @@ header .logo-menu-text {
 }
 header .logo-img {
   width: 20%;
+  animation: rotateLogo 10s linear infinite;
 }
 @media (min-width: 1024px) {
   header .logo-img {
     width: 8%;
+  }
+}
+@keyframes rotateLogo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 header .logo-img img {
@@ -553,17 +562,6 @@ main #intro .intro-txt #resume {
   font-family: "Alegreya";
   font-weight: lighter;
 }
-main #intro svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-main #intro text {
-  font-family: Arial, sans-serif;
-  font-size: 20px;
-  fill: #000;
-}
 main #intro .gradient_orange {
   position: absolute;
   top: 67%;
@@ -603,20 +601,69 @@ main #aboutme .aboutme_txt-img {
   top: -150px; /* 위치를 위로 이동 */
   left: 50%;
   transform: translateX(-50%);
+  /* Reverse mode */
 }
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img {
     top: -200px;
   }
 }
-main #aboutme .aboutme_txt-img h2 {
+main #aboutme .aboutme_txt-img .estrellas {
+  position: relative;
+  top: 110px;
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  margin-top: 200px;
+  font-size: 2rem;
   font-family: "Alegreya";
   font-weight: 400;
 }
 @media (min-width: 1024px) {
-  main #aboutme .aboutme_txt-img h2 {
+  main #aboutme .aboutme_txt-img .estrellas {
+    width: 0;
+    height: 0;
+    margin: 0 auto;
     font-size: 3rem;
   }
+}
+main #aboutme .aboutme_txt-img .estrellas span {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 70px;
+  height: 200px;
+  margin-left: -35px;
+  text-align: center;
+  transform-origin: top center;
+}
+main #aboutme .aboutme_txt-img .estrellas span:nth-of-type(1) {
+  transform: rotate(75deg);
+}
+main #aboutme .aboutme_txt-img .estrellas span:nth-of-type(2) {
+  transform: rotate(50deg);
+}
+main #aboutme .aboutme_txt-img .estrellas span:nth-of-type(3) {
+  transform: rotate(25deg);
+}
+main #aboutme .aboutme_txt-img .estrellas span:nth-of-type(4) {
+  transform: rotate(0deg);
+}
+main #aboutme .aboutme_txt-img .estrellas span:nth-of-type(5) {
+  transform: rotate(-25deg);
+}
+main #aboutme .aboutme_txt-img .estrellas span:nth-of-type(6) {
+  transform: rotate(-50deg);
+}
+main #aboutme .aboutme_txt-img .estrellas span:nth-of-type(7) {
+  transform: rotate(-75deg);
+}
+main #aboutme .aboutme_txt-img .inverso {
+  font-weight: bold;
+}
+main #aboutme .aboutme_txt-img .inverso span {
+  line-height: -10;
+  transform-origin: bottom center;
 }
 main #aboutme .aboutme_txt-img .pic {
   opacity: 0;
@@ -635,12 +682,12 @@ main #aboutme .aboutme_txt-img .pic.active {
   opacity: 1;
   transform: translateY(0);
 }
-main #aboutme .aboutme_txt-img h2 {
+main #aboutme .aboutme_txt-img .estrellas {
   opacity: 0;
   transform: translateX(-50px);
   transition: opacity 0.4s ease-out, transform 0.6s ease-out;
 }
-main #aboutme .aboutme_txt-img h2.active {
+main #aboutme .aboutme_txt-img .estrellas.active {
   opacity: 1;
   transform: translateX(0);
 }
@@ -1753,7 +1800,9 @@ main #portfolio .loyal-festival .festival-img-box .festival-img1, main #portfoli
   }
 }
 main #portfolio .loyal-festival .festival-img-box .festival-img1.visible,
-main #portfolio .loyal-festival .festival-img-box .festival-img2.visible {
+main #portfolio .loyal-festival .festival-img-box .festival-img2.visible,
+main #portfolio .loyal-festival .festival-img-box .festival-img3.visible,
+main #portfolio .loyal-festival .festival-img-box .festival-img4.visible {
   opacity: 1;
   transform: translateX(0);
 }
@@ -1806,7 +1855,7 @@ main #portfolio .loyal-festival .festival-img-box .festival-img2 img {
     z-index: 1; /* 낮은 z-index 값으로 설정하여 뒤에 위치 */
     opacity: 0;
     transform: translateX(100px); /* 초기에 오른쪽으로 이동 */
-    transition: opacity 0.5s, transform 0.5s;
+    transition: opacity 0.3s, transform 0.3s;
   }
   main #portfolio .loyal-festival .festival-img-box .festival-img1 img {
     width: 100%;
@@ -1833,7 +1882,7 @@ main #portfolio .loyal-festival .festival-img-box .festival-img2 img {
   main #portfolio .loyal-festival .festival-img-box .festival-img2 {
     opacity: 0;
     transform: translateX(-100px); /* 초기에 왼쪽으로 이동 */
-    transition: opacity 0.5s, transform 0.5s;
+    transition: opacity 0.3s, transform 0.3s;
     width: 35%;
     top: 14%;
     left: 7.8%;
@@ -1851,6 +1900,10 @@ main #portfolio .loyal-festival .festival-img-box .festival-img2 img {
     top: 23%;
     width: 100%;
     transition: left 0.5s ease;
+  }
+  main #portfolio .loyal-festival .festival-img-box .loyal-img-po:hover {
+    transform: translateX(-190px);
+    transition: transform 0.3s ease;
   }
   main #portfolio .loyal-festival .festival-img-box .loyal-img-po .festival-img3 {
     margin-right: -330px;
@@ -1872,9 +1925,6 @@ main #portfolio .loyal-festival .festival-img-box .festival-img2 img {
   main #portfolio .loyal-festival .festival-img-box .loyal-img-po .festival-img3.visible, main #portfolio .loyal-festival .festival-img-box .loyal-img-po .festival-img4.visible {
     opacity: 1;
     transform: translateX(0);
-  }
-  main #portfolio .loyal-festival .festival-img-box .loyal-img-po .loyal-img-po:hover {
-    left: calc(70% - 50px); /* 슬라이드할 양만큼 왼쪽으로 이동 */
   }
 }
 main #portfolio .loyal-festival .festival-button {
@@ -2245,6 +2295,9 @@ main #contact .contact-box {
 }
 main #contact .contact-box .contact-img {
   width: 100%;
+  opacity: 0;
+  transform: translateY(50px); /* 예시로 50px 아래로 이동 */
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 main #contact .contact-box .contact-img .contact-img1 {
   position: relative;
@@ -2267,6 +2320,9 @@ main #contact .contact-box .contact-img .contact-img1 img {
   }
 }
 main #contact .contact-box .contact-txt {
+  opacity: 0;
+  transform: translateY(50px); /* 예시로 50px 아래로 이동 */
+  transition: opacity 0.5s ease, transform 0.5s ease;
   margin: 0 auto;
   margin-top: 30px;
   margin-bottom: 50px;
@@ -2312,7 +2368,30 @@ main #contact .contact-box .contact-txt .icon-mail a {
   }
 }
 
+footer {
+  background-color: #E77E51;
+  padding: 10px;
+}
+@media (min-width: 1024px) {
+  footer {
+    margin-top: 50px;
+  }
+}
 footer .copyright {
+  color: #fff;
   text-align: center;
   font-family: "Alegreya";
+}
+footer .sns {
+  display: flex;
+  justify-content: center;
+}
+footer .sns img {
+  width: 5%;
+  margin: 5px;
+}
+@media (min-width: 1024px) {
+  footer .sns img {
+    width: 2%;
+  }
 }/*# sourceMappingURL=index.css.map */

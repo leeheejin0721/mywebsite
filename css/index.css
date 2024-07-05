@@ -610,7 +610,7 @@ main #aboutme .aboutme_txt-img {
 }
 main #aboutme .aboutme_txt-img .estrellas {
   position: relative;
-  top: 110px;
+  top: 30%;
   width: 0;
   height: 0;
   margin: 0 auto;
@@ -621,6 +621,7 @@ main #aboutme .aboutme_txt-img .estrellas {
 }
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .estrellas {
+    top: 110px;
     width: 0;
     height: 0;
     margin: 0 auto;
@@ -632,10 +633,15 @@ main #aboutme .aboutme_txt-img .estrellas span {
   bottom: 0;
   left: 50%;
   width: 70px;
-  height: 200px;
+  height: 110px;
   margin-left: -35px;
   text-align: center;
   transform-origin: top center;
+}
+@media (min-width: 1024px) {
+  main #aboutme .aboutme_txt-img .estrellas span {
+    height: 200px;
+  }
 }
 main #aboutme .aboutme_txt-img .estrellas span:nth-of-type(1) {
   transform: rotate(75deg);
@@ -662,8 +668,13 @@ main #aboutme .aboutme_txt-img .inverso {
   font-weight: bold;
 }
 main #aboutme .aboutme_txt-img .inverso span {
-  line-height: -10;
+  line-height: -30;
   transform-origin: bottom center;
+}
+@media (min-width: 1024px) {
+  main #aboutme .aboutme_txt-img .inverso span {
+    line-height: -10;
+  }
 }
 main #aboutme .aboutme_txt-img .pic {
   opacity: 0;
@@ -936,7 +947,7 @@ main #aboutme .aboutme-button #suit {
 main #skill {
   overflow: hidden;
   width: 100%;
-  height: 107vh;
+  height: 115vh;
   margin-top: 150px;
   position: relative;
   /* 나머지 항목도 같은 방식으로 추가 */
@@ -1678,13 +1689,23 @@ main #portfolio .art-museum .museum-txt .together {
 main #portfolio .art-museum .museum-txt h4 {
   font-size: 1rem;
   font-family: "Pretendard-Light";
-  width: 50%;
+  width: 30%;
+}
+@media (min-width: 1024px) {
+  main #portfolio .art-museum .museum-txt h4 {
+    width: 50%;
+  }
 }
 main #portfolio .art-museum .museum-txt p {
   font-size: 1rem;
   line-height: 1.3;
   font-family: "Pretendard-Light";
-  width: 50%;
+  width: 70%;
+}
+@media (min-width: 1024px) {
+  main #portfolio .art-museum .museum-txt p {
+    width: 50%;
+  }
 }
 main #portfolio .art-museum .museum-txt .tool-box {
   width: 100%;
@@ -1692,11 +1713,10 @@ main #portfolio .art-museum .museum-txt .tool-box {
 }
 main #portfolio .art-museum .museum-txt .tool-box .usetool {
   display: flex;
+  width: 50%;
+  cursor: pointer;
 }
 main #portfolio .art-museum .museum-txt .tool-box .usetool h4 {
-  width: 50%;
-}
-main #portfolio .art-museum .museum-txt .tool-box .usetool .usetool {
   width: 50%;
 }
 main #portfolio .art-museum .museum-txt .tool-box .usetool .tool {
@@ -1708,12 +1728,17 @@ main #portfolio .art-museum .museum-txt .tool-box .usetool .tool {
   padding: 3px;
   margin-right: 5%;
 }
+main #portfolio .art-museum .museum-txt .tool-box .usetool .tool:hover {
+  border: 1px solid #E77E51;
+  background: #E77E51;
+  color: white;
+}
 main #portfolio .art-museum .museum-txt .project-txt {
   margin-top: 10px;
   display: flex;
 }
 main #portfolio .art-museum .museum-txt .project-txt p {
-  width: 50%;
+  text-align: justify;
 }
 @media (min-width: 1024px) {
   main #portfolio .art-museum .museum-txt {
@@ -1869,7 +1894,7 @@ main #portfolio .loyal-festival .festival-img-box .festival-img2 img {
     position: absolute;
     top: 0;
     left: 0;
-    height: 800px;
+    height: 828px;
     width: 100%;
     background-color: black;
     opacity: 0.5;
@@ -1948,7 +1973,6 @@ main #portfolio .loyal-festival .festival-button #git, main #portfolio .loyal-fe
   margin: 1%;
   border: 1px solid #E78156;
   background-color: #fff;
-  background-color: #FFF5ED;
   padding: 0 1%;
 }
 @media (min-width: 1024px) {
@@ -1973,25 +1997,20 @@ main #portfolio .loyal-festival .festival-button #git .black, main #portfolio .l
 main #portfolio .loyal-festival .festival-button #git .white, main #portfolio .loyal-festival .festival-button #website .white, main #portfolio .loyal-festival .festival-button #design-guide .white, main #portfolio .loyal-festival .festival-button #design-plan .white {
   display: none;
 }
-main #portfolio .loyal-festival .festival-button #git, main #portfolio .loyal-festival .festival-button #website, main #portfolio .loyal-festival .festival-button #design-guide {
+main #portfolio .loyal-festival .festival-button #git, main #portfolio .loyal-festival .festival-button #website, main #portfolio .loyal-festival .festival-button #design-guide, main #portfolio .loyal-festival .festival-button #design-plan {
   cursor: pointer;
 }
-main #portfolio .loyal-festival .festival-button #git:hover, main #portfolio .loyal-festival .festival-button #website:hover, main #portfolio .loyal-festival .festival-button #design-guide:hover {
+main #portfolio .loyal-festival .festival-button #git:hover, main #portfolio .loyal-festival .festival-button #website:hover, main #portfolio .loyal-festival .festival-button #design-guide:hover, main #portfolio .loyal-festival .festival-button #design-plan:hover {
   background-color: #E78156;
 }
-main #portfolio .loyal-festival .festival-button #git:hover p, main #portfolio .loyal-festival .festival-button #website:hover p, main #portfolio .loyal-festival .festival-button #design-guide:hover p {
+main #portfolio .loyal-festival .festival-button #git:hover p, main #portfolio .loyal-festival .festival-button #website:hover p, main #portfolio .loyal-festival .festival-button #design-guide:hover p, main #portfolio .loyal-festival .festival-button #design-plan:hover p {
   color: #fff;
 }
-main #portfolio .loyal-festival .festival-button #git:hover .black, main #portfolio .loyal-festival .festival-button #website:hover .black, main #portfolio .loyal-festival .festival-button #design-guide:hover .black {
+main #portfolio .loyal-festival .festival-button #git:hover .black, main #portfolio .loyal-festival .festival-button #website:hover .black, main #portfolio .loyal-festival .festival-button #design-guide:hover .black, main #portfolio .loyal-festival .festival-button #design-plan:hover .black {
   display: none;
 }
-main #portfolio .loyal-festival .festival-button #git:hover .white, main #portfolio .loyal-festival .festival-button #website:hover .white, main #portfolio .loyal-festival .festival-button #design-guide:hover .white {
+main #portfolio .loyal-festival .festival-button #git:hover .white, main #portfolio .loyal-festival .festival-button #website:hover .white, main #portfolio .loyal-festival .festival-button #design-guide:hover .white, main #portfolio .loyal-festival .festival-button #design-plan:hover .white {
   display: block;
-}
-@media (min-width: 1024px) {
-  main #portfolio .loyal-festival .festival-txt {
-    width: 20%;
-  }
 }
 main #portfolio .loyal-festival .festival-txt .time {
   margin-top: 20px;
@@ -2008,13 +2027,24 @@ main #portfolio .loyal-festival .festival-txt .together {
 main #portfolio .loyal-festival .festival-txt h4 {
   font-size: 1rem;
   font-family: "Pretendard-Light";
-  width: 50%;
+  width: 30%;
+}
+@media (min-width: 1024px) {
+  main #portfolio .loyal-festival .festival-txt h4 {
+    width: 20%;
+  }
 }
 main #portfolio .loyal-festival .festival-txt p {
+  width: 70%;
   font-size: 1rem;
   line-height: 1.3;
   font-family: "Pretendard-Light";
-  width: 50%;
+  text-align: left;
+}
+@media (min-width: 1024px) {
+  main #portfolio .loyal-festival .festival-txt p {
+    width: 80%;
+  }
 }
 main #portfolio .loyal-festival .festival-txt .tool-box {
   width: 100%;
@@ -2022,28 +2052,34 @@ main #portfolio .loyal-festival .festival-txt .tool-box {
 }
 main #portfolio .loyal-festival .festival-txt .tool-box .usetool {
   display: flex;
+  cursor: pointer;
 }
 main #portfolio .loyal-festival .festival-txt .tool-box .usetool h4 {
   width: 50%;
 }
-main #portfolio .loyal-festival .festival-txt .tool-box .usetool .usetool {
-  width: 50%;
-}
 main #portfolio .loyal-festival .festival-txt .tool-box .usetool .tool {
   border: 1px solid black;
+  cursor: pointer;
   border-radius: 10px;
   width: 50%;
+  color: black;
   text-align: center;
   font-size: 0.9rem;
   padding: 3px;
   margin-right: 5%;
 }
+main #portfolio .loyal-festival .festival-txt .tool-box .usetool .tool:hover {
+  border: 1px solid #E77E51;
+  background: #E77E51;
+  color: white;
+}
 main #portfolio .loyal-festival .festival-txt .project-txt {
+  width: 100%;
   margin-top: 10px;
   display: flex;
 }
 main #portfolio .loyal-festival .festival-txt .project-txt p {
-  width: 50%;
+  text-align: justify;
 }
 @media (min-width: 1024px) {
   main #portfolio .loyal-festival .festival-txt {
@@ -2168,7 +2204,6 @@ main #portfolio .public-portfolio .public-button #git, main #portfolio .public-p
   margin: 5px;
   border: 1px solid #E78156;
   background-color: #fff;
-  background-color: #FFF5ED;
   padding: 0 5px;
 }
 @media (min-width: 1024px) {
@@ -2212,11 +2247,6 @@ main #portfolio .public-portfolio .public-button #git:hover .white, main #portfo
 main #portfolio .public-portfolio .public-txt {
   width: 100%;
 }
-@media (min-width: 1024px) {
-  main #portfolio .public-portfolio .public-txt {
-    width: 20%;
-  }
-}
 main #portfolio .public-portfolio .public-txt .time {
   margin-top: 20px;
   display: flex;
@@ -2232,39 +2262,50 @@ main #portfolio .public-portfolio .public-txt .together {
 main #portfolio .public-portfolio .public-txt h4 {
   font-size: 1rem;
   font-family: "Pretendard-Light";
-  width: 50%;
+  width: 30%;
+}
+@media (min-width: 1024px) {
+  main #portfolio .public-portfolio .public-txt h4 {
+    width: 10%;
+  }
 }
 main #portfolio .public-portfolio .public-txt p {
   font-size: 1rem;
   line-height: 1.3;
   font-family: "Pretendard-Light";
-  width: 50%;
+  width: 70%;
+}
+@media (min-width: 1024px) {
+  main #portfolio .public-portfolio .public-txt p {
+    width: 70%;
+  }
 }
 main #portfolio .public-portfolio .public-txt .tool-box {
   display: flex;
 }
 main #portfolio .public-portfolio .public-txt .tool-box .usetool {
   display: flex;
-}
-main #portfolio .public-portfolio .public-txt .tool-box .usetool h4 {
-  width: 50%;
-}
-main #portfolio .public-portfolio .public-txt .tool-box .usetool .usetool {
-  width: 50%;
+  cursor: pointer;
 }
 main #portfolio .public-portfolio .public-txt .tool-box .usetool .tool {
   border: 1px solid black;
   border-radius: 10px;
-  width: 50%;
   text-align: center;
   font-size: 0.9rem;
   padding: 3px;
   margin-right: 5%;
 }
+main #portfolio .public-portfolio .public-txt .tool-box .usetool .tool:hover {
+  border: 1px solid #E77E51;
+  background: #E77E51;
+  color: white;
+}
 main #portfolio .public-portfolio .public-txt .project-txt {
-  width: 50%;
   margin-top: 10px;
   display: flex;
+}
+main #portfolio .public-portfolio .public-txt .project-txt p {
+  text-align: justify;
 }
 main #contact {
   overflow: hidden;

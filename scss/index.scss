@@ -491,7 +491,7 @@ main {
             }
             .estrellas {
                 position: relative;
-                top: 110px;
+                top: 30%;
                 width: 0;
                 height: 0;
                 margin: 0 auto;
@@ -500,6 +500,7 @@ main {
                 font-family: $font-en;
                 font-weight: 400;
                 @include responsive(large-screens) {
+                    top: 110px;
                     width: 0;
                     height:0;
                     margin: 0 auto;
@@ -511,11 +512,13 @@ main {
                 bottom: 0;
                 left: 50%;
                 width: 70px;
-                height: 200px;
+                height: 110px;
                 margin-left: -35px;
                 text-align: center;
                 transform-origin: top center;
-                
+                @include responsive(large-screens) {
+                    height: 200px;
+                }
               }
               .estrellas span:nth-of-type(1)  {
                 transform: rotate(75deg);
@@ -543,9 +546,12 @@ main {
                 font-weight: bold;
               }
               .inverso span {
-                line-height: -10;
+                line-height: -30;
                 transform-origin: bottom center;
                 // border: 1px solid red; /* Only for seeing trick */
+                @include responsive(large-screens) {
+                    line-height: -10;
+                }
               }
             .pic {
                 opacity: 0;
@@ -811,7 +817,7 @@ main {
     #skill {
         overflow: hidden;
         width: $width-wide;
-        height: 107vh;
+        height: 115vh;
         margin-top: 150px;
         position: relative;
         @include responsive(large-screens) {
@@ -1029,16 +1035,13 @@ main {
         .modal-content {
             background-image: url(../images/gradient_yellow.png);
             background-size: cover;
-            
             border-radius: 50%;
             margin: 50% auto;
             padding: 20px;
-            
             width: 100%;
             height: 100%;
             position: relative;
         }
-        
         .close {
             color: #aaa;
             position: absolute;
@@ -1513,24 +1516,28 @@ main {
                     h4 {
                         font-size: 1rem;
                         font-family: $font-pre-light;
-                        width: $width-half; 
+                        width: 30%; 
+                        @include responsive(large-screens) {
+                            width: $width-half; 
+                        }
                     }
                     p {
                         font-size: 1rem;
                         line-height: 1.3;
                         font-family: $font-pre-light;
-                        width: $width-half; 
+                        width: 70%;
+                        @include responsive(large-screens) {
+                            width: $width-half;
+                        }
                     }
                     .tool-box {
                         width: $width-wide;
                         display: flex;
                         .usetool {
                             display: flex;
-        
+                            width: $width-half;
+                            cursor: pointer;
                             h4 {
-                                width: $width-half;
-                            }
-                            .usetool {
                                 width: $width-half;
                             }
                             .tool {
@@ -1541,6 +1548,11 @@ main {
                                 font-size: 0.9rem;
                                 padding: 3px;
                                 margin-right: 5%;
+                                &:hover {
+                                    border: 1px solid #E77E51;
+                                    background: #E77E51;
+                                    color: white;
+                                }
                             }
                         }
                     }
@@ -1548,7 +1560,7 @@ main {
                         margin-top: 10px;
                         display: flex;
                         p {
-                           width: $width-half; 
+                            text-align: justify;
                         }
                     }
                     @include responsive(large-screens) {
@@ -1695,14 +1707,13 @@ main {
                                 position: absolute;
                                 top: 0;
                                 left: 0;
-                                height: 800px;
+                                height: 828px;
                                 width: $width-wide;
                                 background-color: black;
                                 opacity: 0.5;
                                 transition: opacity 0.5s ease;
                                 pointer-events: none; /* 박스가 호버 이벤트에 영향을 주지 않도록 */
                             }
-                        
                             &:hover {
                                 z-index: 11; /* 호버 시 요소를 가장 앞에 보이게 */
                             }
@@ -1720,7 +1731,6 @@ main {
                                 width: 100%;
                             }
                         }
-                       
                         .loyal-img-po {
                             z-index: 1;
                             position: absolute;
@@ -1775,14 +1785,12 @@ main {
                     margin: 1%;
                     border: 1px solid #E78156;
                     background-color: $color-white;
-                    background-color: $bg-color;
                     padding: 0 1%;
                     @include responsive(large-screens) {
                         width: 20%;
                         padding: 3px 5px;
                     }
-                    p {
-                        
+                    p { 
                         font-size: 0.7rem;
                         font-family: $font-pre-light;
                     }
@@ -1800,7 +1808,7 @@ main {
                     }
                     
                 }
-                #git, #website, #design-guide {
+                #git, #website, #design-guide, #design-plan {
                     cursor: pointer;
                     &:hover {
                         background-color: $color-hover;
@@ -1818,7 +1826,7 @@ main {
             }
             .festival-txt {
                 @include responsive(large-screens) {
-                    width: 20%;
+                    // width: 20%;
                 }
                 .time {
                     margin-top: 20px;
@@ -1835,43 +1843,55 @@ main {
                 h4 {
                     font-size: 1rem;
                     font-family: $font-pre-light;
-                    width: $width-half; 
+                    width: 30%; 
+                    @include responsive(large-screens) {
+                        width: 20%;
+                    }
                 }
                 p {
+                    width: 70%;
                     font-size: 1rem;
                     line-height: 1.3;
                     font-family: $font-pre-light;
-                    width: $width-half; 
+                    text-align: left;
+                    
+                    @include responsive(large-screens) {
+                        width: 80%;
+                    }
                 }
                 .tool-box {
                     width: $width-wide;
                     display: flex;
                     .usetool {
                         display: flex;
-    
+                        cursor: pointer;
                         h4 {
-                            width: $width-half;
-                        }
-                        .usetool {
                             width: $width-half;
                         }
                         .tool {
                             border: 1px solid black;
+                            cursor: pointer;
                             border-radius: 10px;
                             width: 50%;
+                            color: black;
                             text-align: center;
                             font-size: 0.9rem;
                             padding: 3px;
                             margin-right: 5%;
+                            &:hover {
+                                border: 1px solid #E77E51;
+                                background: #E77E51;
+                                color: white;
+                            }
                         }
                     }
                 }
                 .project-txt {
+                    width: $width-wide;
                     margin-top: 10px;
                     display: flex;
                     p {
-                        width: $width-half;
-                        
+                        text-align: justify;
                     }
                 }
                 @include responsive(large-screens) {
@@ -1935,7 +1955,6 @@ main {
                 overflow: hidden;
                 position: relative;
                 @include responsive(large-screens) {
-
                 }
                 .public-img1 {
                     @include responsive(large-screens) {
@@ -1992,7 +2011,6 @@ main {
                     margin: 5px;
                     border: 1px solid #E78156;
                     background-color: $color-white;
-                    background-color: $bg-color;
                     padding: 0 5px;
                     @include responsive(large-screens) {
                         width: 25%;
@@ -2034,9 +2052,6 @@ main {
             }
             .public-txt {
                 width: $width-wide;
-                @include responsive(large-screens) {
-                    width: 20%;
-                }
                 .time {
                     margin-top: 20px;
                     display: flex;
@@ -2052,41 +2067,46 @@ main {
                 h4 {
                     font-size: 1rem;
                     font-family: $font-pre-light;
-                    width: $width-half; 
+                    width: 30%;
+                    @include responsive(large-screens) {
+                        width: 10%;
+                    }
                 }
                 p {
                     font-size: 1rem;
                     line-height: 1.3;
                     font-family: $font-pre-light;
-                    width: $width-half; 
+                    width: 70%; 
+                    @include responsive(large-screens) {
+                        width: 70%;
+                    }
                 }
                 .tool-box {
                     display: flex;
                     .usetool {
                         display: flex;
-    
-                        h4 {
-                            width: $width-half;
-                        }
-                        .usetool {
-                            width: $width-half;
-                        }
+                        cursor: pointer;
                         .tool {
                             border: 1px solid black;
                             border-radius: 10px;
-                            width: 50%;
                             text-align: center;
                             font-size: 0.9rem;
                             padding: 3px;
                             margin-right: 5%;
+                            &:hover {
+                                border: 1px solid #E77E51;
+                                background: #E77E51;
+                                color: white;
+                            }
                         }
                     }
                 }
-                .project-txt {
-                    width: $width-half;
-                    
+                .project-txt {                   
                     margin-top: 10px;
                     display: flex;
+                    p {
+                        text-align: justify;
+                    }
                 }
             }   
         }     
@@ -2200,6 +2220,11 @@ main {
 footer {
     background-color: #E77E51;
     padding: 10px;
+    // .topmenu {
+    //     img {
+    //         width: 5%;
+    //     }
+    // }
     @include responsive(large-screens) {
         margin-top: 50px;
     }

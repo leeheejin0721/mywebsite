@@ -483,7 +483,7 @@ main {
             text-align: center;
             z-index: 3;
             position: relative;
-            top: -150px; /* 위치를 위로 이동 */
+            top: -160px; /* 위치를 위로 이동 */
             left: 50%;
             transform: translateX(-50%);
             @include responsive(large-screens) {
@@ -500,7 +500,7 @@ main {
                 font-family: $font-en;
                 font-weight: 400;
                 @include responsive(large-screens) {
-                    top: 110px;
+                    top: 140px;
                     width: 0;
                     height:0;
                     margin: 0 auto;
@@ -517,7 +517,7 @@ main {
                 text-align: center;
                 transform-origin: top center;
                 @include responsive(large-screens) {
-                    height: 200px;
+                    height: 190px;
                 }
               }
               .estrellas span:nth-of-type(1)  {
@@ -550,7 +550,7 @@ main {
                 transform-origin: bottom center;
                 // border: 1px solid red; /* Only for seeing trick */
                 @include responsive(large-screens) {
-                    line-height: -10;
+                    line-height: 0;
                 }
               }
             .pic {
@@ -559,10 +559,8 @@ main {
                 transition: opacity 0.7s ease-out, transform 0.7s ease-out;
                 width: 60%;
                 margin: auto;
-                margin-bottom: 30px;
                 @include responsive(large-screens) {
                     width: 35%;
-                    
                 }
             }  
             .pic.active {
@@ -590,11 +588,9 @@ main {
                 }
                 
                 .sum {
-
                     @include responsive(large-screens) {
                         position: absolute;
                         top: 450px;
-
                     }
                     p {
                         line-height: 1.9;
@@ -613,8 +609,8 @@ main {
                         }
                         p {
                             opacity: 0;
-                transform: translateX(-50px);
-                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+                            transform: translateX(-50px);
+                            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
                         }
                         p.active {
                             opacity: 1;
@@ -646,11 +642,14 @@ main {
                 h4 {
                     color: white;
                     font-family: $font-pre-regular;
-                    padding-top: 20px;
-                    font-size: 20px;       
+                    font-size: 1.1rem;
+                    @include responsive(large-screens) {
+                        padding-top: 20px;
+                    }       
                 }
                 .web-name {
                     display: flex;
+                    flex-direction: column;
                     justify-content: center;
                 }
                 .web {
@@ -669,32 +668,38 @@ main {
                         position: absolute;
                         top: -430px;
                         font-size: 2rem;
-                        left: 73%;
+                        left: 66%;
+                        width: 40%;
                     }
                 }
                 .me {
                     color: white;
                     font-family: $font-pre-light;
-                    font-size: 0.8rem;
                     margin-top: 20px;
                     @include responsive(large-screens) {
                         display: flex;
                     }
                     .fast {
+                        font-size: 0.9rem;
+                        text-align: left;
+                        text-align: justify;
                         @include responsive(large-screens) {
                             font-size: 1.25rem;
                             position: absolute;
-                            top: -130%;
+                            top: -170%;
                             width: 450px;
                         }
                     }
                     .want {
+                        font-size: 0.9rem;
+                        text-align: left;
+                        text-align: justify;
                         @include responsive(large-screens) {
                             font-size: 1.25rem;
-                            width: 40%;
+                            width: 32%;
                             position: absolute;
-                            top: -130%;
-                            left: 970px;
+                            top: -170%;
+                            left: 964px;
                         }
                     }
                 }
@@ -707,28 +712,47 @@ main {
                     color: white;
                 }
                 .hash-1, .hash-2, .hash-3 {
+                    padding: 3px 0;
                     display: flex;
                     justify-content: center;
                     width: $width-wide;
                     flex-direction: column;
                     @include responsive(large-screens) {
                         flex-direction: row;
+                        margin: 0;
                     }
                     h5 {
                         color: white;
-                        font-size: 1.3rem;
+                        text-align: left;
+                        font-size: 1.1rem;
+                        @include responsive(large-screens) {
+                            font-size: 1.3rem;
                         width: 15%;
                         text-align: left;
+                        }
                     }
                     p {
-                        width: 85%;
+                        font-size: 0.8rem;
                         text-align: left;
+                        @include responsive(large-screens) {
+                            font-size: 1rem;
+                            width: 85%;
+                            text-align: left;
+                        }
                     }
                 }
                 .hash {
+                    width: $width-wide;
                     display: flex;
                     justify-content: space-around;
                     position: relative;
+                    h5 {
+                        font-size: 1.1rem;
+                        margin-bottom: 30px;
+                        @include responsive(large-screens) {
+                            font-size: 1.3rem;
+                        }
+                    }
                 }
             }   
         }
@@ -786,6 +810,9 @@ main {
             z-index: 3;
             width: $width-wide;
             display: flex;
+            @include responsive(large-screens) {
+                margin-top: 60px;
+            }
             button {
                 width: $width-half;
                 background: $bg-color;
@@ -1926,7 +1953,7 @@ main {
             .public-title {
                 @include responsive(large-screens) {
                     position: absolute;
-                    top: 30px;
+                    top: 10px;
                     left: 60%;
                 }
                 h3 {
@@ -1957,39 +1984,113 @@ main {
                 @include responsive(large-screens) {
                 }
                 .public-img1 {
+                    display: none;
                     @include responsive(large-screens) {
-                        width: 28%;
+                        display: block;
+                        width: $width-wide;
                         position: absolute;
-                        top: 28%;
+                        top: 35%;
+                        &:hover {
+                            z-index: 7;
+                            img {
+                                z-index: 10; // 이미지가 더 앞으로 나오게 설정
+                            }
+                            &::before {
+                                background: rgba(0, 0, 0, 0); // 배경색 제거
+                            }
+                            ~ .public-img2::before {
+                                background: rgba(0, 0, 0, 0.5); // public-img2를 어둡게 만들기
+                            }
+                        }
                     }
                     img {
-                        width: $width-wide;
+                        width: 28%;
                         margin: 20px 0;
                     }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 28%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.5);
+                        transition: background 0.3s
+                    }
+            
                 }
                 .public-img2 {
+                    width: $width-wide;
+                    img {
+                        width: $width-wide
+                    }
                     @include responsive(large-screens) {
                         position: relative;
                         margin: auto;
                         margin-top: 70px;
                         margin-bottom: 70px;
-                        z-index: 5;
+                        z-index: 3;
+                        left: 19%;
+                        width: $width-wide;
                         img {
-                            margin: 20px 0;
+                            width: 60%;
+                        }
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 60%;
+                            height: 100%;
+                            background: rgba(0, 0, 0, 0);
+                            transition: background 0.3s; // 배경색 변화 트랜지션 추가
                         }
                     }
+
                 }
                 .public-img3 {
+                    display: none;
                     @include responsive(large-screens) {
+                        display: block;
+                        width: $width-wide;
                         z-index: 1;
-                        width: 27%;
+                        cursor: pointer;
+                        width: $width-wide;
                         position: absolute;
                         top: 0;
                         left: 70%;
+                        &:hover {
+                            z-index: 7;
+                            img {
+                                z-index: 10; // 이미지가 더 앞으로 나오게 설정
+                            }
+                            &::before {
+                                background: rgba(0, 0, 0, 0); // 배경색 제거
+                            }
+                        }
                     }
                     img {
-                        width: $width-wide;
-                        margin: 20px 0;
+                        width: 27%;
+                    }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 27%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.5);
+                        transition: background 0.3s;
+                    }
+                    
+                }
+                .public-img1:hover ~ .public-img2::before,
+                .public-img3:hover ~ .public-img2::before {
+                    background: rgba(0, 0, 0, 0.5);
+                }
+                &:hover {
+                    .public-img2::before {
+                        background: rgba(0, 0, 0, 0.5);
                     }
                 }
             }
@@ -1999,7 +2100,7 @@ main {
                 justify-content: right;
                 @include responsive(large-screens) {
                     position: absolute;
-                    top: 68%;
+                    top: 65%;
                     left: 17.5%;
                     width: 55%;
                 }
@@ -2218,6 +2319,33 @@ main {
 }
 
 footer {
+    .topmenu {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+
+        a {
+            display: block;
+            position: relative;
+            text-decoration: none;
+
+            img {
+                width: 50px;
+                height: auto;
+            }
+
+            span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-family: $font-en;
+                font-size: 1.2rem;
+            }
+        }
+    }
+    position: relative;
     background-color: #E77E51;
     padding: 10px;
     // .topmenu {

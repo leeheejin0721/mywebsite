@@ -598,7 +598,7 @@ main #aboutme .aboutme_txt-img {
   text-align: center;
   z-index: 3;
   position: relative;
-  top: -150px; /* 위치를 위로 이동 */
+  top: -160px; /* 위치를 위로 이동 */
   left: 50%;
   transform: translateX(-50%);
   /* Reverse mode */
@@ -621,7 +621,7 @@ main #aboutme .aboutme_txt-img .estrellas {
 }
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .estrellas {
-    top: 110px;
+    top: 140px;
     width: 0;
     height: 0;
     margin: 0 auto;
@@ -640,7 +640,7 @@ main #aboutme .aboutme_txt-img .estrellas span {
 }
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .estrellas span {
-    height: 200px;
+    height: 190px;
   }
 }
 main #aboutme .aboutme_txt-img .estrellas span:nth-of-type(1) {
@@ -673,7 +673,7 @@ main #aboutme .aboutme_txt-img .inverso span {
 }
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .inverso span {
-    line-height: -10;
+    line-height: 0;
   }
 }
 main #aboutme .aboutme_txt-img .pic {
@@ -682,7 +682,6 @@ main #aboutme .aboutme_txt-img .pic {
   transition: opacity 0.7s ease-out, transform 0.7s ease-out;
   width: 60%;
   margin: auto;
-  margin-bottom: 30px;
 }
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .pic {
@@ -768,11 +767,16 @@ main #aboutme .aboutme_txt-img .about-txt .sum .ab-right p.active {
 main #aboutme .aboutme_txt-img .about-txt h4 {
   color: white;
   font-family: "Pretendard-Regular";
-  padding-top: 20px;
-  font-size: 20px;
+  font-size: 1.1rem;
+}
+@media (min-width: 1024px) {
+  main #aboutme .aboutme_txt-img .about-txt h4 {
+    padding-top: 20px;
+  }
 }
 main #aboutme .aboutme_txt-img .about-txt .web-name {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 main #aboutme .aboutme_txt-img .about-txt .web {
@@ -795,13 +799,13 @@ main #aboutme .aboutme_txt-img .about-txt .name {
     position: absolute;
     top: -430px;
     font-size: 2rem;
-    left: 73%;
+    left: 66%;
+    width: 40%;
   }
 }
 main #aboutme .aboutme_txt-img .about-txt .me {
   color: white;
   font-family: "Pretendard-Light";
-  font-size: 0.8rem;
   margin-top: 20px;
 }
 @media (min-width: 1024px) {
@@ -809,21 +813,31 @@ main #aboutme .aboutme_txt-img .about-txt .me {
     display: flex;
   }
 }
+main #aboutme .aboutme_txt-img .about-txt .me .fast {
+  font-size: 0.9rem;
+  text-align: left;
+  text-align: justify;
+}
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .about-txt .me .fast {
     font-size: 1.25rem;
     position: absolute;
-    top: -130%;
+    top: -170%;
     width: 450px;
   }
+}
+main #aboutme .aboutme_txt-img .about-txt .me .want {
+  font-size: 0.9rem;
+  text-align: left;
+  text-align: justify;
 }
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .about-txt .me .want {
     font-size: 1.25rem;
-    width: 40%;
+    width: 32%;
     position: absolute;
-    top: -130%;
-    left: 970px;
+    top: -170%;
+    left: 964px;
   }
 }
 main #aboutme .aboutme_txt-img .about-txt h5 {
@@ -835,6 +849,7 @@ main #aboutme .aboutme_txt-img .about-txt p {
   color: white;
 }
 main #aboutme .aboutme_txt-img .about-txt .hash-1, main #aboutme .aboutme_txt-img .about-txt .hash-2, main #aboutme .aboutme_txt-img .about-txt .hash-3 {
+  padding: 3px 0;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -843,22 +858,46 @@ main #aboutme .aboutme_txt-img .about-txt .hash-1, main #aboutme .aboutme_txt-im
 @media (min-width: 1024px) {
   main #aboutme .aboutme_txt-img .about-txt .hash-1, main #aboutme .aboutme_txt-img .about-txt .hash-2, main #aboutme .aboutme_txt-img .about-txt .hash-3 {
     flex-direction: row;
+    margin: 0;
   }
 }
 main #aboutme .aboutme_txt-img .about-txt .hash-1 h5, main #aboutme .aboutme_txt-img .about-txt .hash-2 h5, main #aboutme .aboutme_txt-img .about-txt .hash-3 h5 {
   color: white;
-  font-size: 1.3rem;
-  width: 15%;
   text-align: left;
+  font-size: 1.1rem;
+}
+@media (min-width: 1024px) {
+  main #aboutme .aboutme_txt-img .about-txt .hash-1 h5, main #aboutme .aboutme_txt-img .about-txt .hash-2 h5, main #aboutme .aboutme_txt-img .about-txt .hash-3 h5 {
+    font-size: 1.3rem;
+    width: 15%;
+    text-align: left;
+  }
 }
 main #aboutme .aboutme_txt-img .about-txt .hash-1 p, main #aboutme .aboutme_txt-img .about-txt .hash-2 p, main #aboutme .aboutme_txt-img .about-txt .hash-3 p {
-  width: 85%;
+  font-size: 0.8rem;
   text-align: left;
 }
+@media (min-width: 1024px) {
+  main #aboutme .aboutme_txt-img .about-txt .hash-1 p, main #aboutme .aboutme_txt-img .about-txt .hash-2 p, main #aboutme .aboutme_txt-img .about-txt .hash-3 p {
+    font-size: 1rem;
+    width: 85%;
+    text-align: left;
+  }
+}
 main #aboutme .aboutme_txt-img .about-txt .hash {
+  width: 100%;
   display: flex;
   justify-content: space-around;
   position: relative;
+}
+main #aboutme .aboutme_txt-img .about-txt .hash h5 {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+@media (min-width: 1024px) {
+  main #aboutme .aboutme_txt-img .about-txt .hash h5 {
+    font-size: 1.3rem;
+  }
 }
 @keyframes rotate {
   from {
@@ -916,6 +955,11 @@ main #aboutme .aboutme-button {
   z-index: 3;
   width: 100%;
   display: flex;
+}
+@media (min-width: 1024px) {
+  main #aboutme .aboutme-button {
+    margin-top: 60px;
+  }
 }
 main #aboutme .aboutme-button button {
   width: 50%;
@@ -2114,7 +2158,7 @@ main #portfolio .public-portfolio {
 @media (min-width: 1024px) {
   main #portfolio .public-portfolio .public-title {
     position: absolute;
-    top: 30px;
+    top: 10px;
     left: 60%;
   }
 }
@@ -2147,16 +2191,48 @@ main #portfolio .public-portfolio .public-img-box {
   overflow: hidden;
   position: relative;
 }
+main #portfolio .public-portfolio .public-img-box .public-img1 {
+  display: none;
+}
 @media (min-width: 1024px) {
   main #portfolio .public-portfolio .public-img-box .public-img1 {
-    width: 28%;
+    display: block;
+    width: 100%;
     position: absolute;
-    top: 28%;
+    top: 35%;
+  }
+  main #portfolio .public-portfolio .public-img-box .public-img1:hover {
+    z-index: 7;
+  }
+  main #portfolio .public-portfolio .public-img-box .public-img1:hover img {
+    z-index: 10;
+  }
+  main #portfolio .public-portfolio .public-img-box .public-img1:hover::before {
+    background: rgba(0, 0, 0, 0);
+  }
+  main #portfolio .public-portfolio .public-img-box .public-img1:hover ~ .public-img2::before {
+    background: rgba(0, 0, 0, 0.5);
   }
 }
 main #portfolio .public-portfolio .public-img-box .public-img1 img {
-  width: 100%;
+  width: 28%;
   margin: 20px 0;
+}
+main #portfolio .public-portfolio .public-img-box .public-img1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  transition: background 0.3s;
+}
+main #portfolio .public-portfolio .public-img-box .public-img2 {
+  width: 100%;
+}
+main #portfolio .public-portfolio .public-img-box .public-img2 img {
+  width: 100%;
 }
 @media (min-width: 1024px) {
   main #portfolio .public-portfolio .public-img-box .public-img2 {
@@ -2164,24 +2240,67 @@ main #portfolio .public-portfolio .public-img-box .public-img1 img {
     margin: auto;
     margin-top: 70px;
     margin-bottom: 70px;
-    z-index: 5;
+    z-index: 3;
+    left: 19%;
+    width: 100%;
   }
   main #portfolio .public-portfolio .public-img-box .public-img2 img {
-    margin: 20px 0;
+    width: 60%;
   }
+  main #portfolio .public-portfolio .public-img-box .public-img2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s;
+  }
+}
+main #portfolio .public-portfolio .public-img-box .public-img3 {
+  display: none;
 }
 @media (min-width: 1024px) {
   main #portfolio .public-portfolio .public-img-box .public-img3 {
+    display: block;
+    width: 100%;
     z-index: 1;
-    width: 27%;
+    cursor: pointer;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 70%;
   }
+  main #portfolio .public-portfolio .public-img-box .public-img3:hover {
+    z-index: 7;
+  }
+  main #portfolio .public-portfolio .public-img-box .public-img3:hover img {
+    z-index: 10;
+  }
+  main #portfolio .public-portfolio .public-img-box .public-img3:hover::before {
+    background: rgba(0, 0, 0, 0);
+  }
 }
 main #portfolio .public-portfolio .public-img-box .public-img3 img {
-  width: 100%;
-  margin: 20px 0;
+  width: 27%;
+}
+main #portfolio .public-portfolio .public-img-box .public-img3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 27%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  transition: background 0.3s;
+}
+main #portfolio .public-portfolio .public-img-box .public-img1:hover ~ .public-img2::before,
+main #portfolio .public-portfolio .public-img-box .public-img3:hover ~ .public-img2::before {
+  background: rgba(0, 0, 0, 0.5);
+}
+main #portfolio .public-portfolio .public-img-box:hover .public-img2::before {
+  background: rgba(0, 0, 0, 0.5);
 }
 main #portfolio .public-portfolio .public-button {
   width: 100%;
@@ -2191,7 +2310,7 @@ main #portfolio .public-portfolio .public-button {
 @media (min-width: 1024px) {
   main #portfolio .public-portfolio .public-button {
     position: absolute;
-    top: 68%;
+    top: 65%;
     left: 17.5%;
     width: 55%;
   }
@@ -2410,8 +2529,32 @@ main #contact .contact-box .contact-txt .icon-mail a {
 }
 
 footer {
+  position: relative;
   background-color: #E77E51;
   padding: 10px;
+}
+footer .topmenu {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+footer .topmenu a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+footer .topmenu a img {
+  width: 50px;
+  height: auto;
+}
+footer .topmenu a span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Alegreya";
+  font-size: 1.2rem;
 }
 @media (min-width: 1024px) {
   footer {

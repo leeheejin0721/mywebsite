@@ -926,12 +926,12 @@
                 </div>
             </div>
             <div class="museum-button">
-                <button id="git">
+                <button id="git" onclick="window.location.href='https://github.com/leeheejin0721/ARTMUSEUM'">
                     <p>GIT</p>
                     <img src="./images/git_black.png" alt="git" class="black">
                     <img src="./images/github_white.png" alt="github_white" class="white">
                 </button>
-                <button id="website">
+                <button id="website" onclick="window.location.href='./work/page/ARTMUSEUM/index.html'">
                     <p>WEBSITE</p>
                     <img src="./images/website_black.png" alt="website_black" class="black">
                     <img src="./images/website_white.png" alt="website_white" class="white">
@@ -995,12 +995,12 @@
                     </div>
                     <div class="container">
                         <div class="festival-button">
-                            <button id="git">
+                            <button id="git" onclick="window.location.href='https://github.com/leeheejin00/leeheejin00.github.io'">
                                 <p>GIT</p>
                                 <img src="./images/git_black.png" alt="git" class="black">
                                 <img src="./images/github_white.png" alt="github_white" class="white">
                             </button>
-                            <button id="website">
+                            <button id="website" onclick="window.location.href='https://leeheejin00.github.io/'">
                                 <p>WEBSITE</p>
                                 <img src="./images/website_black.png" alt="website_black" class="black">
                                 <img src="./images/website_white.png" alt="website_white" class="white">
@@ -1010,7 +1010,7 @@
                                 <img src="./images/design_black.png" alt="design_black" class="black">
                                 <img src="./images/design_white.png" alt="design_white" class="white">
                             </button>
-                            <button id="design-plan">
+                            <button id="design-plan" onclick="window.location.href='https://www.figma.com/design/O3K5xS539H3FKnBQkPapxB/%EA%B6%81%EC%A4%91%EB%AC%B8%ED%99%94%EC%B6%95%EC%A0%84-%EA%B8%B0%ED%9A%8D%EC%84%9C?node-id=0-1&t=VY4n9wt8f18nGe3e-0'">
                                 <p class="design-p">DESIGN PLAN</p>
                                 <img src="./images/designplan_black.png" alt="design_black" class="black">
                                 <img src="./images/designplan_white.png" alt="designplan_white" class="white">
@@ -1064,12 +1064,12 @@
                         </div>
                     </div>
                     <div class="public-button">
-                        <button id="git">
+                        <button id="git" onclick="window.location.href='https://github.com/leeheejin0721/mywebsite'">
                             <p>GIT</p>
                             <img src="./images/git_black.png" alt="git" class="black">
                             <img src="./images/github_white.png" alt="github_white" class="white">
                         </button>
-                        <button id="website">
+                        <button id="website" onclick="window.location.href='./index.html'">
                             <p>WEBSITE</p>
                             <img src="./images/website_black.png" alt="website_black" class="black">
                             <img src="./images/website_white.png" alt="website_white" class="white">
@@ -1105,6 +1105,34 @@
                 </div> <!-- public-portfolio -->
             </div> <!-- container -->
         </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 // 요소의 50% 이상이 뷰포트에 들어왔을 때 트리거
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('public-img1')) {
+                            entry.target.classList.add('slide-in-left');
+                        } else if (entry.target.classList.contains('public-img3')) {
+                            entry.target.classList.add('slide-in-right');
+                        }
+                        observer.unobserve(entry.target); // 애니메이션 적용 후 다시 관찰하지 않도록 해제
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            const targets = document.querySelectorAll('.public-img1, .public-img3');
+            targets.forEach(target => observer.observe(target));
+        });
+        </script>
 
         <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -1428,7 +1456,7 @@
         <div class="topmenu">
             <a href="#">
                 <img src="./images/topmenu.png" alt="topmenu">
-                <span>top</span>
+                <span>TOP</span>
             </a>
         </div>
     </footer>

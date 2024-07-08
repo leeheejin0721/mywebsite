@@ -2184,6 +2184,26 @@ main #portfolio .public-portfolio .public-title .en {
     text-align: right;
   }
 }
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 main #portfolio .public-portfolio .public-img-box {
   width: 100%;
   display: flex;
@@ -2197,6 +2217,7 @@ main #portfolio .public-portfolio .public-img-box .public-img1 {
 @media (min-width: 1024px) {
   main #portfolio .public-portfolio .public-img-box .public-img1 {
     display: block;
+    opacity: 0;
     width: 100%;
     position: absolute;
     top: 35%;
@@ -2227,6 +2248,9 @@ main #portfolio .public-portfolio .public-img-box .public-img1::before {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   transition: background 0.3s;
+}
+main #portfolio .public-portfolio .public-img-box .public-img1.slide-in-left {
+  animation: slideInFromLeft 1s forwards;
 }
 main #portfolio .public-portfolio .public-img-box .public-img2 {
   width: 100%;
@@ -2264,8 +2288,9 @@ main #portfolio .public-portfolio .public-img-box .public-img3 {
 @media (min-width: 1024px) {
   main #portfolio .public-portfolio .public-img-box .public-img3 {
     display: block;
+    opacity: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
     cursor: pointer;
     width: 100%;
     position: absolute;
@@ -2295,6 +2320,9 @@ main #portfolio .public-portfolio .public-img-box .public-img3::before {
   background: rgba(0, 0, 0, 0.5);
   transition: background 0.3s;
 }
+main #portfolio .public-portfolio .public-img-box .public-img3.slide-in-right {
+  animation: slideInFromRight 1s forwards;
+}
 main #portfolio .public-portfolio .public-img-box .public-img1:hover ~ .public-img2::before,
 main #portfolio .public-portfolio .public-img-box .public-img3:hover ~ .public-img2::before {
   background: rgba(0, 0, 0, 0.5);
@@ -2310,6 +2338,7 @@ main #portfolio .public-portfolio .public-button {
 @media (min-width: 1024px) {
   main #portfolio .public-portfolio .public-button {
     position: absolute;
+    z-index: 10;
     top: 65%;
     left: 17.5%;
     width: 55%;
@@ -2555,6 +2584,7 @@ footer .topmenu a span {
   transform: translate(-50%, -50%);
   font-family: "Alegreya";
   font-size: 1.2rem;
+  color: white;
 }
 @media (min-width: 1024px) {
   footer {

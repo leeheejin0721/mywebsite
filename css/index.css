@@ -2288,7 +2288,7 @@ main #portfolio .public-portfolio .public-img-box .public-img3 {
 @media (min-width: 1024px) {
   main #portfolio .public-portfolio .public-img-box .public-img3 {
     display: block;
-    opacity: 0;
+    opacity: 1;
     width: 100%;
     z-index: 2;
     cursor: pointer;

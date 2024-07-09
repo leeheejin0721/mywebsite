@@ -2077,7 +2077,7 @@ main {
                     display: none;
                     @include responsive(large-screens) {
                         display: block;
-                        opacity: 0;
+                        opacity: 1; // 고치기
                         width: $width-wide;
                         z-index: 2;
                         cursor: pointer;

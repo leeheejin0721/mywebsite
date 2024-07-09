@@ -9,7 +9,7 @@
     <meta name="type" property="og:type" content="article">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./js/menu.js">
+    <script src="js/index.js"></script>
     <title>mywebsite</title>
 </head>
 <body>
@@ -42,55 +42,6 @@
             </nav>
         </div>
     </header>
-
-    <script>
-        document.getElementById("scrollToContact").addEventListener("click", function(event) {
-    event.preventDefault();
-    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-})
-    </script>
-
-    <script>
-        document.getElementById('menuToggle').addEventListener('click', function() {
-        this.classList.toggle('change');
-        const menuBox = document.getElementById('menuBox');
-        if (menuBox.classList.contains('active')) {
-            menuBox.classList.remove('active');
-            setTimeout(() => menuBox.style.display = 'none', 500); // 애니메이션 시간과 일치
-        } else {
-            menuBox.style.display = 'block';
-            setTimeout(() => menuBox.classList.add('active'), 10); // display가 block으로 바뀐 후 애니메이션 시작
-        }
-    });
-
-    document.getElementById('aboutMeLink').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.getElementById('aboutme').scrollIntoView({ behavior: 'smooth' });
-            document.getElementById('menuBox').style.display = 'none';
-            document.getElementById('menuToggle').classList.remove('open');
-        });
-
-        document.getElementById('skillLink').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.getElementById('skill').scrollIntoView({ behavior: 'smooth' });
-            document.getElementById('menuBox').style.display = 'none';
-            document.getElementById('menuToggle').classList.remove('open');
-        });
-
-        document.getElementById('portfolioLink').addEventListener('click', function(event) {
-        event.preventDefault();
-        document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
-        document.getElementById('menuBox').style.display = 'none';
-        document.getElementById('menuToggle').classList.remove('open');  // 햄버거 모양으로 변경
-    });
-
-    document.getElementById('contactLink').addEventListener('click', function(event) {
-        event.preventDefault();
-        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-        document.getElementById('menuBox').style.display = 'none';
-        document.getElementById('menuToggle').classList.remove('open');  // 햄버거 모양으로 변경
-    });
-    </script>
 
     <main>
         <section id="intro">
@@ -143,86 +94,6 @@
                 </div>
             </div>
         </section>
-
-        <script>
-            document.getElementById('aboutme-circle').addEventListener('click', function() {
-                document.getElementById('aboutme').scrollIntoView({ behavior: 'smooth' });
-            });
-        </script>
-        <script>
-            document.getElementById('portfolio-circle').addEventListener('click', function() {
-                document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
-            });
-        </script>
-        <script>
-            document.getElementById('contact-circle').addEventListener('click', function() {
-                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-            });
-        </script>
-        <script>
-            document.getElementById('skill-circle').addEventListener('click', function() {
-                document.getElementById('skill').scrollIntoView({ behavior: 'smooth' });
-            });
-        </script>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-            const introSection = document.querySelector('#intro');
-            const options = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // 여기에 애니메이션을 다시 실행하는 코드를 추가합니다.
-                        const circles = document.querySelectorAll('.contact-circle, .portfolio-circle, .aboutme-circle, .skill-circle');
-                        circles.forEach(circle => {
-                            circle.style.animation = 'none';
-                            circle.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
-                            circle.style.animation = '';
-                        });
-
-                        const gradients = document.querySelectorAll('.blue_gradient img, .gradient-red, .gradient-orange, .gradient-yellow, .intro-txt h1, #resume');
-                        gradients.forEach(gradient => {
-                            gradient.style.animation = 'none';
-                            gradient.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
-                            gradient.style.animation = '';
-                        });
-                    }
-                });
-            }, options);
-
-            observer.observe(introSection);
-        });
-        </script>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-            const gradientOrange = document.querySelector('.gradient_orange');
-            const options = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // 애니메이션을 다시 실행
-                        gradientOrange.style.animation = 'none';
-                        gradientOrange.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
-                        gradientOrange.style.animation = 'gradientFadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
-                    }
-                });
-            }, options);
-
-            observer.observe(gradientOrange);
-        });
-        </script>
-        
 
         <section id="aboutme">
             <div class="container">
@@ -312,98 +183,6 @@
             </div>
             </div>
         </section>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-    const aboutMeSection = document.getElementById("aboutme");
-    const elementsToAnimate = document.querySelectorAll(".animate");
-    const picElement = document.querySelector(".pic");
-    const h2Element = document.querySelector(".estrellas");
-    const sumElement = document.querySelector(".about-txt .sum");
-    const sumParagraphs = document.querySelectorAll(".about-txt .sum p");
-    const profButton = document.getElementById('prof');
-    const suitButton = document.getElementById('suit');
-    const suitSection = document.querySelector('.suit');
-
-    let activeSection = 'prof'; // 기본값으로 'prof' 설정
-
-    window.addEventListener("scroll", function() {
-        const sectionPosition = aboutMeSection.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.5;
-
-        if (sectionPosition < screenPosition) {
-            aboutMeSection.style.backgroundPosition = "bottom 100px";
-            elementsToAnimate.forEach(element => {
-                element.classList.add("active");
-            });
-            picElement.classList.add("active");
-            h2Element.classList.add("active");
-            
-            if (activeSection === 'prof') {
-                sumElement.classList.add("active");
-                sumParagraphs.forEach((p, index) => {
-                    setTimeout(() => {
-                        p.classList.add("active");
-                    }, index * 100);
-                });
-            }
-        }
-    });
-
-    profButton.addEventListener('click', function() {
-        activeSection = 'prof';
-        profButton.classList.add('active');
-        suitButton.classList.remove('active');
-        sumElement.classList.add('active');
-        suitSection.classList.remove('active');
-        sumParagraphs.forEach(p => {
-            p.classList.add('active');
-        });
-    });
-
-    suitButton.addEventListener('click', function() {
-        activeSection = 'suit';
-        suitButton.classList.add('active');
-        profButton.classList.remove('active');
-        sumElement.classList.remove('active');
-        suitSection.classList.add('active');
-        sumParagraphs.forEach(p => {
-            p.classList.remove('active');
-        });
-    });
-});
-            </script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-            const profButton = document.getElementById('prof');
-            const suitButton = document.getElementById('suit');
-            const suitSection = document.querySelector('.suit');
-            const sumSection = document.querySelector('.sum');
-            const sumParagraphs = document.querySelectorAll('.about-txt .sum p');
-        
-            profButton.addEventListener('click', function() {
-                profButton.classList.add('active');
-                suitButton.classList.remove('active');
-                sumSection.classList.add('active');
-                suitSection.classList.remove('active');
-                sumParagraphs.forEach(p => {
-                    p.classList.add('active');
-                });
-            });
-        
-            suitButton.addEventListener('click', function() {
-                suitButton.classList.add('active');
-                profButton.classList.remove('active');
-                sumSection.classList.remove('active');
-                suitSection.classList.add('active');
-                sumParagraphs.forEach(p => {
-                    p.classList.remove('active');
-                });
-            });
-        });
-</script>
-
 
         <section id="skill">
             <div class="skill-bg">
@@ -680,232 +459,6 @@
             </div>
         </section>
 
-       <script>
-            document.addEventListener('DOMContentLoaded', function() {
-            const skillSection = document.querySelector('.skills-circle');
-            const skillBoxes = document.querySelectorAll('.skill-box');
-
-            const checkVisibility = () => {
-                const sectionTop = skillSection.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-
-                // skill 섹션이 화면에 나올 때
-                if (sectionTop < windowHeight - 100) { // 약간의 여유를 두기 위해 -100 추가
-                    skillBoxes.forEach(box => {
-                        box.classList.add('visible');
-                    });
-
-                    // 스크롤 이벤트 리스너 제거
-                    document.removeEventListener('scroll', checkVisibility);
-                }
-            };
-
-            document.addEventListener('scroll', checkVisibility);
-
-            // 페이지 로드 시 한 번 확인
-            checkVisibility();
-        });
-       </script>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-            const skillBoxes = document.querySelectorAll('.skill-box');
-            const skillsCircle = document.querySelector('.skills-circle');
-            const imgBars = document.querySelectorAll('.img-bar'); // 모든 img-bar 요소를 선택
-
-            skillsCircle.addEventListener('mouseenter', function() {
-                skillsCircle.style.animationPlayState = 'paused';
-                imgBars.forEach(bar => {
-                    bar.style.animationPlayState = 'paused';
-                });
-            });
-
-            skillsCircle.addEventListener('mouseleave', function() {
-                skillsCircle.style.animationPlayState = 'running';
-                imgBars.forEach(bar => {
-                    bar.style.animationPlayState = 'running';
-                });
-            });
-
-            skillBoxes.forEach(box => {
-                box.addEventListener('mouseenter', function() {
-                    skillsCircle.style.animationPlayState = 'paused';
-                    imgBars.forEach(bar => {
-                        bar.style.animationPlayState = 'paused';
-                    });
-                });
-
-                box.addEventListener('mouseleave', function() {
-                    skillsCircle.style.animationPlayState = 'running';
-                    imgBars.forEach(bar => {
-                        bar.style.animationPlayState = 'running';
-                    });
-                });
-            });
-        });
-        </script>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const skillBg = document.querySelector('.skill-bg img');
-                const options = {
-                    root: null,
-                    rootMargin: '0px',
-                    threshold: 0.1
-                };
-            
-                const observer = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            // 애니메이션을 다시 실행
-                            skillBg.style.animation = 'none';
-                            skillBg.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
-                            skillBg.style.animation = 'gradientFadein 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
-                        }
-                    });
-                }, options);
-            
-                observer.observe(skillBg);
-            });
-            </script>
-
-        <script>
-            document.querySelectorAll('.skill-box').forEach(skill => {
-            skill.addEventListener('mouseover', function() {
-                const icon = skill.getAttribute('data-icon');
-                const description = skill.getAttribute('data-description');
-                const progress = skill.getAttribute('data-progress');
-                const progressValue = parseInt(progress, 10);
-                const circumference = 754; // 반지름 120에 맞춘 둘레 길이
-                const offset = circumference - (progressValue / 100) * circumference;
-
-                const hoverDisplay = document.querySelector('.hover-display');
-                hoverDisplay.querySelector('.hover-icon').src = icon;
-                hoverDisplay.querySelector('.hover-description').innerHTML = description;
-                hoverDisplay.querySelector('.hover-progress').style.width = progress;
-
-                const progressRing = hoverDisplay.querySelector('.progress-ring');
-                progressRing.style.strokeDashoffset = circumference;
-                progressRing.style.transition = 'none';
-                requestAnimationFrame(() => {
-                    requestAnimationFrame(() => {
-                        progressRing.style.transition = 'stroke-dashoffset 1s linear';
-                        progressRing.style.strokeDashoffset = offset;
-                    });
-                });
-
-                hoverDisplay.style.display = 'block';
-            });
-
-            skill.addEventListener('mouseout', function() {
-                document.querySelector('.hover-display').style.display = 'none';
-            });
-        });
-            </script>
-
-        <!-- 스킬 퍼센트 -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-            var skillSection = document.querySelector('#skill');
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-            var progressBars = document.querySelectorAll('.progress');
-            if (entry.isIntersecting) {
-                skillSection.classList.add('skill-visible');
-                progressBars.forEach(function(progressBar) {
-                    progressBar.style.animation = progressBar.classList.contains('html-progress') ? 'fill-html 2s forwards' :
-                    progressBar.classList.contains('css-progress') ? 'fill-css 2s forwards' :
-                    progressBar.classList.contains('sass-progress') ? 'fill-sass 2s forwards' :
-                    progressBar.classList.contains('javascript-progress') ? 'fill-javascript 2s forwards' :
-                    progressBar.classList.contains('jquery-progress') ? 'fill-jquery 2s forwards' :
-                    progressBar.classList.contains('react-progress') ? 'fill-react 2s forwards' :
-                    progressBar.classList.contains('git-progress') ? 'fill-git 2s forwards' :
-                    progressBar.classList.contains('figma-progress') ? 'fill-figma 2s forwards' :
-                    progressBar.classList.contains('ai-progress') ? 'fill-ai 2s forwards' :
-                    progressBar.classList.contains('photoshop-progress') ? 'fill-photoshop 2s forwards' :
-                    progressBar.classList.contains('ae-progress') ? 'fill-ae 2s forwards' :
-                    progressBar.classList.contains('pre-progress') ? 'fill-pre 2s forwards' :
-                    
-                    progressBar.style.animation;
-                });
-            } else {
-                skillSection.classList.remove('skill-visible');
-                progressBars.forEach(function(progressBar) {
-                    progressBar.style.animation = 'none';
-                });
-            }
-        });
-        }, {
-            threshold: 0.5
-        });
-
-        observer.observe(skillSection);
-
-    // 모달 제어
-        var modal = document.getElementById('skill-modal');
-        var modalIcon = modal.querySelector('.modal-icon');
-        var modalDescription = modal.querySelector('.modal-description');
-        var closeBtn = modal.querySelector('.close');
-        var skillBoxes = document.querySelectorAll('.mo-skill-box div');
-
-        var skillPercentages = {
-            'html-box': 90,
-            'css-box': 85,
-            'sass-box': 85,
-            'javascript-box': 80,
-            'jquery-box': 85,
-            'react-box': 80,
-            'git-box': 90,
-            'figma-box': 90,
-            'ai-box': 85,
-            'photoshop-box': 90,
-            'ae-box': 75,
-            'pre-box': 80
-        };
-
-        skillBoxes.forEach(function(skillBox) {
-            skillBox.addEventListener('click', function() {
-                var imgSrc = this.querySelector('img').src;
-                var description = this.querySelector('p').innerText;
-                var skillClass = this.classList[1];
-                var percentage = skillPercentages[skillClass];
-                
-                modalIcon.src = imgSrc;
-                modalDescription.innerText = description;
-                modal.style.display = 'block';
-                
-                // 애니메이션 설정
-                var progressCircle = document.getElementById('progress-circle');
-                var radius = progressCircle.r.baseVal.value;
-                var circumference = radius * 2 * Math.PI;
-                var offset = circumference - (percentage / 100 * circumference);
-
-                progressCircle.style.strokeDashoffset = circumference; // 초기 상태
-                modal.style.display = 'block';
-                
-                setTimeout(() => {
-                    progressCircle.style.strokeDashoffset = offset;
-                }, 0);
-                    });
-                });
-
-                closeBtn.addEventListener('click', function() {
-                    modal.style.display = 'none';
-                    var progressCircle = document.getElementById('progress');
-                    progressCircle.style.strokeDashoffset = 879; // 초기 상태로 복구
-                });
-
-                window.addEventListener('click', function(event) {
-                    if (event.target === modal) {
-                        modal.style.display = 'none';
-                        var progressCircle = document.getElementById('progress');
-                        progressCircle.style.strokeDashoffset = 879; // 초기 상태로 복구
-                    }
-                });
-                });
-        </script>
-
-
         <section id="portfolio">
             <div class="container">
                 <h2>PORTFOLIO</h2>
@@ -1105,295 +658,6 @@
                 </div> <!-- public-portfolio -->
             </div> <!-- container -->
         </section>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.5 // 요소의 50% 이상이 뷰포트에 들어왔을 때 트리거
-            };
-
-            const observerCallback = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (entry.target.classList.contains('public-img1')) {
-                            entry.target.classList.add('slide-in-left');
-                        } else if (entry.target.classList.contains('public-img3')) {
-                            entry.target.classList.add('slide-in-right');
-                        }
-                        observer.unobserve(entry.target); // 애니메이션 적용 후 다시 관찰하지 않도록 해제
-                    }
-                });
-            };
-
-            const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-            const targets = document.querySelectorAll('.public-img1, .public-img3');
-            targets.forEach(target => observer.observe(target));
-        });
-        </script>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                let festivalImages = document.querySelectorAll('.festival-img1, .festival-img2, .festival-img3, .festival-img4');
-        
-                function checkScroll() {
-                    festivalImages.forEach(image => {
-                        if (isElementInViewport(image)) {
-                            image.classList.add('visible');
-                        }
-                    });
-                }
-        
-                function isElementInViewport(el) {
-                    var rect = el.getBoundingClientRect();
-                    return (
-                        rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
-                        rect.bottom >= 0
-                    );
-                }
-        
-                window.addEventListener('scroll', checkScroll);
-                checkScroll(); // Check on page load
-            });
-        </script>
-        <script>
-            // 스크롤 이벤트 리스너
-            let alreadyAnimated = false; // 이미 한 번 애니메이션을 실행했는지 여부를 체크하는 변수
-
-            window.addEventListener('scroll', function() {
-                // 이미 한 번 애니메이션을 실행했으면 다시 실행하지 않음
-                if (alreadyAnimated) return;
-
-                const museumImg1 = document.querySelector('.museum-img1');
-                const museumImg2 = document.querySelector('.museum-img2');
-                const museumImg3 = document.querySelector('.museum-img3');
-
-                // .museum-img1 요소가 화면에 보일 때
-                if (isElementInViewport(museumImg1)) {
-                    museumImg1.classList.add('active');
-                    alreadyAnimated = true; // 한 번 애니메이션을 실행했음을 표시
-                } else {
-                    museumImg1.classList.remove('active');
-                }
-            });
-
-            // 요소가 화면에 보이는지 체크하는 함수
-            function isElementInViewport(el) {
-                const rect = el.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
-            }
-        </script>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const loyalBg = document.querySelector('.loyal-bg img');
-                const options = {
-                    root: null,
-                    rootMargin: '0px',
-                    threshold: 0.1
-                };
-            
-                const observer = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            // 애니메이션을 다시 실행
-                            loyalBg.style.animation = 'none';
-                            loyalBg.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
-                            loyalBg.style.animation = 'gradientFadein 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
-                        }
-                    });
-                }, options);
-            
-                observer.observe(loyalBg);
-            });
-        </script>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const publicBg = document.querySelector('.public-bg img');
-                const options = {
-                    root: null,
-                    rootMargin: '0px',
-                    threshold: 0.1
-                };
-                const observer = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            // 애니메이션을 다시 실행
-                            publicBg.style.animation = 'none';
-                            publicBg.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
-                            publicBg.style.animation = 'gradientFadein 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
-                        }
-                    });
-                }, options);
-                observer.observe(publicBg);
-            });
-        </script>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-            const img2 = document.querySelector('.museum-img2');
-            const img3 = document.querySelector('.museum-img3');
-            const img1 = document.querySelector('.museum-img1');
-
-            function addDarkenClass() {
-                img1.classList.add('darken');
-            }
-
-            function removeDarkenClass() {
-                img1.classList.remove('darken');
-            }
-
-            img2.addEventListener('mouseenter', addDarkenClass);
-            img2.addEventListener('mouseleave', removeDarkenClass);
-            img3.addEventListener('mouseenter', addDarkenClass);
-            img3.addEventListener('mouseleave', removeDarkenClass);
-        });
-        </script>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const museumSection = document.querySelector('.art-museum');
-                const img2 = document.querySelector('.museum-img2');
-                const img3 = document.querySelector('.museum-img3');
-
-                function isElementInViewport(el) {
-                    const rect = el.getBoundingClientRect();
-                    return (
-                        rect.top >= 0 &&
-                        rect.left >= 0 &&
-                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                    );
-                }
-
-                function animateImages() {
-                    if (isElementInViewport(museumSection)) {
-                        img2.classList.add('animate');
-                        img3.classList.add('animate');
-                    } else {
-                        img2.classList.remove('animate');
-                        img3.classList.remove('animate');
-                    }
-                }
-
-                window.addEventListener('scroll', animateImages);
-                window.addEventListener('resize', animateImages);
-                animateImages(); // 초기 실행
-            });
-        </script>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const img = document.querySelector('.museum-img1 img');
-                let startY = 0;
-                let currentY = 0;
-            
-                const startDragging = (y) => {
-                    startY = y - currentY;
-                    img.style.cursor = 'grabbing';
-                };
-            
-                const stopDragging = () => {
-                    img.style.cursor = 'grab';
-                    document.removeEventListener('mousemove', onMouseMove);
-                    document.removeEventListener('mouseup', stopDragging);
-                    document.removeEventListener('touchmove', onTouchMove);
-                    document.removeEventListener('touchend', stopDragging);
-                };
-            
-                const onMouseMove = (e) => {
-                    currentY = e.clientY - startY;
-                    updateImagePosition();
-                };
-            
-                const onTouchMove = (e) => {
-                    currentY = e.touches[0].clientY - startY;
-                    updateImagePosition();
-                };
-            
-                const updateImagePosition = () => {
-                    const containerHeight = img.parentElement.clientHeight;
-                    const imgHeight = img.clientHeight;
-                    if (currentY > 0) currentY = 0; // 위로 드래그할 때의 한계 설정
-                    if (currentY < -(imgHeight - containerHeight)) currentY = -(imgHeight - containerHeight); // 아래로 드래그할 때의 한계 설정
-                    img.style.transform = `translateY(${currentY}px)`;
-                };
-            
-                img.addEventListener('mousedown', (e) => {
-                    startDragging(e.clientY);
-                    document.addEventListener('mousemove', onMouseMove);
-                    document.addEventListener('mouseup', stopDragging);
-                });
-            
-                img.addEventListener('touchstart', (e) => {
-                    startDragging(e.touches[0].clientY);
-                    document.addEventListener('touchmove', onTouchMove);
-                    document.addEventListener('touchend', stopDragging);
-                });
-            
-                // 처음 로드될 때 grab 커서 설정
-                img.style.cursor = 'grab';
-            });
-            </script>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const img = document.querySelector('.festival-img2 img');
-                let startY = 0;
-                let currentY = 0;
-            
-                const startDragging = (y) => {
-                    startY = y - currentY;
-                    img.style.cursor = 'grabbing';
-                };
-            
-                const stopDragging = () => {
-                    img.style.cursor = 'grab';
-                    document.removeEventListener('mousemove', onMouseMove);
-                    document.removeEventListener('mouseup', stopDragging);
-                    document.removeEventListener('touchmove', onTouchMove);
-                    document.removeEventListener('touchend', stopDragging);
-                };
-            
-                const onMouseMove = (e) => {
-                    currentY = e.clientY - startY;
-                    updateImagePosition();
-                };
-            
-                const onTouchMove = (e) => {
-                    currentY = e.touches[0].clientY - startY;
-                    updateImagePosition();
-                };
-            
-                const updateImagePosition = () => {
-                    const containerHeight = img.parentElement.clientHeight;
-                    const imgHeight = img.clientHeight;
-                    if (currentY > 0) currentY = 0; // 위로 드래그할 때의 한계 설정
-                    if (currentY < -(imgHeight - containerHeight)) currentY = -(imgHeight - containerHeight); // 아래로 드래그할 때의 한계 설정
-                    img.style.transform = `translateY(${currentY}px)`;
-                };
-            
-                img.addEventListener('mousedown', (e) => {
-                    startDragging(e.clientY);
-                    document.addEventListener('mousemove', onMouseMove);
-                    document.addEventListener('mouseup', stopDragging);
-                });
-            
-                img.addEventListener('touchstart', (e) => {
-                    startDragging(e.touches[0].clientY);
-                    document.addEventListener('touchmove', onTouchMove);
-                    document.addEventListener('touchend', stopDragging);
-                });
-            });
-        </script>
         
         <section id="contact">
             <div class="container">
@@ -1423,26 +687,6 @@
                 </div>
             </div>
         </section>
-        <script>
-            // IntersectionObserver를 사용하여 contact 섹션이 화면에 나타날 때 애니메이션 트리거
-            const contactSection = document.querySelector('#contact');
-            const contactImg = document.querySelector('.contact-img');
-            const contactTxt = document.querySelector('.contact-txt');
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // contact 섹션이 화면에 진입하면 opacity와 transform 속성을 변경하여 나타나도록 설정
-                        contactImg.style.opacity = '1';
-                        contactImg.style.transform = 'translateY(0)';
-                        contactTxt.style.opacity = '1';
-                        contactTxt.style.transform = 'translateY(0)';
-                    }
-                });
-            }, {
-                threshold: 0.5 // 50% 이상 보이면 트리거 (설정값은 적절히 조정 가능)
-            });
-            observer.observe(contactSection);
-        </script>
     </main>
 
     <footer>
@@ -1460,5 +704,250 @@
             </a>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const skillBoxes = document.querySelectorAll('.skill-box');
+        const skillsCircle = document.querySelector('.skills-circle');
+        const imgBars = document.querySelectorAll('.img-bar'); // 모든 img-bar 요소를 선택
+    
+        skillsCircle.addEventListener('mouseenter', function() {
+            skillsCircle.style.animationPlayState = 'paused';
+            imgBars.forEach(bar => {
+                bar.style.animationPlayState = 'paused';
+            });
+        });
+    
+        skillsCircle.addEventListener('mouseleave', function() {
+            skillsCircle.style.animationPlayState = 'running';
+            imgBars.forEach(bar => {
+                bar.style.animationPlayState = 'running';
+            });
+        });
+    
+        skillBoxes.forEach(box => {
+            box.addEventListener('mouseenter', function() {
+                skillsCircle.style.animationPlayState = 'paused';
+                imgBars.forEach(bar => {
+                    bar.style.animationPlayState = 'paused';
+                });
+            });
+    
+            box.addEventListener('mouseleave', function() {
+                skillsCircle.style.animationPlayState = 'running';
+                imgBars.forEach(bar => {
+                    bar.style.animationPlayState = 'running';
+                });
+            });
+        });
+    });
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const skillBg = document.querySelector('.skill-bg img');
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+        
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // 애니메이션을 다시 실행
+                        skillBg.style.animation = 'none';
+                        skillBg.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
+                        skillBg.style.animation = 'gradientFadein 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+                    }
+                });
+            }, options);
+        
+            observer.observe(skillBg);
+        });
+        </script>
+    
+    <script>
+        document.querySelectorAll('.skill-box').forEach(skill => {
+        skill.addEventListener('mouseover', function() {
+            const icon = skill.getAttribute('data-icon');
+            const description = skill.getAttribute('data-description');
+            const progress = skill.getAttribute('data-progress');
+            const progressValue = parseInt(progress, 10);
+            const circumference = 754; // 반지름 120에 맞춘 둘레 길이
+            const offset = circumference - (progressValue / 100) * circumference;
+    
+            const hoverDisplay = document.querySelector('.hover-display');
+            hoverDisplay.querySelector('.hover-icon').src = icon;
+            hoverDisplay.querySelector('.hover-description').innerHTML = description;
+            hoverDisplay.querySelector('.hover-progress').style.width = progress;
+    
+            const progressRing = hoverDisplay.querySelector('.progress-ring');
+            progressRing.style.strokeDashoffset = circumference;
+            progressRing.style.transition = 'none';
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    progressRing.style.transition = 'stroke-dashoffset 1s linear';
+                    progressRing.style.strokeDashoffset = offset;
+                });
+            });
+    
+            hoverDisplay.style.display = 'block';
+        });
+    
+        skill.addEventListener('mouseout', function() {
+            document.querySelector('.hover-display').style.display = 'none';
+        });
+    });
+        </script>
+    
+    <!-- 스킬 퍼센트 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var skillSection = document.querySelector('#skill');
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+        var progressBars = document.querySelectorAll('.progress');
+        if (entry.isIntersecting) {
+            skillSection.classList.add('skill-visible');
+            progressBars.forEach(function(progressBar) {
+                progressBar.style.animation = progressBar.classList.contains('html-progress') ? 'fill-html 2s forwards' :
+                progressBar.classList.contains('css-progress') ? 'fill-css 2s forwards' :
+                progressBar.classList.contains('sass-progress') ? 'fill-sass 2s forwards' :
+                progressBar.classList.contains('javascript-progress') ? 'fill-javascript 2s forwards' :
+                progressBar.classList.contains('jquery-progress') ? 'fill-jquery 2s forwards' :
+                progressBar.classList.contains('react-progress') ? 'fill-react 2s forwards' :
+                progressBar.classList.contains('git-progress') ? 'fill-git 2s forwards' :
+                progressBar.classList.contains('figma-progress') ? 'fill-figma 2s forwards' :
+                progressBar.classList.contains('ai-progress') ? 'fill-ai 2s forwards' :
+                progressBar.classList.contains('photoshop-progress') ? 'fill-photoshop 2s forwards' :
+                progressBar.classList.contains('ae-progress') ? 'fill-ae 2s forwards' :
+                progressBar.classList.contains('pre-progress') ? 'fill-pre 2s forwards' :
+                
+                progressBar.style.animation;
+            });
+        } else {
+            skillSection.classList.remove('skill-visible');
+            progressBars.forEach(function(progressBar) {
+                progressBar.style.animation = 'none';
+            });
+        }
+    });
+    }, {
+        threshold: 0.5
+    });
+    
+    observer.observe(skillSection);
+    
+    // 모달 제어
+    var modal = document.getElementById('skill-modal');
+    var modalIcon = modal.querySelector('.modal-icon');
+    var modalDescription = modal.querySelector('.modal-description');
+    var closeBtn = modal.querySelector('.close');
+    var skillBoxes = document.querySelectorAll('.mo-skill-box div');
+    
+    var skillPercentages = {
+        'html-box': 90,
+        'css-box': 85,
+        'sass-box': 85,
+        'javascript-box': 80,
+        'jquery-box': 85,
+        'react-box': 80,
+        'git-box': 90,
+        'figma-box': 90,
+        'ai-box': 85,
+        'photoshop-box': 90,
+        'ae-box': 75,
+        'pre-box': 80
+    };
+    
+    skillBoxes.forEach(function(skillBox) {
+        skillBox.addEventListener('click', function() {
+            var imgSrc = this.querySelector('img').src;
+            var description = this.querySelector('p').innerText;
+            var skillClass = this.classList[1];
+            var percentage = skillPercentages[skillClass];
+            
+            modalIcon.src = imgSrc;
+            modalDescription.innerText = description;
+            modal.style.display = 'block';
+            
+            // 애니메이션 설정
+            var progressCircle = document.getElementById('progress-circle');
+            var radius = progressCircle.r.baseVal.value;
+            var circumference = radius * 2 * Math.PI;
+            var offset = circumference - (percentage / 100 * circumference);
+    
+            progressCircle.style.strokeDashoffset = circumference; // 초기 상태
+            modal.style.display = 'block';
+            
+            setTimeout(() => {
+                progressCircle.style.strokeDashoffset = offset;
+            }, 0);
+                });
+            });
+    
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                var progressCircle = document.getElementById('progress');
+                progressCircle.style.strokeDashoffset = 879; // 초기 상태로 복구
+            });
+    
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    var progressCircle = document.getElementById('progress');
+                    progressCircle.style.strokeDashoffset = 879; // 초기 상태로 복구
+                }
+            });
+            });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let festivalImages = document.querySelectorAll('.festival-img1, .festival-img2, .festival-img3, .festival-img4');
+    
+            function checkScroll() {
+                festivalImages.forEach(image => {
+                    if (isElementInViewport(image)) {
+                        image.classList.add('visible');
+                    }
+                });
+            }
+    
+            function isElementInViewport(el) {
+                var rect = el.getBoundingClientRect();
+                return (
+                    rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom >= 0
+                );
+            }
+    
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // Check on page load
+        });
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const loyalBg = document.querySelector('.loyal-bg img');
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+    
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // 애니메이션을 다시 실행
+                    loyalBg.style.animation = 'none';
+                    loyalBg.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
+                    loyalBg.style.animation = 'gradientFadein 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+                }
+            });
+        }, options);
+    
+        observer.observe(loyalBg);
+    });
+</script>
 </body>
 </html>

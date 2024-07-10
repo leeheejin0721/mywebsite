@@ -25,7 +25,7 @@ header {
         justify-content: space-between;
         align-items: center;
         position: relative;
-        z-index: 1001;
+        z-index: 1;
     }
     .logo-img {
         width: 20%;
@@ -50,7 +50,7 @@ header {
         flex-direction: column;
         gap: 12px;
         cursor: pointer;
-        z-index: 1001;
+        z-index: 1;
     }
     .menu-toggle-btn span {
         width: 36px; /* Adjusted width */
@@ -70,7 +70,7 @@ header {
     .header-text {
         width: 25%;
         text-align: center;
-        z-index: 1001;
+        z-index: 1;
         @include responsive(large-screens) {
             width: 10%;
         }
@@ -79,12 +79,15 @@ header {
         font-family: $font-en;
         font-size: 0.5rem;
         @include responsive(large-screens) {
-            font-size: 0.7rem;
+            font-size: 0.9rem;
         }
     }
     .header-text p {
         line-height: 1.2;
         font-size: 0.5rem;
+        @include responsive(large-screens) {
+            font-size: 0.7rem;
+        }
     }
     .menu_box {
         display: none;
@@ -160,7 +163,7 @@ main {
             }
         }
         .star2 {
-            z-index: 8;
+            z-index: 1;
             top: 22%;
             left: 79%;
             width: 6%;
@@ -491,7 +494,7 @@ main {
             }
             .estrellas {
                 position: relative;
-                top: 30%;
+                top: 40px;
                 width: 0;
                 height: 0;
                 margin: 0 auto;
@@ -818,18 +821,15 @@ main {
                 background: $bg-color;
                 cursor: pointer;
                 border: 1.5px solid black;
-                p {
-                    line-height: 1.4;
-                    font-size: 0.9rem;
-                    padding: 8% 0;
-                    @include responsive(large-screens) {
-                        font-size: 1.2rem;
-                    padding: 5% 0;
+                font-size: 0.9rem;
+                padding: 6% 0;
+                @include responsive(large-screens) {
+                    font-size: 1.2rem;
+                padding: 3% 0;
+                }
+                    &:hover, &.active {
+                        color: $color-hover;
                     }
-                }
-                &:hover, &.active {
-                    color: $color-hover;
-                }
             }
             #prof {
                 border-left: 0;
@@ -982,7 +982,7 @@ main {
             from { width: 0; }
             to { width: 75%; } /* CSS는 80%로 설정 */
         }
-        @keyframes fill-pre {
+        @keyframes fill-boot {
             from { width: 0; }
             to { width: 80%; } /* CSS는 80%로 설정 */
         }
@@ -995,34 +995,34 @@ main {
             animation: fill-css 2s forwards;
         }
         .sass-progress {
-            animation: fill-css 2s forwards;
+            animation: fill-sass 2s forwards;
         }
         .javascript-progress {
-            animation: fill-css 2s forwards;
+            animation: fill-javascript 2s forwards;
         }
         .jquery-progress {
-            animation: fill-css 2s forwards;
+            animation: fill-jquery 2s forwards;
         }
         .react-progress {
-            animation: fill-css 2s forwards;
+            animation: fill-react 2s forwards;
         }
         .git-progress {
-            animation: fill-css 2s forwards;
+            animation: fill-git 2s forwards;
         }
         .figma-progress {
-            animation: fill-css 2s forwards;
+            animation: fill-figma 2s forwards;
         }
         .ai-progress {
-            animation: fill-css 2s forwards;
+            animation: fill-ai 2s forwards;
         }
         .photoshop-progress {
-            animation: fill-css 2s forwards;
+            animation: fill-photoshop 2s forwards;
         }
         .ae-progress {
-            animation: fill-css 2s forwards;
+            animation: fill-ae 2s forwards;
         }
-        .pre-progress {
-            animation: fill-css 2s forwards;
+        .boot-progress {
+            animation: fill-boot 2s forwards;
         }
         /* 나머지 항목도 같은 방식으로 추가 */
 
@@ -1087,7 +1087,7 @@ main {
         
         .modal-icon {
             position: relative;
-            top: 25%;
+            top: 20%;
             width: 50px;
             height: 50px;
             margin: auto;
@@ -1095,7 +1095,8 @@ main {
         
         .modal-description {
             position: relative;
-            top: 23%;
+            width: 75%;
+            top: 20%;
             margin-top: 10px;
             text-align: center;
             font-size: 14px;
@@ -1136,7 +1137,7 @@ main {
             .ae-box { 
                 transform: rotate(300deg) translate(350px) rotate(-300deg); 
             }
-            .pre-box { 
+            .boot-box { 
                 transform: rotate(330deg) translate(350px) rotate(-330deg); 
             }
         }
@@ -1206,7 +1207,12 @@ main {
                 transform: rotate(0deg);
             }
         }
-        
+        .hover-icon {
+            display: none;
+        }
+        .hover-display .progress-bar {
+            display: none;
+        }
         @include responsive(large-screens) {
             @keyframes fill {
                 to {
@@ -1227,6 +1233,7 @@ main {
             }
             
             .hover-display .hover-icon {
+                display: block;
                 position: relative;
                 top: 40%;
                 left: 41.5%;
@@ -1362,11 +1369,6 @@ main {
                     visibility: hidden; /* 요소 숨기기 */
                 }
                 
-                .museum-img1.active ~ .museum-img2, .museum-img1.active ~ .museum-img3 {
-                    opacity: 1;
-                    transform: translateX(0);
-                    visibility: visible; /* 요소 보이기 */
-                }
                 .museum-img2 {
                     width: $width-wide;
                     display: none;
@@ -1383,7 +1385,11 @@ main {
                         height: auto;
                     }
                 }
-
+                .museum-img2.animate, .museum-img3.animate {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateX(0);
+                }
 
                 .museum-img1 {
                     cursor: pointer;
@@ -1396,49 +1402,37 @@ main {
                         margin: auto;
                         z-index: 5;
                         width: 50%;
-                        height: 630px; /* 높이 지정 */
+                        height: 580px; /* 높이 지정 */
                         overflow: hidden; /* 오버플로우 숨기기 */
+                        margin-top: 5%;
                         img {
                             width: 100%;
                             position: relative;
-                            top: -10%;
                             display: block;
                             transition: opacity 0.5s ease;
                         }
                         &.darken::before {
                         content: '';
                         position: absolute;
-                        top: 11%;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background-color: black;
-                        opacity: 0.5;
-                        transition: opacity 0.5s ease;
-                        z-index: 6;
-                        pointer-events: none; /* 박스가 호버 이벤트에 영향을 주지 않도록 */
-                    }
-                    }
-                    img {
-                        width: $width-wide;
-                        position: relative;
-                        top: 0;
-                        @include responsive(large-screens) {
-                            top: 11%;
-                        }
-                    }
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        top: 11%;
                         left: 0;
                         width: 100%;
                         height: 100%;
                         background-color: black;
                         opacity: 0;
                         transition: opacity 0.5s ease;
+                        z-index: 6;
                         pointer-events: none; /* 박스가 호버 이벤트에 영향을 주지 않도록 */
                     }
+                    &.darken.active::before {
+                        opacity: 0.5;
+                    }
+                    }
+                    img {
+                        width: $width-wide;
+                        position: relative;
+                        top: 0;
+                    }
+                    
                 }
                 @include responsive(large-screens) {
                     .museum-img1:hover img {
@@ -1477,7 +1471,7 @@ main {
                         right: 35%;
                         width: 40%;
                     }
-                    #git, #website, #design-guide {
+                    .git, .website, .design-guide {
                         width: $width-wide;
                         display: flex;
                         align-items: center;
@@ -1511,7 +1505,7 @@ main {
                             display: none;
                         }
                     }  
-                    #git, #website, #design-guide {
+                    .git, .website, .design-guide {
                         cursor: pointer;
                         &:hover {
                             background-color: $color-hover;
@@ -1526,6 +1520,38 @@ main {
                             }
                         }
                     }
+                    .modal {
+                        display: none;
+                        position: fixed;
+                        z-index: 9999;
+                        left: 0;
+                        top: 100%;
+                        width: 100%;
+                        height: 100%;
+                        overflow: auto;
+                        background-color: rgba(0,0,0,0.9);
+                        transition: top 0.5s ease-in-out;
+                      }
+                      .modal-content {
+                        display: block;
+                        width: 100%;
+                        object-fit: contain;
+                      }  
+                      .close {
+                        color: black;
+                        position: fixed;
+                        top: 10px;
+                        right: 40px;
+                        font-size: 35px;
+                        font-weight: bold;
+                        cursor: pointer;
+                      }
+                      .close:hover,
+                      .close:focus {
+                        color: #bbb;
+                        text-decoration: none;
+                        cursor: pointer;
+                      }
                 }
                 .museum-txt {
                     .time {
@@ -1804,7 +1830,7 @@ main {
                     left: 9.7%;
                     width: 45%;
                 }
-                #git, #website, #design-guide, #design-plan {
+                .git, .website, .design-guide, .design-plan {
                     width: $width-wide;
                     display: flex;
                     align-items: center;
@@ -1835,7 +1861,7 @@ main {
                     }
                     
                 }
-                #git, #website, #design-guide, #design-plan {
+                .git, .website, .design-guide, .design-plan {
                     cursor: pointer;
                     &:hover {
                         background-color: $color-hover;
@@ -1850,6 +1876,41 @@ main {
                         }
                     }
                 }
+                .modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 9999;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: auto;
+                    background-color: rgba(0,0,0,0.9);
+                    transition: top 0.5s ease-in-out;
+                  }
+                  
+                  .modal-content {
+                    display: block;
+                    width: 100%;
+                    object-fit: contain;
+                  }
+                  
+                  .close {
+                    color: black;
+                    position: fixed;
+                    top: 10px;
+                    right: 40px;
+                    font-size: 35px;
+                    font-weight: bold;
+                    cursor: pointer;
+                  }
+                  
+                  .close:hover,
+                  .close:focus {
+                    color: #bbb;
+                    text-decoration: none;
+                    cursor: pointer;
+                  }
             }
             .festival-txt {
                 @include responsive(large-screens) {
@@ -2000,16 +2061,16 @@ main {
                 width: $width-wide;
                 display: flex;
                 align-items: center;
-                overflow: hidden;
                 position: relative;
                 @include responsive(large-screens) {
                 }
                 .public-img1 {
                     display: none;
                     @include responsive(large-screens) {
+                        cursor: pointer;
                         display: block;
                         opacity: 0;
-                        width: $width-wide;
+                        width: 28%;
                         position: absolute;
                         top: 35%;
                         &:hover {
@@ -2020,71 +2081,78 @@ main {
                             &::before {
                                 background: rgba(0, 0, 0, 0); // 배경색 제거
                             }
-                            ~ .public-img2::before {
-                                background: rgba(0, 0, 0, 0.5); // public-img2를 어둡게 만들기
-                            }
                         }
                     }
                     img {
-                        width: 28%;
-                        margin: 20px 0;
+                        width: $width-wide;
                     }
                     &::before {
                         content: "";
                         position: absolute;
                         top: 0;
                         left: 0;
-                        width: 28%;
+                        width: 100%;
                         height: 100%;
                         background: rgba(0, 0, 0, 0.5);
                         transition: background 0.3s
                     }
-            
                 }
                 .public-img1.slide-in-left {
                     animation: slideInFromLeft 1s forwards;
                 }
                 .public-img2 {
+                    overflow: hidden;
                     width: $width-wide;
+                    cursor: pointer;
+                    height: 330px;
                     img {
-                        width: $width-wide
+                        width: $width-wide;
+                        transition: transform 0.3s ease;
+                        @include responsive(large-screens) {
+                            transition: transform 3s ease;
+                        }
                     }
                     @include responsive(large-screens) {
+                        background-color: #776677;
                         position: relative;
                         margin: auto;
+                        height: 480px;
                         margin-top: 70px;
                         margin-bottom: 70px;
                         z-index: 3;
-                        left: 19%;
-                        width: $width-wide;
+                        width: 60%;
                         img {
-                            width: 60%;
+                            width: $width-wide;
                         }
                         &::before {
                             content: "";
                             position: absolute;
                             top: 0;
                             left: 0;
-                            width: 60%;
+                            width: 100%;
                             height: 100%;
                             background: rgba(0, 0, 0, 0);
                             transition: background 0.3s; // 배경색 변화 트랜지션 추가
                         }
+                        &.darkened::before {
+                            background: rgba(0, 0, 0, 0.5);
+                        }
+                        &:hover img {
+                            transform: translateY(calc(-100% + 480px));
+                        }
                     }
-
                 }
                 .public-img3 {
                     display: none;
                     @include responsive(large-screens) {
                         display: block;
-                        opacity: 1; // 고치기
-                        width: $width-wide;
+                        opacity: 0;
                         z-index: 2;
                         cursor: pointer;
-                        width: $width-wide;
                         position: absolute;
                         top: 0;
                         left: 70%;
+                        width: 27%;
                         &:hover {
                             z-index: 7;
                             img {
@@ -2096,14 +2164,15 @@ main {
                         }
                     }
                     img {
-                        width: 27%;
+                        width: 100%;
+                        height: 100%;
                     }
                     &::before {
                         content: "";
                         position: absolute;
                         top: 0;
                         left: 0;
-                        width: 27%;
+                        width: 100%;
                         height: 100%;
                         background: rgba(0, 0, 0, 0.5);
                         transition: background 0.3s;
@@ -2111,15 +2180,6 @@ main {
                 }
                 .public-img3.slide-in-right {
                     animation: slideInFromRight 1s forwards;
-                }
-                .public-img1:hover ~ .public-img2::before,
-                .public-img3:hover ~ .public-img2::before {
-                    background: rgba(0, 0, 0, 0.5);
-                }
-                &:hover {
-                    .public-img2::before {
-                        background: rgba(0, 0, 0, 0.5);
-                    }
                 }
             }
             .public-button {
@@ -2133,7 +2193,7 @@ main {
                     left: 17.5%;
                     width: 55%;
                 }
-                #git, #website, #design-guide {
+                .git, .website, .design-guide {
                     width: $width-wide;
                     display: flex;
                     align-items: center;
@@ -2164,7 +2224,7 @@ main {
                         display: none;
                     }
                 }
-                #git, #website, #design-guide {
+                .git, .website, .design-guide {
                     cursor: pointer;
                     &:hover {
                         background-color: $color-hover;
@@ -2179,6 +2239,40 @@ main {
                         }
                     }
                 }
+                .modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 1000000;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: auto;
+                    background-color: rgba(0,0,0,0.9);
+                    transition: top 0.5s ease-in-out;
+                  }
+                  
+                  .modal-content {
+                    display: block;
+                    width: 100%;
+                    object-fit: contain;
+                  }
+                  
+                  .close {
+                    color: black;
+                    position: fixed;
+                    top: 10px;
+                    right: 40px;
+                    font-size: 35px;
+                    font-weight: bold;
+                    cursor: pointer;
+                  }
+                  .close:hover,
+                  .close:focus {
+                    color: #bbb;
+                    text-decoration: none;
+                    cursor: pointer;
+                  }
             }
             .public-txt {
                 width: $width-wide;
@@ -2352,7 +2446,7 @@ footer {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        z-index: 1000;
+        z-index: 1;
 
         a {
             display: block;
@@ -2386,6 +2480,16 @@ footer {
     @include responsive(large-screens) {
         margin-top: 50px;
     }
+    .thank-you {
+        P {
+            text-align: center;
+            color: white;
+            font-family: $font-en;
+            @include responsive(large-screens) {
+                font-size: 1.3rem;
+            }
+        }
+    }
     .copyright {
         color: $color-white;
         text-align: center;
@@ -2394,12 +2498,9 @@ footer {
     .sns {
         display: flex;
         justify-content: center;
-        img {
-            width: 5%;
-            margin: 5px;
-            @include responsive(large-screens) {
-                width: 2%;
-            }
+        align-items: center;
+        a {
+            margin-right: 10px;
         }
     }
 }

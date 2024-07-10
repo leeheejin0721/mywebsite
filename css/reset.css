@@ -58,6 +58,12 @@ body {
   font-size: 16px;
 }
 
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 ol,
 ul {
   list-style: none;

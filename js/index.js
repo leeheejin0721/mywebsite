@@ -23,10 +23,20 @@ document.addEventListener('DOMContentLoaded', function() {
         ['aboutMeLink', 'skillLink', 'portfolioLink', 'contactLink'].forEach(id => {
             document.getElementById(id).addEventListener('click', function(event) {
                 event.preventDefault();
-                const targetId = this.id.replace('Link', '');
-                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-                document.getElementById('menuBox').style.display = 'none';
-                document.getElementById('menuToggle').classList.remove('open');
+                let targetId = this.id.replace('Link', '');
+                if (targetId === 'aboutMe') {
+                    targetId = 'aboutme';  // 소문자로 변경
+                }
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    // 메뉴를 닫고 아이콘을 햄버거 버튼으로 변경
+                    menuBox.classList.remove('active');
+                    menuBox.style.display = 'none';
+                    menuToggle.classList.remove('change');
+                } else {
+                    console.error(`Element with id ${targetId} not found`);
+                }
             });
         });
     }
@@ -187,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const skillPercentages = {
             'html-box': 90, 'css-box': 85, 'sass-box': 85, 'javascript-box': 80,
             'jquery-box': 85, 'react-box': 80, 'git-box': 90, 'figma-box': 90,
-            'ai-box': 85, 'photoshop-box': 90, 'ae-box': 75, 'pre-box': 80
+            'ai-box': 85, 'photoshop-box': 90, 'ae-box': 75, 'boot-box': 80
         };
 
         skillBoxes.forEach(function(skillBox) {
@@ -225,13 +235,104 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('progress').style.strokeDashoffset = 879;
         }
     }
+    function setupSkillBackground() {
+        const skillBg = document.querySelector('.skill-bg img');
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+    
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // 애니메이션을 다시 실행
+                    skillBg.style.animation = 'none';
+                    skillBg.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
+                    skillBg.style.animation = 'gradientFadein 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+                }
+            });
+        }, options);
+    
+        observer.observe(skillBg);
+    }
+    
+    function setupSkillHover() {
+        document.querySelectorAll('.skill-box').forEach(skill => {
+            skill.addEventListener('mouseover', function() {
+                const icon = skill.getAttribute('data-icon');
+                const description = skill.getAttribute('data-description');
+                const progress = skill.getAttribute('data-progress');
+                const progressValue = parseInt(progress, 10);
+                const circumference = 754; // 반지름 120에 맞춘 둘레 길이
+                const offset = circumference - (progressValue / 100) * circumference;
+    
+                const hoverDisplay = document.querySelector('.hover-display');
+                hoverDisplay.querySelector('.hover-icon').src = icon;
+                hoverDisplay.querySelector('.hover-description').innerHTML = description;
+                hoverDisplay.querySelector('.hover-progress').style.width = progress;
+    
+                const progressRing = hoverDisplay.querySelector('.progress-ring');
+                progressRing.style.strokeDashoffset = circumference;
+                progressRing.style.transition = 'none';
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        progressRing.style.transition = 'stroke-dashoffset 1s linear';
+                        progressRing.style.strokeDashoffset = offset;
+                    });
+                });
+    
+                hoverDisplay.style.display = 'block';
+            });
+    
+            skill.addEventListener('mouseout', function() {
+                document.querySelector('.hover-display').style.display = 'none';
+            });
+        });
+    }
+    
+    function setupSkillProgress() {
+        var skillSection = document.querySelector('#skill');
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                var progressBars = document.querySelectorAll('.progress');
+                if (entry.isIntersecting) {
+                    skillSection.classList.add('skill-visible');
+                    progressBars.forEach(function(progressBar) {
+                        progressBar.style.animation = progressBar.classList.contains('html-progress') ? 'fill-html 2s forwards' :
+                        progressBar.classList.contains('css-progress') ? 'fill-css 2s forwards' :
+                        progressBar.classList.contains('sass-progress') ? 'fill-sass 2s forwards' :
+                        progressBar.classList.contains('javascript-progress') ? 'fill-javascript 2s forwards' :
+                        progressBar.classList.contains('jquery-progress') ? 'fill-jquery 2s forwards' :
+                        progressBar.classList.contains('react-progress') ? 'fill-react 2s forwards' :
+                        progressBar.classList.contains('git-progress') ? 'fill-git 2s forwards' :
+                        progressBar.classList.contains('figma-progress') ? 'fill-figma 2s forwards' :
+                        progressBar.classList.contains('ai-progress') ? 'fill-ai 2s forwards' :
+                        progressBar.classList.contains('photoshop-progress') ? 'fill-photoshop 2s forwards' :
+                        progressBar.classList.contains('ae-progress') ? 'fill-ae 2s forwards' :
+                        progressBar.classList.contains('boot-progress') ? 'fill-boot 2s forwards' :
+                        progressBar.style.animation;
+                    });
+                } else {
+                    skillSection.classList.remove('skill-visible');
+                    progressBars.forEach(function(progressBar) {
+                        progressBar.style.animation = 'none';
+                    });
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+    
+        observer.observe(skillSection);
+    }
 
     // 포트폴리오 섹션 관련 함수들
     function setupPortfolioAnimations() {
         const observerOptions = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.5
+            threshold: 0.1
         };
 
         const observerCallback = (entries, observer) => {
@@ -242,6 +343,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     } else if (entry.target.classList.contains('public-img3')) {
                         entry.target.classList.add('slide-in-right');
                     }
+                    entry.target.style.opacity = '1';  // 요소를 보이게 함
                     observer.unobserve(entry.target);
                 }
             });
@@ -262,9 +364,55 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0
+            );
+        }
+
         window.addEventListener('scroll', checkScroll);
         checkScroll();
 
+        function setupLoyalBackground() {
+            const loyalBg = document.querySelector('.loyal-bg img');
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // 애니메이션을 다시 실행
+                        loyalBg.style.animation = 'none';
+                        loyalBg.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
+                        loyalBg.style.animation = 'gradientFadein 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+                    }
+                });
+            }, options);
+
+            observer.observe(loyalBg);
+        }
+
+        // public 이미지 스크롤
+        const publicImgBox = document.querySelector('.public-img-box');
+        const publicImg2 = publicImgBox.querySelector('.public-img2');
+        
+        publicImgBox.addEventListener('mouseover', function(event) {
+            if (event.target.closest('.public-img1') || event.target.closest('.public-img3')) {
+                publicImg2.classList.add('darkened');
+            }
+        });
+        
+        publicImgBox.addEventListener('mouseout', function(event) {
+            if (event.target.closest('.public-img1') || event.target.closest('.public-img3')) {
+                publicImg2.classList.remove('darkened');
+            }
+        });
+        
         // Museum images animation
         let alreadyAnimated = false;
 
@@ -304,30 +452,36 @@ document.addEventListener('DOMContentLoaded', function() {
             const img = document.querySelector(imgSelector);
             let startY = 0;
             let currentY = 0;
-
+            let isDragging = false;
+    
             const startDragging = (y) => {
+                isDragging = true;
                 startY = y - currentY;
                 img.style.cursor = 'grabbing';
             };
-
+    
             const stopDragging = () => {
+                isDragging = false;
                 img.style.cursor = 'grab';
                 document.removeEventListener('mousemove', onMouseMove);
                 document.removeEventListener('mouseup', stopDragging);
                 document.removeEventListener('touchmove', onTouchMove);
                 document.removeEventListener('touchend', stopDragging);
             };
-
+    
             const onMouseMove = (e) => {
+                if (!isDragging) return;
                 currentY = e.clientY - startY;
                 updateImagePosition();
             };
-
+    
             const onTouchMove = (e) => {
+                if (!isDragging) return;
+                e.preventDefault(); // 화면 스크롤 방지
                 currentY = e.touches[0].clientY - startY;
                 updateImagePosition();
             };
-
+    
             const updateImagePosition = () => {
                 const containerHeight = img.parentElement.clientHeight;
                 const imgHeight = img.clientHeight;
@@ -335,25 +489,84 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (currentY < -(imgHeight - containerHeight)) currentY = -(imgHeight - containerHeight);
                 img.style.transform = `translateY(${currentY}px)`;
             };
-
+    
             img.addEventListener('mousedown', (e) => {
                 startDragging(e.clientY);
                 document.addEventListener('mousemove', onMouseMove);
                 document.addEventListener('mouseup', stopDragging);
             });
-
+    
             img.addEventListener('touchstart', (e) => {
                 startDragging(e.touches[0].clientY);
-                document.addEventListener('touchmove', onTouchMove);
+                document.addEventListener('touchmove', onTouchMove, { passive: false });
                 document.addEventListener('touchend', stopDragging);
             });
-
+    
+            // 전체 문서에 대한 터치 이벤트 처리
+            document.addEventListener('touchmove', (e) => {
+                if (isDragging) {
+                    e.preventDefault(); // 드래그 중일 때만 전체 스크롤 방지
+                }
+            }, { passive: false });
+    
             img.style.cursor = 'grab';
         };
-
+    
         setupDraggable('.museum-img1 img');
         setupDraggable('.festival-img2 img');
+        setupDraggable('.public-img2 img');
     }
+    const museumImg1 = document.querySelector('.museum-img1');
+    const museumImg2 = document.querySelector('.museum-img2');
+    const museumImg3 = document.querySelector('.museum-img3');
+
+    function addDarkenEffect() {
+        museumImg1.classList.add('active');
+    }
+
+    function removeDarkenEffect() {
+        museumImg1.classList.remove('active');
+    }
+
+    museumImg2.addEventListener('mouseenter', addDarkenEffect);
+    museumImg2.addEventListener('mouseleave', removeDarkenEffect);
+    museumImg3.addEventListener('mouseenter', addDarkenEffect);
+    museumImg3.addEventListener('mouseleave', removeDarkenEffect);
+
+     // 디자인가이드 모달
+     document.querySelectorAll('.design-guide').forEach(button => {
+        var modalId = button.getAttribute('data-modal');
+        var modal = document.getElementById(modalId);
+        var span = modal.getElementsByClassName('close')[0];
+    
+        button.onclick = function() {
+            modal.style.display = 'block';
+            document.body.classList.add('modal-open'); // body에 클래스 추가하여 스크롤 방지
+            setTimeout(function() {
+                modal.style.top = '0';
+            }, 10);
+        }
+    
+        span.onclick = function() {
+            modal.style.top = '100%';
+            setTimeout(function() {
+                modal.style.display = 'none';
+                document.body.classList.remove('modal-open'); // body에서 클래스 제거하여 스크롤 재개
+            }, 500);
+        }
+    
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.top = '100%';
+                setTimeout(function() {
+                    modal.style.display = 'none';
+                    document.body.classList.remove('modal-open'); // body에서 클래스 제거하여 스크롤 재개
+                }, 500);
+            }
+        }
+    });
+    
+    
 
     // Contact 섹션 애니메이션
     function setupContactAnimation() {
@@ -386,6 +599,17 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     }
 
+    // top menu 스크롤
+    const topMenu = document.querySelector('.topmenu a');
+    topMenu.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
     // 모든 기능 초기화
     function initializeAllFunctions() {
         setupScrollToContact();
@@ -399,6 +623,12 @@ document.addEventListener('DOMContentLoaded', function() {
         setupPortfolioAnimations();
         setupDraggableImages();
         setupContactAnimation();
+        setupSkillSection();
+        setupSkillModal();
+        setupSkillBackground();
+        setupSkillHover();
+        setupSkillProgress();
+        setupLoyalBackground();
     }
 
     // 모든 기능 초기화 실행

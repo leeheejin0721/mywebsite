@@ -60,8 +60,14 @@ body {
 
 body.modal-open {
   overflow: hidden;
-  position: fixed;
+  height: 100%;
   width: 100%;
+}
+
+.no-scroll {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 ol,

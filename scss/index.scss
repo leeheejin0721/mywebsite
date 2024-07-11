@@ -461,10 +461,8 @@ main {
     #aboutme {
         background-image: url(../images/aboutme_bg.png);
         background-size: cover;
-        background-position: bottom 100px;
         width: $width-wide;
         position: relative;
-        background-position: bottom -200px; /* 초기 위치 */
         transition: background-position 1s ease-out; /* 애니메이션 효과 */
         @include responsive(large-screens) {
             background-image: url(../images/about_bg_pc.png);
@@ -494,7 +492,7 @@ main {
             }
             .estrellas {
                 position: relative;
-                top: 40px;
+                top: 60px;
                 width: 0;
                 height: 0;
                 margin: 0 auto;
@@ -549,7 +547,7 @@ main {
                 font-weight: bold;
               }
               .inverso span {
-                line-height: -30;
+                line-height: 0;
                 transform-origin: bottom center;
                 // border: 1px solid red; /* Only for seeing trick */
                 @include responsive(large-screens) {
@@ -608,7 +606,7 @@ main {
                         @include responsive(large-screens) {
                             position: absolute;
                             width: 400px;
-                            right: 80;
+                            left: 0;
                         }
                         p {
                             opacity: 0;
@@ -730,8 +728,8 @@ main {
                         font-size: 1.1rem;
                         @include responsive(large-screens) {
                             font-size: 1.3rem;
-                        width: 15%;
-                        text-align: left;
+                            width: 15%;
+                            text-align: left;
                         }
                     }
                     p {
@@ -844,8 +842,8 @@ main {
     #skill {
         overflow: hidden;
         width: $width-wide;
-        height: 115vh;
-        margin-top: 150px;
+        height: 140vh;
+        margin-top: 210px;
         position: relative;
         @include responsive(large-screens) {
             margin-top: 200px;
@@ -873,7 +871,7 @@ main {
             // margin-top: 150px;
             position: absolute;
             z-index: 1;
-            top: -10%;
+            top: 0;
             height: 100%;
             opacity: 0.5;
             @include responsive(large-screens) {
@@ -1154,6 +1152,7 @@ main {
                 position: relative;
                 img {
                     margin: auto;
+                    width: 75px;
                 }
                 p {
                     display: none;
@@ -1161,8 +1160,6 @@ main {
                 animation: rotateCircle 20s linear infinite;
             }
         }
-        
-
         .skill-box {
             @include responsive(large-screens) {
                 opacity: 0;
@@ -1230,6 +1227,7 @@ main {
                 padding: 20px;
                 width: 500px;
                 height: 500px;  
+                pointer-events: none;
             }
             
             .hover-display .hover-icon {
@@ -1297,10 +1295,11 @@ main {
             }
             .art-museum {
                 height: 100vh;
+                margin-bottom: 100px;
                 .art-museum-title {
                     @include responsive(large-screens) {
                         position: absolute;
-                        left: 33%;
+                        left: 35%;
                         top: 110px;
                     }
                     h3 {
@@ -1467,8 +1466,8 @@ main {
                     z-index: 5;
                     @include responsive(large-screens) {
                         position: absolute;
-                        top: 26%;
-                        right: 35%;
+                        top: 17.8%;
+                        right: 37%;
                         width: 40%;
                     }
                     .git, .website, .design-guide {
@@ -1492,8 +1491,7 @@ main {
                     }
                     .design {
                         line-height: 1.3;
-                    }
-                        
+                    }     
                         img {
                             width: 18%;
                             
@@ -1534,11 +1532,12 @@ main {
                       }
                       .modal-content {
                         display: block;
-                        width: 100%;
+                        width: 60%;
+                        margin: auto;
                         object-fit: contain;
                       }  
                       .close {
-                        color: black;
+                        color: white;
                         position: fixed;
                         top: 10px;
                         right: 40px;
@@ -1548,7 +1547,7 @@ main {
                       }
                       .close:hover,
                       .close:focus {
-                        color: #bbb;
+                        color: darkgray;
                         text-decoration: none;
                         cursor: pointer;
                       }
@@ -1618,7 +1617,7 @@ main {
                     }
                     @include responsive(large-screens) {
                         position: absolute;
-                        top: 22%;
+                        top: 14.5%;
                     }
                 }
             }
@@ -1646,10 +1645,8 @@ main {
             .loyal-festival {
                 height: 100vh;
                 width: $width-wide;
-                overflow: hidden;
                 position: relative;
-                z-index: 5;
-                margin-top: 30px;
+                z-index: 1;
                 .festiva-title {
                     @include responsive(large-screens) {
                         position: absolute;
@@ -1737,6 +1734,7 @@ main {
 
                     @include responsive(large-screens) {
                         .festival-img1 {
+                            overflow: hidden;
                             cursor: pointer;
                             position: absolute;
                             top: 8%;
@@ -1760,7 +1758,7 @@ main {
                                 position: absolute;
                                 top: 0;
                                 left: 0;
-                                height: 828px;
+                                height: 880px;
                                 width: $width-wide;
                                 background-color: black;
                                 opacity: 0.5;
@@ -1768,7 +1766,7 @@ main {
                                 pointer-events: none; /* 박스가 호버 이벤트에 영향을 주지 않도록 */
                             }
                             &:hover {
-                                z-index: 11; /* 호버 시 요소를 가장 앞에 보이게 */
+                                z-index: 2; /* 호버 시 요소를 가장 앞에 보이게 */
                             }
                         }
                         .festival-img2 {
@@ -1820,14 +1818,15 @@ main {
                         }
                     }
                 }
+
             .festival-button {
                 width: $width-wide;
                 display: flex;
                 justify-content: left;
                 @include responsive(large-screens) {
                     position: absolute;
-                    top: 73%;
-                    left: 9.7%;
+                    top: 68%;
+                    left: 9.5%;
                     width: 45%;
                 }
                 .git, .website, .design-guide, .design-plan {
@@ -1890,13 +1889,14 @@ main {
                   }
                   
                   .modal-content {
+                    margin: auto;
                     display: block;
-                    width: 100%;
+                    width: 60%;
                     object-fit: contain;
                   }
                   
                   .close {
-                    color: black;
+                    color: #bbb;
                     position: fixed;
                     top: 10px;
                     right: 40px;
@@ -1907,7 +1907,7 @@ main {
                   
                   .close:hover,
                   .close:focus {
-                    color: #bbb;
+                    color: white;
                     text-decoration: none;
                     cursor: pointer;
                   }
@@ -1984,7 +1984,8 @@ main {
                 }
                 @include responsive(large-screens) {
                     position: absolute;
-                    top: 79%;
+                    top: 74%;
+                    left: 10%;
                 }
             }
         }
@@ -2007,7 +2008,6 @@ main {
             z-index: 1;
         }
         .public-portfolio {
-            z-index: 5;
             height: 100vh;
             position: relative;
             margin-top: 150px;
@@ -2058,6 +2058,7 @@ main {
                 }
             }
             .public-img-box {
+                z-index: 0;
                 width: $width-wide;
                 display: flex;
                 align-items: center;
@@ -2074,9 +2075,9 @@ main {
                         position: absolute;
                         top: 35%;
                         &:hover {
-                            z-index: 7;
+                            z-index: 3;
                             img {
-                                z-index: 10; // 이미지가 더 앞으로 나오게 설정
+                                z-index: 3; // 이미지가 더 앞으로 나오게 설정
                             }
                             &::before {
                                 background: rgba(0, 0, 0, 0); // 배경색 제거
@@ -2119,7 +2120,7 @@ main {
                         height: 480px;
                         margin-top: 70px;
                         margin-bottom: 70px;
-                        z-index: 3;
+                        z-index: 2;
                         width: 60%;
                         img {
                             width: $width-wide;
@@ -2147,16 +2148,16 @@ main {
                     @include responsive(large-screens) {
                         display: block;
                         opacity: 0;
-                        z-index: 2;
+                        z-index: 1;
                         cursor: pointer;
                         position: absolute;
                         top: 0;
                         left: 70%;
                         width: 27%;
                         &:hover {
-                            z-index: 7;
+                            z-index: 2;
                             img {
-                                z-index: 10; // 이미지가 더 앞으로 나오게 설정
+                                z-index: 2; // 이미지가 더 앞으로 나오게 설정
                             }
                             &::before {
                                 background: rgba(0, 0, 0, 0); // 배경색 제거
@@ -2188,8 +2189,8 @@ main {
                 justify-content: right;
                 @include responsive(large-screens) {
                     position: absolute;
-                    z-index: 10;
-                    top: 65%;
+                    z-index: 1;
+                    top: 60%;
                     left: 17.5%;
                     width: 55%;
                 }
@@ -2253,13 +2254,16 @@ main {
                   }
                   
                   .modal-content {
+                    position: relative;
+                    z-index: 3000;
+                    margin: auto;
                     display: block;
-                    width: 100%;
+                    width: 60%;
                     object-fit: contain;
                   }
                   
                   .close {
-                    color: black;
+                    color: white;
                     position: fixed;
                     top: 10px;
                     right: 40px;
@@ -2269,7 +2273,7 @@ main {
                   }
                   .close:hover,
                   .close:focus {
-                    color: #bbb;
+                    color: darkgray;
                     text-decoration: none;
                     cursor: pointer;
                   }
@@ -2333,8 +2337,191 @@ main {
                     }
                 }
             }   
-        }     
+        }
+
+        .java-portfolio {
+            z-index: 0;
+            height: 100vh;
+            position: relative;
+            margin-top: 100px;
+            .java-title { 
+                h3 {
+                    font-family: $font-pre-light;
+                    font-size: 20px;
+                    @include responsive(large-screens) {
+                        width: $width-wide;
+                        text-align: left;
+                    }
+                }
+                .en {
+                    color: #776677;
+                    font-size: 14px;
+                    font-family: $font-pre-light;
+                    @include responsive(large-screens) {
+                        display: inline-block;
+                        width: $width-wide;
+                        text-align: left;
+                    }
+                }
+            }
+            .java-img-box {
+                width: $width-wide;
+                display: flex;
+                align-items: center;
+                position: relative;
+                @include responsive(large-screens) {
+                }
+                .java-img1 {
+                    overflow: hidden;
+                    width: $width-wide;
+                    cursor: pointer;
+                    height: 330px;
+                    img {
+                        width: $width-wide;
+                        transition: transform 0.3s ease;
+                        @include responsive(large-screens) {
+                            transition: transform 3s ease;
+                        }
+                    }
+                    @include responsive(large-screens) {
+                        background-color: #776677;
+                        position: relative;
+                        margin: auto;
+                        height: 600px;
+                        margin-top: 10px;
+                        z-index: 3;
+                        width: 100%;
+                        img {
+                            width: $width-wide;
+                        }
+                        &:hover img {
+                            transform: translateY(calc(-100% + 600px));
+                        }
+                    }
+                }
+            }
+            .java-button {
+                width: $width-wide;
+                display: flex;
+                @include responsive(large-screens) {
+                    justify-content: right;
+                    position: absolute;
+                    z-index: 10;
+                    top: 70%;
+                    left: 45.5%;
+                    width: 55%;
+                }
+                .git, .website {
+                    width: $width-wide;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 5px;
+                    border: 1px solid #E78156;
+                    background-color: $color-white;
+                    padding: 0 5px;
+                    @include responsive(large-screens) {
+                        width: 25%;
+                        padding: 3px 5px;
+                    }
+                    p {
+                        padding: 3px;
+                        font-size: 12px;
+                        font-family: $font-pre-light;
+                    }
+                    .design {
+                        line-height: 1.3;
+                    }
+                    img {
+                        width: 18%;
+                    }
+                    .black {
+                        display: block;
+                    }
+                    .white {
+                        display: none;
+                    }
+                }
+                .git, .website {
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $color-hover;
+                        p {
+                            color: $color-white;
+                        }
+                        .black {
+                            display: none;
+                        }
+                        .white {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .java-txt {
+                width: $width-wide;
+                .time {
+                    margin-top: 20px;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    width: $width-wide;
+                }
+                .together {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 10px;
+                }
+                h4 {
+                    font-size: 1rem;
+                    font-family: $font-pre-light;
+                    width: 30%;
+                    @include responsive(large-screens) {
+                        width: 10%;
+                    }
+                }
+                p {
+                    font-size: 1rem;
+                    line-height: 1.3;
+                    font-family: $font-pre-light;
+                    width: 70%; 
+                    @include responsive(large-screens) {
+                        width: 70%;
+                    }
+                }
+                .tool-box {
+                    display: flex;
+                    .usetool {
+                        display: flex;
+                        cursor: pointer;
+                        .tool {
+                            border: 1px solid black;
+                            border-radius: 10px;
+                            text-align: center;
+                            font-size: 0.9rem;
+                            padding: 3px;
+                            margin-right: 5%;
+                            &:hover {
+                                border: 1px solid #E77E51;
+                                background: #E77E51;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                .project-txt {                   
+                    margin-top: 10px;
+                    display: flex;
+                    p {
+                        text-align: justify;
+                    }
+                }
+            }   
+        }          
     }
+
+    
+
     #contact {
         overflow: hidden;
         width: $width-wide;
@@ -2446,7 +2633,7 @@ footer {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        z-index: 1;
+        z-index: 0;
 
         a {
             display: block;

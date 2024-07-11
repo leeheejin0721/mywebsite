@@ -25,12 +25,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 event.preventDefault();
                 let targetId = this.id.replace('Link', '');
                 if (targetId === 'aboutMe') {
-                    targetId = 'aboutme';  // 소문자로 변경
+                    targetId = 'aboutme';
                 }
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
                     targetElement.scrollIntoView({ behavior: 'smooth' });
-                    // 메뉴를 닫고 아이콘을 햄버거 버튼으로 변경
                     menuBox.classList.remove('active');
                     menuBox.style.display = 'none';
                     menuToggle.classList.remove('change');
@@ -193,6 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const modalDescription = modal.querySelector('.modal-description');
         const closeBtn = modal.querySelector('.close');
         const skillBoxes = document.querySelectorAll('.mo-skill-box div');
+        let scrollPosition;
 
         const skillPercentages = {
             'html-box': 90, 'css-box': 85, 'sass-box': 85, 'javascript-box': 80,
@@ -209,7 +209,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 modalIcon.src = imgSrc;
                 modalDescription.innerText = description;
+                scrollPosition = window.pageYOffset;
                 modal.style.display = 'block';
+                document.body.classList.add('no-scroll');
+                document.body.style.top = `-${scrollPosition}px`;
                 
                 const progressCircle = document.getElementById('progress-circle');
                 const radius = progressCircle.r.baseVal.value;
@@ -232,7 +235,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function closeModal() {
             modal.style.display = 'none';
-            document.getElementById('progress').style.strokeDashoffset = 879;
+            document.getElementById('progress-circle').style.strokeDashoffset = 283; // 원래 값으로 복구
+            document.body.classList.remove('no-scroll');
+            document.body.style.top = ''; // 원래 상태로 복구
         }
     }
     function setupSkillBackground() {
@@ -539,32 +544,33 @@ document.addEventListener('DOMContentLoaded', function() {
         var modal = document.getElementById(modalId);
         var span = modal.getElementsByClassName('close')[0];
     
-        button.onclick = function() {
+        button.onclick = function(event) {
+            event.preventDefault(); // 기본 동작 방지
             modal.style.display = 'block';
-            document.body.classList.add('modal-open'); // body에 클래스 추가하여 스크롤 방지
+            document.body.style.overflow = 'hidden'; // 스크롤 방지
             setTimeout(function() {
                 modal.style.top = '0';
             }, 10);
         }
     
         span.onclick = function() {
-            modal.style.top = '100%';
-            setTimeout(function() {
-                modal.style.display = 'none';
-                document.body.classList.remove('modal-open'); // body에서 클래스 제거하여 스크롤 재개
-            }, 500);
+            closeModal(modal);
         }
     
         window.onclick = function(event) {
             if (event.target == modal) {
-                modal.style.top = '100%';
-                setTimeout(function() {
-                    modal.style.display = 'none';
-                    document.body.classList.remove('modal-open'); // body에서 클래스 제거하여 스크롤 재개
-                }, 500);
+                closeModal(modal);
             }
         }
     });
+
+    function closeModal(modal) {
+        modal.style.top = '100%';
+        setTimeout(function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = ''; // 스크롤 재개
+        }, 500);
+    }
     
     
 

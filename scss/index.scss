@@ -842,15 +842,19 @@ main {
     #skill {
         overflow: hidden;
         width: $width-wide;
-        height: 140vh;
-        margin-top: 210px;
+        height: 100vh;
+        margin-top: 40vw;
+        margin-bottom: 40vw;
         position: relative;
+            z-index: 2000000000;
         @include responsive(large-screens) {
             margin-top: 200px;
             height: 120vh;
+            margin-bottom: 0;
         }
 
         .skill-bg {
+            position: relative;
             opacity: 0;
             transform: scale(1);
         }
@@ -871,7 +875,7 @@ main {
             // margin-top: 150px;
             position: absolute;
             z-index: 1;
-            top: 0;
+            top: -1vh;
             height: 100%;
             opacity: 0.5;
             @include responsive(large-screens) {
@@ -883,7 +887,7 @@ main {
             }
             img {
                 width: $width-wide;
-                height: 1100px;
+                height: 100%;
             }
         }
         h2 {

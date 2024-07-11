@@ -53,7 +53,7 @@ header {
         z-index: 1;
     }
     .menu-toggle-btn span {
-        width: 36px; /* Adjusted width */
+        width: 36px;
         height: 3px;
         background-color: black;
         border-radius: 5px;
@@ -222,11 +222,6 @@ main {
             animation-delay: 1.4s;
         }
 
-        // .contact-circle, .portfolio-circle, .aboutme-circle, .skill-circle {
-            //     position: absolute;
-            //     display: flex;
-            //     justify-content: space-between;
-            // }
         .contact-circle {
             position: absolute;
             top: -3%;
@@ -419,7 +414,7 @@ main {
             padding-top: 5%;
         }
         h1 {
-            position: static; /* absolute에서 static으로 변경 */
+            position: static;
             margin: auto;
             animation: textFadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.6s;
             text-align: center;
@@ -448,7 +443,6 @@ main {
     }
 
     .gradient_orange {
-        // animation: gradientFadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         position: absolute;
         top: 67%;
         left: 65%;
@@ -463,7 +457,7 @@ main {
         background-size: cover;
         width: $width-wide;
         position: relative;
-        transition: background-position 1s ease-out; /* 애니메이션 효과 */
+        transition: background-position 1s ease-out;
         @include responsive(large-screens) {
             background-image: url(../images/about_bg_pc.png);
         }
@@ -473,8 +467,7 @@ main {
             transform: translateY(50px);
             transition: opacity 1s ease-out, transform 1s ease-out;
         }
-    
-        /* 스크롤 시 활성화될 스타일 */
+
         .animate.active {
             opacity: 1;
             transform: translateY(0);
@@ -484,7 +477,7 @@ main {
             text-align: center;
             z-index: 3;
             position: relative;
-            top: -160px; /* 위치를 위로 이동 */
+            top: -160px;
             left: 50%;
             transform: translateX(-50%);
             @include responsive(large-screens) {
@@ -542,14 +535,12 @@ main {
               .estrellas span:nth-of-type(7)  {
                 transform: rotate(-75deg);
               }
-              /* Reverse mode */
               .inverso {
                 font-weight: bold;
               }
               .inverso span {
                 line-height: 0;
                 transform-origin: bottom center;
-                // border: 1px solid red; /* Only for seeing trick */
                 @include responsive(large-screens) {
                     line-height: 0;
                 }
@@ -872,7 +863,6 @@ main {
 
         .skill-bg {
             animation: gradientFadein 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.4s;
-            // margin-top: 150px;
             position: absolute;
             z-index: 1;
             top: -1vh;
@@ -925,8 +915,8 @@ main {
         .progress-bar {
             margin: auto;
             width: 100%;
-            height: 7px; /* 직사각형 박스의 높이 */
-            background-color: #e0e0e0; /* 백그라운드 색상 */
+            height: 7px; 
+            background-color: #e0e0e0; 
             margin-top: 10px;
             position: relative;
         }
@@ -942,53 +932,52 @@ main {
         
         @keyframes fill-html {
             from { width: 0; }
-            to { width: 90%; } /* HTML은 90%로 설정 */
+            to { width: 90%; }
         }
         @keyframes fill-css {
             from { width: 0; }
-            to { width: 85%; } /* CSS는 80%로 설정 */
+            to { width: 85%; }
         }
         @keyframes fill-sass {
             from { width: 0; }
-            to { width: 85%; } /* CSS는 80%로 설정 */
+            to { width: 85%; }
         }
         @keyframes fill-javascript {
             from { width: 0; }
-            to { width: 80%; } /* CSS는 80%로 설정 */
+            to { width: 80%; } 
         }
         @keyframes fill-jquery {
             from { width: 0; }
-            to { width: 85%; } /* CSS는 80%로 설정 */
+            to { width: 85%; } 
         }
         @keyframes fill-react {
             from { width: 0; }
-            to { width: 80%; } /* CSS는 80%로 설정 */
+            to { width: 80%; } 
         }
         @keyframes fill-git {
             from { width: 0; }
-            to { width: 90%; } /* CSS는 80%로 설정 */
+            to { width: 90%; } 
         }
         @keyframes fill-figma {
             from { width: 0; }
-            to { width: 90%; } /* CSS는 80%로 설정 */
+            to { width: 90%; } 
         }
         @keyframes fill-ai {
             from { width: 0; }
-            to { width: 85%; } /* CSS는 80%로 설정 */
+            to { width: 85%; } 
         }
         @keyframes fill-photoshop {
             from { width: 0; }
-            to { width: 90%; } /* CSS는 80%로 설정 */
+            to { width: 90%; } 
         }
         @keyframes fill-ae {
             from { width: 0; }
-            to { width: 75%; } /* CSS는 80%로 설정 */
+            to { width: 75%; } 
         }
         @keyframes fill-boot {
             from { width: 0; }
-            to { width: 80%; } /* CSS는 80%로 설정 */
+            to { width: 80%; } 
         }
-        /* 나머지 항목도 같은 방식으로 추가 */
         
         .html-progress {
             animation: fill-html 2s forwards;
@@ -1026,10 +1015,9 @@ main {
         .boot-progress {
             animation: fill-boot 2s forwards;
         }
-        /* 나머지 항목도 같은 방식으로 추가 */
 
         .modal {
-            display: none; /* 기본적으로 숨김 */
+            display: none;
             position: fixed;
             z-index: 5;
             left: 0;
@@ -1037,7 +1025,7 @@ main {
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.8); /* 반투명 배경 */
+            background-color: rgba(0,0,0,0.8);
         }
         .modal-border {
             width: 300px;
@@ -1053,12 +1041,12 @@ main {
             position: absolute;
             width: 100%;
             height: 100%;
-            transform: rotate(-90deg); /* 12시 방향에서 시작하도록 회전 */
+            transform: rotate(-90deg);
         }
         
         #progress-circle {
-            stroke-dasharray: 283; /* 원의 둘레 */
-            stroke-dashoffset: 283; /* 처음에는 전체 표시되지 않도록 */
+            stroke-dasharray: 283;
+            stroke-dashoffset: 283;
             transition: stroke-dashoffset 2s;
         }
         .modal-content {
@@ -1152,7 +1140,7 @@ main {
                 justify-content: center;
                 align-items: center;
                 width: 100%;
-                height: 100vh; /* 원형 배치를 위해 높이 설정 */
+                height: 100vh;
                 position: relative;
                 img {
                     margin: auto;
@@ -1334,14 +1322,14 @@ main {
                 .museum-img2, .museum-img3 {
                     position: relative;
                     overflow: hidden; 
-                    z-index: 1; /* 기본 z-index 설정 */ 
+                    z-index: 1;
                     width: $width-wide;
                     img {
                         width: 100%;
-                        height: 100%; /* 이미지의 높이를 부모 요소에 맞춤 */
-                        display: block; /* 이미지 요소의 margin 제거 */
+                        height: 100%; 
+                        display: block; 
                         transition: opacity 0.5s ease, z-index 0.5s ease;
-                        opacity: 0.5; /* 이미지를 어둡게 */
+                        opacity: 0.5; 
                     }
                     &::before {
                         content: '';
@@ -1353,23 +1341,23 @@ main {
                         background-color: black;
                         opacity: 0.5;
                         transition: opacity 0.5s ease;
-                        pointer-events: none; /* 박스가 호버 이벤트에 영향을 주지 않도록 */
+                        pointer-events: none; 
                     }
                     &:hover {
-                        z-index: 11; /* 호버 시 요소를 가장 앞에 보이게 */
+                        z-index: 11;
                     }
                     &:hover img {
                         opacity: 1;
-                        z-index: 11; /* 호버 시 이미지가 밝아지면서 앞에 보이게 */
+                        z-index: 11; 
                     }
                     &:hover::before {
-                        opacity: 0; /* 호버 시 어두운 박스 제거 */
+                        opacity: 0;
                     }
                 }
                 .museum-img2, .museum-img3 {
                     opacity: 0;
                     transition: opacity 0.5s ease, transform 1s ease;
-                    visibility: hidden; /* 요소 숨기기 */
+                    visibility: hidden; 
                 }
                 
                 .museum-img2 {
@@ -1397,16 +1385,16 @@ main {
                 .museum-img1 {
                     cursor: pointer;
                     width: $width-wide;
-                    height: 400px; /* 높이 지정 */
-                    overflow: hidden; /* 오버플로우 숨기기 */
+                    height: 400px;
+                    overflow: hidden; 
                     position: relative;
                     @include responsive(large-screens) {
                         position: relative;
                         margin: auto;
                         z-index: 5;
                         width: 50%;
-                        height: 580px; /* 높이 지정 */
-                        overflow: hidden; /* 오버플로우 숨기기 */
+                        height: 580px;
+                        overflow: hidden; 
                         margin-top: 5%;
                         img {
                             width: 100%;
@@ -1424,7 +1412,7 @@ main {
                         opacity: 0;
                         transition: opacity 0.5s ease;
                         z-index: 6;
-                        pointer-events: none; /* 박스가 호버 이벤트에 영향을 주지 않도록 */
+                        pointer-events: none;
                     }
                     &.darken.active::before {
                         opacity: 0.5;
@@ -1439,11 +1427,11 @@ main {
                 }
                 @include responsive(large-screens) {
                     .museum-img1:hover img {
-                        transform: translateY(-67%); /* 이미지를 위로 100%만큼 스크롤 */
+                        transform: translateY(-67%); 
                     }
                     
                     .museum-img1 img {
-                        transition: transform 1.5s ease; /* 변환 애니메이션 설정 */
+                        transition: transform 1.5s ease; 
                     }    
                 }
                 .museum-img3 {
@@ -1701,18 +1689,18 @@ main {
                     .festival-img2 {
                         width: 100%;
                         overflow: hidden;
-                        height: 400px; /* 컨테이너 높이 지정 */
+                        height: 400px;
                         position: relative;
                         transition: transform 0.3s ease;
                         opacity: 0;
-                        transform: translateX(-100px); /* 초기에 왼쪽으로 이동 */
+                        transform: translateX(-100px); 
                         transition: opacity 0.5s, transform 0.5s;
                         img {
-                            width: 100%; /* 이미지 너비를 꽉 차게 지정 */
-                            height: auto; /* 자동 높이 설정 */
-                            cursor: grab; /* 드래그할 수 있음을 나타내는 커서 */
-                            position: absolute; /* 드래그 이동을 위해 position을 absolute로 설정 */
-                            top: 0; /* 초기 위치 설정 */
+                            width: 100%; 
+                            height: auto; 
+                            cursor: grab; 
+                            position: absolute; 
+                            top: 0; 
                         }
                         @include responsive(large-screens) {
                             margin-left: 40px;
@@ -1721,18 +1709,18 @@ main {
                     }
                     @include responsive(large-screens) {
                         .festival-img2:hover img {
-                            transform: translateY(-75%); /* 이미지를 위로 100%만큼 스크롤 */
+                            transform: translateY(-75%); 
                         }
                         
                         .festival-img2 img {
-                            transition: transform 1.5s ease; /* 변환 애니메이션 설정 */
+                            transition: transform 1.5s ease;
                         }
 
                         .festival-img1:hover img {
-                            transform: translateY(-43%); /* 이미지를 위로 100%만큼 스크롤 */
+                            transform: translateY(-43%);
                         }
                         .festival-img1 img {
-                            transition: transform 1.5s ease; /* 변환 애니메이션 설정 */
+                            transition: transform 1.5s ease; 
                         }
                     }
 
@@ -1746,16 +1734,16 @@ main {
                             margin: 0 80px;
                             height: 700px;
                             width: 35%;
-                            z-index: 1; /* 낮은 z-index 값으로 설정하여 뒤에 위치 */
+                            z-index: 1; 
                             opacity: 0;
-                            transform: translateX(100px); /* 초기에 오른쪽으로 이동 */
+                            transform: translateX(100px);
                             transition: opacity 0.3s, transform 0.3s;
                             img {
                                 width: $width-wide;
                             }
                             &:hover {
-                                opacity: 1; /* 호버 시 밝게 표시 */
-                                z-index: 3; /* 높은 z-index 값으로 설정하여 앞으로 가져옴 */
+                                opacity: 1; 
+                                z-index: 3; 
                             }
                             &::before {
                                 content: '';
@@ -1767,15 +1755,15 @@ main {
                                 background-color: black;
                                 opacity: 0.5;
                                 transition: opacity 0.5s ease;
-                                pointer-events: none; /* 박스가 호버 이벤트에 영향을 주지 않도록 */
+                                pointer-events: none;
                             }
                             &:hover {
-                                z-index: 2; /* 호버 시 요소를 가장 앞에 보이게 */
+                                z-index: 2;
                             }
                         }
                         .festival-img2 {
                             opacity: 0;
-                            transform: translateX(-100px); /* 초기에 왼쪽으로 이동 */
+                            transform: translateX(-100px);
                             transition: opacity 0.3s, transform 0.3s;
                             width: 35%;
                             top: 14%;
@@ -1801,7 +1789,7 @@ main {
                             .festival-img3 {
                                 margin-right: -330px;
                                 opacity: 0;
-                                transform: translateX(100px); /* 초기에 오른쪽으로 이동 */
+                                transform: translateX(100px);
                                 transition: opacity 0.5s, transform 0.5s;
                                 img {
                                     width: 50%;
@@ -1809,7 +1797,7 @@ main {
                             }
                             .festival-img4 {
                                 opacity: 0;
-                                transform: translateX(100px); /* 초기에 오른쪽으로 이동 */
+                                transform: translateX(100px);
                                 transition: opacity 0.5s, transform 0.5s;
                                 img {
                                     width: 48%;
@@ -2081,10 +2069,10 @@ main {
                         &:hover {
                             z-index: 3;
                             img {
-                                z-index: 3; // 이미지가 더 앞으로 나오게 설정
+                                z-index: 3;
                             }
                             &::before {
-                                background: rgba(0, 0, 0, 0); // 배경색 제거
+                                background: rgba(0, 0, 0, 0);
                             }
                         }
                     }
@@ -2161,10 +2149,10 @@ main {
                         &:hover {
                             z-index: 2;
                             img {
-                                z-index: 2; // 이미지가 더 앞으로 나오게 설정
+                                z-index: 2;
                             }
                             &::before {
-                                background: rgba(0, 0, 0, 0); // 배경색 제거
+                                background: rgba(0, 0, 0, 0);
                             }
                         }
                     }
@@ -2550,25 +2538,8 @@ main {
             .contact-img {
                 width: $width-wide;
                 opacity: 0;
-                transform: translateY(50px); /* 예시로 50px 아래로 이동 */
+                transform: translateY(50px);
                 transition: opacity 0.5s ease, transform 0.5s ease;
-                // .contact-top {
-                //     width: 85%;
-                //     position: absolute;
-                //     top: 2%;
-                //     img {
-                //         width: $width-wide
-                //     }
-                // }
-                // .contact-bottom {
-                //     width: 85%;
-                //     position: absolute;
-                //     top: 29%;
-                //     img {
-                //         width: $width-wide;
-                        
-                //     }
-                // }
                 .contact-img1 {
                     position: relative;
                     margin: auto;
@@ -2588,7 +2559,7 @@ main {
             }
             .contact-txt {
                 opacity: 0;
-                transform: translateY(50px); /* 예시로 50px 아래로 이동 */
+                transform: translateY(50px);
                 transition: opacity 0.5s ease, transform 0.5s ease;
                 margin: 0 auto;
                 margin-top: 30px;
@@ -2663,11 +2634,7 @@ footer {
     position: relative;
     background-color: #E77E51;
     padding: 10px;
-    // .topmenu {
-    //     img {
-    //         width: 5%;
-    //     }
-    // }
+
     @include responsive(large-screens) {
         margin-top: 50px;
     }

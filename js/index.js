@@ -235,9 +235,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function closeModal() {
             modal.style.display = 'none';
-            document.getElementById('progress-circle').style.strokeDashoffset = 283; // 원래 값으로 복구
+            document.getElementById('progress-circle').style.strokeDashoffset = 283;
             document.body.classList.remove('no-scroll');
-            document.body.style.top = ''; // 원래 상태로 복구
+            document.body.style.top = '';
         }
     }
     function setupSkillBackground() {
@@ -251,9 +251,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // 애니메이션을 다시 실행
                     skillBg.style.animation = 'none';
-                    skillBg.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
+                    skillBg.offsetHeight;
                     skillBg.style.animation = 'gradientFadein 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
                 }
             });
@@ -269,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const description = skill.getAttribute('data-description');
                 const progress = skill.getAttribute('data-progress');
                 const progressValue = parseInt(progress, 10);
-                const circumference = 754; // 반지름 120에 맞춘 둘레 길이
+                const circumference = 754;
                 const offset = circumference - (progressValue / 100) * circumference;
     
                 const hoverDisplay = document.querySelector('.hover-display');
@@ -348,7 +347,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     } else if (entry.target.classList.contains('public-img3')) {
                         entry.target.classList.add('slide-in-right');
                     }
-                    entry.target.style.opacity = '1';  // 요소를 보이게 함
+                    entry.target.style.opacity = '1';
                     observer.unobserve(entry.target);
                 }
             });
@@ -358,7 +357,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const targets = document.querySelectorAll('.public-img1, .public-img3');
         targets.forEach(target => observer.observe(target));
 
-        // Festival images animation
+
         const festivalImages = document.querySelectorAll('.festival-img1, .festival-img2, .festival-img3, .festival-img4');
 
         function checkScroll() {
@@ -391,9 +390,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // 애니메이션을 다시 실행
                         loyalBg.style.animation = 'none';
-                        loyalBg.offsetHeight; // 트릭: 강제로 리페인트하여 애니메이션을 재시작하게 함
+                        loyalBg.offsetHeight;
                         loyalBg.style.animation = 'gradientFadein 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
                     }
                 });
@@ -418,7 +416,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Museum images animation
         let alreadyAnimated = false;
 
         window.addEventListener('scroll', function() {
@@ -482,7 +479,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
             const onTouchMove = (e) => {
                 if (!isDragging) return;
-                e.preventDefault(); // 화면 스크롤 방지
+                e.preventDefault();
                 currentY = e.touches[0].clientY - startY;
                 updateImagePosition();
             };
@@ -507,10 +504,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.addEventListener('touchend', stopDragging);
             });
     
-            // 전체 문서에 대한 터치 이벤트 처리
             document.addEventListener('touchmove', (e) => {
                 if (isDragging) {
-                    e.preventDefault(); // 드래그 중일 때만 전체 스크롤 방지
+                    e.preventDefault();
                 }
             }, { passive: false });
     
@@ -545,9 +541,9 @@ document.addEventListener('DOMContentLoaded', function() {
         var span = modal.getElementsByClassName('close')[0];
     
         button.onclick = function(event) {
-            event.preventDefault(); // 기본 동작 방지
+            event.preventDefault(); 
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // 스크롤 방지
+            document.body.style.overflow = 'hidden'; 
             setTimeout(function() {
                 modal.style.top = '0';
             }, 10);
@@ -568,7 +564,7 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.top = '100%';
         setTimeout(function() {
             modal.style.display = 'none';
-            document.body.style.overflow = ''; // 스크롤 재개
+            document.body.style.overflow = '';
         }, 500);
     }
     
@@ -594,7 +590,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(contactSection);
     }
 
-    // 유틸리티 함수
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
         return (

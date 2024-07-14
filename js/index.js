@@ -14,9 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
             if (menuBox.classList.contains('active')) {
                 menuBox.classList.remove('active');
                 setTimeout(() => menuBox.style.display = 'none', 500);
+                document.body.classList.remove('no-scroll'); // 스크롤 활성화
             } else {
                 menuBox.style.display = 'block';
                 setTimeout(() => menuBox.classList.add('active'), 10);
+                document.body.classList.add('no-scroll'); // 스크롤 비활성화
             }
         });
 
@@ -33,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     menuBox.classList.remove('active');
                     menuBox.style.display = 'none';
                     menuToggle.classList.remove('change');
+                    document.body.classList.remove('no-scroll'); // 스크롤 활성화
                 } else {
                     console.error(`Element with id ${targetId} not found`);
                 }
@@ -111,19 +114,25 @@ document.addEventListener('DOMContentLoaded', function() {
         const profButton = document.getElementById('prof');
         const suitButton = document.getElementById('suit');
         const suitSection = document.querySelector('.suit');
-
-        let activeSection = 'prof';
-
+    
+        let activeSection = 'suit'; // 초기값을 'suit'로 변경
+    
+        // 페이지 로드 시 'suit' 섹션 활성화
+        suitButton.classList.add('active');
+        profButton.classList.remove('active');
+        sumElement.classList.remove('active');
+        suitSection.classList.add('active');
+    
         window.addEventListener("scroll", function() {
             const sectionPosition = aboutMeSection.getBoundingClientRect().top;
             const screenPosition = window.innerHeight / 1.5;
-
+    
             if (sectionPosition < screenPosition) {
                 aboutMeSection.style.backgroundPosition = "bottom 100px";
                 elementsToAnimate.forEach(element => element.classList.add("active"));
                 picElement.classList.add("active");
                 h2Element.classList.add("active");
-                
+    
                 if (activeSection === 'prof') {
                     sumElement.classList.add("active");
                     sumParagraphs.forEach((p, index) => {
@@ -132,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
-
+    
         profButton.addEventListener('click', function() {
             activeSection = 'prof';
             profButton.classList.add('active');
@@ -141,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
             suitSection.classList.remove('active');
             sumParagraphs.forEach(p => p.classList.add('active'));
         });
-
+    
         suitButton.addEventListener('click', function() {
             activeSection = 'suit';
             suitButton.classList.add('active');
@@ -151,6 +160,9 @@ document.addEventListener('DOMContentLoaded', function() {
             sumParagraphs.forEach(p => p.classList.remove('active'));
         });
     }
+    
+    // 페이지 로드 시 함수 실행
+    window.addEventListener('load', setupAboutMeSection);
 
     // 스킬 섹션 관련 함수들
     function setupSkillSection() {

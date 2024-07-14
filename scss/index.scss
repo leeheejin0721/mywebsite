@@ -19,13 +19,13 @@ body {
 header {
     width: 100%;
     .logo-menu-text {
+        z-index: 100;
         margin-top: 32px;
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         position: relative;
-        z-index: 1;
     }
     .logo-img {
         width: 20%;
@@ -97,12 +97,13 @@ header {
         width: 100%;
         height: 100%;
         background-color: #FFF5ED;
-        z-index: 1000;
+        z-index: 99;
         text-align: center;
         padding-top: 100px;
         transition: opacity 0.5s ease;
         @include responsive(large-screens) {
-            left: 0;
+            top: 18%;
+            left: -1%;
         }
     }
     .menu_box.active {
@@ -126,8 +127,11 @@ header {
         font-size: 2rem;
         font-family: $font-en;
         font-weight: 500;
+        &:hover {
+            color: #E77E51;
+        }
         @include responsive(large-screens) {
-            font-size: 34px;
+            font-size: 2.5rem;
         }
     }
 }
@@ -703,6 +707,12 @@ main {
                     font-size: 1.2rem;
                     color: white;
                 }
+                .hash-box {
+                    @include responsive(large-screens) {
+                        margin-top: -30px;
+                        flex-direction: row;
+                    }
+                }
                 .hash-1, .hash-2, .hash-3 {
                     padding: 3px 0;
                     display: flex;
@@ -711,7 +721,6 @@ main {
                     flex-direction: column;
                     @include responsive(large-screens) {
                         flex-direction: row;
-                        margin: 0;
                     }
                     h5 {
                         color: white;
@@ -740,8 +749,8 @@ main {
                     position: relative;
                     h5 {
                         font-size: 1.1rem;
-                        margin-bottom: 30px;
                         @include responsive(large-screens) {
+                            margin-top: 20px;
                             font-size: 1.3rem;
                         }
                     }
@@ -932,35 +941,35 @@ main {
         
         @keyframes fill-html {
             from { width: 0; }
-            to { width: 90%; }
+            to { width: 95%; }
         }
         @keyframes fill-css {
             from { width: 0; }
-            to { width: 85%; }
+            to { width: 95%; }
         }
         @keyframes fill-sass {
             from { width: 0; }
-            to { width: 85%; }
+            to { width: 95%; }
         }
         @keyframes fill-javascript {
             from { width: 0; }
-            to { width: 80%; } 
+            to { width: 90%; } 
         }
         @keyframes fill-jquery {
             from { width: 0; }
-            to { width: 85%; } 
+            to { width: 90%; } 
         }
         @keyframes fill-react {
             from { width: 0; }
-            to { width: 80%; } 
+            to { width: 90%; } 
         }
         @keyframes fill-git {
             from { width: 0; }
-            to { width: 90%; } 
+            to { width: 95%; } 
         }
         @keyframes fill-figma {
             from { width: 0; }
-            to { width: 90%; } 
+            to { width: 95%; } 
         }
         @keyframes fill-ai {
             from { width: 0; }
@@ -976,7 +985,7 @@ main {
         }
         @keyframes fill-boot {
             from { width: 0; }
-            to { width: 80%; } 
+            to { width: 90%; } 
         }
         
         .html-progress {
@@ -2548,10 +2557,12 @@ main {
                         width: $width-wide;    
                     }
                     img {
+                        border-radius: 50% 0;
+                        border: 1px solid black;
                         margin: auto;
-                        width: 80%;
+                        width: 70%;
                         @include responsive(large-screens) {
-                            width: 60%;
+                            width: 65%;
                             margin: auto;
                         }
                     }
@@ -2604,6 +2615,46 @@ main {
 }
 
 footer {
+    position: relative;
+    background-color: #E77E51;
+    padding: 10px;
+
+    @include responsive(large-screens) {
+        margin-top: 50px;
+    }
+
+    .thank-you {
+        P {
+            text-align: center;
+            color: white;
+            font-family: $font-en;
+            @include responsive(large-screens) {
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    .copyright {
+        color: $color-white;
+        text-align: center;
+        font-family: $font-en;
+    }
+
+    .sns {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+            margin-right: 10px;
+            img {
+                transition: transform 0.3s ease;
+            }
+            &:hover img {
+                animation: wiggle 0.5s ease infinite;
+            }
+        }
+    }
+
     .topmenu {
         position: fixed;
         bottom: 20px;
@@ -2618,6 +2669,11 @@ footer {
             img {
                 width: 50px;
                 height: auto;
+                transition: transform 0.3s ease;
+            }
+
+            &:hover img {
+                animation: rotate 0.5s ease infinite;
             }
 
             span {
@@ -2631,34 +2687,20 @@ footer {
             }
         }
     }
-    position: relative;
-    background-color: #E77E51;
-    padding: 10px;
+}
 
-    @include responsive(large-screens) {
-        margin-top: 50px;
-    }
-    .thank-you {
-        P {
-            text-align: center;
-            color: white;
-            font-family: $font-en;
-            @include responsive(large-screens) {
-                font-size: 1.3rem;
-            }
-        }
-    }
-    .copyright {
-        color: $color-white;
-        text-align: center;
-        font-family: $font-en;
-    }
-    .sns {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        a {
-            margin-right: 10px;
-        }
-    }
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(15deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-15deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(20deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-20deg); }
+    100% { transform: rotate(0deg); }
 }

@@ -199,6 +199,9 @@ header .header-text a {
   font-family: "Alegreya";
   font-size: 0.5rem;
 }
+header .header-text a:hover {
+  color: #E77E51;
+}
 @media (min-width: 1024px) {
   header .header-text a {
     font-size: 0.9rem;
@@ -572,6 +575,7 @@ main #intro .intro-txt h1 {
 }
 main #intro .intro-txt #resume {
   animation: textFadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.6s;
+  animation-fill-mode: forwards;
   margin: auto;
   background-color: #000;
   color: #fff;
@@ -581,6 +585,10 @@ main #intro .intro-txt #resume {
   cursor: pointer;
   font-family: "Alegreya";
   font-weight: lighter;
+}
+main #intro .intro-txt #resume:hover {
+  color: black;
+  background-color: #ccc;
 }
 main #intro .gradient_orange {
   position: absolute;

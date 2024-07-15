@@ -1616,6 +1616,7 @@ main #portfolio .art-museum .museum-img1 {
   height: 400px;
   overflow: hidden;
   position: relative;
+  margin-top: 10px;
 }
 @media (min-width: 1024px) {
   main #portfolio .art-museum .museum-img1 {
@@ -1903,6 +1904,7 @@ main #portfolio .loyal-festival .festiva-title .en {
   color: #776677;
   font-size: 14px;
   font-family: "Pretendard-Light";
+  margin-bottom: 10px;
 }
 @media (min-width: 1024px) {
   main #portfolio .loyal-festival .festiva-title .en {
@@ -2267,6 +2269,7 @@ main #portfolio .public-portfolio .public-title .en {
   color: #776677;
   font-size: 14px;
   font-family: "Pretendard-Light";
+  margin-bottom: 10px;
 }
 @media (min-width: 1024px) {
   main #portfolio .public-portfolio .public-title .en {
@@ -2597,6 +2600,7 @@ main #portfolio .java-portfolio {
 main #portfolio .java-portfolio .java-title h3 {
   font-family: "Pretendard-Light";
   font-size: 20px;
+  text-align: right;
 }
 @media (min-width: 1024px) {
   main #portfolio .java-portfolio .java-title h3 {
@@ -2608,12 +2612,41 @@ main #portfolio .java-portfolio .java-title .en {
   color: #776677;
   font-size: 14px;
   font-family: "Pretendard-Light";
+  float: right;
+  margin-bottom: 10px;
 }
 @media (min-width: 1024px) {
   main #portfolio .java-portfolio .java-title .en {
     display: inline-block;
     width: 100%;
     text-align: left;
+    margin-bottom: 0;
+  }
+}
+main #portfolio .java-portfolio .java-title .java2 {
+  font-family: "Pretendard-Light";
+  font-size: 20px;
+  text-align: left;
+}
+@media (min-width: 1024px) {
+  main #portfolio .java-portfolio .java-title .java2 {
+    width: 100%;
+    text-align: right;
+  }
+}
+main #portfolio .java-portfolio .java-title .en2 {
+  color: #776677;
+  font-size: 14px;
+  font-family: "Pretendard-Light";
+  float: left;
+  margin-bottom: 10px;
+}
+@media (min-width: 1024px) {
+  main #portfolio .java-portfolio .java-title .en2 {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 0;
   }
 }
 main #portfolio .java-portfolio .java-img-box {

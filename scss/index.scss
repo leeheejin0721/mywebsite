@@ -448,8 +448,7 @@ main {
             font-family: $font-en;
             font-weight: lighter;
             &:hover {
-                color: black;
-                background-color: #ccc;
+                background-color: #ff7b42;
             }
         }
 
@@ -1294,13 +1293,26 @@ main {
             h2 {
                 position: relative;
                 width: $width-wide;
-                text-align: right;
+                text-align: left;
                 z-index: 4;
                 font-family: $font-en;
                 font-weight: 400;
                 margin-bottom: 30px;
                 @include responsive(large-screens) {
+                    text-align: right;
                     font-size: 3rem;
+                }
+            }
+            .renuwal-title {
+                font-family: $font-en;
+                font-weight: 300;
+                text-align: right;
+                font-size: 1.9rem;
+                margin-bottom: 30px;
+                @include responsive(large-screens) {
+                    text-align: left;
+                    font-size: 2.2rem;
+                    margin-bottom: 40px;
                 }
             }
             .art-museum {
@@ -1310,7 +1322,7 @@ main {
                     @include responsive(large-screens) {
                         position: absolute;
                         left: 35%;
-                        top: 110px;
+                        top: 189px;
                     }
                     h3 {
                         position: relative;
@@ -1399,7 +1411,6 @@ main {
                     visibility: visible;
                     transform: translateX(0);
                 }
-
                 .museum-img1 {
                     cursor: pointer;
                     width: $width-wide;
@@ -1407,7 +1418,9 @@ main {
                     overflow: hidden; 
                     position: relative;
                     margin-top: 10px;
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
                     @include responsive(large-screens) {
+                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
                         position: relative;
                         margin: auto;
                         z-index: 5;
@@ -1442,7 +1455,6 @@ main {
                         position: relative;
                         top: 0;
                     }
-                    
                 }
                 @include responsive(large-screens) {
                     .museum-img1:hover img {
@@ -1475,11 +1487,13 @@ main {
                     justify-content: right;
                     position: relative;
                     z-index: 5;
+                    margin-top: 3%;
                     @include responsive(large-screens) {
                         position: absolute;
-                        top: 17.8%;
+                        top: 840px;
                         right: 37%;
                         width: 40%;
+                        margin-top: 0;
                     }
                     .git, .website, .design-guide {
                         width: $width-wide;
@@ -1628,7 +1642,7 @@ main {
                     }
                     @include responsive(large-screens) {
                         position: absolute;
-                        top: 14.5%;
+                        top: 705px;
                     }
                 }
             }
@@ -1654,6 +1668,7 @@ main {
                 }
             }
             .loyal-festival {
+                padding-top: 70px;
                 height: 100vh;
                 width: $width-wide;
                 position: relative;
@@ -1661,7 +1676,7 @@ main {
                 .festiva-title {
                     @include responsive(large-screens) {
                         position: absolute;
-                        top: 8%;
+                        top: 110px;
                         left: 10.3%;
                     }
                     h3 {
@@ -1715,6 +1730,7 @@ main {
                         opacity: 0;
                         transform: translateX(-100px); 
                         transition: opacity 0.5s, transform 0.5s;
+                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
                         img {
                             width: 100%; 
                             height: auto; 
@@ -1790,6 +1806,7 @@ main {
                             left: 7.8%;
                             height: 500px;
                             position: absolute;
+                            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
                             img {
                                 width: 100%;
                             }
@@ -1812,7 +1829,7 @@ main {
                                 transform: translateX(100px);
                                 transition: opacity 0.5s, transform 0.5s;
                                 img {
-                                    width: 50%;
+                                    width: 51%;
                                 }
                             }
                             .festival-img4 {
@@ -1835,11 +1852,13 @@ main {
                 width: $width-wide;
                 display: flex;
                 justify-content: left;
+                margin-top: 3%;
                 @include responsive(large-screens) {
                     position: absolute;
-                    top: 68%;
+                    top: 670px;
                     left: 9.5%;
                     width: 45%;
+                    margin-top: 0;
                 }
                 .git, .website, .design-guide, .design-plan {
                     width: $width-wide;
@@ -1900,14 +1919,14 @@ main {
                     transition: top 0.5s ease-in-out;
                   }
                   
-                  .modal-content {
+                .modal-content {
                     margin: auto;
                     display: block;
                     width: 60%;
                     object-fit: contain;
-                  }
-                  
-                  .close {
+                }
+                
+                .close {
                     color: #bbb;
                     position: fixed;
                     top: 10px;
@@ -1915,14 +1934,14 @@ main {
                     font-size: 35px;
                     font-weight: bold;
                     cursor: pointer;
-                  }
+                }
                   
-                  .close:hover,
-                  .close:focus {
+                .close:hover,
+                .close:focus {
                     color: white;
                     text-decoration: none;
                     cursor: pointer;
-                  }
+                }
             }
             .festival-txt {
                 @include responsive(large-screens) {
@@ -1996,7 +2015,7 @@ main {
                 }
                 @include responsive(large-screens) {
                     position: absolute;
-                    top: 74%;
+                    top: 731px;
                     left: 10%;
                 }
             }
@@ -2016,17 +2035,18 @@ main {
             position: absolute;
             top: 60%;
             right: 20%;
-            opacity: 0.5;
-            z-index: 1;
+            opacity: 0.3;
+            z-index: 0;
         }
         .public-portfolio {
+            padding-top: 120px;
             height: 100vh;
             position: relative;
             margin-top: 150px;
             .public-title {
                 @include responsive(large-screens) {
                     position: absolute;
-                    top: 10px;
+                    top: 130px;
                     left: 60%;
                 }
                 h3 {
@@ -2119,6 +2139,7 @@ main {
                     width: $width-wide;
                     cursor: pointer;
                     height: 330px;
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
                     img {
                         width: $width-wide;
                         transition: transform 0.3s ease;
@@ -2127,7 +2148,7 @@ main {
                         }
                     }
                     @include responsive(large-screens) {
-                        background-color: #776677;
+                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
                         position: relative;
                         margin: auto;
                         height: 480px;
@@ -2200,10 +2221,12 @@ main {
                 width: $width-wide;
                 display: flex;
                 justify-content: right;
+                margin-top: 3%;
                 @include responsive(large-screens) {
+                    margin-top: 0;
                     position: absolute;
                     z-index: 1;
-                    top: 60%;
+                    top: 691px;
                     left: 17.5%;
                     width: 55%;
                 }
@@ -2351,12 +2374,58 @@ main {
                 }
             }   
         }
-
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
         .java-portfolio {
             z-index: 0;
             height: 100vh;
             position: relative;
             margin-top: 100px;
+            .javascript-title {
+                padding-top: 40%;
+                font-family: $font-en;
+                font-weight: 300;
+                text-align: right;
+                font-size: 1.9rem;
+                margin-bottom: -25%;
+                @include responsive(large-screens) {
+                    padding-top: 0;
+                    margin-bottom: -40px;
+                    text-align: right;
+                    font-size: 2.2rem;
+                }
+            }
+            .react-title {
+                font-family: $font-en;
+                font-weight: 300;
+                text-align: left;
+                margin-bottom: 40px;
+                font-size: 1.9rem;
+                @include responsive(large-screens) {
+                    margin-bottom: 40px;
+                    text-align: left;
+                    font-size: 2.2rem;
+                }
+            }
             .java-title { 
                 h3 {
                     font-family: $font-pre-light;
@@ -2371,7 +2440,7 @@ main {
                     color: #776677;
                     font-size: 14px;
                     font-family: $font-pre-light;
-                    float: right;
+                    float: left;
                     margin-bottom: 10px;
                     @include responsive(large-screens) {
                         display: inline-block;
@@ -2380,10 +2449,14 @@ main {
                         margin-bottom: 0;
                     }
                 }
+                .java {
+                    padding-top: 130px;
+                    text-align: left;
+                }
                 .java2 {
                     font-family: $font-pre-light;
                     font-size: 20px;
-                    text-align: left;
+                    text-align: right;
                     @include responsive(large-screens) {
                         width: $width-wide;
                         text-align: right;
@@ -2393,7 +2466,26 @@ main {
                     color: #776677;
                     font-size: 14px;
                     font-family: $font-pre-light;
-                    float: left;
+                    float: right;
+                    margin-bottom: 10px;
+                    @include responsive(large-screens) {
+                        display: inline-block;
+                        width: $width-wide;
+                        text-align: right;
+                        margin-bottom: 0;
+                    }
+                }
+                .java3 {
+                    text-align: right;
+                    @include responsive(large-screens) {
+                        text-align: right;
+                    }
+                }
+                .en3 {
+                    color: #776677;
+                    font-size: 14px;
+                    font-family: $font-pre-light;
+                    float: right;
                     margin-bottom: 10px;
                     @include responsive(large-screens) {
                         display: inline-block;
@@ -2408,13 +2500,12 @@ main {
                 display: flex;
                 align-items: center;
                 position: relative;
-                @include responsive(large-screens) {
-                }
                 .java-img1 {
                     overflow: hidden;
                     width: $width-wide;
                     cursor: pointer;
-                    height: 330px;
+                    height: auto;
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
                     img {
                         width: $width-wide;
                         transition: transform 0.3s ease;
@@ -2422,8 +2513,8 @@ main {
                             transition: transform 3s ease;
                         }
                     }
+                    
                     @include responsive(large-screens) {
-                        background-color: #776677;
                         position: relative;
                         margin: auto;
                         height: 600px;
@@ -2439,14 +2530,88 @@ main {
                     }
                 }
             }
-            .java-button {
+                .crispy.animate {
+                    animation: slideInLeft 1s forwards;
+                }
+                
+                .tetris.animate {
+                    animation: slideInRight 1s forwards;
+                }
+                
+                .todolist.animate {
+                    animation: slideInLeft 1s forwards;
+                }
+                .java-button {
+                    width: $width-wide;
+                    display: flex;
+                    margin-top: 3%;
+                    @include responsive(large-screens) {
+                        margin-top: 0;
+                        justify-content: right;
+                        position: absolute;
+                        z-index: 10;
+                        top: 813px;
+                        left: 45.5%;
+                        width: 55%;
+                    }
+                    .git, .website {
+                        width: $width-wide;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin: 5px;
+                        border: 1px solid #E78156;
+                        background-color: $color-white;
+                        padding: 0 5px;
+                        @include responsive(large-screens) {
+                        width: 25%;
+                        padding: 3px 5px;
+                    }
+                    p {
+                        padding: 3px;
+                        font-size: 12px;
+                        font-family: $font-pre-light;
+                    }
+                    .design {
+                        line-height: 1.3;
+                    }
+                    img {
+                        width: 18%;
+                        padding: 4px;
+                    }
+                    .black {
+                        display: block;
+                    }
+                    .white {
+                        display: none;
+                    }
+                }
+                .git, .website {
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $color-hover;
+                        p {
+                            color: $color-white;
+                        }
+                        .black {
+                            display: none;
+                        }
+                        .white {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .java-button2 {
                 width: $width-wide;
                 display: flex;
+                margin-top: 3%;
                 @include responsive(large-screens) {
+                    margin-top: 0;
                     justify-content: right;
                     position: absolute;
                     z-index: 10;
-                    top: 70%;
+                    top: 678px;
                     left: 45.5%;
                     width: 55%;
                 }
@@ -2473,6 +2638,69 @@ main {
                     }
                     img {
                         width: 18%;
+                        padding: 4px;
+                    }
+                    .black {
+                        display: block;
+                    }
+                    .white {
+                        display: none;
+                    }
+                }
+                .git, .website {
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $color-hover;
+                        p {
+                            color: $color-white;
+                        }
+                        .black {
+                            display: none;
+                        }
+                        .white {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .java-button3 {
+                width: $width-wide;
+                display: flex;
+                margin-top: 3%;
+                @include responsive(large-screens) {
+                    margin-top: 0;
+                    justify-content: right;
+                    position: absolute;
+                    z-index: 10;
+                    top: 765px;
+                    left: 45.5%;
+                    width: 55%;
+                }
+                .git, .website {
+                    width: $width-wide;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 5px;
+                    border: 1px solid #E78156;
+                    background-color: $color-white;
+                    padding: 0 5px;
+                    @include responsive(large-screens) {
+                        width: 25%;
+                        padding: 3px 5px;
+                    }
+                    p {
+                        padding: 3px;
+                        font-size: 12px;
+                        font-family: $font-pre-light;
+                    }
+                    .design {
+                        line-height: 1.3;
+                    }
+                    img {
+                        width: 18%;
+                        padding: 4px;
                     }
                     .black {
                         display: block;
@@ -2500,7 +2728,7 @@ main {
             .java-txt {
                 width: $width-wide;
                 .time {
-                    margin-top: 20px;
+                    margin-top: 30px;
                     display: flex;
                     align-items: center;
                     margin-bottom: 10px;
@@ -2592,7 +2820,8 @@ main {
                     margin: auto;
                     @include responsive(large-screens) {
                         margin: auto;
-                        width: $width-wide;    
+                        width: $width-wide; 
+                        margin-bottom: 50px;   
                     }
                     img {
                         border-radius: 50% 0;

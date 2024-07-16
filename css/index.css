@@ -587,8 +587,7 @@ main #intro .intro-txt #resume {
   font-weight: lighter;
 }
 main #intro .intro-txt #resume:hover {
-  color: black;
-  background-color: #ccc;
+  background-color: #ff7b42;
 }
 main #intro .gradient_orange {
   position: absolute;
@@ -1500,7 +1499,7 @@ main #portfolio {
 main #portfolio h2 {
   position: relative;
   width: 100%;
-  text-align: right;
+  text-align: left;
   z-index: 4;
   font-family: "Alegreya";
   font-weight: 400;
@@ -1508,7 +1507,22 @@ main #portfolio h2 {
 }
 @media (min-width: 1024px) {
   main #portfolio h2 {
+    text-align: right;
     font-size: 3rem;
+  }
+}
+main #portfolio .renuwal-title {
+  font-family: "Alegreya";
+  font-weight: 300;
+  text-align: right;
+  font-size: 1.9rem;
+  margin-bottom: 30px;
+}
+@media (min-width: 1024px) {
+  main #portfolio .renuwal-title {
+    text-align: left;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
   }
 }
 main #portfolio .art-museum {
@@ -1519,7 +1533,7 @@ main #portfolio .art-museum {
   main #portfolio .art-museum .art-museum-title {
     position: absolute;
     left: 35%;
-    top: 110px;
+    top: 189px;
   }
 }
 main #portfolio .art-museum .art-museum-title h3 {
@@ -1617,9 +1631,11 @@ main #portfolio .art-museum .museum-img1 {
   overflow: hidden;
   position: relative;
   margin-top: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 @media (min-width: 1024px) {
   main #portfolio .art-museum .museum-img1 {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     position: relative;
     margin: auto;
     z-index: 5;
@@ -1686,13 +1702,15 @@ main #portfolio .art-museum .museum-button {
   justify-content: right;
   position: relative;
   z-index: 5;
+  margin-top: 3%;
 }
 @media (min-width: 1024px) {
   main #portfolio .art-museum .museum-button {
     position: absolute;
-    top: 17.8%;
+    top: 840px;
     right: 37%;
     width: 40%;
+    margin-top: 0;
   }
 }
 main #portfolio .art-museum .museum-button .git, main #portfolio .art-museum .museum-button .website, main #portfolio .art-museum .museum-button .design-guide {
@@ -1846,7 +1864,7 @@ main #portfolio .art-museum .museum-txt .project-txt p {
 @media (min-width: 1024px) {
   main #portfolio .art-museum .museum-txt {
     position: absolute;
-    top: 14.5%;
+    top: 705px;
   }
 }
 @keyframes gradientFadein {
@@ -1873,6 +1891,7 @@ main #portfolio .loyal-bg {
   }
 }
 main #portfolio .loyal-festival {
+  padding-top: 70px;
   height: 100vh;
   width: 100%;
   position: relative;
@@ -1881,7 +1900,7 @@ main #portfolio .loyal-festival {
 @media (min-width: 1024px) {
   main #portfolio .loyal-festival .festiva-title {
     position: absolute;
-    top: 8%;
+    top: 110px;
     left: 10.3%;
   }
 }
@@ -1942,6 +1961,7 @@ main #portfolio .loyal-festival .festival-img-box .festival-img2 {
   opacity: 0;
   transform: translateX(-100px);
   transition: opacity 0.5s, transform 0.5s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 main #portfolio .loyal-festival .festival-img-box .festival-img2 img {
   width: 100%;
@@ -2016,6 +2036,7 @@ main #portfolio .loyal-festival .festival-img-box .festival-img2 img {
     left: 7.8%;
     height: 500px;
     position: absolute;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
   main #portfolio .loyal-festival .festival-img-box .festival-img2 img {
     width: 100%;
@@ -2040,7 +2061,7 @@ main #portfolio .loyal-festival .festival-img-box .festival-img2 img {
     transition: opacity 0.5s, transform 0.5s;
   }
   main #portfolio .loyal-festival .festival-img-box .loyal-img-po .festival-img3 img {
-    width: 50%;
+    width: 51%;
   }
   main #portfolio .loyal-festival .festival-img-box .loyal-img-po .festival-img4 {
     opacity: 0;
@@ -2059,13 +2080,15 @@ main #portfolio .loyal-festival .festival-button {
   width: 100%;
   display: flex;
   justify-content: left;
+  margin-top: 3%;
 }
 @media (min-width: 1024px) {
   main #portfolio .loyal-festival .festival-button {
     position: absolute;
-    top: 68%;
+    top: 670px;
     left: 9.5%;
     width: 45%;
+    margin-top: 0;
   }
 }
 main #portfolio .loyal-festival .festival-button .git, main #portfolio .loyal-festival .festival-button .website, main #portfolio .loyal-festival .festival-button .design-guide, main #portfolio .loyal-festival .festival-button .design-plan {
@@ -2221,7 +2244,7 @@ main #portfolio .loyal-festival .festival-txt .project-txt p {
 @media (min-width: 1024px) {
   main #portfolio .loyal-festival .festival-txt {
     position: absolute;
-    top: 74%;
+    top: 731px;
     left: 10%;
   }
 }
@@ -2240,10 +2263,11 @@ main #portfolio .public-bg {
   position: absolute;
   top: 60%;
   right: 20%;
-  opacity: 0.5;
-  z-index: 1;
+  opacity: 0.3;
+  z-index: 0;
 }
 main #portfolio .public-portfolio {
+  padding-top: 120px;
   height: 100vh;
   position: relative;
   margin-top: 150px;
@@ -2251,7 +2275,7 @@ main #portfolio .public-portfolio {
 @media (min-width: 1024px) {
   main #portfolio .public-portfolio .public-title {
     position: absolute;
-    top: 10px;
+    top: 130px;
     left: 60%;
   }
 }
@@ -2348,6 +2372,7 @@ main #portfolio .public-portfolio .public-img-box .public-img2 {
   width: 100%;
   cursor: pointer;
   height: 330px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 main #portfolio .public-portfolio .public-img-box .public-img2 img {
   width: 100%;
@@ -2360,7 +2385,7 @@ main #portfolio .public-portfolio .public-img-box .public-img2 img {
 }
 @media (min-width: 1024px) {
   main #portfolio .public-portfolio .public-img-box .public-img2 {
-    background-color: #776677;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
     position: relative;
     margin: auto;
     height: 480px;
@@ -2434,12 +2459,14 @@ main #portfolio .public-portfolio .public-button {
   width: 100%;
   display: flex;
   justify-content: right;
+  margin-top: 3%;
 }
 @media (min-width: 1024px) {
   main #portfolio .public-portfolio .public-button {
+    margin-top: 0;
     position: absolute;
     z-index: 1;
-    top: 60%;
+    top: 691px;
     left: 17.5%;
     width: 55%;
   }
@@ -2591,11 +2618,61 @@ main #portfolio .public-portfolio .public-txt .project-txt {
 main #portfolio .public-portfolio .public-txt .project-txt p {
   text-align: justify;
 }
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 main #portfolio .java-portfolio {
   z-index: 0;
   height: 100vh;
   position: relative;
   margin-top: 100px;
+}
+main #portfolio .java-portfolio .javascript-title {
+  padding-top: 40%;
+  font-family: "Alegreya";
+  font-weight: 300;
+  text-align: right;
+  font-size: 1.9rem;
+  margin-bottom: -25%;
+}
+@media (min-width: 1024px) {
+  main #portfolio .java-portfolio .javascript-title {
+    padding-top: 0;
+    margin-bottom: -40px;
+    text-align: right;
+    font-size: 2.2rem;
+  }
+}
+main #portfolio .java-portfolio .react-title {
+  font-family: "Alegreya";
+  font-weight: 300;
+  text-align: left;
+  margin-bottom: 40px;
+  font-size: 1.9rem;
+}
+@media (min-width: 1024px) {
+  main #portfolio .java-portfolio .react-title {
+    margin-bottom: 40px;
+    text-align: left;
+    font-size: 2.2rem;
+  }
 }
 main #portfolio .java-portfolio .java-title h3 {
   font-family: "Pretendard-Light";
@@ -2612,7 +2689,7 @@ main #portfolio .java-portfolio .java-title .en {
   color: #776677;
   font-size: 14px;
   font-family: "Pretendard-Light";
-  float: right;
+  float: left;
   margin-bottom: 10px;
 }
 @media (min-width: 1024px) {
@@ -2623,10 +2700,14 @@ main #portfolio .java-portfolio .java-title .en {
     margin-bottom: 0;
   }
 }
+main #portfolio .java-portfolio .java-title .java {
+  padding-top: 130px;
+  text-align: left;
+}
 main #portfolio .java-portfolio .java-title .java2 {
   font-family: "Pretendard-Light";
   font-size: 20px;
-  text-align: left;
+  text-align: right;
 }
 @media (min-width: 1024px) {
   main #portfolio .java-portfolio .java-title .java2 {
@@ -2638,11 +2719,34 @@ main #portfolio .java-portfolio .java-title .en2 {
   color: #776677;
   font-size: 14px;
   font-family: "Pretendard-Light";
-  float: left;
+  float: right;
   margin-bottom: 10px;
 }
 @media (min-width: 1024px) {
   main #portfolio .java-portfolio .java-title .en2 {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 0;
+  }
+}
+main #portfolio .java-portfolio .java-title .java3 {
+  text-align: right;
+}
+@media (min-width: 1024px) {
+  main #portfolio .java-portfolio .java-title .java3 {
+    text-align: right;
+  }
+}
+main #portfolio .java-portfolio .java-title .en3 {
+  color: #776677;
+  font-size: 14px;
+  font-family: "Pretendard-Light";
+  float: right;
+  margin-bottom: 10px;
+}
+@media (min-width: 1024px) {
+  main #portfolio .java-portfolio .java-title .en3 {
     display: inline-block;
     width: 100%;
     text-align: right;
@@ -2659,7 +2763,8 @@ main #portfolio .java-portfolio .java-img-box .java-img1 {
   overflow: hidden;
   width: 100%;
   cursor: pointer;
-  height: 330px;
+  height: auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 main #portfolio .java-portfolio .java-img-box .java-img1 img {
   width: 100%;
@@ -2672,7 +2777,6 @@ main #portfolio .java-portfolio .java-img-box .java-img1 img {
 }
 @media (min-width: 1024px) {
   main #portfolio .java-portfolio .java-img-box .java-img1 {
-    background-color: #776677;
     position: relative;
     margin: auto;
     height: 600px;
@@ -2687,16 +2791,27 @@ main #portfolio .java-portfolio .java-img-box .java-img1 img {
     transform: translateY(calc(-100% + 600px));
   }
 }
+main #portfolio .java-portfolio .crispy.animate {
+  animation: slideInLeft 1s forwards;
+}
+main #portfolio .java-portfolio .tetris.animate {
+  animation: slideInRight 1s forwards;
+}
+main #portfolio .java-portfolio .todolist.animate {
+  animation: slideInLeft 1s forwards;
+}
 main #portfolio .java-portfolio .java-button {
   width: 100%;
   display: flex;
+  margin-top: 3%;
 }
 @media (min-width: 1024px) {
   main #portfolio .java-portfolio .java-button {
+    margin-top: 0;
     justify-content: right;
     position: absolute;
     z-index: 10;
-    top: 70%;
+    top: 813px;
     left: 45.5%;
     width: 55%;
   }
@@ -2727,6 +2842,7 @@ main #portfolio .java-portfolio .java-button .git .design, main #portfolio .java
 }
 main #portfolio .java-portfolio .java-button .git img, main #portfolio .java-portfolio .java-button .website img {
   width: 18%;
+  padding: 4px;
 }
 main #portfolio .java-portfolio .java-button .git .black, main #portfolio .java-portfolio .java-button .website .black {
   display: block;
@@ -2749,11 +2865,141 @@ main #portfolio .java-portfolio .java-button .git:hover .black, main #portfolio 
 main #portfolio .java-portfolio .java-button .git:hover .white, main #portfolio .java-portfolio .java-button .website:hover .white {
   display: block;
 }
+main #portfolio .java-portfolio .java-button2 {
+  width: 100%;
+  display: flex;
+  margin-top: 3%;
+}
+@media (min-width: 1024px) {
+  main #portfolio .java-portfolio .java-button2 {
+    margin-top: 0;
+    justify-content: right;
+    position: absolute;
+    z-index: 10;
+    top: 678px;
+    left: 45.5%;
+    width: 55%;
+  }
+}
+main #portfolio .java-portfolio .java-button2 .git, main #portfolio .java-portfolio .java-button2 .website {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px;
+  border: 1px solid #E78156;
+  background-color: #fff;
+  padding: 0 5px;
+}
+@media (min-width: 1024px) {
+  main #portfolio .java-portfolio .java-button2 .git, main #portfolio .java-portfolio .java-button2 .website {
+    width: 25%;
+    padding: 3px 5px;
+  }
+}
+main #portfolio .java-portfolio .java-button2 .git p, main #portfolio .java-portfolio .java-button2 .website p {
+  padding: 3px;
+  font-size: 12px;
+  font-family: "Pretendard-Light";
+}
+main #portfolio .java-portfolio .java-button2 .git .design, main #portfolio .java-portfolio .java-button2 .website .design {
+  line-height: 1.3;
+}
+main #portfolio .java-portfolio .java-button2 .git img, main #portfolio .java-portfolio .java-button2 .website img {
+  width: 18%;
+  padding: 4px;
+}
+main #portfolio .java-portfolio .java-button2 .git .black, main #portfolio .java-portfolio .java-button2 .website .black {
+  display: block;
+}
+main #portfolio .java-portfolio .java-button2 .git .white, main #portfolio .java-portfolio .java-button2 .website .white {
+  display: none;
+}
+main #portfolio .java-portfolio .java-button2 .git, main #portfolio .java-portfolio .java-button2 .website {
+  cursor: pointer;
+}
+main #portfolio .java-portfolio .java-button2 .git:hover, main #portfolio .java-portfolio .java-button2 .website:hover {
+  background-color: #E78156;
+}
+main #portfolio .java-portfolio .java-button2 .git:hover p, main #portfolio .java-portfolio .java-button2 .website:hover p {
+  color: #fff;
+}
+main #portfolio .java-portfolio .java-button2 .git:hover .black, main #portfolio .java-portfolio .java-button2 .website:hover .black {
+  display: none;
+}
+main #portfolio .java-portfolio .java-button2 .git:hover .white, main #portfolio .java-portfolio .java-button2 .website:hover .white {
+  display: block;
+}
+main #portfolio .java-portfolio .java-button3 {
+  width: 100%;
+  display: flex;
+  margin-top: 3%;
+}
+@media (min-width: 1024px) {
+  main #portfolio .java-portfolio .java-button3 {
+    margin-top: 0;
+    justify-content: right;
+    position: absolute;
+    z-index: 10;
+    top: 765px;
+    left: 45.5%;
+    width: 55%;
+  }
+}
+main #portfolio .java-portfolio .java-button3 .git, main #portfolio .java-portfolio .java-button3 .website {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px;
+  border: 1px solid #E78156;
+  background-color: #fff;
+  padding: 0 5px;
+}
+@media (min-width: 1024px) {
+  main #portfolio .java-portfolio .java-button3 .git, main #portfolio .java-portfolio .java-button3 .website {
+    width: 25%;
+    padding: 3px 5px;
+  }
+}
+main #portfolio .java-portfolio .java-button3 .git p, main #portfolio .java-portfolio .java-button3 .website p {
+  padding: 3px;
+  font-size: 12px;
+  font-family: "Pretendard-Light";
+}
+main #portfolio .java-portfolio .java-button3 .git .design, main #portfolio .java-portfolio .java-button3 .website .design {
+  line-height: 1.3;
+}
+main #portfolio .java-portfolio .java-button3 .git img, main #portfolio .java-portfolio .java-button3 .website img {
+  width: 18%;
+  padding: 4px;
+}
+main #portfolio .java-portfolio .java-button3 .git .black, main #portfolio .java-portfolio .java-button3 .website .black {
+  display: block;
+}
+main #portfolio .java-portfolio .java-button3 .git .white, main #portfolio .java-portfolio .java-button3 .website .white {
+  display: none;
+}
+main #portfolio .java-portfolio .java-button3 .git, main #portfolio .java-portfolio .java-button3 .website {
+  cursor: pointer;
+}
+main #portfolio .java-portfolio .java-button3 .git:hover, main #portfolio .java-portfolio .java-button3 .website:hover {
+  background-color: #E78156;
+}
+main #portfolio .java-portfolio .java-button3 .git:hover p, main #portfolio .java-portfolio .java-button3 .website:hover p {
+  color: #fff;
+}
+main #portfolio .java-portfolio .java-button3 .git:hover .black, main #portfolio .java-portfolio .java-button3 .website:hover .black {
+  display: none;
+}
+main #portfolio .java-portfolio .java-button3 .git:hover .white, main #portfolio .java-portfolio .java-button3 .website:hover .white {
+  display: block;
+}
 main #portfolio .java-portfolio .java-txt {
   width: 100%;
 }
 main #portfolio .java-portfolio .java-txt .time {
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
@@ -2853,6 +3099,7 @@ main #contact .contact-box .contact-img .contact-img1 {
   main #contact .contact-box .contact-img .contact-img1 {
     margin: auto;
     width: 100%;
+    margin-bottom: 50px;
   }
 }
 main #contact .contact-box .contact-img .contact-img1 img {
